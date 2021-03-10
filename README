@@ -1,0 +1,3 @@
+Requirements:
+- FIRRTL (https://github.com/chipsalliance/firrtl/blob/master/README.md)
+    - yosys, sbt, verilator are all secondary dependencies
