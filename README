@@ -1,3 +1,7 @@
 Requirements:
 - FIRRTL (https://github.com/chipsalliance/firrtl/blob/master/README.md)
     - yosys, sbt, verilator are all secondary dependencies
+
+
+Additional Resources:
+- UCLID5: (https://github.com/uclid-org/uclid)
