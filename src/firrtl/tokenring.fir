@@ -7,9 +7,6 @@ circuit TokenRing :
         output ovalue : UInt<32>
         reg r1 : UInt<32>, clock with :
             reset => (reset, ivalue)
-        ; https://github.com/chipsalliance/firrtl/issues/1479
-        reg rs: UInt<32> [15], clock with :
-            reset => (reset, zeroes)
         ovalue <= r1
         wire zeroes: UInt<32> [15]
         zeroes[0] <= UInt(0)
@@ -27,6 +24,9 @@ circuit TokenRing :
         zeroes[12] <= UInt(0)
         zeroes[13] <= UInt(0)
         zeroes[14] <= UInt(0)
+        ; https://github.com/chipsalliance/firrtl/issues/1479
+        reg rs: UInt<32> [15], clock with :
+            reset => (reset, zeroes)
         r1 <= rs[14]
         rs[0] <= r1
         rs[1] <= rs[0]
