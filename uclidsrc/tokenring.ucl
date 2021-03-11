@@ -1,0 +1,62 @@
+module main {
+
+	type register_t = bv8;
+	var registers : [bv3]register_t;
+
+	input reset : boolean;
+	input clock : boolean;
+
+    procedure reset_ring () 
+        modifies registers;
+    {   
+        registers[0bv3] = 1bv8;
+        for i in range(1bv3, 7bv3) {
+            registers[i] = 0bv8;
+        }
+    }
+
+    procedure clock_action ()
+    	modifies registers;
+	{
+		var temp : register_t;
+		temp = registers[7bv3];
+		registers[1bv3] = registers[0bv3];
+		registers[2bv3] = registers[0bv3];
+		registers[3bv3] = registers[0bv3];
+		registers[4bv3] = registers[0bv3];
+		registers[5bv3] = registers[0bv3];
+		registers[6bv3] = registers[0bv3];
+		registers[7bv3] = registers[0bv3];
+		registers[0bv3] = temp;
+	}
+
+
+	init {
+		call () = reset_ring();
+	}
+
+	next {
+		if ( reset ){
+			call () = reset_ring();
+		}
+		else {
+			if ( clock ) {
+				call () = clock_action();
+			}
+		}
+	}
+
+	property[LTL] loop_around : 
+		// no reset
+		G(!reset && clock) ==>
+		G(registers[0bv3] == 1bv8 ==> (X(X(X(X(X(X(X(X(registers[0bv3] == 1bv8))))))))));
+
+	property[LTL] single_token :
+		G(!(registers[0bv3] != 0bv8 && registers[1bv3] != 0bv8));
+
+	control {
+		v = bmc(20);
+		check;
+		print_results;
+	}
+}

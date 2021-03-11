@@ -1,0 +1,57 @@
+module main {
+    type value = enum {val1, val2};
+    type register_t = value;
+    
+    var registers : [bv3]register_t;
+
+    input clock : boolean;
+    input reset : boolean;
+
+    procedure reset_ring ()
+        modifies registers;
+    {   
+        registers[0bv3] = val1;
+        for i in range(1bv3, 7bv3) {
+            registers[i] = val2;
+        }
+    }
+
+    procedure clock_action ()
+        modifies registers;
+    {
+        var temp : register_t;
+        temp = registers[7bv3];
+        registers[1bv3] = registers[0bv3];
+        registers[2bv3] = registers[0bv3];
+        registers[3bv3] = registers[0bv3];
+        registers[4bv3] = registers[0bv3];
+        registers[5bv3] = registers[0bv3];
+        registers[6bv3] = registers[0bv3];
+        registers[7bv3] = registers[0bv3];
+        registers[0bv3] = temp;
+    }
+
+
+    init {
+        call () = reset_ring();
+    }
+
+    next {
+        call () = clock_action();
+    }
+
+
+    property[LTL] loop_around : 
+        // no reset
+        G(!reset && clock) ==>
+        G(registers[0bv3] == val1 ==> (X(X(X(X(X(X(X(X(registers[0bv3] == val1))))))))));
+
+    property[LTL] single_token :
+        G(!(registers[0bv3] != val2 && registers[1bv3] != val2));
+
+    control {
+        v = bmc(20);
+        check;
+        print_results;
+    }
+}

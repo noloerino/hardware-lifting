@@ -1,0 +1,65 @@
+module main {
+
+	type register_t = bv8;
+	var register0 : register_t;
+	var register1 : register_t;
+	var register2 : register_t;
+	var register3 : register_t;
+	var register4 : register_t;
+	var register5 : register_t;
+	var register6 : register_t;
+	var register7 : register_t;
+
+	input reset : boolean;
+	input clock : boolean;
+
+    procedure reset_ring () 
+        modifies register0, register1, register2, register3, register4, register5, register6, register7;
+    {   
+        register0 = 1bv8;
+        register1 = 0bv8;
+        register2 = 0bv8;
+        register3 = 0bv8;
+        register4 = 0bv8;
+        register5 = 0bv8;
+        register6 = 0bv8;
+        register7 = 0bv8;
+    }
+
+
+	init {
+		call () = reset_ring();
+	}
+
+	next {
+		if ( reset ){
+			call () = reset_ring();
+		}
+		else {
+			if ( clock ) {
+				register0' = register7;
+				register1' = register0;
+				register2' = register1;
+				register3' = register2;
+				register4' = register3;
+				register5' = register4;
+				register6' = register5;
+				register7' = register6;
+			}
+		}
+	}
+
+	property[LTL] loop_around :
+		// no reset
+		G(!reset && clock) ==>
+		G(register0 == 1bv8 ==> (X(X(X(X(X(X(X(X(register0 == 1bv8))))))))));
+
+	property[LTL] single_token :
+		G(!(register0 != 0bv8 && register1 != 0bv8));
+
+	control {
+		v = bmc(20);
+		check;
+		print_results;
+	}
+}
