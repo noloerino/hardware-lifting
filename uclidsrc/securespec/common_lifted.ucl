@@ -1,0 +1,64 @@
+module common {
+
+    type byte_t = bv8;
+    type word_t = bv8;
+
+    type addr_t = bv8;
+    type mem_t = [addr_t]word_t;
+
+    const slice : integer = 31;
+    const addr1 : bv6 = 1bv8;
+
+    type pc_t = enum {
+        enter, 
+        block1,
+        block2,
+        block3,
+        block4,
+        block5,
+        end,
+        halt        
+    };
+
+    type size_t = enum { s_byte, s_word };
+    type obs_mem_t = enum {mema, memb};
+    function update_obs_mem (mem_obs : obs_mem_t, addr : word_t, access_size : size_t) : obs_mem_t;
+
+    // keep as is
+    type br_pred_state_t;
+    function update_br_pred(state : br_pred_state_t, cond : boolean) : br_pred_state_t;
+    function br_pred(state : br_pred_state_t, pc : pc_t) : boolean;
+    function br_resolve(state : br_pred_state_t, pc : pc_t) : boolean;
+    // keep as is
+    type spec_idx_t = bv2;
+    const spec_idx0 : spec_idx_t = 0bv2;
+    const spec_idx1 : spec_idx_t = 1bv2;
+    function walk_back(state : br_pred_state_t, pc : pc_t, spec_idx : spec_idx_t) : spec_idx_t;
+    // keep as is
+    type spec_mem_t      = [spec_idx_t]mem_t;       // Stores memory across speculation so it can be restored
+    type spec_reg_t      = [spec_idx_t]word_t;      // Stores shadow registers as we deepen speculation
+    type spec_flag_reg_t = [spec_idx_t]boolean;     // Stores flag registers values for speculation checkpoints
+    type spec_pc_t       = [spec_idx_t]pc_t;        // Stores the PC value that would have been correct
+
+    function multiply(x : word_t, y : word_t) : word_t;
+    const obs_mem_init : obs_mem_t;
+    const RAX_init : word_t;
+    const RCX_init : word_t;
+    const RDX_init : word_t;
+    const RDI_init : word_t;
+    const RSI_init : word_t;
+    const RSP_init : word_t;
+    const RBP_init : word_t;
+    const CF_init  : boolean;
+    const ZF_init  : boolean;
+    const ret_init : word_t;
+    const mem_init : mem_t;
+    const br_pred_init : br_pred_state_t;
+    const spec_mem_init : spec_mem_t;
+    const spec_reg_init : spec_reg_t;
+    const spec_flag_reg_init : spec_flag_reg_t;
+    const spec_pc_init  : spec_pc_t;
+    const secret : addr_t;
+}
+
+

@@ -1,0 +1,407 @@
+module program {
+
+	type * = common.*;
+
+    input speculative : boolean;
+    var pc : pc_t;
+    var mem : mem_t;
+
+    assume (pc != block2 && pc != block3 && pc != block4 && pc != block5);    // Ignore invalid blocks
+
+    // Registers
+    var RDI,
+        RAX,
+        RDX,
+        RCX: word_t;
+    var CF : boolean;
+
+    // Observable states
+    var br_pred_state : br_pred_state_t;        // Branch predictor state
+    var obs_mem : obs_mem_t;
+
+    // Speculation stack for saving register values at branch checkpoints
+    var spec_level : spec_idx_t;
+    var spec_mem : spec_mem_t;
+    var spec_pc : spec_pc_t;
+    var spec_RAX,
+        spec_RDX,
+        spec_RCX : spec_reg_t;
+    var spec_CF : spec_flag_reg_t;
+
+    // CHANGE: remove the higher order bits which match
+    // const array1_addr        : word_t = 0x601038bv32;
+    const array1_addr        : word_t = 0x38bv8;
+    const array2_addr        : word_t = 0x40bv8;
+    const array1_size_addr : word_t = 0x50bv8;
+    const temp_addr        : word_t = 0x58bv8;
+    const lfence           : bv1    = 0bv1;                 // NOTE: 0bv1 means no lfence, 1bv1 means use lfence
+
+    // CHANGE: word and addr are the same
+    define word2addr(w : word_t) : addr_t = w;
+
+    procedure do_enter()
+        modifies pc, mem,
+                 RDI, RAX, RDX, RCX, CF,
+                 br_pred_state, obs_mem,
+                 spec_level, spec_mem, spec_pc, spec_RAX, spec_RDX, spec_RCX, spec_CF;
+    {
+        var v377 : word_t;
+
+        // 00000177: mem := mem with [RBP + 0xFFFFFFFFFFFFFFF8, el]:u64 <- RDI
+        // 00000178: RAX := mem[0x601050, el]:u64
+        call (RAX) = load_mem32(array1_size_addr);
+        // 0000017a: CF := mem[RBP + 0xFFFFFFFFFFFFFFF8, el]:u64 < RAX
+        CF = (RDI < RAX);
+        // 00000180: when ~CF goto %000001b4
+        // 00000181: goto %00000182
+        call branch(!CF, end, block1);
+    }
+
+    // CHANGE: shift amount in bv_left_shift
+    procedure do_block1()
+        modifies pc, mem,
+                 RDI, RAX, RDX, RCX, CF,
+                 br_pred_state, obs_mem,
+                 spec_level, spec_mem, spec_pc, spec_RAX, spec_RDX, spec_RCX, spec_CF;
+    {
+        var v274, v284 : word_t;
+
+        // 00000183: RAX := mem[0x601040, el]:u64
+        call (RAX) = load_mem32(array2_addr);
+        // 00000184: RDX := mem[0x601038, el]:u64
+        call (RDX) = load_mem32(array1_addr);
+        // 00000185: RCX := mem[RBP + 0xFFFFFFFFFFFFFFF8, el]:u64
+        RCX = RDI;
+        // 00000187: RCX := RCX << 3
+        RCX = bv_left_shift(0x3bv8, RCX);
+        // 0000018f: v274 := RCX
+        v274 = RCX;
+        // 00000190: RDX := RDX + v274
+        RDX = RDX + v274;
+
+        if (lfence == 1bv1 && spec_level != common.spec_idx0) {
+            call do_resolve();
+        } else {
+            // 00000197: RDX := mem[RDX, el]:u64
+            call (RDX) = load_mem32(RDX);
+            // 00000199: RDX := RDX << 0xC
+    // RDX = bv_left_shift(0xCbv8, RDX);
+            // 000001a1: v284 := RDX
+            v284 = RDX;
+            // 000001a2: RAX := RAX + v284
+            RAX = RAX + v284;
+            // 000001a9: RDX := mem[RAX, el]:u64
+
+    //         if (pid == p3) {
+				// call (RDX) = load_mem32(3bv8);            	
+    //         }
+    //         if (pid == p4) {
+				// call (RDX) = load_mem32(4bv8);            	
+    //         }
+    //         else{
+        	call (RDX) = load_mem32(RAX);
+	// }
+
+            
+            // 000001aa: RAX := mem[0x601058, el]:u64
+            call (RAX) = load_mem32(temp_addr);
+            // 000001ab: RAX := RAX & RDX
+            RAX = RAX & RDX;
+            // 000001b2: mem := mem with [0x601058, el]:u64 <- RAX
+            call store_mem32(temp_addr, RAX);
+            // 000001b3: goto %000001b4
+            pc = end; br_pred_state = common.update_br_pred(br_pred_state, true);
+        }
+    }
+
+    procedure do_end()
+        modifies pc, mem,
+                 RDI, RAX, RDX, RCX, CF,
+                 br_pred_state, obs_mem,
+                 spec_level, spec_mem, spec_pc, spec_RAX, spec_RDX, spec_RCX, spec_CF;
+    {
+    }
+
+    assume (word2addr((mem[word2addr(array1_size_addr)] - 1bv8) + array1_addr) != common.secret);
+    assume (common.secret != word2addr(array1_addr));
+    assume (common.secret != word2addr(array1_size_addr));
+    assume (common.secret != word2addr(array2_addr));
+    assume (common.secret != word2addr(temp_addr));
+    assume (common.secret != word2addr(array1_addr + RDI));
+
+
+    init {
+        var secret_value : word_t;
+
+        RDI = common.RDI_init;
+        RAX = common.RAX_init;
+        RDX = common.RDX_init;
+        RCX = common.RCX_init;
+        CF  = common.CF_init;
+
+        // mem = common.mem_init;
+        // mem[common.secret] = secret_value;
+
+        obs_mem = common.obs_mem_init;
+        br_pred_state = common.br_pred_init;
+        spec_level = common.spec_idx0;
+        spec_mem = common.spec_mem_init;
+        spec_pc  = common.spec_pc_init;
+
+        spec_RAX = common.spec_reg_init;
+        spec_RDX = common.spec_reg_init;
+        spec_RCX = common.spec_reg_init;
+        spec_CF  = common.spec_flag_reg_init;
+
+        pc = enter;
+    }
+
+    next {
+        // If speculating and resolving
+        if (spec_level <_u common.spec_idx0 && common.br_resolve(br_pred_state, pc)) {
+            call do_resolve();
+        } else {
+            case
+                (pc == enter)  : { call do_enter(); }
+                (pc == block1) : { call do_block1(); }
+                (pc == end)    : { call do_end(); }
+            esac
+        }
+    }
+
+    procedure branch(cond : boolean, pc_if : pc_t, pc_else : pc_t) 
+        modifies
+            br_pred_state,
+            mem,
+            RAX, RCX, RDX, RDI,
+            spec_level, spec_mem, spec_RAX, spec_RCX, spec_RDX, spec_CF, spec_pc,
+            pc;
+    {
+        var pred : boolean;
+
+        br_pred_state = common.update_br_pred(br_pred_state, cond);
+        pred = common.br_pred(br_pred_state, pc);
+
+        if (cond) {
+            if (speculative && pred) {
+                call save_reg_states(pc_if);
+                spec_level = spec_level + common.spec_idx1;
+                pc = pc_else;
+            } else {
+                pc = pc_if;
+            }
+        } else {
+        	if (speculative && pred) {
+                call save_reg_states(pc_else);
+                spec_level = spec_level + common.spec_idx1;
+                pc = pc_if;
+            } else {
+                pc = pc_else;
+            }
+        }
+    }
+
+    // Add speculation checkpoint to speculation checkpoint stack
+    procedure save_reg_states(resolvePC : pc_t)
+        modifies spec_level, spec_mem, spec_pc, spec_RAX, spec_RDX, spec_RCX, spec_CF;
+    {
+        spec_RAX[spec_level] = RAX;
+        spec_RDX[spec_level] = RDX;
+        spec_RCX[spec_level] = RCX;
+        spec_CF[spec_level]  = CF;
+        
+        spec_pc[spec_level] = resolvePC;
+        spec_mem[spec_level] = mem;
+    }
+
+    procedure restore_state()
+        modifies pc, mem, RAX, RDX, RCX, CF;
+    {
+        RAX = spec_RAX[spec_level];
+        RDX = spec_RDX[spec_level];
+        RCX = spec_RCX[spec_level];
+        CF = spec_CF[spec_level];
+        
+        pc  = spec_pc[spec_level];
+        mem = spec_mem[spec_level];
+    }
+
+    // Handles walking back misspeculation
+    procedure do_resolve()
+        modifies pc, mem, RAX, RDX, RCX, CF, spec_level;
+    {
+    	var prev_spec_level : spec_idx_t;
+        // Non deterministic choice of walkback level
+        assume (prev_spec_level == common.walk_back(br_pred_state, pc, spec_level));
+        assume (common.spec_idx0 <=_u prev_spec_level && prev_spec_level <_u spec_level);
+        // Walkback
+        spec_level = prev_spec_level;
+        call restore_state();
+    }
+
+    procedure load_mem8(addr : word_t)
+        returns (value : bv8)
+        modifies obs_mem;
+    {
+        var word : word_t;
+        var idx : bv2;
+
+        word = mem[word2addr(addr)];
+        // CHANGE: idx = addr[1:0];
+
+        value = word[7:0];
+        // case
+        //     (idx == 0bv2) : { value = word[7:0]; }
+        //     (idx == 1bv2) : { value = word[15:8]; }
+        //     (idx == 2bv2) : { value = word[23:16]; }
+        //     (idx == 3bv2) : { value = word[31:24]; }
+        // esac
+
+        obs_mem = common.update_obs_mem(obs_mem, addr, s_byte);
+    }
+
+    procedure load_mem32(addr : word_t)
+        returns (value : word_t)
+        modifies obs_mem;
+    {
+        var word_addr : addr_t;
+        var word0, word1 : word_t;
+        var idx : bv2;
+
+        word_addr = word2addr(addr);
+        word0 = mem[word_addr];
+        // word1 = mem[word_addr + common.addr1];
+		// CHANGE:
+        // idx = addr[1:0];
+
+        // case 
+        //     (idx == 0bv2) : { value = word0; }
+        //     (idx == 1bv2) : { value = word1[7:0]  ++ word0[31:8] ; }
+        //     (idx == 2bv2) : { value = word1[15:0] ++ word0[31:16]; }
+        //     (idx == 3bv2) : { value = word1[23:0] ++ word0[31:24]; }
+        // esac
+
+
+        // if (pid == p3) {
+        // 	// obs_mem = common.update_obs_mem(obs_mem, 3bv8, s_word);
+        // 	value = 1bv8;
+        // }
+        // if (pid == p4) {
+        // 	value = 2bv8;
+
+        // 	// obs_mem = common.update_obs_mem(obs_mem, 4bv8, s_word);	
+        // }
+        // else {
+		value = word0;    	
+        // }
+
+        obs_mem = common.update_obs_mem(obs_mem, addr, s_word);		
+    }
+
+    procedure store_mem8(addr : word_t, value : bv8)
+        modifies
+            obs_mem,
+            mem;
+    {
+        var word_addr : addr_t;
+        var word : word_t;
+        var idx : bv2;
+
+        word_addr = word2addr(addr);
+
+        mem[word_addr] = value;
+
+        // word = mem[word_addr];
+        // idx = addr[1:0];
+        // case
+        //     (idx == 0bv2) : { mem[word_addr] = word[31:8]  ++ value; }
+        //     (idx == 1bv2) : { mem[word_addr] = word[31:16] ++ value ++ word[7:0]; }
+        //     (idx == 2bv2) : { mem[word_addr] = word[31:24] ++ value ++ word[15:0]; }
+        //     (idx == 3bv2) : { mem[word_addr] = value ++ word[23:0]; }
+        // esac
+
+        obs_mem = common.update_obs_mem(obs_mem, addr, s_word);
+    }
+
+    procedure store_mem32(addr : word_t, value : word_t)
+        modifies
+            obs_mem,
+			mem;
+	{
+        var word_addr0, word_addr1 : addr_t;
+        var word0, word1 : word_t;
+        var idx : bv2;
+
+        word_addr0 = word2addr(addr);
+
+        mem[word_addr0] = value;
+        // word_addr1 = word_addr0 + common.addr1;
+        // word0 = mem[word_addr0];
+        // word1 = mem[word_addr1];
+
+        // idx = addr[1:0];
+    
+        // case 
+        //     (idx == 0bv2) : { mem[word_addr0] = value; }
+        //     (idx == 1bv2) : { 
+        //             mem[word_addr0] = value[23:0] ++ word0[7:0]  ;
+        //             mem[word_addr1] = word1[31:8] ++ value[31:24];
+        //         }
+        //     (idx == 2bv2) : {
+        //             mem[word_addr0] = value[15:0]  ++ word0[15:0] ; 
+        //             mem[word_addr1] = word1[31:16] ++ value[31:16];
+        //         }
+        //     (idx == 3bv2) : {
+        //             mem[word_addr0] = value[7:0]   ++ word0[23:0];
+        //             mem[word_addr1] = word1[31:24] ++ value[31:8];
+        //         }
+        // esac
+
+        obs_mem = common.update_obs_mem(obs_mem, addr, s_word);
+    }
+}
+
+
+
+module main {
+    type * = common.*;
+
+    instance t1 : program(speculative : (false));
+    instance t2 : program(speculative : (false));
+    instance t3 : program(speculative : (true));
+    instance t4 : program(speculative : (true));
+
+    init {
+        assume (t1.mem == t3.mem);
+        assume (t2.mem == t4.mem);
+        assume (t3.br_pred_state == t4.br_pred_state);
+        assume (t3.obs_mem == t4.obs_mem);
+        assume (t1.RDI == t2.RDI && t1.RDI == t3.RDI && t1.RDI == t4.RDI);
+    }
+
+    assume (t1.pc == t2.pc);
+    assume (t1.obs_mem == t2.obs_mem);
+    assume (t1.br_pred_state == t2.br_pred_state);
+
+    next {
+        next(t1); next(t2); next(t3); next(t4);
+    }
+
+	// invariant same_public_mem : t3.mem == t4.mem;
+	// invariant same_pc : t3.pc == t4.pc;
+    invariant same_mem_obs : t3.obs_mem == t4.obs_mem;
+    invariant same_br_pred_state : t3.br_pred_state == t4.br_pred_state;
+
+    control {
+        v = unroll(3);
+		// v = induction(1);
+        check;
+        print_results;
+        v.print_cex(t3.pc,
+                    t4.pc,
+                    t3.obs_mem,
+                    t4.obs_mem,
+                    t3.br_pred_state,
+                    t4.br_pred_state);
+    }
+}
