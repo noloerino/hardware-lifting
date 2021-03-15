@@ -7,3 +7,8 @@ target/
 project/
 
 .DS_Store
+
+# Apparently on some MacOS configurations this needs to be in the same directory
+# as the invocation of uclid...?
+# https://github.com/Z3Prover/z3/issues/4979
+libz3.dylib
