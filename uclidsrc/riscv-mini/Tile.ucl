@@ -637,14 +637,14 @@ module CSR {
     _T_212 = _T_211 | _T_82;
     csrValid = _T_212 | _T_84;
     _T_213 = csr_addr[11:10];
-    _T_214 = _T_213[0] & _T_213[1];
+    _T_214 = _T_213[0:0] & _T_213[1:1];
     _T_215 = if (csr_addr == 769bv12) then (1bv1) else (0bv1);
     _T_216 = _T_214 | _T_215;
     _T_217 = if (csr_addr == 770bv12) then (1bv1) else (0bv1);
     csrRO = _T_216 | _T_217;
     _T_218 = if (io_cmd == 1bv3) then (1bv1) else (0bv1);
     _T_219 = io_cmd[1:1];
-    _T_220 = rs1_addr[0] | rs1_addr[1] | rs1_addr[2] | rs1_addr[3] | rs1_addr[4];
+    _T_220 = rs1_addr[0:0] | rs1_addr[1:1] | rs1_addr[2:2] | rs1_addr[3:3] | rs1_addr[4:4];
     _T_221 = _T_219 & _T_220;
     wen = _T_218 | _T_221;
     _T_222 = io_out | io_in;
@@ -659,7 +659,7 @@ module CSR {
     _T_230 = io_addr[1:1];
     iaddrInvalid = io_pc_check & _T_230;
     _T_231 = io_addr[1:0];
-    _T_232 = _T_231[0] | _T_231[1];
+    _T_232 = _T_231[0:0] | _T_231[1:1];
     _T_233 = io_addr[0:0];
     _T_235 = if (1bv3 == io_ld_type) then (1bv1) else (0bv1);
     _T_236 = _T_235 & _T_232;
@@ -675,7 +675,7 @@ module CSR {
     _T_247 = _T_246 | laddrInvalid;
     _T_248 = _T_247 | saddrInvalid;
     _T_249 = io_cmd[1:0];
-    _T_250 = _T_249[0] | _T_249[1];
+    _T_250 = _T_249[0:0] | _T_249[1:1];
     _T_251 = ~csrValid;
     _T_252 = ~privValid;
     _T_253 = _T_251 | _T_252;
@@ -691,13 +691,13 @@ module CSR {
     _T_264 = bv_zero_extend(1, 256bv32) + bv_zero_extend(1, _GEN_260);
     _T_266 = bv_zero_extend(1, time) + bv_zero_extend(1, 1bv32);
     _T_267 = time + 1bv32;
-    _T_268 = time[0] & time[1] & time[2] & time[3] & time[4] & time[5] & time[6] & time[7] & time[8] & time[9] & time[10] & time[11] & time[12] & time[13] & time[14] & time[15] & time[16] & time[17] & time[18] & time[19] & time[20] & time[21] & time[22] & time[23] & time[24] & time[25] & time[26] & time[27] & time[28] & time[29] & time[30] & time[31];
+    _T_268 = time[0:0] & time[1:1] & time[2:2] & time[3:3] & time[4:4] & time[5:5] & time[6:6] & time[7:7] & time[8:8] & time[9:9] & time[10:10] & time[11:11] & time[12:12] & time[13:13] & time[14:14] & time[15:15] & time[16:16] & time[17:17] & time[18:18] & time[19:19] & time[20:20] & time[21:21] & time[22:22] & time[23:23] & time[24:24] & time[25:25] & time[26:26] & time[27:27] & time[28:28] & time[29:29] & time[30:30] & time[31:31];
     _T_269 = bv_zero_extend(1, timeh) + bv_zero_extend(1, 1bv32);
     _T_270 = timeh + 1bv32;
     _GEN_1 = if ((_T_268) == 1bv1) then (_T_270) else (timeh);
     _T_271 = bv_zero_extend(1, cycle) + bv_zero_extend(1, 1bv32);
     _T_272 = cycle + 1bv32;
-    _T_273 = cycle[0] & cycle[1] & cycle[2] & cycle[3] & cycle[4] & cycle[5] & cycle[6] & cycle[7] & cycle[8] & cycle[9] & cycle[10] & cycle[11] & cycle[12] & cycle[13] & cycle[14] & cycle[15] & cycle[16] & cycle[17] & cycle[18] & cycle[19] & cycle[20] & cycle[21] & cycle[22] & cycle[23] & cycle[24] & cycle[25] & cycle[26] & cycle[27] & cycle[28] & cycle[29] & cycle[30] & cycle[31];
+    _T_273 = cycle[0:0] & cycle[1:1] & cycle[2:2] & cycle[3:3] & cycle[4:4] & cycle[5:5] & cycle[6:6] & cycle[7:7] & cycle[8:8] & cycle[9:9] & cycle[10:10] & cycle[11:11] & cycle[12:12] & cycle[13:13] & cycle[14:14] & cycle[15:15] & cycle[16:16] & cycle[17:17] & cycle[18:18] & cycle[19:19] & cycle[20:20] & cycle[21:21] & cycle[22:22] & cycle[23:23] & cycle[24:24] & cycle[25:25] & cycle[26:26] & cycle[27:27] & cycle[28:28] & cycle[29:29] & cycle[30:30] & cycle[31:31];
     _T_274 = bv_zero_extend(1, cycleh) + bv_zero_extend(1, 1bv32);
     _T_275 = cycleh + 1bv32;
     _GEN_2 = if ((_T_273) == 1bv1) then (_T_275) else (cycleh);
@@ -711,7 +711,7 @@ module CSR {
     _T_282 = bv_zero_extend(1, instret) + bv_zero_extend(1, 1bv32);
     _T_283 = instret + 1bv32;
     _GEN_3 = if ((isInstRet) == 1bv1) then (_T_283) else (instret);
-    _T_284 = instret[0] & instret[1] & instret[2] & instret[3] & instret[4] & instret[5] & instret[6] & instret[7] & instret[8] & instret[9] & instret[10] & instret[11] & instret[12] & instret[13] & instret[14] & instret[15] & instret[16] & instret[17] & instret[18] & instret[19] & instret[20] & instret[21] & instret[22] & instret[23] & instret[24] & instret[25] & instret[26] & instret[27] & instret[28] & instret[29] & instret[30] & instret[31];
+    _T_284 = instret[0:0] & instret[1:1] & instret[2:2] & instret[3:3] & instret[4:4] & instret[5:5] & instret[6:6] & instret[7:7] & instret[8:8] & instret[9:9] & instret[10:10] & instret[11:11] & instret[12:12] & instret[13:13] & instret[14:14] & instret[15:15] & instret[16:16] & instret[17:17] & instret[18:18] & instret[19:19] & instret[20:20] & instret[21:21] & instret[22:22] & instret[23:23] & instret[24:24] & instret[25:25] & instret[26:26] & instret[27:27] & instret[28:28] & instret[29:29] & instret[30:30] & instret[31:31];
     _T_285 = isInstRet & _T_284;
     _T_286 = bv_zero_extend(1, instreth) + bv_zero_extend(1, 1bv32);
     _T_287 = instreth + 1bv32;
@@ -1159,14 +1159,14 @@ module CSR {
     _T_212' = _T_211' | _T_82';
     csrValid' = _T_212' | _T_84';
     _T_213' = csr_addr'[11:10];
-    _T_214' = _T_213'[0] & _T_213'[1];
+    _T_214' = _T_213'[0:0] & _T_213'[1:1];
     _T_215' = if (csr_addr' == 769bv12) then (1bv1) else (0bv1);
     _T_216' = _T_214' | _T_215';
     _T_217' = if (csr_addr' == 770bv12) then (1bv1) else (0bv1);
     csrRO' = _T_216' | _T_217';
     _T_218' = if (io_cmd' == 1bv3) then (1bv1) else (0bv1);
     _T_219' = io_cmd'[1:1];
-    _T_220' = rs1_addr'[0] | rs1_addr'[1] | rs1_addr'[2] | rs1_addr'[3] | rs1_addr'[4];
+    _T_220' = rs1_addr'[0:0] | rs1_addr'[1:1] | rs1_addr'[2:2] | rs1_addr'[3:3] | rs1_addr'[4:4];
     _T_221' = _T_219' & _T_220';
     wen' = _T_218' | _T_221';
     _T_222' = io_out' | io_in';
@@ -1181,7 +1181,7 @@ module CSR {
     _T_230' = io_addr'[1:1];
     iaddrInvalid' = io_pc_check' & _T_230';
     _T_231' = io_addr'[1:0];
-    _T_232' = _T_231'[0] | _T_231'[1];
+    _T_232' = _T_231'[0:0] | _T_231'[1:1];
     _T_233' = io_addr'[0:0];
     _T_235' = if (1bv3 == io_ld_type') then (1bv1) else (0bv1);
     _T_236' = _T_235' & _T_232';
@@ -1197,7 +1197,7 @@ module CSR {
     _T_247' = _T_246' | laddrInvalid';
     _T_248' = _T_247' | saddrInvalid';
     _T_249' = io_cmd'[1:0];
-    _T_250' = _T_249'[0] | _T_249'[1];
+    _T_250' = _T_249'[0:0] | _T_249'[1:1];
     _T_251' = ~csrValid';
     _T_252' = ~privValid';
     _T_253' = _T_251' | _T_252';
@@ -1213,13 +1213,13 @@ module CSR {
     _T_264' = bv_zero_extend(1, 256bv32) + bv_zero_extend(1, _GEN_260');
     _T_266' = bv_zero_extend(1, time') + bv_zero_extend(1, 1bv32);
     _T_267' = time' + 1bv32;
-    _T_268' = time'[0] & time'[1] & time'[2] & time'[3] & time'[4] & time'[5] & time'[6] & time'[7] & time'[8] & time'[9] & time'[10] & time'[11] & time'[12] & time'[13] & time'[14] & time'[15] & time'[16] & time'[17] & time'[18] & time'[19] & time'[20] & time'[21] & time'[22] & time'[23] & time'[24] & time'[25] & time'[26] & time'[27] & time'[28] & time'[29] & time'[30] & time'[31];
+    _T_268' = time'[0:0] & time'[1:1] & time'[2:2] & time'[3:3] & time'[4:4] & time'[5:5] & time'[6:6] & time'[7:7] & time'[8:8] & time'[9:9] & time'[10:10] & time'[11:11] & time'[12:12] & time'[13:13] & time'[14:14] & time'[15:15] & time'[16:16] & time'[17:17] & time'[18:18] & time'[19:19] & time'[20:20] & time'[21:21] & time'[22:22] & time'[23:23] & time'[24:24] & time'[25:25] & time'[26:26] & time'[27:27] & time'[28:28] & time'[29:29] & time'[30:30] & time'[31:31];
     _T_269' = bv_zero_extend(1, timeh') + bv_zero_extend(1, 1bv32);
     _T_270' = timeh' + 1bv32;
     _GEN_1' = if ((_T_268') == 1bv1) then (_T_270') else (timeh');
     _T_271' = bv_zero_extend(1, cycle') + bv_zero_extend(1, 1bv32);
     _T_272' = cycle' + 1bv32;
-    _T_273' = cycle'[0] & cycle'[1] & cycle'[2] & cycle'[3] & cycle'[4] & cycle'[5] & cycle'[6] & cycle'[7] & cycle'[8] & cycle'[9] & cycle'[10] & cycle'[11] & cycle'[12] & cycle'[13] & cycle'[14] & cycle'[15] & cycle'[16] & cycle'[17] & cycle'[18] & cycle'[19] & cycle'[20] & cycle'[21] & cycle'[22] & cycle'[23] & cycle'[24] & cycle'[25] & cycle'[26] & cycle'[27] & cycle'[28] & cycle'[29] & cycle'[30] & cycle'[31];
+    _T_273' = cycle'[0:0] & cycle'[1:1] & cycle'[2:2] & cycle'[3:3] & cycle'[4:4] & cycle'[5:5] & cycle'[6:6] & cycle'[7:7] & cycle'[8:8] & cycle'[9:9] & cycle'[10:10] & cycle'[11:11] & cycle'[12:12] & cycle'[13:13] & cycle'[14:14] & cycle'[15:15] & cycle'[16:16] & cycle'[17:17] & cycle'[18:18] & cycle'[19:19] & cycle'[20:20] & cycle'[21:21] & cycle'[22:22] & cycle'[23:23] & cycle'[24:24] & cycle'[25:25] & cycle'[26:26] & cycle'[27:27] & cycle'[28:28] & cycle'[29:29] & cycle'[30:30] & cycle'[31:31];
     _T_274' = bv_zero_extend(1, cycleh') + bv_zero_extend(1, 1bv32);
     _T_275' = cycleh' + 1bv32;
     _GEN_2' = if ((_T_273') == 1bv1) then (_T_275') else (cycleh');
@@ -1233,7 +1233,7 @@ module CSR {
     _T_282' = bv_zero_extend(1, instret') + bv_zero_extend(1, 1bv32);
     _T_283' = instret' + 1bv32;
     _GEN_3' = if ((isInstRet') == 1bv1) then (_T_283') else (instret');
-    _T_284' = instret'[0] & instret'[1] & instret'[2] & instret'[3] & instret'[4] & instret'[5] & instret'[6] & instret'[7] & instret'[8] & instret'[9] & instret'[10] & instret'[11] & instret'[12] & instret'[13] & instret'[14] & instret'[15] & instret'[16] & instret'[17] & instret'[18] & instret'[19] & instret'[20] & instret'[21] & instret'[22] & instret'[23] & instret'[24] & instret'[25] & instret'[26] & instret'[27] & instret'[28] & instret'[29] & instret'[30] & instret'[31];
+    _T_284' = instret'[0:0] & instret'[1:1] & instret'[2:2] & instret'[3:3] & instret'[4:4] & instret'[5:5] & instret'[6:6] & instret'[7:7] & instret'[8:8] & instret'[9:9] & instret'[10:10] & instret'[11:11] & instret'[12:12] & instret'[13:13] & instret'[14:14] & instret'[15:15] & instret'[16:16] & instret'[17:17] & instret'[18:18] & instret'[19:19] & instret'[20:20] & instret'[21:21] & instret'[22:22] & instret'[23:23] & instret'[24:24] & instret'[25:25] & instret'[26:26] & instret'[27:27] & instret'[28:28] & instret'[29:29] & instret'[30:30] & instret'[31:31];
     _T_285' = isInstRet' & _T_284';
     _T_286' = bv_zero_extend(1, instreth') + bv_zero_extend(1, 1bv32);
     _T_287' = instreth' + 1bv32;
@@ -1580,9 +1580,9 @@ module RegFile {
   var _T_3 : bv1;
   var _T_6 : bv1;
   init {
-    _T = io_raddr1[0] | io_raddr1[1] | io_raddr1[2] | io_raddr1[3] | io_raddr1[4];
-    _T_3 = io_raddr2[0] | io_raddr2[1] | io_raddr2[2] | io_raddr2[3] | io_raddr2[4];
-    _T_6 = io_waddr[0] | io_waddr[1] | io_waddr[2] | io_waddr[3] | io_waddr[4];
+    _T = io_raddr1[0:0] | io_raddr1[1:1] | io_raddr1[2:2] | io_raddr1[3:3] | io_raddr1[4:4];
+    _T_3 = io_raddr2[0:0] | io_raddr2[1:1] | io_raddr2[2:2] | io_raddr2[3:3] | io_raddr2[4:4];
+    _T_6 = io_waddr[0:0] | io_waddr[1:1] | io_waddr[2:2] | io_waddr[3:3] | io_waddr[4:4];
     io_rdata1 = if ((_T) == 1bv1) then (regs__T_1_data) else (0bv32);
     io_rdata2 = if ((_T_3) == 1bv1) then (regs__T_4_data) else (0bv32);
     regs__T_1_en = 1bv1;
@@ -1602,9 +1602,9 @@ module RegFile {
   }
   next {
     call write_mem_regs();
-    _T' = io_raddr1'[0] | io_raddr1'[1] | io_raddr1'[2] | io_raddr1'[3] | io_raddr1'[4];
-    _T_3' = io_raddr2'[0] | io_raddr2'[1] | io_raddr2'[2] | io_raddr2'[3] | io_raddr2'[4];
-    _T_6' = io_waddr'[0] | io_waddr'[1] | io_waddr'[2] | io_waddr'[3] | io_waddr'[4];
+    _T' = io_raddr1'[0:0] | io_raddr1'[1:1] | io_raddr1'[2:2] | io_raddr1'[3:3] | io_raddr1'[4:4];
+    _T_3' = io_raddr2'[0:0] | io_raddr2'[1:1] | io_raddr2'[2:2] | io_raddr2'[3:3] | io_raddr2'[4:4];
+    _T_6' = io_waddr'[0:0] | io_waddr'[1:1] | io_waddr'[2:2] | io_waddr'[3:3] | io_waddr'[4:4];
     if (regs__T_1_en' == 1bv1) { regs__T_1_data' = regs'[regs__T_1_addr']; } else { havoc regs__T_1_data; }
     if (regs__T_4_en' == 1bv1) { regs__T_4_data' = regs'[regs__T_4_addr']; } else { havoc regs__T_4_data; }
     io_rdata1' = if ((_T') == 1bv1) then (regs__T_1_data') else (0bv32);
@@ -2131,7 +2131,7 @@ module BrCondArea {
   init {
     _T = bv_zero_extend(1, io_rs1) - bv_zero_extend(1, io_rs2);
     diff = io_rs1 - io_rs2;
-    neq = diff[0] | diff[1] | diff[2] | diff[3] | diff[4] | diff[5] | diff[6] | diff[7] | diff[8] | diff[9] | diff[10] | diff[11] | diff[12] | diff[13] | diff[14] | diff[15] | diff[16] | diff[17] | diff[18] | diff[19] | diff[20] | diff[21] | diff[22] | diff[23] | diff[24] | diff[25] | diff[26] | diff[27] | diff[28] | diff[29] | diff[30] | diff[31];
+    neq = diff[0:0] | diff[1:1] | diff[2:2] | diff[3:3] | diff[4:4] | diff[5:5] | diff[6:6] | diff[7:7] | diff[8:8] | diff[9:9] | diff[10:10] | diff[11:11] | diff[12:12] | diff[13:13] | diff[14:14] | diff[15:15] | diff[16:16] | diff[17:17] | diff[18:18] | diff[19:19] | diff[20:20] | diff[21:21] | diff[22:22] | diff[23:23] | diff[24:24] | diff[25:25] | diff[26:26] | diff[27:27] | diff[28:28] | diff[29:29] | diff[30:30] | diff[31:31];
     eq = ~neq;
     _T_1 = io_rs1[31:31];
     _T_2 = io_rs2[31:31];
@@ -2162,7 +2162,7 @@ module BrCondArea {
   next {
     _T' = bv_zero_extend(1, io_rs1') - bv_zero_extend(1, io_rs2');
     diff' = io_rs1' - io_rs2';
-    neq' = diff'[0] | diff'[1] | diff'[2] | diff'[3] | diff'[4] | diff'[5] | diff'[6] | diff'[7] | diff'[8] | diff'[9] | diff'[10] | diff'[11] | diff'[12] | diff'[13] | diff'[14] | diff'[15] | diff'[16] | diff'[17] | diff'[18] | diff'[19] | diff'[20] | diff'[21] | diff'[22] | diff'[23] | diff'[24] | diff'[25] | diff'[26] | diff'[27] | diff'[28] | diff'[29] | diff'[30] | diff'[31];
+    neq' = diff'[0:0] | diff'[1:1] | diff'[2:2] | diff'[3:3] | diff'[4:4] | diff'[5:5] | diff'[6:6] | diff'[7:7] | diff'[8:8] | diff'[9:9] | diff'[10:10] | diff'[11:11] | diff'[12:12] | diff'[13:13] | diff'[14:14] | diff'[15:15] | diff'[16:16] | diff'[17:17] | diff'[18:18] | diff'[19:19] | diff'[20:20] | diff'[21:21] | diff'[22:22] | diff'[23:23] | diff'[24:24] | diff'[25:25] | diff'[26:26] | diff'[27:27] | diff'[28:28] | diff'[29:29] | diff'[30:30] | diff'[31:31];
     eq' = ~neq';
     _T_1' = io_rs1'[31:31];
     _T_2' = io_rs2'[31:31];
@@ -2445,11 +2445,11 @@ module Datapath {
     rs1_addr = fe_inst[19:15];
     rs2_addr = fe_inst[24:20];
     wb_rd_addr = ew_inst[11:7];
-    _T_22 = rs1_addr[0] | rs1_addr[1] | rs1_addr[2] | rs1_addr[3] | rs1_addr[4];
+    _T_22 = rs1_addr[0:0] | rs1_addr[1:1] | rs1_addr[2:2] | rs1_addr[3:3] | rs1_addr[4:4];
     _T_23 = wb_en & _T_22;
     _T_24 = if (rs1_addr == wb_rd_addr) then (1bv1) else (0bv1);
     rs1hazard = _T_23 & _T_24;
-    _T_25 = rs2_addr[0] | rs2_addr[1] | rs2_addr[2] | rs2_addr[3] | rs2_addr[4];
+    _T_25 = rs2_addr[0:0] | rs2_addr[1:1] | rs2_addr[2:2] | rs2_addr[3:3] | rs2_addr[4:4];
     _T_26 = wb_en & _T_25;
     _T_27 = if (rs2_addr == wb_rd_addr) then (1bv1) else (0bv1);
     rs2hazard = _T_26 & _T_27;
@@ -2471,8 +2471,8 @@ module Datapath {
     _T_41 = bv_left_shift(3, bv_zero_extend(3, _T_40));
     _GEN_28 = bv_zero_extend(4, _T_41);
     woffset = _T_39 | _GEN_28;
-    _T_43 = io_ctrl_st_type[0] | io_ctrl_st_type[1];
-    _T_44 = io_ctrl_ld_type[0] | io_ctrl_ld_type[1] | io_ctrl_ld_type[2];
+    _T_43 = io_ctrl_st_type[0:0] | io_ctrl_st_type[1:1];
+    _T_44 = io_ctrl_ld_type[0:0] | io_ctrl_ld_type[1:1] | io_ctrl_ld_type[2:2];
     _T_45 = _T_43 | _T_44;
     _GEN_29 = bv_zero_extend(255, rs2);
     _T_47 = bv_left_shift(bv_zero_extend(279, woffset), _GEN_29);
@@ -2635,11 +2635,11 @@ module Datapath {
     rs1_addr' = fe_inst'[19:15];
     rs2_addr' = fe_inst'[24:20];
     wb_rd_addr' = ew_inst'[11:7];
-    _T_22' = rs1_addr'[0] | rs1_addr'[1] | rs1_addr'[2] | rs1_addr'[3] | rs1_addr'[4];
+    _T_22' = rs1_addr'[0:0] | rs1_addr'[1:1] | rs1_addr'[2:2] | rs1_addr'[3:3] | rs1_addr'[4:4];
     _T_23' = wb_en' & _T_22';
     _T_24' = if (rs1_addr' == wb_rd_addr') then (1bv1) else (0bv1);
     rs1hazard' = _T_23' & _T_24';
-    _T_25' = rs2_addr'[0] | rs2_addr'[1] | rs2_addr'[2] | rs2_addr'[3] | rs2_addr'[4];
+    _T_25' = rs2_addr'[0:0] | rs2_addr'[1:1] | rs2_addr'[2:2] | rs2_addr'[3:3] | rs2_addr'[4:4];
     _T_26' = wb_en' & _T_25';
     _T_27' = if (rs2_addr' == wb_rd_addr') then (1bv1) else (0bv1);
     rs2hazard' = _T_26' & _T_27';
@@ -2661,8 +2661,8 @@ module Datapath {
     _T_41' = bv_left_shift(3, bv_zero_extend(3, _T_40'));
     _GEN_28' = bv_zero_extend(4, _T_41');
     woffset' = _T_39' | _GEN_28';
-    _T_43' = io_ctrl_st_type'[0] | io_ctrl_st_type'[1];
-    _T_44' = io_ctrl_ld_type'[0] | io_ctrl_ld_type'[1] | io_ctrl_ld_type'[2];
+    _T_43' = io_ctrl_st_type'[0:0] | io_ctrl_st_type'[1:1];
+    _T_44' = io_ctrl_ld_type'[0:0] | io_ctrl_ld_type'[1:1] | io_ctrl_ld_type'[2:2];
     _T_45' = _T_43' | _T_44';
     _GEN_29' = bv_zero_extend(255, rs2');
     _T_47' = bv_left_shift(bv_zero_extend(279, woffset'), _GEN_29');
@@ -4991,7 +4991,7 @@ module Cache {
     _GEN_15 = if ((if (2bv2 == off_reg) then (1bv1) else (0bv1)) == 1bv1) then (_T_57) else (_GEN_14);
     _T_60 = is_read & hit;
     _T_61 = is_idle | _T_60;
-    _T_62 = cpu_mask[0] | cpu_mask[1] | cpu_mask[2] | cpu_mask[3];
+    _T_62 = cpu_mask[0:0] | cpu_mask[1:1] | cpu_mask[2:2] | cpu_mask[3:3];
     _T_63 = ~_T_62;
     _T_64 = is_alloc_reg & _T_63;
     _T_66 = ~is_alloc;
@@ -5030,7 +5030,7 @@ module Cache {
     _T_152 = _T_151[0:0];
     is_dirty = _T_52 & _T_152;
     _T_153 = if (0bv3 == state) then (1bv1) else (0bv1);
-    _T_154 = io_cpu_req_bits_mask[0] | io_cpu_req_bits_mask[1] | io_cpu_req_bits_mask[2] | io_cpu_req_bits_mask[3];
+    _T_154 = io_cpu_req_bits_mask[0:0] | io_cpu_req_bits_mask[1:1] | io_cpu_req_bits_mask[2:2] | io_cpu_req_bits_mask[3:3];
     _T_155 = if ((_T_154) == 1bv1) then (2bv3) else (1bv3);
     _GEN_105 = if ((io_cpu_req_valid) == 1bv1) then (_T_155) else (state);
     _T_156 = if (1bv3 == state) then (1bv1) else (0bv1);
@@ -5446,7 +5446,7 @@ module Cache {
     _GEN_15' = if ((if (2bv2 == off_reg') then (1bv1) else (0bv1)) == 1bv1) then (_T_57') else (_GEN_14');
     _T_60' = is_read' & hit';
     _T_61' = is_idle' | _T_60';
-    _T_62' = cpu_mask'[0] | cpu_mask'[1] | cpu_mask'[2] | cpu_mask'[3];
+    _T_62' = cpu_mask'[0:0] | cpu_mask'[1:1] | cpu_mask'[2:2] | cpu_mask'[3:3];
     _T_63' = ~_T_62';
     _T_64' = is_alloc_reg' & _T_63';
     _T_66' = ~is_alloc';
@@ -5485,7 +5485,7 @@ module Cache {
     _T_152' = _T_151'[0:0];
     is_dirty' = _T_52' & _T_152';
     _T_153' = if (0bv3 == state') then (1bv1) else (0bv1);
-    _T_154' = io_cpu_req_bits_mask'[0] | io_cpu_req_bits_mask'[1] | io_cpu_req_bits_mask'[2] | io_cpu_req_bits_mask'[3];
+    _T_154' = io_cpu_req_bits_mask'[0:0] | io_cpu_req_bits_mask'[1:1] | io_cpu_req_bits_mask'[2:2] | io_cpu_req_bits_mask'[3:3];
     _T_155' = if ((_T_154') == 1bv1) then (2bv3) else (1bv3);
     _GEN_105' = if ((io_cpu_req_valid') == 1bv1) then (_T_155') else (state');
     _T_156' = if (1bv3 == state') then (1bv1) else (0bv1);
