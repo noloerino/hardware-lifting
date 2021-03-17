@@ -1,0 +1,3 @@
+# Ignore SymbiYosys outputs
+verify_tile/
+verify_alu/

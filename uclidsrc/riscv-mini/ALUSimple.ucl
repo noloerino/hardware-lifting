@@ -1,0 +1,177 @@
+module ALUSimple {
+  input reset : bv1;
+  input io_A : bv32;
+  input io_B : bv32;
+  input io_alu_op : bv4;
+  output io_out : bv32;
+  output io_sum : bv32;
+  var shamt : bv5;
+  var _T : bv33;
+  var _T_1 : bv32;
+  var _T_2 : bv33;
+  var _T_3 : bv32;
+  var _T_4 : bv32;
+  var _T_5 : bv32;
+  var _T_6 : bv32;
+  var _T_7 : bv32;
+  var _GEN_0 : bv63;
+  var _T_8 : bv63;
+  var _T_10 : bv32;
+  var _T_11 : bv1;
+  var _T_12 : bv1;
+  var _T_13 : bv32;
+  var _T_14 : bv32;
+  var _T_15 : bv32;
+  var _T_16 : bv1;
+  var _T_17 : bv32;
+  var _T_18 : bv1;
+  var _T_19 : bv32;
+  var _T_20 : bv1;
+  var _T_21 : bv32;
+  var _T_22 : bv1;
+  var _T_23 : bv32;
+  var _T_24 : bv1;
+  var _T_25 : bv63;
+  var _T_26 : bv1;
+  var _T_27 : bv63;
+  var _T_28 : bv1;
+  var _T_29 : bv63;
+  var _T_30 : bv1;
+  var _T_31 : bv63;
+  var _T_32 : bv1;
+  var _T_33 : bv63;
+  var _T_34 : bv1;
+  var _T_35 : bv63;
+  var _T_36 : bv1;
+  var _T_37 : bv63;
+  var _T_38 : bv1;
+  var _T_39 : bv33;
+  var _T_40 : bv32;
+  var _T_41 : bv32;
+  var _T_42 : bv33;
+  init {
+    shamt = io_B[4:0];
+    _T = bv_zero_extend(1, io_A) + bv_zero_extend(1, io_B);
+    _T_1 = io_A + io_B;
+    _T_2 = bv_zero_extend(1, io_A) - bv_zero_extend(1, io_B);
+    _T_3 = io_A - io_B;
+    _T_4 = io_A;
+    _T_5 = bv_a_right_shift(bv_zero_extend(27, shamt), _T_4);
+    _T_6 = _T_5;
+    _T_7 = bv_l_right_shift(bv_zero_extend(27, shamt), io_A);
+    _GEN_0 = bv_zero_extend(31, io_A);
+    _T_8 = bv_left_shift(bv_zero_extend(58, shamt), _GEN_0);
+    _T_10 = io_B;
+    _T_11 = if (_T_4 < _T_10) then (1bv1) else (0bv1);
+    _T_12 = if (io_A < io_B) then (1bv1) else (0bv1);
+    _T_13 = io_A & io_B;
+    _T_14 = io_A | io_B;
+    _T_15 = io_A ^ io_B;
+    _T_16 = if (0bv4 == io_alu_op) then (1bv1) else (0bv1);
+    _T_17 = if ((_T_16) == 1bv1) then (_T_1) else (io_B);
+    _T_18 = if (1bv4 == io_alu_op) then (1bv1) else (0bv1);
+    _T_19 = if ((_T_18) == 1bv1) then (_T_3) else (_T_17);
+    _T_20 = if (9bv4 == io_alu_op) then (1bv1) else (0bv1);
+    _T_21 = if ((_T_20) == 1bv1) then (_T_6) else (_T_19);
+    _T_22 = if (8bv4 == io_alu_op) then (1bv1) else (0bv1);
+    _T_23 = if ((_T_22) == 1bv1) then (_T_7) else (_T_21);
+    _T_24 = if (6bv4 == io_alu_op) then (1bv1) else (0bv1);
+    _T_25 = if ((_T_24) == 1bv1) then (_T_8) else (bv_zero_extend(31, _T_23));
+    _T_26 = if (5bv4 == io_alu_op) then (1bv1) else (0bv1);
+    _T_27 = if ((_T_26) == 1bv1) then (bv_zero_extend(62, _T_11)) else (_T_25);
+    _T_28 = if (7bv4 == io_alu_op) then (1bv1) else (0bv1);
+    _T_29 = if ((_T_28) == 1bv1) then (bv_zero_extend(62, _T_12)) else (_T_27);
+    _T_30 = if (2bv4 == io_alu_op) then (1bv1) else (0bv1);
+    _T_31 = if ((_T_30) == 1bv1) then (bv_zero_extend(31, _T_13)) else (_T_29);
+    _T_32 = if (3bv4 == io_alu_op) then (1bv1) else (0bv1);
+    _T_33 = if ((_T_32) == 1bv1) then (bv_zero_extend(31, _T_14)) else (_T_31);
+    _T_34 = if (4bv4 == io_alu_op) then (1bv1) else (0bv1);
+    _T_35 = if ((_T_34) == 1bv1) then (bv_zero_extend(31, _T_15)) else (_T_33);
+    _T_36 = if (10bv4 == io_alu_op) then (1bv1) else (0bv1);
+    _T_37 = if ((_T_36) == 1bv1) then (bv_zero_extend(31, io_A)) else (_T_35);
+    _T_38 = io_alu_op[0:0];
+    _T_39 = bv_zero_extend(1, 0bv32) - bv_zero_extend(1, io_B);
+    _T_40 = 0bv32 - io_B;
+    _T_41 = if ((_T_38) == 1bv1) then (_T_40) else (io_B);
+    _T_42 = bv_zero_extend(1, io_A) + bv_zero_extend(1, _T_41);
+    io_out = _T_37[31:0];
+    io_sum = io_A + _T_41;
+  }
+  next {
+    shamt' = io_B'[4:0];
+    _T' = bv_zero_extend(1, io_A') + bv_zero_extend(1, io_B');
+    _T_1' = io_A' + io_B';
+    _T_2' = bv_zero_extend(1, io_A') - bv_zero_extend(1, io_B');
+    _T_3' = io_A' - io_B';
+    _T_4' = io_A';
+    _T_5' = bv_a_right_shift(bv_zero_extend(27, shamt'), _T_4');
+    _T_6' = _T_5';
+    _T_7' = bv_l_right_shift(bv_zero_extend(27, shamt'), io_A');
+    _GEN_0' = bv_zero_extend(31, io_A');
+    _T_8' = bv_left_shift(bv_zero_extend(58, shamt'), _GEN_0');
+    _T_10' = io_B';
+    _T_11' = if (_T_4' < _T_10') then (1bv1) else (0bv1);
+    _T_12' = if (io_A' < io_B') then (1bv1) else (0bv1);
+    _T_13' = io_A' & io_B';
+    _T_14' = io_A' | io_B';
+    _T_15' = io_A' ^ io_B';
+    _T_16' = if (0bv4 == io_alu_op') then (1bv1) else (0bv1);
+    _T_17' = if ((_T_16') == 1bv1) then (_T_1') else (io_B');
+    _T_18' = if (1bv4 == io_alu_op') then (1bv1) else (0bv1);
+    _T_19' = if ((_T_18') == 1bv1) then (_T_3') else (_T_17');
+    _T_20' = if (9bv4 == io_alu_op') then (1bv1) else (0bv1);
+    _T_21' = if ((_T_20') == 1bv1) then (_T_6') else (_T_19');
+    _T_22' = if (8bv4 == io_alu_op') then (1bv1) else (0bv1);
+    _T_23' = if ((_T_22') == 1bv1) then (_T_7') else (_T_21');
+    _T_24' = if (6bv4 == io_alu_op') then (1bv1) else (0bv1);
+    _T_25' = if ((_T_24') == 1bv1) then (_T_8') else (bv_zero_extend(31, _T_23'));
+    _T_26' = if (5bv4 == io_alu_op') then (1bv1) else (0bv1);
+    _T_27' = if ((_T_26') == 1bv1) then (bv_zero_extend(62, _T_11')) else (_T_25');
+    _T_28' = if (7bv4 == io_alu_op') then (1bv1) else (0bv1);
+    _T_29' = if ((_T_28') == 1bv1) then (bv_zero_extend(62, _T_12')) else (_T_27');
+    _T_30' = if (2bv4 == io_alu_op') then (1bv1) else (0bv1);
+    _T_31' = if ((_T_30') == 1bv1) then (bv_zero_extend(31, _T_13')) else (_T_29');
+    _T_32' = if (3bv4 == io_alu_op') then (1bv1) else (0bv1);
+    _T_33' = if ((_T_32') == 1bv1) then (bv_zero_extend(31, _T_14')) else (_T_31');
+    _T_34' = if (4bv4 == io_alu_op') then (1bv1) else (0bv1);
+    _T_35' = if ((_T_34') == 1bv1) then (bv_zero_extend(31, _T_15')) else (_T_33');
+    _T_36' = if (10bv4 == io_alu_op') then (1bv1) else (0bv1);
+    _T_37' = if ((_T_36') == 1bv1) then (bv_zero_extend(31, io_A')) else (_T_35');
+    _T_38' = io_alu_op'[0:0];
+    _T_39' = bv_zero_extend(1, 0bv32) - bv_zero_extend(1, io_B');
+    _T_40' = 0bv32 - io_B';
+    _T_41' = if ((_T_38') == 1bv1) then (_T_40') else (io_B');
+    _T_42' = bv_zero_extend(1, io_A') + bv_zero_extend(1, _T_41');
+    io_out' = _T_37'[31:0];
+    io_sum' = io_A' + _T_41';
+  }
+  control {
+  }
+}
+
+// Checks that when the ALU operation is set to be COPY_A or COPY_B, the respective input is propagated
+// to the output.
+// Reference: https://github.com/ucb-bar/riscv-mini/blob/master/src/main/scala/mini/ALU.scala
+module main {
+  var A, B : bv32;
+  var alu_op : bv4;
+  var out : bv32;
+  var sum : bv32;
+  instance alu : ALUSimple(reset : (0bv1), io_A : (A), io_B : (B), io_alu_op: (alu_op), io_out : (out), io_sum : (sum));
+  const COPY_A : bv4 = 10bv4;
+  const COPY_B : bv4 = 11bv4;
+  assume (alu_op == COPY_A || alu_op == COPY_B);
+  next {
+    next(alu);
+  }
+  invariant when_copy_a : (alu_op == COPY_A) ==> (out == A);
+  invariant when_copy_b : (alu_op == COPY_B) ==> (out == B);
+  control {
+    // BMC for 50 cycles finishes in ~6.4 seconds
+    v = unroll (50);
+    // induction;
+    check;
+    print_results;
+    v.print_cex(alu_op, A, B, out);
+  }
+}
