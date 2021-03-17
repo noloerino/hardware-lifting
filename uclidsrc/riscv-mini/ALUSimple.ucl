@@ -148,3 +148,30 @@ module ALUSimple {
   control {
   }
 }
+
+// Checks that when the ALU operation is set to be COPY_A or COPY_B, the respective input is propagated
+// to the output.
+// Reference: https://github.com/ucb-bar/riscv-mini/blob/master/src/main/scala/mini/ALU.scala
+module main {
+  var A, B : bv32;
+  var alu_op : bv4;
+  var out : bv32;
+  var sum : bv32;
+  instance alu : ALUSimple(reset : (0bv1), io_A : (A), io_B : (B), io_alu_op: (alu_op), io_out : (out), io_sum : (sum));
+  const COPY_A : bv4 = 10bv4;
+  const COPY_B : bv4 = 11bv4;
+  assume (alu_op == COPY_A || alu_op == COPY_B);
+  next {
+    next(alu);
+  }
+  invariant when_copy_a : (alu_op == COPY_A) ==> (out == A);
+  invariant when_copy_b : (alu_op == COPY_B) ==> (out == B);
+  control {
+    // BMC for 50 cycles finishes in ~6.4 seconds
+    v = unroll (50);
+    // induction;
+    check;
+    print_results;
+    v.print_cex(alu_op, A, B, out);
+  }
+}

@@ -1,0 +1,47 @@
+// Changes from original model:
+// - io_A/io_B can be reduced to symbolic constants
+// - io_alu_op can be constrained to 2 values (10, 11; also made symbolic)
+// - io_sum and almost all intermediate wires can be dropped (algorithmically, most of them can be dropped by
+//   statically restricting the values in if statement conditionals)
+module ALUSimple {
+  type alu_sel = enum { copy_a, copy_b };
+  input io_A : bv32;
+  input io_B : bv32;
+  input io_alu_op : alu_sel;
+  output io_out : bv32;
+  var _T_36 : bv1;
+  var _T_37 : bv63;
+  init {
+    _T_36 = if (copy_a == io_alu_op) then (1bv1) else (0bv1);
+    _T_37 = if ((_T_36) == 1bv1) then (bv_zero_extend(31, io_A)) else (bv_zero_extend(31, io_B));
+    io_out = _T_37[31:0];
+  }
+  next {
+    _T_36' = if (copy_a == io_alu_op') then (1bv1) else (0bv1);
+    _T_37' = if ((_T_36') == 1bv1) then (bv_zero_extend(31, io_A')) else (bv_zero_extend(31, io_B'));
+    io_out' = _T_37'[31:0];
+  }
+  control {
+  }
+}
+
+module main {
+  type alu_sel = enum { copy_a, copy_b };
+  var A, B : bv32;
+  var alu_op : alu_sel;
+  var out : bv32;
+  instance alu : ALUSimple(io_A : (A), io_B : (B), io_alu_op: (alu_op), io_out : (out));
+  next {
+    next(alu);
+  }
+  invariant when_copy_a : (alu_op == copy_a) ==> (out == A);
+  invariant when_copy_b : (alu_op == copy_b) ==> (out == B);
+  control {
+    // BMC for 50 cycles finishes in ~2 seconds
+    v = unroll (50);
+    // induction;
+    check;
+    print_results;
+    v.print_cex(alu_op, A, B, out);
+  }
+}
