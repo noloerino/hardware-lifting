@@ -1,0 +1,55 @@
+// Direct mapped write back cache
+module cache {
+	// type addr_t = common.addr_t;
+	// type caddr_t = common.caddr_t;
+	// type mem_t  = common.mem_t;
+	// type cmem_t  = common.cmem_t;
+	// type word_t = common.word_t;
+	// type cache_map_t = common.cache_map_t;
+	// type hit_t = common.hit_t;
+	type * = common.*;
+	
+	var dmem		: mem_t;
+	var dcache		: cmem_t;
+	var c2mem_map	: cache_map_t;
+
+	function addr2caddr (i : addr_t) : caddr_t;
+
+	procedure fetch_data(full_addr: addr_t, waitCacheLoad: integer)
+		returns (result: word_t, in_cache: hit_t, waitCacheLoadNew: integer)
+		modifies dcache, c2mem_map, dmem;
+	{
+		var cache_addr : caddr_t;
+
+		cache_addr = addr2caddr(full_addr);
+		
+		if(c2mem_map[cache_addr] == full_addr) {
+			result = dcache[cache_addr];
+			in_cache = c_hit;
+			waitCacheLoadNew = 3;
+		} else{
+			if(waitCacheLoad < 3){
+				in_cache = c_miss;
+				waitCacheLoadNew = waitCacheLoad + 1;
+			} else {
+				dmem[c2mem_map[cache_addr]] = dcache[cache_addr];
+				dcache[cache_addr] = dmem[full_addr];
+				result = dcache[cache_addr];
+				c2mem_map[cache_addr] = full_addr;
+				in_cache = c_hit;
+				waitCacheLoadNew = 0;
+			}
+		}
+	}
+
+	procedure put_data(full_addr: addr_t, content: word_t)
+		modifies dcache;
+	{
+		var cache_addr : caddr_t;
+
+		cache_addr = addr2caddr(full_addr);
+
+		dcache[cache_addr] = content;
+	}
+
+}
