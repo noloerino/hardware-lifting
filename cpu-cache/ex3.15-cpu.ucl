@@ -26,7 +26,7 @@ module cache {
 		if(c2mem_map[cache_addr] == full_addr) {
 			result = dcache[cache_addr];
 			in_cache = c_hit;
-			waitCacheLoadNew = 3;
+			waitCacheLoadNew = 0;
 		} else{
 			if(waitCacheLoad < 3){
 				in_cache = c_miss;
