@@ -1,0 +1,77 @@
+module main {
+
+	type * = common.*;
+
+	var data_cpu_out : data_t;
+	var addr_cpu_out : addr_t;
+	var data_cpu_in : data_t;
+
+	// cpu control interface
+	var request : boolean;
+	var req_valid : boolean;
+	var abort : boolean;
+	var response : boolean;
+
+	var nasti_response_b : boolean;
+	var nasti_response_w : boolean;
+	var nasti_response_r : boolean;
+		
+	var nasti_writetrigger : boolean;
+	var nasti_readtrigger : boolean;
+	var nasti_writevalid : boolean;
+	var nasti_bready : boolean;
+
+ 	var nasti_data_cache_in : data_t;
+	var nasti_data_cache_out : data_t;
+	var nasti_addr : addr_t;
+
+	instance cache : cache(	
+		data_in	: (data_cpu_out),
+		addr_in	: (addr_cpu_out),		
+		data_out	: (data_cpu_in),		
+		request	: (request),		
+		req_valid	: (req_valid),
+		abort	: (abort),
+		response : (response),
+
+		nasti_response_w : (nasti_response_w),
+		nasti_response_r : (nasti_response_r),
+		nasti_response_b : (nasti_response_b),
+		nasti_writetrigger : (nasti_writetrigger),
+		nasti_readtrigger : (nasti_readtrigger),
+		nasti_writevalid : (nasti_writevalid),
+		nasti_bready : (nasti_bready),
+
+		// memory data interface
+		nasti_data_in : (nasti_data_cache_in),
+		nasti_data_out : (nasti_data_cache_out),
+		nasti_addr_out : (nasti_addr)
+	);
+
+
+	instance cpu : cpu(
+		data_out : (data_cpu_out),
+		addr_out : (addr_cpu_out),
+		data_in : (data_cpu_in),
+		request : (request),
+		req_valid : (req_valid),
+		response : (response),
+		abort : (abort)
+	);
+
+
+	instance memory : memory(
+		nasti_writetrigger : (nasti_writetrigger),
+		nasti_readtrigger : (nasti_readtrigger),
+		nasti_writevalid : (nasti_writevalid),
+		nasti_bready : (nasti_bready),
+
+		nasti_response_w : (nasti_response_w),
+		nasti_response_r : (nasti_response_r),
+		nasti_response_b : (nasti_response_b),
+
+		nasti_data_out : (nasti_data_cache_in),
+		nasti_data_in : (nasti_data_cache_out),
+		nasti_addr_in : (nasti_addr)
+	);
+}

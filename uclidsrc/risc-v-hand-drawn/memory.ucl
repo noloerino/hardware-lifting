@@ -1,0 +1,76 @@
+module memory {
+
+	type * = common.*;
+
+	
+	input nasti_writetrigger : boolean;
+	input nasti_readtrigger : boolean;	
+	input nasti_writevalid : boolean;
+	input nasti_bready : boolean;
+
+	output nasti_response_w : boolean; 
+	output nasti_response_r : boolean;
+	output nasti_response_b : boolean;
+
+	output nasti_data_out : word_t;
+	input nasti_data_in : word_t;
+	input nasti_addr_in : word_t;
+
+	var data : [word_t]word_t;
+	var mem_state : memory_state_t;
+
+
+
+	procedure take_step ()
+		modifies data, nasti_data_out;
+		modifies nasti_response_b, nasti_response_r, nasti_response_w;
+	{	
+		nasti_response_r = false;
+		nasti_response_w = false;
+		nasti_response_b = false;
+
+		case
+		(mem_state == IDLE) : {
+			if (nasti_writetrigger) {
+				nasti_response_w = true;
+				mem_state = UPDATE;
+			} else {
+				if (nasti_readtrigger) {
+					nasti_response_r = true;
+					mem_state = REFILL_READY;
+				}
+			}
+		}
+		(mem_state == UPDATE) : {
+			if (nasti_writevalid) {
+				data[nasti_addr_in] = nasti_data_in;
+			} else {
+				if (nasti_bready) {
+					nasti_response_b = true;
+					mem_state = IDLE;
+				}
+			}
+		}	
+		(mem_state == REFILL) : {
+			if (nasti_readtrigger) {
+				nasti_data_out = data[nasti_addr_in];
+				nasti_response_r = true;
+			} else {
+				mem_state = IDLE;
+			}
+		}
+		esac
+	}
+
+	init {
+		mem_state = IDLE;
+
+		nasti_response_w = false;
+		nasti_response_r = false;
+		nasti_response_b = false;
+	}
+
+	next {
+		call () = take_step();
+	}
+}

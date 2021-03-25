@@ -1,0 +1,28 @@
+// This module declares types that are used in the rest of the model.
+module common {
+  // addresses are uninterpreted types.
+  type word_t = bv8;
+
+  // // memory
+  // type mem_t = [addr_t]word_t;
+  
+  // // cache
+  // type cmem_t = [caddr_t]word_t;
+  // type cache_map_t = [caddr_t]addr_t;
+  // type hit_t = enum { c_hit, c_miss };
+  
+  // CPU operation.
+  type instr_t;
+  type inst_addr_t = bv4;
+  type op_t   = enum { op_mov, op_add, op_sub, op_load, op_store };
+  type regindex_t = bv3;
+
+  // cache specific types
+  type index_t = bv4;
+  type cache_state_t = enum { IDLE, READ_CACHE, WRITE_CACHE, WRITE_BACK, WRITE_ACK, REFILL_READY, REFILL };
+  type tag_t = bv4;
+
+  // memory specific types
+  type memory_state_t = enum{ IDLE, REFILL, UPDATE };
+
+}

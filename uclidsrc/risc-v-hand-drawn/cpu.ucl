@@ -1,0 +1,131 @@
+module cpu {
+	
+	type * = common.*;
+
+  // addresses are uninterpreted types.
+  type word_t = bv8;
+  
+  // CPU operation.
+  type instr_t;
+  type inst_addr_t = bv4;
+  type op_t   = enum { op_mov, op_add, op_sub, op_load, op_store };
+  type regindex_t = bv3;
+
+  // cache specific types
+  type index_t = bv4;
+  type cache_state_t = enum { IDLE, READ_CACHE, WRITE_CACHE, WRITE_BACK, WRITE_ACK, REFILL_READY, REFILL };
+  type tag_t = bv4;
+
+  // memory specific types
+  type memory_state_t = enum{ IDLE, REFILL, UPDATE };
+  
+
+	// data channels
+	input data_in 		: word_t;
+	output addr_out		: word_t;
+	output data_out 	: word_t;
+
+	// control channels
+	output request		: boolean;
+	output req_valid	: boolean;
+	output abort		: boolean;
+	input response		: boolean;
+
+	var program 		: [inst_addr_t]instr_t;
+	var pc 				: inst_addr_t;
+	var regfile			: [regindex_t]word_t;
+	var debug_op 		: op_t;
+
+	function inst2op   (i : inst_addr_t) : op_t;
+	function inst2reg0 (i : inst_addr_t) : regindex_t;
+	function inst2reg1 (i : inst_addr_t) : regindex_t;
+	function inst2imm  (i : inst_addr_t) : word_t;
+	function inst2addr (i : inst_addr_t) : word_t;
+
+	procedure exec_inst(pc : inst_addr_t, timer : integer)
+		returns (result : word_t, timer_post : integer)
+		modifies regfile, pc, debug_op;//, dmem;
+  	{
+	    var op           : op_t;
+	    var r0ind, r1ind : regindex_t;
+	    var r0, r1       : word_t;
+	    var pc_temp      : inst_addr_t;
+
+	    // inst = program[pc];
+	    op = inst2op(pc);
+	    r0ind, r1ind = inst2reg0(pc), inst2reg1(pc);
+	    r0, r1 = regfile[r0ind], regfile[r1ind]; 
+	    pc_temp = pc;
+	    timer_post = timer;
+
+	    // globally visible state: for debug printing
+	    debug_op = op;
+	    
+		case
+			(op == op_mov)     : { result = inst2imm(inst); }
+			(op == op_add)     : { result = r0 + r1; }
+			(op == op_sub)     : { result = r0 - r1; }
+			(op == op_load)    : { 
+				call (result, done) = load(inst2addr(inst)); 
+				if (done) { 
+					regs[r0ind] = result;
+				}
+			}
+			(op == op_store)   : {
+				call (result, done) = store(inst2addr(inst), r0);
+				if (done) {
+					regs[r0ind] = result;
+				}
+			}
+		esac
+		if (done) {
+			pc = pc + 1bv8;
+		}
+	}
+
+
+	procedure load (addr : word_t)
+		returns (data : word_t, done : boolean)
+		modifies addr_out, data_out, request, req_valid, abort;
+	{
+		req_valid = true;
+		request = true;
+		addr_out = addr;
+		abort = false;
+		if (response) {
+			data = data_in;
+			done = true; 
+		} else {
+			done = false;
+		}
+	}
+
+	procedure store (addr : word_t, data : word_t)
+		returns (data : word_t, done : boolean)
+		modifies addr_out, data_out, request, req_valid, abort;
+	{
+		req_valid = true;
+		request = false;
+		addr_out = addr;
+		data_out = data;
+		abort = false;
+		if (response) {
+			data = data_in;
+			done = true;
+		} else {
+			done = false;
+		}
+	}
+
+	init {
+		pc = 0bv3;
+		request = false;
+		req_valid = false;
+		abort = false;
+	}
+
+	next {
+		call exec_inst();
+	}
+
+}

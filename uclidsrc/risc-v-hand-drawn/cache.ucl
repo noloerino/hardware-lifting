@@ -1,0 +1,178 @@
+module cache {
+
+	type * = common.*;
+
+	// cpu data interface
+	input data_in : word_t;
+	input addr_in : addr_t;
+	output data_out : word_t;
+
+	// cpu control interface
+	input request : boolean;
+	input req_valid : boolean;
+	input abort : boolean;
+	output response : boolean;
+
+	// memory control interface
+	input nasti_response_w : boolean;
+	input nasti_response_r : boolean;
+	input nasti_response_b : boolean;
+	output nasti_writetrigger : boolean;
+	output nasti_readtrigger : boolean;
+	output nasti_writevalid : boolean;
+	output nasti_bready : boolean;
+
+	// memory data interface
+	input nasti_data_in : word_t;
+	output nasti_data_out : word_t;
+	output nasti_addr_out : addr_t;
+
+	var cache_state : cache_state_t;
+	var data : [index_t]word_t;
+	var meta_data : [index_t]tag_t;
+	var dirty : [index_t]boolean;
+	var valid : [index_t]boolean;
+
+	// var is_alloc : boolean;
+	// var is_alloc_reg : boolean;
+
+	define get_index (address : addr_t) : index_t = address[3:0];
+	define get_tag (address : addr_t) : tag_t = address[7:4];
+
+	procedure take_step ()
+		modifies cache_state, data, is_alloc, is_alloc_reg, dirty, valid;
+		modifies nasti_writetrigger, nasti_readtrigger;
+		modifies nasti_writevalid, nasti_bready;
+	{
+		var hit : boolean;
+		// var wen : boolean; 
+		// var ren : boolean;
+		// is_alloc_reg = is_alloc;
+		// is_alloc = (cache_state == REFILL);
+		
+		hit = valid[get_index(addr_in)] && (get_tag(addr_in) == meta_data[get_index(addr_in)]);
+		// wen = (cache_state == s_WRITE_CACHE && (hit || is_alloc_reg) && !abort) || is_alloc;
+		// ren = !wen && (cache_state == IDLE || cache_state == READ) && req_valid;
+		nasti_writetrigger = false;
+		nasti_readtrigger = false;
+		nasti_writevalid = false;
+		nasti_bready = false;
+		response = false;
+
+		case 
+		(cache_state == IDLE) : {		
+			if (req_valid) {
+				if (request) { 
+					cache_state = READ_CACHE;
+				}
+				else { 
+					cache_state = WRITE_CACHE;
+				}
+			}
+		}
+		(cache_state == READ_CACHE) : {
+			if (hit) {
+				if (req_valid) {
+					if (request) {
+						data_out = mem[get_index(addr_in)];
+						response = true;
+						cache_state = READ_CACHE;
+					}
+					else { 
+						cache_state = WRITE_CACHE;
+					}
+				} else {
+					cache_state = IDLE;
+				}
+			} else {
+				nasti_writetrigger = valid[get_index(addr_in)] && dirty[get_index(addr_in)];
+				nasti_readtrigger = !nasti_writetrigger;
+				if (nasti_response_w) {
+					cache_state = WRITE_BACK;
+				} else {
+					if (nasti_response_r) {
+						cache_state = REFILL;
+					}
+				}
+			}
+		}
+		(cache_state == WRITE_CACHE) : {
+			if (hit || abort) {
+				cache_state = IDLE;
+				if (!abort) {
+					data[get_index(addr_in)] = data_in;
+					response = true;
+				}
+			} else {
+				nasti_writetrigger = valid[get_index(addr_in)] && dirty[get_index(addr_in)];
+				nasti_readtrigger = !nasti_writetrigger;
+				if (nasti_response_w) {
+					cache_state = WRITE_BACK;
+				} else {
+					if (nasti_response_r) {
+						cache_state = REFILL;
+					}
+				}
+			}
+		}
+		(cache_state == WRITE_BACK) : {
+			nasti_writevalid = true;
+			nasti_addr_out = meta_data[get_index(addr_in)];
+			nasti_data_out = data[get_index(addr_in)];
+			// if (nasti_response_w) {
+			cache_state = WRITE_ACK;
+			// }
+		}
+		(cache_state == WRITE_ACK) : {
+			nasti_bready = true;
+			if (nasti_response_b) {
+				cache_state = REFILL_READY;
+			}
+		}
+		(cache_state == REFILL_READY) : {
+			// communicate with memory, trigger refill and send address
+			nasti_readtrigger = true;
+			nasti_addr_out = addr_in;
+			cache_state = REFILL;
+		}
+		(cache_state == REFILL) : {
+			nasti_readtrigger = true;
+			if (nasti_response_r) {
+				data[get_index(addr_in)] = nasti_data_in;
+				meta_data[get_index(addr_in)] = addr_in;
+				dirty[get_index(addr_in)] = false;
+
+				nasti_readtrigger = false;
+				if (request) { cache_state = READ_CACHE; }
+				else { cache_state = WRITE_CACHE; }
+			}
+		}
+		esac
+	}
+
+
+	init {
+		cache_state = IDLE;
+
+
+		nasti_bready = false;
+		nasti_writevalid = false;
+
+		nasti_readtrigger = false;
+		nasti_writetrigger = false;
+
+		is_alloc = false;
+	}
+
+	next {
+		call () = take_step();
+	}
+
+
+	control {
+		v = unroll(3);
+		check;
+		v.print_cex();
+	}
+
+}
