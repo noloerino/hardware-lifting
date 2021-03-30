@@ -33,14 +33,22 @@ VERILATOR = $(VERILATOR_ROOT)/bin/verilator
 endif
 
 default:
-	@echo "-- Verilator hello-world simple example"
+	@echo "-- Verilator harness"
+	@echo "-- Make sure your files are sim_main.cpp and top.v --"
 	@echo "-- VERILATE & BUILD --------"
 	$(VERILATOR) -cc --exe --build -j top.v sim_main.cpp
 	@echo "-- RUN ---------------------"
+	@echo "-- Please provide input in the following format: --"
+	@echo "first line"
+	@echo "	n: number of cycles"
+	@echo "for each of the next n lines:"
+	@echo "(where inputs are in the order specified in portconfig.h)"
+	@echo "	i1 i2 .. ik: inputs at each cycle"
 	obj_dir/Vtop
 	@echo "-- DONE --------------------"
-	@echo "Note: Once this example is understood, see examples/make_tracing_c."
-	@echo "Note: Also see the EXAMPLE section in the verilator manpage/document."
+	@echo Completed one simulation run.
+#	@echo "Note: Once this example is understood, see examples/make_tracing_c."
+#	@echo "Note: Also see the EXAMPLE section in the verilator manpage/document."
 
 ######################################################################
 
