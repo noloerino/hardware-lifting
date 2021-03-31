@@ -3,7 +3,7 @@
 
 #define ADD_PRINT_SMO(portname) VL_PRINTF("(_ bv%d 8) ", top->portname);
 
-#define CYCLE_CNT 2
+#define CYCLE_CNT 1 
 
 // Define this if the output is piped as oracle interface
 #define SMO
