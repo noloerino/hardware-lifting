@@ -6,6 +6,9 @@ venv/
 target/
 project/
 
+# verilator output
+obj_dir/
+
 # personal files
 personal/
 
