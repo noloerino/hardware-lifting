@@ -7,7 +7,7 @@ from lispparser import *
 
 # (define-fun add ((x Bool) (y Bool)) Bool (bvadd x y))
 
-FORMALFILE = 'Formal.v'
+FORMALFILE = '__lft__formal.v'
 
 FUNCNAME_TO_RISC_OPCODE = {
 	'add' : '0',
