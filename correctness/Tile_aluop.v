@@ -6562,64 +6562,8 @@ module Tile(
   // .io__lft__core__alu_io_out(__lft__tile__alu_io_out),
   // .io__lft__core__alu_io_sum(__lft__tile__alu_io_sum)
 
-  //  6 $var wire 1 n0 __lft__seen $end
-  //  7 $var wire 32 n1 __lft__shadow__reg1 $end
-  //  8 $var wire 32 n2 __lft__shadow__reg2 $end
-  //  9 $var wire 32 n3 __lft__tile__alu_io_A $end
-  // 10 $var wire 32 n4 __lft__tile__alu_io_B $end
-  // 11 $var wire 4 n5 __lft__tile__alu_io_alu_op $end
-  // 12 $var wire 32 n6 __lft__tile__alu_io_out $end
-  // 13 $var wire 32 n7 __lft__tile__alu_io_sum $end
-  // 14 $var wire 33 n8 __lft__tile__ew_pc $end
-  // 15 $var wire 33 n9 __lft__tile__fe_pc $end
-  // 16 $var wire 33 n10 __lft__tile__pc $end
-  // 17 $var wire 5 n11 __lft__tile__regFile_io_raddr1 $end
-  // 18 $var wire 5 n12 __lft__tile__regFile_io_raddr2 $end
-  // 19 $var wire 32 n13 __lft__tile__regFile_io_rdata1 $end
-  // 20 $var wire 32 n14 __lft__tile__regFile_io_rdata2 $end
-  // 21 $var wire 5 n15 __lft__tile__regFile_io_waddr $end
-  // 22 $var wire 32 n16 __lft__tile__regFile_io_wdata $end
-  // wire [5:0] __lft__shadow__reg1
 
-  // `ifdef FORMAL
-
-  // (* anyconst *) reg [32:0] past_pc;
-
-  // always @(posedge clock) begin
-  //   assume (__lft__tile__alu_io_alu_op == 1);
-  //   assert (__lft__tile__alu_io_A - __lft__tile__alu_io_B == __lft__tile__alu_io_out);
-  // end
-  // `endif
-
-  `ifdef FORMAL
-  
-  (* anyconst *) reg [32:0] past_pc;
-  (* anyconst *) reg [31:0] __lft__shadow__reg1;
-  (* anyconst *) reg [31:0] __lft__shadow__reg2;
-  reg __lft__seen;
-  initial __lft__seen = 1'b0;
-
-  always @(posedge clock) begin
-    assume(past_pc > 5);
-    assume(past_pc < 10);
-
-    if (__lft__tile__fe_pc == past_pc) 
-      __lft__seen <= 1;
-    else
-      __lft__seen <= 0;
-
-    assume (!(__lft__tile__fe_pc == past_pc) |
-      (
-        // (__lft__tile__alu_io_alu_op == 0) &
-      (__lft__shadow__reg1 == __lft__tile__regFile_io_rdata1) &
-      (__lft__shadow__reg2 == __lft__tile__regFile_io_rdata2))
-      );
-
-    assert (! (__lft__seen) | !(__lft__tile__ew_pc == past_pc) |
-      !(__lft__tile__alu_io_alu_op == 0) |
-      (__lft__tile__alu_io_A + __lft__tile__alu_io_B == __lft__tile__alu_io_out));
-  end
-  `endif
+  __lft__INCLUDE_FORMAL_CODE_BLOCK
 
 
 endmodule
