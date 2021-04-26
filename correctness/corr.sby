@@ -19,7 +19,7 @@ smtbmc z3
 
 [script]
 task_corr:
-read -formal Corr.v
+read -formal __lft__corr.v
 
 prep -top Tile
 --
@@ -27,5 +27,5 @@ prep -top Tile
 
 [files]
 task_corr:
-Corr.v
+__lft__corr.v
 --
