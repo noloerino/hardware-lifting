@@ -1,0 +1,20 @@
+SBY  2:58:44 [corr_taskBMC] Removing directory 'corr_taskBMC'.
+SBY  2:58:44 [corr_taskBMC] Copy '__lft__corr.v' to 'corr_taskBMC/src/__lft__corr.v'.
+SBY  2:58:44 [corr_taskBMC] engine_0: smtbmc z3
+SBY  2:58:44 [corr_taskBMC] base: starting process "cd corr_taskBMC/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY  2:58:47 [corr_taskBMC] base: finished (returncode=0)
+SBY  2:58:47 [corr_taskBMC] smt2: starting process "cd corr_taskBMC/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY  2:58:47 [corr_taskBMC] smt2: finished (returncode=0)
+SBY  2:58:47 [corr_taskBMC] engine_0: starting process "cd corr_taskBMC; yosys-smtbmc -s z3 --presat --noprogress -t 2  --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY  2:58:47 [corr_taskBMC] engine_0: ##   0:00:00  Solver: z3
+SBY  2:58:47 [corr_taskBMC] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY  2:58:47 [corr_taskBMC] engine_0: ##   0:00:00  Checking assertions in step 0..
+SBY  2:58:47 [corr_taskBMC] engine_0: ##   0:00:00  Checking assumptions in step 1..
+SBY  2:58:50 [corr_taskBMC] engine_0: ##   0:00:02  Checking assertions in step 1..
+SBY  2:58:50 [corr_taskBMC] engine_0: ##   0:00:02  Status: passed
+SBY  2:58:50 [corr_taskBMC] engine_0: finished (returncode=0)
+SBY  2:58:50 [corr_taskBMC] engine_0: Status returned by engine: pass
+SBY  2:58:50 [corr_taskBMC] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:05 (5)
+SBY  2:58:50 [corr_taskBMC] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:05 (5)
+SBY  2:58:50 [corr_taskBMC] summary: engine_0 (smtbmc z3) returned pass
+SBY  2:58:50 [corr_taskBMC] DONE (PASS, rc=0)

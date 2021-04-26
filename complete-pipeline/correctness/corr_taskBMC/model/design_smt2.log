@@ -1,0 +1,306 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+4052 (git sha1 a58571d0, clang 6.0.0-1ubuntu2 -fPIC -Os)
+
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+3. Printing statistics.
+
+=== Tile ===
+
+   Number of wires:                172
+   Number of wire bits:           2110
+   Number of public wires:         167
+   Number of public wire bits:    2074
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 11
+     $assert                         1
+     $assume                         1
+     $dff                            2
+     $eq                             2
+     $sub                            1
+     Cache                           2
+     Core                            1
+     MemArbiter                      1
+
+=== RegFile ===
+
+   Number of wires:                 29
+   Number of wire bits:            404
+   Number of public wires:          22
+   Number of public wire bits:     294
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 14
+     $and                            1
+     $anyseq                         4
+     $mem                            1
+     $mux                            5
+     $reduce_bool                    3
+
+=== MemArbiter ===
+
+   Number of wires:                 96
+   Number of wire bits:            625
+   Number of public wires:          78
+   Number of public wire bits:     581
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 56
+     $and                           23
+     $dff                            1
+     $eq                             8
+     $logic_not                      1
+     $mux                           14
+     $ne                             3
+     $not                            2
+     $or                             2
+     $reduce_and                     1
+     $reduce_bool                    1
+
+=== ImmGenWire ===
+
+   Number of wires:                 47
+   Number of wire bits:            593
+   Number of public wires:          47
+   Number of public wire bits:     593
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 13
+     $and                            1
+     $eq                             6
+     $mux                            6
+
+=== Datapath ===
+
+   Number of wires:                241
+   Number of wire bits:           3921
+   Number of public wires:         211
+   Number of public wire bits:    3537
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                123
+     $add                            2
+     $and                           11
+     $dff                           16
+     $eq                            16
+     $logic_not                      1
+     $mux                           47
+     $ne                             1
+     $not                            5
+     $or                             9
+     $reduce_and                     2
+     $reduce_bool                    4
+     $shl                            3
+     $shr                            1
+     ALUArea                         1
+     BrCondArea                      1
+     CSR                             1
+     ImmGenWire                      1
+     RegFile                         1
+
+=== Core ===
+
+   Number of wires:                 74
+   Number of wire bits:            932
+   Number of public wires:          74
+   Number of public wire bits:     932
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     Control                         1
+     Datapath                        1
+
+=== Control ===
+
+   Number of wires:                557
+   Number of wire bits:           1197
+   Number of public wires:         557
+   Number of public wire bits:    1197
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                543
+     $and                            4
+     $eq                            49
+     $mux                          490
+
+=== Cache ===
+
+   Number of wires:                514
+   Number of wire bits:           8641
+   Number of public wires:         332
+   Number of public wire bits:    6315
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                307
+     $add                            2
+     $and                           32
+     $anyseq                        68
+     $dff                           14
+     $eq                            13
+     $logic_not                      1
+     $mem                           17
+     $mux                          130
+     $ne                             4
+     $not                            7
+     $or                             9
+     $reduce_and                     3
+     $reduce_bool                    3
+     $shl                            2
+     $shr                            2
+
+=== CSR ===
+
+   Number of wires:                542
+   Number of wire bits:           9088
+   Number of public wires:         297
+   Number of public wire bits:    3439
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                472
+     $add                            8
+     $and                           15
+     $dff                           23
+     $eq                            59
+     $le                             1
+     $logic_not                      4
+     $mux                          266
+     $ne                            16
+     $not                           22
+     $or                            45
+     $reduce_and                     9
+     $reduce_bool                    4
+
+=== BrCondArea ===
+
+   Number of wires:                 34
+   Number of wire bits:            193
+   Number of public wires:          34
+   Number of public wire bits:     193
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 25
+     $and                            6
+     $eq                             7
+     $mux                            2
+     $not                            3
+     $or                             5
+     $reduce_bool                    1
+     $sub                            1
+
+=== ALUArea ===
+
+   Number of wires:                131
+   Number of wire bits:           3211
+   Number of public wires:         131
+   Number of public wire bits:    3211
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 62
+     $add                            1
+     $and                           20
+     $eq                            11
+     $logic_not                      1
+     $mux                           12
+     $or                            14
+     $sshr                           1
+     $sub                            1
+     $xor                            1
+
+=== design hierarchy ===
+
+   Tile                              1
+     Cache                           2
+     Core                            1
+       Control                       1
+       Datapath                      1
+         ALUArea                     1
+         BrCondArea                  1
+         CSR                         1
+         ImmGenWire                  1
+         RegFile                     1
+     MemArbiter                      1
+
+   Number of wires:               2951
+   Number of wire bits:          39556
+   Number of public wires:        2282
+   Number of public wire bits:   28681
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1924
+     $add                           15
+     $and                          145
+     $anyseq                       140
+     $assert                         1
+     $assume                         1
+     $dff                           70
+     $eq                           184
+     $le                             1
+     $logic_not                      9
+     $mem                           35
+     $mux                         1102
+     $ne                            28
+     $not                           46
+     $or                            93
+     $reduce_and                    18
+     $reduce_bool                   19
+     $shl                            7
+     $shr                            5
+     $sshr                           1
+     $sub                            3
+     $xor                            1
+
+4. Executing SMT2 backend.
+Creating SMT-LIBv2 representation of module ALUArea.
+Creating SMT-LIBv2 representation of module BrCondArea.
+Creating SMT-LIBv2 representation of module CSR.
+Creating SMT-LIBv2 representation of module Cache.
+Creating SMT-LIBv2 representation of module Control.
+Creating SMT-LIBv2 representation of module ImmGenWire.
+Creating SMT-LIBv2 representation of module MemArbiter.
+Creating SMT-LIBv2 representation of module RegFile.
+Creating SMT-LIBv2 representation of module Datapath.
+Creating SMT-LIBv2 representation of module Core.
+Creating SMT-LIBv2 representation of module Tile.
+
+End of script. Logfile hash: b89c779748, CPU: user 0.12s system 0.00s, MEM: 15.99 MB peak
+Yosys 0.9+4052 (git sha1 a58571d0, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Time spent: 71% 2x write_smt2 (0 sec), 26% 2x read_ilang (0 sec), ...
