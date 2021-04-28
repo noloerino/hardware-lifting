@@ -1,0 +1,1848 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+4052 (git sha1 a58571d0, clang 6.0.0-1ubuntu2 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: Tile.v
+Parsing formal SystemVerilog input from `Tile.v' to AST representation.
+Storing AST representation for module `$abstract\CSR'.
+Storing AST representation for module `$abstract\RegFile'.
+Storing AST representation for module `$abstract\ALUArea'.
+Storing AST representation for module `$abstract\ImmGenWire'.
+Storing AST representation for module `$abstract\BrCondArea'.
+Storing AST representation for module `$abstract\Datapath'.
+Storing AST representation for module `$abstract\Control'.
+Storing AST representation for module `$abstract\Core'.
+Storing AST representation for module `$abstract\Cache'.
+Storing AST representation for module `$abstract\MemArbiter'.
+Storing AST representation for module `$abstract\Tile'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\Tile'.
+Generating RTLIL representation for module `\Tile'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \Tile
+
+2.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\MemArbiter'.
+Generating RTLIL representation for module `\MemArbiter'.
+
+2.2.3. Executing AST frontend in derive mode using pre-parsed AST for module `\Cache'.
+Generating RTLIL representation for module `\Cache'.
+
+2.2.4. Executing AST frontend in derive mode using pre-parsed AST for module `\Core'.
+Generating RTLIL representation for module `\Core'.
+
+2.2.5. Analyzing design hierarchy..
+Top module:  \Tile
+Used module:     \MemArbiter
+Used module:     \Cache
+Used module:     \Core
+
+2.2.6. Executing AST frontend in derive mode using pre-parsed AST for module `\Control'.
+Generating RTLIL representation for module `\Control'.
+
+2.2.7. Executing AST frontend in derive mode using pre-parsed AST for module `\Datapath'.
+Generating RTLIL representation for module `\Datapath'.
+
+2.2.8. Analyzing design hierarchy..
+Top module:  \Tile
+Used module:     \MemArbiter
+Used module:     \Cache
+Used module:     \Core
+Used module:         \Control
+Used module:         \Datapath
+
+2.2.9. Executing AST frontend in derive mode using pre-parsed AST for module `\BrCondArea'.
+Generating RTLIL representation for module `\BrCondArea'.
+
+2.2.10. Executing AST frontend in derive mode using pre-parsed AST for module `\ImmGenWire'.
+Generating RTLIL representation for module `\ImmGenWire'.
+
+2.2.11. Executing AST frontend in derive mode using pre-parsed AST for module `\ALUArea'.
+Generating RTLIL representation for module `\ALUArea'.
+
+2.2.12. Executing AST frontend in derive mode using pre-parsed AST for module `\RegFile'.
+Generating RTLIL representation for module `\RegFile'.
+
+2.2.13. Executing AST frontend in derive mode using pre-parsed AST for module `\CSR'.
+Generating RTLIL representation for module `\CSR'.
+
+2.2.14. Analyzing design hierarchy..
+Top module:  \Tile
+Used module:     \MemArbiter
+Used module:     \Cache
+Used module:     \Core
+Used module:         \Control
+Used module:         \Datapath
+Used module:             \BrCondArea
+Used module:             \ImmGenWire
+Used module:             \ALUArea
+Used module:             \RegFile
+Used module:             \CSR
+
+2.2.15. Analyzing design hierarchy..
+Top module:  \Tile
+Used module:     \MemArbiter
+Used module:     \Cache
+Used module:     \Core
+Used module:         \Control
+Used module:         \Datapath
+Used module:             \BrCondArea
+Used module:             \ImmGenWire
+Used module:             \ALUArea
+Used module:             \RegFile
+Used module:             \CSR
+Removing unused module `$abstract\Tile'.
+Removing unused module `$abstract\MemArbiter'.
+Removing unused module `$abstract\Cache'.
+Removing unused module `$abstract\Core'.
+Removing unused module `$abstract\Control'.
+Removing unused module `$abstract\Datapath'.
+Removing unused module `$abstract\BrCondArea'.
+Removing unused module `$abstract\ImmGenWire'.
+Removing unused module `$abstract\ALUArea'.
+Removing unused module `$abstract\RegFile'.
+Removing unused module `$abstract\CSR'.
+Removed 11 unused modules.
+Module Tile directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\Datapath.$proc$Tile.v:3318$1046'.
+Cleaned up 1 empty switch.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 197 switch rules as full_case in process $proc$Tile.v:1175$1637 in module CSR.
+Marked 1 switch rules as full_case in process $proc$Tile.v:2294$1176 in module RegFile.
+Marked 15 switch rules as full_case in process $proc$Tile.v:3318$1046 in module Datapath.
+Marked 37 switch rules as full_case in process $proc$Tile.v:5710$273 in module Cache.
+Marked 7 switch rules as full_case in process $proc$Tile.v:6131$106 in module MemArbiter.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 74 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\Datapath.$proc$Tile.v:0$1056'.
+  Set init value: \ew_pc = 33'000000000000000000000000000000000
+Found init rule in `\Datapath.$proc$Tile.v:0$1055'.
+  Set init value: \fe_pc = 33'000000000000000000000000000000000
+Found init rule in `\Datapath.$proc$Tile.v:0$1054'.
+  Set init value: \pc = 33'000000000000000000000000000000000
+Found init rule in `\Tile.$proc$Tile.v:0$55'.
+  Set init value: $formal$Tile.v:6646$3_EN = 1'0
+Found init rule in `\Tile.$proc$Tile.v:0$53'.
+  Set init value: $formal$Tile.v:6630$2_EN = 1'0
+Found init rule in `\Tile.$proc$Tile.v:0$51'.
+  Set init value: $formal$Tile.v:6620$1_EN = 1'0
+Found init rule in `\Tile.$proc$Tile.v:6590$50'.
+  Set init value: \started = 1'0
+Found init rule in `\Tile.$proc$Tile.v:6585$49'.
+  Set init value: \counter = 4'0000
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\CSR.$proc$Tile.v:1175$1637'.
+     1/20: $0\cycle[31:0]
+     2/20: $0\time$[31:0]$1638
+     3/20: $0\mfromhost[31:0]
+     4/20: $0\mtohost[31:0]
+     5/20: $0\mbadaddr[31:0]
+     6/20: $0\mcause[31:0]
+     7/20: $0\mscratch[31:0]
+     8/20: $0\mtimecmp[31:0]
+     9/20: $0\MSIE[0:0]
+    10/20: $0\MSIP[0:0]
+    11/20: $0\MTIE[0:0]
+    12/20: $0\MTIP[0:0]
+    13/20: $0\IE1[0:0]
+    14/20: $0\IE[0:0]
+    15/20: $0\PRV1[1:0]
+    16/20: $0\PRV[1:0]
+    17/20: $0\instreth[31:0]
+    18/20: $0\instret[31:0]
+    19/20: $0\cycleh[31:0]
+    20/20: $0\timeh[31:0]
+Creating decoders for process `\RegFile.$proc$Tile.v:2294$1176'.
+     1/3: $1$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1183
+     2/3: $1$memwr$\regs$Tile.v:2296$1167_DATA[31:0]$1182
+     3/3: $1$memwr$\regs$Tile.v:2296$1167_ADDR[4:0]$1181
+Creating decoders for process `\Datapath.$proc$Tile.v:0$1056'.
+Creating decoders for process `\Datapath.$proc$Tile.v:0$1055'.
+Creating decoders for process `\Datapath.$proc$Tile.v:0$1054'.
+Creating decoders for process `\Datapath.$proc$Tile.v:3318$1046'.
+     1/14: $0\pc[32:0]
+     2/14: $0\pc_check[0:0]
+     3/14: $0\illegal[0:0]
+     4/14: $0\csr_cmd[2:0]
+     5/14: $0\wb_en[0:0]
+     6/14: $0\wb_sel[1:0]
+     7/14: $0\ld_type[2:0]
+     8/14: $0\st_type[1:0]
+     9/14: $0\csr_in[31:0]
+    10/14: $0\ew_alu[31:0]
+    11/14: $0\ew_pc[32:0]
+    12/14: $0\ew_inst[31:0]
+    13/14: $0\fe_pc[32:0]
+    14/14: $0\fe_inst[31:0]
+Creating decoders for process `\Cache.$proc$Tile.v:5710$273'.
+     1/79: $1$memwr$\dataMem_3_3$Tile.v:5903$123_EN[7:0]$392
+     2/79: $1$memwr$\dataMem_3_3$Tile.v:5903$123_DATA[7:0]$391
+     3/79: $1$memwr$\dataMem_3_3$Tile.v:5903$123_ADDR[7:0]$390
+     4/79: $1$memwr$\dataMem_3_2$Tile.v:5897$122_EN[7:0]$388
+     5/79: $1$memwr$\dataMem_3_2$Tile.v:5897$122_DATA[7:0]$387
+     6/79: $1$memwr$\dataMem_3_2$Tile.v:5897$122_ADDR[7:0]$386
+     7/79: $1$memwr$\dataMem_3_1$Tile.v:5891$121_EN[7:0]$384
+     8/79: $1$memwr$\dataMem_3_1$Tile.v:5891$121_DATA[7:0]$383
+     9/79: $1$memwr$\dataMem_3_1$Tile.v:5891$121_ADDR[7:0]$382
+    10/79: $1$memwr$\dataMem_3_0$Tile.v:5885$120_EN[7:0]$380
+    11/79: $1$memwr$\dataMem_3_0$Tile.v:5885$120_DATA[7:0]$379
+    12/79: $1$memwr$\dataMem_3_0$Tile.v:5885$120_ADDR[7:0]$378
+    13/79: $1$memwr$\dataMem_2_3$Tile.v:5879$119_EN[7:0]$376
+    14/79: $1$memwr$\dataMem_2_3$Tile.v:5879$119_DATA[7:0]$375
+    15/79: $1$memwr$\dataMem_2_3$Tile.v:5879$119_ADDR[7:0]$374
+    16/79: $1$memwr$\dataMem_2_2$Tile.v:5873$118_EN[7:0]$372
+    17/79: $1$memwr$\dataMem_2_2$Tile.v:5873$118_DATA[7:0]$371
+    18/79: $1$memwr$\dataMem_2_2$Tile.v:5873$118_ADDR[7:0]$370
+    19/79: $1$memwr$\dataMem_2_1$Tile.v:5867$117_EN[7:0]$368
+    20/79: $1$memwr$\dataMem_2_1$Tile.v:5867$117_DATA[7:0]$367
+    21/79: $1$memwr$\dataMem_2_1$Tile.v:5867$117_ADDR[7:0]$366
+    22/79: $1$memwr$\dataMem_2_0$Tile.v:5861$116_EN[7:0]$364
+    23/79: $1$memwr$\dataMem_2_0$Tile.v:5861$116_DATA[7:0]$363
+    24/79: $1$memwr$\dataMem_2_0$Tile.v:5861$116_ADDR[7:0]$362
+    25/79: $1$memwr$\dataMem_1_3$Tile.v:5855$115_EN[7:0]$360
+    26/79: $1$memwr$\dataMem_1_3$Tile.v:5855$115_DATA[7:0]$359
+    27/79: $1$memwr$\dataMem_1_3$Tile.v:5855$115_ADDR[7:0]$358
+    28/79: $1$memwr$\dataMem_1_2$Tile.v:5849$114_EN[7:0]$356
+    29/79: $1$memwr$\dataMem_1_2$Tile.v:5849$114_DATA[7:0]$355
+    30/79: $1$memwr$\dataMem_1_2$Tile.v:5849$114_ADDR[7:0]$354
+    31/79: $1$memwr$\dataMem_1_1$Tile.v:5843$113_EN[7:0]$352
+    32/79: $1$memwr$\dataMem_1_1$Tile.v:5843$113_DATA[7:0]$351
+    33/79: $1$memwr$\dataMem_1_1$Tile.v:5843$113_ADDR[7:0]$350
+    34/79: $1$memwr$\dataMem_1_0$Tile.v:5837$112_EN[7:0]$348
+    35/79: $1$memwr$\dataMem_1_0$Tile.v:5837$112_DATA[7:0]$347
+    36/79: $1$memwr$\dataMem_1_0$Tile.v:5837$112_ADDR[7:0]$346
+    37/79: $1$memwr$\dataMem_0_3$Tile.v:5831$111_EN[7:0]$344
+    38/79: $1$memwr$\dataMem_0_3$Tile.v:5831$111_DATA[7:0]$343
+    39/79: $1$memwr$\dataMem_0_3$Tile.v:5831$111_ADDR[7:0]$342
+    40/79: $1$memwr$\dataMem_0_2$Tile.v:5825$110_EN[7:0]$340
+    41/79: $1$memwr$\dataMem_0_2$Tile.v:5825$110_DATA[7:0]$339
+    42/79: $1$memwr$\dataMem_0_2$Tile.v:5825$110_ADDR[7:0]$338
+    43/79: $1$memwr$\dataMem_0_1$Tile.v:5819$109_EN[7:0]$336
+    44/79: $1$memwr$\dataMem_0_1$Tile.v:5819$109_DATA[7:0]$335
+    45/79: $1$memwr$\dataMem_0_1$Tile.v:5819$109_ADDR[7:0]$334
+    46/79: $1$memwr$\dataMem_0_0$Tile.v:5813$108_EN[7:0]$332
+    47/79: $1$memwr$\dataMem_0_0$Tile.v:5813$108_DATA[7:0]$331
+    48/79: $1$memwr$\dataMem_0_0$Tile.v:5813$108_ADDR[7:0]$330
+    49/79: $1$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$328
+    50/79: $1$memwr$\metaMem_tag$Tile.v:5807$107_DATA[19:0]$327
+    51/79: $1$memwr$\metaMem_tag$Tile.v:5807$107_ADDR[7:0]$326
+    52/79: $0\refill_buf_1[63:0]
+    53/79: $0\refill_buf_0[63:0]
+    54/79: $0\rdata_buf[127:0]
+    55/79: $0\value_1[0:0]
+    56/79: $0\value[0:0]
+    57/79: $0\cpu_mask[3:0]
+    58/79: $0\cpu_data[31:0]
+    59/79: $0\addr_reg[31:0]
+    60/79: $0\dataMem_3_3__T_210_addr_pipe_0[7:0]
+    61/79: $0\dataMem_3_2__T_210_addr_pipe_0[7:0]
+    62/79: $0\dataMem_3_1__T_210_addr_pipe_0[7:0]
+    63/79: $0\dataMem_3_0__T_210_addr_pipe_0[7:0]
+    64/79: $0\dataMem_2_3__T_190_addr_pipe_0[7:0]
+    65/79: $0\dataMem_2_2__T_190_addr_pipe_0[7:0]
+    66/79: $0\dataMem_2_1__T_190_addr_pipe_0[7:0]
+    67/79: $0\dataMem_2_0__T_190_addr_pipe_0[7:0]
+    68/79: $0\dataMem_1_3__T_170_addr_pipe_0[7:0]
+    69/79: $0\dataMem_1_2__T_170_addr_pipe_0[7:0]
+    70/79: $0\dataMem_1_1__T_170_addr_pipe_0[7:0]
+    71/79: $0\dataMem_1_0__T_170_addr_pipe_0[7:0]
+    72/79: $0\dataMem_0_3__T_150_addr_pipe_0[7:0]
+    73/79: $0\dataMem_0_2__T_150_addr_pipe_0[7:0]
+    74/79: $0\dataMem_0_1__T_150_addr_pipe_0[7:0]
+    75/79: $0\dataMem_0_0__T_150_addr_pipe_0[7:0]
+    76/79: $0\metaMem_tag_rmeta_addr_pipe_0[7:0]
+    77/79: $0\d[255:0]
+    78/79: $0\v[255:0]
+    79/79: $0\state[2:0]
+Creating decoders for process `\MemArbiter.$proc$Tile.v:6131$106'.
+     1/1: $0\state[2:0]
+Creating decoders for process `\Tile.$proc$Tile.v:0$55'.
+Creating decoders for process `\Tile.$proc$Tile.v:0$53'.
+Creating decoders for process `\Tile.$proc$Tile.v:0$51'.
+Creating decoders for process `\Tile.$proc$Tile.v:6590$50'.
+Creating decoders for process `\Tile.$proc$Tile.v:6585$49'.
+Creating decoders for process `\Tile.$proc$Tile.v:6620$23'.
+Creating decoders for process `\Tile.$proc$Tile.v:6591$6'.
+Creating decoders for process `\Tile.$proc$Tile.v:6586$4'.
+
+2.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\CSR.\time$' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2944' with positive edge clock.
+Creating register for signal `\CSR.\timeh' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2945' with positive edge clock.
+Creating register for signal `\CSR.\cycle' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2946' with positive edge clock.
+Creating register for signal `\CSR.\cycleh' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2947' with positive edge clock.
+Creating register for signal `\CSR.\instret' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2948' with positive edge clock.
+Creating register for signal `\CSR.\instreth' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2949' with positive edge clock.
+Creating register for signal `\CSR.\PRV' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2950' with positive edge clock.
+Creating register for signal `\CSR.\PRV1' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2951' with positive edge clock.
+Creating register for signal `\CSR.\IE' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2952' with positive edge clock.
+Creating register for signal `\CSR.\IE1' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2953' with positive edge clock.
+Creating register for signal `\CSR.\MTIP' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2954' with positive edge clock.
+Creating register for signal `\CSR.\MTIE' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2955' with positive edge clock.
+Creating register for signal `\CSR.\MSIP' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2956' with positive edge clock.
+Creating register for signal `\CSR.\MSIE' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2957' with positive edge clock.
+Creating register for signal `\CSR.\mtimecmp' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2958' with positive edge clock.
+Creating register for signal `\CSR.\mscratch' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2959' with positive edge clock.
+Creating register for signal `\CSR.\mepc' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2960' with positive edge clock.
+Creating register for signal `\CSR.\mcause' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2961' with positive edge clock.
+Creating register for signal `\CSR.\mbadaddr' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2962' with positive edge clock.
+Creating register for signal `\CSR.\mtohost' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2963' with positive edge clock.
+Creating register for signal `\CSR.\mfromhost' using process `\CSR.$proc$Tile.v:1175$1637'.
+  created $dff cell `$procdff$2964' with positive edge clock.
+Creating register for signal `\RegFile.$memwr$\regs$Tile.v:2296$1167_ADDR' using process `\RegFile.$proc$Tile.v:2294$1176'.
+  created $dff cell `$procdff$2965' with positive edge clock.
+Creating register for signal `\RegFile.$memwr$\regs$Tile.v:2296$1167_DATA' using process `\RegFile.$proc$Tile.v:2294$1176'.
+  created $dff cell `$procdff$2966' with positive edge clock.
+Creating register for signal `\RegFile.$memwr$\regs$Tile.v:2296$1167_EN' using process `\RegFile.$proc$Tile.v:2294$1176'.
+  created $dff cell `$procdff$2967' with positive edge clock.
+Creating register for signal `\Datapath.\started' using process `\Datapath.$proc$Tile.v:3318$1046'.
+  created $dff cell `$procdff$2968' with positive edge clock.
+Creating register for signal `\Datapath.\fe_inst' using process `\Datapath.$proc$Tile.v:3318$1046'.
+  created $dff cell `$procdff$2969' with positive edge clock.
+Creating register for signal `\Datapath.\fe_pc' using process `\Datapath.$proc$Tile.v:3318$1046'.
+  created $dff cell `$procdff$2970' with positive edge clock.
+Creating register for signal `\Datapath.\ew_inst' using process `\Datapath.$proc$Tile.v:3318$1046'.
+  created $dff cell `$procdff$2971' with positive edge clock.
+Creating register for signal `\Datapath.\ew_pc' using process `\Datapath.$proc$Tile.v:3318$1046'.
+  created $dff cell `$procdff$2972' with positive edge clock.
+Creating register for signal `\Datapath.\ew_alu' using process `\Datapath.$proc$Tile.v:3318$1046'.
+  created $dff cell `$procdff$2973' with positive edge clock.
+Creating register for signal `\Datapath.\csr_in' using process `\Datapath.$proc$Tile.v:3318$1046'.
+  created $dff cell `$procdff$2974' with positive edge clock.
+Creating register for signal `\Datapath.\st_type' using process `\Datapath.$proc$Tile.v:3318$1046'.
+  created $dff cell `$procdff$2975' with positive edge clock.
+Creating register for signal `\Datapath.\ld_type' using process `\Datapath.$proc$Tile.v:3318$1046'.
+  created $dff cell `$procdff$2976' with positive edge clock.
+Creating register for signal `\Datapath.\wb_sel' using process `\Datapath.$proc$Tile.v:3318$1046'.
+  created $dff cell `$procdff$2977' with positive edge clock.
+Creating register for signal `\Datapath.\wb_en' using process `\Datapath.$proc$Tile.v:3318$1046'.
+  created $dff cell `$procdff$2978' with positive edge clock.
+Creating register for signal `\Datapath.\csr_cmd' using process `\Datapath.$proc$Tile.v:3318$1046'.
+  created $dff cell `$procdff$2979' with positive edge clock.
+Creating register for signal `\Datapath.\illegal' using process `\Datapath.$proc$Tile.v:3318$1046'.
+  created $dff cell `$procdff$2980' with positive edge clock.
+Creating register for signal `\Datapath.\pc_check' using process `\Datapath.$proc$Tile.v:3318$1046'.
+  created $dff cell `$procdff$2981' with positive edge clock.
+Creating register for signal `\Datapath.\pc' using process `\Datapath.$proc$Tile.v:3318$1046'.
+  created $dff cell `$procdff$2982' with positive edge clock.
+Creating register for signal `\Cache.\state' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2983' with positive edge clock.
+Creating register for signal `\Cache.\v' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2984' with positive edge clock.
+Creating register for signal `\Cache.\d' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2985' with positive edge clock.
+Creating register for signal `\Cache.\metaMem_tag_rmeta_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2986' with positive edge clock.
+Creating register for signal `\Cache.\dataMem_0_0__T_150_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2987' with positive edge clock.
+Creating register for signal `\Cache.\dataMem_0_1__T_150_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2988' with positive edge clock.
+Creating register for signal `\Cache.\dataMem_0_2__T_150_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2989' with positive edge clock.
+Creating register for signal `\Cache.\dataMem_0_3__T_150_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2990' with positive edge clock.
+Creating register for signal `\Cache.\dataMem_1_0__T_170_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2991' with positive edge clock.
+Creating register for signal `\Cache.\dataMem_1_1__T_170_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2992' with positive edge clock.
+Creating register for signal `\Cache.\dataMem_1_2__T_170_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2993' with positive edge clock.
+Creating register for signal `\Cache.\dataMem_1_3__T_170_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2994' with positive edge clock.
+Creating register for signal `\Cache.\dataMem_2_0__T_190_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2995' with positive edge clock.
+Creating register for signal `\Cache.\dataMem_2_1__T_190_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2996' with positive edge clock.
+Creating register for signal `\Cache.\dataMem_2_2__T_190_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2997' with positive edge clock.
+Creating register for signal `\Cache.\dataMem_2_3__T_190_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2998' with positive edge clock.
+Creating register for signal `\Cache.\dataMem_3_0__T_210_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$2999' with positive edge clock.
+Creating register for signal `\Cache.\dataMem_3_1__T_210_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3000' with positive edge clock.
+Creating register for signal `\Cache.\dataMem_3_2__T_210_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3001' with positive edge clock.
+Creating register for signal `\Cache.\dataMem_3_3__T_210_addr_pipe_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3002' with positive edge clock.
+Creating register for signal `\Cache.\addr_reg' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3003' with positive edge clock.
+Creating register for signal `\Cache.\cpu_data' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3004' with positive edge clock.
+Creating register for signal `\Cache.\cpu_mask' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3005' with positive edge clock.
+Creating register for signal `\Cache.\value' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3006' with positive edge clock.
+Creating register for signal `\Cache.\value_1' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3007' with positive edge clock.
+Creating register for signal `\Cache.\is_alloc_reg' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3008' with positive edge clock.
+Creating register for signal `\Cache.\ren_reg' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3009' with positive edge clock.
+Creating register for signal `\Cache.\rdata_buf' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3010' with positive edge clock.
+Creating register for signal `\Cache.\refill_buf_0' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3011' with positive edge clock.
+Creating register for signal `\Cache.\refill_buf_1' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3012' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\metaMem_tag$Tile.v:5807$107_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3013' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\metaMem_tag$Tile.v:5807$107_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3014' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\metaMem_tag$Tile.v:5807$107_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3015' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_0_0$Tile.v:5813$108_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3016' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_0_0$Tile.v:5813$108_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3017' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_0_0$Tile.v:5813$108_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3018' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_0_1$Tile.v:5819$109_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3019' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_0_1$Tile.v:5819$109_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3020' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_0_1$Tile.v:5819$109_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3021' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_0_2$Tile.v:5825$110_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3022' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_0_2$Tile.v:5825$110_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3023' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_0_2$Tile.v:5825$110_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3024' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_0_3$Tile.v:5831$111_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3025' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_0_3$Tile.v:5831$111_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3026' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_0_3$Tile.v:5831$111_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3027' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_1_0$Tile.v:5837$112_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3028' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_1_0$Tile.v:5837$112_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3029' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_1_0$Tile.v:5837$112_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3030' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_1_1$Tile.v:5843$113_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3031' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_1_1$Tile.v:5843$113_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3032' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_1_1$Tile.v:5843$113_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3033' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_1_2$Tile.v:5849$114_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3034' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_1_2$Tile.v:5849$114_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3035' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_1_2$Tile.v:5849$114_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3036' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_1_3$Tile.v:5855$115_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3037' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_1_3$Tile.v:5855$115_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3038' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_1_3$Tile.v:5855$115_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3039' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_2_0$Tile.v:5861$116_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3040' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_2_0$Tile.v:5861$116_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3041' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_2_0$Tile.v:5861$116_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3042' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_2_1$Tile.v:5867$117_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3043' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_2_1$Tile.v:5867$117_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3044' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_2_1$Tile.v:5867$117_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3045' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_2_2$Tile.v:5873$118_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3046' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_2_2$Tile.v:5873$118_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3047' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_2_2$Tile.v:5873$118_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3048' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_2_3$Tile.v:5879$119_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3049' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_2_3$Tile.v:5879$119_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3050' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_2_3$Tile.v:5879$119_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3051' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_3_0$Tile.v:5885$120_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3052' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_3_0$Tile.v:5885$120_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3053' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_3_0$Tile.v:5885$120_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3054' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_3_1$Tile.v:5891$121_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3055' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_3_1$Tile.v:5891$121_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3056' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_3_1$Tile.v:5891$121_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3057' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_3_2$Tile.v:5897$122_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3058' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_3_2$Tile.v:5897$122_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3059' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_3_2$Tile.v:5897$122_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3060' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_3_3$Tile.v:5903$123_ADDR' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3061' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_3_3$Tile.v:5903$123_DATA' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3062' with positive edge clock.
+Creating register for signal `\Cache.$memwr$\dataMem_3_3$Tile.v:5903$123_EN' using process `\Cache.$proc$Tile.v:5710$273'.
+  created $dff cell `$procdff$3063' with positive edge clock.
+Creating register for signal `\MemArbiter.\state' using process `\MemArbiter.$proc$Tile.v:6131$106'.
+  created $dff cell `$procdff$3064' with positive edge clock.
+Creating register for signal `\Tile.$formal$Tile.v:6620$1_CHECK' using process `\Tile.$proc$Tile.v:6620$23'.
+  created $dff cell `$procdff$3065' with positive edge clock.
+Creating register for signal `\Tile.$formal$Tile.v:6620$1_EN' using process `\Tile.$proc$Tile.v:6620$23'.
+  created $dff cell `$procdff$3066' with positive edge clock.
+Creating register for signal `\Tile.$formal$Tile.v:6630$2_CHECK' using process `\Tile.$proc$Tile.v:6620$23'.
+  created $dff cell `$procdff$3067' with positive edge clock.
+Creating register for signal `\Tile.$formal$Tile.v:6630$2_EN' using process `\Tile.$proc$Tile.v:6620$23'.
+  created $dff cell `$procdff$3068' with positive edge clock.
+Creating register for signal `\Tile.$formal$Tile.v:6646$3_CHECK' using process `\Tile.$proc$Tile.v:6620$23'.
+  created $dff cell `$procdff$3069' with positive edge clock.
+Creating register for signal `\Tile.$formal$Tile.v:6646$3_EN' using process `\Tile.$proc$Tile.v:6620$23'.
+  created $dff cell `$procdff$3070' with positive edge clock.
+Creating register for signal `\Tile.\started' using process `\Tile.$proc$Tile.v:6591$6'.
+  created $dff cell `$procdff$3071' with positive edge clock.
+Creating register for signal `\Tile.\counter' using process `\Tile.$proc$Tile.v:6586$4'.
+  created $dff cell `$procdff$3072' with positive edge clock.
+
+2.3.9. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.3.10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 317 empty switches in `\CSR.$proc$Tile.v:1175$1637'.
+Removing empty process `CSR.$proc$Tile.v:1175$1637'.
+Found and cleaned up 1 empty switch in `\RegFile.$proc$Tile.v:2294$1176'.
+Removing empty process `RegFile.$proc$Tile.v:2294$1176'.
+Removing empty process `Datapath.$proc$Tile.v:0$1056'.
+Removing empty process `Datapath.$proc$Tile.v:0$1055'.
+Removing empty process `Datapath.$proc$Tile.v:0$1054'.
+Found and cleaned up 35 empty switches in `\Datapath.$proc$Tile.v:3318$1046'.
+Removing empty process `Datapath.$proc$Tile.v:3318$1046'.
+Found and cleaned up 74 empty switches in `\Cache.$proc$Tile.v:5710$273'.
+Removing empty process `Cache.$proc$Tile.v:5710$273'.
+Found and cleaned up 13 empty switches in `\MemArbiter.$proc$Tile.v:6131$106'.
+Removing empty process `MemArbiter.$proc$Tile.v:6131$106'.
+Removing empty process `Tile.$proc$Tile.v:0$55'.
+Removing empty process `Tile.$proc$Tile.v:0$53'.
+Removing empty process `Tile.$proc$Tile.v:0$51'.
+Removing empty process `Tile.$proc$Tile.v:6590$50'.
+Removing empty process `Tile.$proc$Tile.v:6585$49'.
+Removing empty process `Tile.$proc$Tile.v:6620$23'.
+Removing empty process `Tile.$proc$Tile.v:6591$6'.
+Removing empty process `Tile.$proc$Tile.v:6586$4'.
+Cleaned up 440 empty switches.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CSR.
+<suppressed ~118 debug messages>
+Optimizing module RegFile.
+<suppressed ~4 debug messages>
+Optimizing module ALUArea.
+<suppressed ~11 debug messages>
+Optimizing module ImmGenWire.
+Optimizing module BrCondArea.
+<suppressed ~4 debug messages>
+Optimizing module Datapath.
+<suppressed ~29 debug messages>
+Optimizing module Control.
+Optimizing module Core.
+Optimizing module Cache.
+<suppressed ~20 debug messages>
+Optimizing module MemArbiter.
+<suppressed ~4 debug messages>
+Optimizing module Tile.
+<suppressed ~3 debug messages>
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CSR..
+Finding unused cells or wires in module \RegFile..
+Finding unused cells or wires in module \ALUArea..
+Finding unused cells or wires in module \ImmGenWire..
+Finding unused cells or wires in module \BrCondArea..
+Finding unused cells or wires in module \Datapath..
+Finding unused cells or wires in module \Control..
+Finding unused cells or wires in module \Core..
+Finding unused cells or wires in module \Cache..
+Finding unused cells or wires in module \MemArbiter..
+Finding unused cells or wires in module \Tile..
+Removed 446 unused cells and 2623 unused wires.
+<suppressed ~857 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module ALUArea...
+Checking module BrCondArea...
+Checking module CSR...
+Checking module Cache...
+Checking module Control...
+Checking module Core...
+Checking module Datapath...
+Checking module ImmGenWire...
+Checking module MemArbiter...
+Checking module RegFile...
+Checking module Tile...
+Found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALUArea.
+Optimizing module BrCondArea.
+Optimizing module CSR.
+Optimizing module Cache.
+Optimizing module Control.
+Optimizing module Core.
+Optimizing module Datapath.
+Optimizing module ImmGenWire.
+Optimizing module MemArbiter.
+Optimizing module RegFile.
+Optimizing module Tile.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALUArea'.
+Finding identical cells in module `\BrCondArea'.
+Finding identical cells in module `\CSR'.
+Finding identical cells in module `\Cache'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\Control'.
+Finding identical cells in module `\Core'.
+Finding identical cells in module `\Datapath'.
+Finding identical cells in module `\ImmGenWire'.
+Finding identical cells in module `\MemArbiter'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\RegFile'.
+Finding identical cells in module `\Tile'.
+<suppressed ~9 debug messages>
+Removed a total of 5 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ALUArea..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \BrCondArea..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \CSR..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \Cache..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \Control..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \Core..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \Datapath..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ImmGenWire..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \MemArbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \RegFile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \Tile..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~186 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ALUArea.
+  Optimizing cells in module \BrCondArea.
+  Optimizing cells in module \CSR.
+  Optimizing cells in module \Cache.
+    Consolidated identical input bits for $mux cell $procmux$2625:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\dataMem_3_3$Tile.v:5903$123_EN[7:0]$324
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\dataMem_3_3$Tile.v:5903$123_EN[7:0]$324 [0]
+      New connections: $0$memwr$\dataMem_3_3$Tile.v:5903$123_EN[7:0]$324 [7:1] = { $0$memwr$\dataMem_3_3$Tile.v:5903$123_EN[7:0]$324 [0] $0$memwr$\dataMem_3_3$Tile.v:5903$123_EN[7:0]$324 [0] $0$memwr$\dataMem_3_3$Tile.v:5903$123_EN[7:0]$324 [0] $0$memwr$\dataMem_3_3$Tile.v:5903$123_EN[7:0]$324 [0] $0$memwr$\dataMem_3_3$Tile.v:5903$123_EN[7:0]$324 [0] $0$memwr$\dataMem_3_3$Tile.v:5903$123_EN[7:0]$324 [0] $0$memwr$\dataMem_3_3$Tile.v:5903$123_EN[7:0]$324 [0] }
+    Consolidated identical input bits for $mux cell $procmux$2634:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\dataMem_3_2$Tile.v:5897$122_EN[7:0]$321
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\dataMem_3_2$Tile.v:5897$122_EN[7:0]$321 [0]
+      New connections: $0$memwr$\dataMem_3_2$Tile.v:5897$122_EN[7:0]$321 [7:1] = { $0$memwr$\dataMem_3_2$Tile.v:5897$122_EN[7:0]$321 [0] $0$memwr$\dataMem_3_2$Tile.v:5897$122_EN[7:0]$321 [0] $0$memwr$\dataMem_3_2$Tile.v:5897$122_EN[7:0]$321 [0] $0$memwr$\dataMem_3_2$Tile.v:5897$122_EN[7:0]$321 [0] $0$memwr$\dataMem_3_2$Tile.v:5897$122_EN[7:0]$321 [0] $0$memwr$\dataMem_3_2$Tile.v:5897$122_EN[7:0]$321 [0] $0$memwr$\dataMem_3_2$Tile.v:5897$122_EN[7:0]$321 [0] }
+    Consolidated identical input bits for $mux cell $procmux$2643:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\dataMem_3_1$Tile.v:5891$121_EN[7:0]$318
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\dataMem_3_1$Tile.v:5891$121_EN[7:0]$318 [0]
+      New connections: $0$memwr$\dataMem_3_1$Tile.v:5891$121_EN[7:0]$318 [7:1] = { $0$memwr$\dataMem_3_1$Tile.v:5891$121_EN[7:0]$318 [0] $0$memwr$\dataMem_3_1$Tile.v:5891$121_EN[7:0]$318 [0] $0$memwr$\dataMem_3_1$Tile.v:5891$121_EN[7:0]$318 [0] $0$memwr$\dataMem_3_1$Tile.v:5891$121_EN[7:0]$318 [0] $0$memwr$\dataMem_3_1$Tile.v:5891$121_EN[7:0]$318 [0] $0$memwr$\dataMem_3_1$Tile.v:5891$121_EN[7:0]$318 [0] $0$memwr$\dataMem_3_1$Tile.v:5891$121_EN[7:0]$318 [0] }
+    Consolidated identical input bits for $mux cell $procmux$2652:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\dataMem_3_0$Tile.v:5885$120_EN[7:0]$315
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\dataMem_3_0$Tile.v:5885$120_EN[7:0]$315 [0]
+      New connections: $0$memwr$\dataMem_3_0$Tile.v:5885$120_EN[7:0]$315 [7:1] = { $0$memwr$\dataMem_3_0$Tile.v:5885$120_EN[7:0]$315 [0] $0$memwr$\dataMem_3_0$Tile.v:5885$120_EN[7:0]$315 [0] $0$memwr$\dataMem_3_0$Tile.v:5885$120_EN[7:0]$315 [0] $0$memwr$\dataMem_3_0$Tile.v:5885$120_EN[7:0]$315 [0] $0$memwr$\dataMem_3_0$Tile.v:5885$120_EN[7:0]$315 [0] $0$memwr$\dataMem_3_0$Tile.v:5885$120_EN[7:0]$315 [0] $0$memwr$\dataMem_3_0$Tile.v:5885$120_EN[7:0]$315 [0] }
+    Consolidated identical input bits for $mux cell $procmux$2661:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\dataMem_2_3$Tile.v:5879$119_EN[7:0]$312
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\dataMem_2_3$Tile.v:5879$119_EN[7:0]$312 [0]
+      New connections: $0$memwr$\dataMem_2_3$Tile.v:5879$119_EN[7:0]$312 [7:1] = { $0$memwr$\dataMem_2_3$Tile.v:5879$119_EN[7:0]$312 [0] $0$memwr$\dataMem_2_3$Tile.v:5879$119_EN[7:0]$312 [0] $0$memwr$\dataMem_2_3$Tile.v:5879$119_EN[7:0]$312 [0] $0$memwr$\dataMem_2_3$Tile.v:5879$119_EN[7:0]$312 [0] $0$memwr$\dataMem_2_3$Tile.v:5879$119_EN[7:0]$312 [0] $0$memwr$\dataMem_2_3$Tile.v:5879$119_EN[7:0]$312 [0] $0$memwr$\dataMem_2_3$Tile.v:5879$119_EN[7:0]$312 [0] }
+    Consolidated identical input bits for $mux cell $procmux$2670:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\dataMem_2_2$Tile.v:5873$118_EN[7:0]$309
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\dataMem_2_2$Tile.v:5873$118_EN[7:0]$309 [0]
+      New connections: $0$memwr$\dataMem_2_2$Tile.v:5873$118_EN[7:0]$309 [7:1] = { $0$memwr$\dataMem_2_2$Tile.v:5873$118_EN[7:0]$309 [0] $0$memwr$\dataMem_2_2$Tile.v:5873$118_EN[7:0]$309 [0] $0$memwr$\dataMem_2_2$Tile.v:5873$118_EN[7:0]$309 [0] $0$memwr$\dataMem_2_2$Tile.v:5873$118_EN[7:0]$309 [0] $0$memwr$\dataMem_2_2$Tile.v:5873$118_EN[7:0]$309 [0] $0$memwr$\dataMem_2_2$Tile.v:5873$118_EN[7:0]$309 [0] $0$memwr$\dataMem_2_2$Tile.v:5873$118_EN[7:0]$309 [0] }
+    Consolidated identical input bits for $mux cell $procmux$2679:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\dataMem_2_1$Tile.v:5867$117_EN[7:0]$306
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\dataMem_2_1$Tile.v:5867$117_EN[7:0]$306 [0]
+      New connections: $0$memwr$\dataMem_2_1$Tile.v:5867$117_EN[7:0]$306 [7:1] = { $0$memwr$\dataMem_2_1$Tile.v:5867$117_EN[7:0]$306 [0] $0$memwr$\dataMem_2_1$Tile.v:5867$117_EN[7:0]$306 [0] $0$memwr$\dataMem_2_1$Tile.v:5867$117_EN[7:0]$306 [0] $0$memwr$\dataMem_2_1$Tile.v:5867$117_EN[7:0]$306 [0] $0$memwr$\dataMem_2_1$Tile.v:5867$117_EN[7:0]$306 [0] $0$memwr$\dataMem_2_1$Tile.v:5867$117_EN[7:0]$306 [0] $0$memwr$\dataMem_2_1$Tile.v:5867$117_EN[7:0]$306 [0] }
+    Consolidated identical input bits for $mux cell $procmux$2688:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\dataMem_2_0$Tile.v:5861$116_EN[7:0]$303
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\dataMem_2_0$Tile.v:5861$116_EN[7:0]$303 [0]
+      New connections: $0$memwr$\dataMem_2_0$Tile.v:5861$116_EN[7:0]$303 [7:1] = { $0$memwr$\dataMem_2_0$Tile.v:5861$116_EN[7:0]$303 [0] $0$memwr$\dataMem_2_0$Tile.v:5861$116_EN[7:0]$303 [0] $0$memwr$\dataMem_2_0$Tile.v:5861$116_EN[7:0]$303 [0] $0$memwr$\dataMem_2_0$Tile.v:5861$116_EN[7:0]$303 [0] $0$memwr$\dataMem_2_0$Tile.v:5861$116_EN[7:0]$303 [0] $0$memwr$\dataMem_2_0$Tile.v:5861$116_EN[7:0]$303 [0] $0$memwr$\dataMem_2_0$Tile.v:5861$116_EN[7:0]$303 [0] }
+    Consolidated identical input bits for $mux cell $procmux$2697:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\dataMem_1_3$Tile.v:5855$115_EN[7:0]$300
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\dataMem_1_3$Tile.v:5855$115_EN[7:0]$300 [0]
+      New connections: $0$memwr$\dataMem_1_3$Tile.v:5855$115_EN[7:0]$300 [7:1] = { $0$memwr$\dataMem_1_3$Tile.v:5855$115_EN[7:0]$300 [0] $0$memwr$\dataMem_1_3$Tile.v:5855$115_EN[7:0]$300 [0] $0$memwr$\dataMem_1_3$Tile.v:5855$115_EN[7:0]$300 [0] $0$memwr$\dataMem_1_3$Tile.v:5855$115_EN[7:0]$300 [0] $0$memwr$\dataMem_1_3$Tile.v:5855$115_EN[7:0]$300 [0] $0$memwr$\dataMem_1_3$Tile.v:5855$115_EN[7:0]$300 [0] $0$memwr$\dataMem_1_3$Tile.v:5855$115_EN[7:0]$300 [0] }
+    Consolidated identical input bits for $mux cell $procmux$2706:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\dataMem_1_2$Tile.v:5849$114_EN[7:0]$297
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\dataMem_1_2$Tile.v:5849$114_EN[7:0]$297 [0]
+      New connections: $0$memwr$\dataMem_1_2$Tile.v:5849$114_EN[7:0]$297 [7:1] = { $0$memwr$\dataMem_1_2$Tile.v:5849$114_EN[7:0]$297 [0] $0$memwr$\dataMem_1_2$Tile.v:5849$114_EN[7:0]$297 [0] $0$memwr$\dataMem_1_2$Tile.v:5849$114_EN[7:0]$297 [0] $0$memwr$\dataMem_1_2$Tile.v:5849$114_EN[7:0]$297 [0] $0$memwr$\dataMem_1_2$Tile.v:5849$114_EN[7:0]$297 [0] $0$memwr$\dataMem_1_2$Tile.v:5849$114_EN[7:0]$297 [0] $0$memwr$\dataMem_1_2$Tile.v:5849$114_EN[7:0]$297 [0] }
+    Consolidated identical input bits for $mux cell $procmux$2715:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\dataMem_1_1$Tile.v:5843$113_EN[7:0]$294
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\dataMem_1_1$Tile.v:5843$113_EN[7:0]$294 [0]
+      New connections: $0$memwr$\dataMem_1_1$Tile.v:5843$113_EN[7:0]$294 [7:1] = { $0$memwr$\dataMem_1_1$Tile.v:5843$113_EN[7:0]$294 [0] $0$memwr$\dataMem_1_1$Tile.v:5843$113_EN[7:0]$294 [0] $0$memwr$\dataMem_1_1$Tile.v:5843$113_EN[7:0]$294 [0] $0$memwr$\dataMem_1_1$Tile.v:5843$113_EN[7:0]$294 [0] $0$memwr$\dataMem_1_1$Tile.v:5843$113_EN[7:0]$294 [0] $0$memwr$\dataMem_1_1$Tile.v:5843$113_EN[7:0]$294 [0] $0$memwr$\dataMem_1_1$Tile.v:5843$113_EN[7:0]$294 [0] }
+    Consolidated identical input bits for $mux cell $procmux$2724:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\dataMem_1_0$Tile.v:5837$112_EN[7:0]$291
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\dataMem_1_0$Tile.v:5837$112_EN[7:0]$291 [0]
+      New connections: $0$memwr$\dataMem_1_0$Tile.v:5837$112_EN[7:0]$291 [7:1] = { $0$memwr$\dataMem_1_0$Tile.v:5837$112_EN[7:0]$291 [0] $0$memwr$\dataMem_1_0$Tile.v:5837$112_EN[7:0]$291 [0] $0$memwr$\dataMem_1_0$Tile.v:5837$112_EN[7:0]$291 [0] $0$memwr$\dataMem_1_0$Tile.v:5837$112_EN[7:0]$291 [0] $0$memwr$\dataMem_1_0$Tile.v:5837$112_EN[7:0]$291 [0] $0$memwr$\dataMem_1_0$Tile.v:5837$112_EN[7:0]$291 [0] $0$memwr$\dataMem_1_0$Tile.v:5837$112_EN[7:0]$291 [0] }
+    Consolidated identical input bits for $mux cell $procmux$2733:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\dataMem_0_3$Tile.v:5831$111_EN[7:0]$288
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\dataMem_0_3$Tile.v:5831$111_EN[7:0]$288 [0]
+      New connections: $0$memwr$\dataMem_0_3$Tile.v:5831$111_EN[7:0]$288 [7:1] = { $0$memwr$\dataMem_0_3$Tile.v:5831$111_EN[7:0]$288 [0] $0$memwr$\dataMem_0_3$Tile.v:5831$111_EN[7:0]$288 [0] $0$memwr$\dataMem_0_3$Tile.v:5831$111_EN[7:0]$288 [0] $0$memwr$\dataMem_0_3$Tile.v:5831$111_EN[7:0]$288 [0] $0$memwr$\dataMem_0_3$Tile.v:5831$111_EN[7:0]$288 [0] $0$memwr$\dataMem_0_3$Tile.v:5831$111_EN[7:0]$288 [0] $0$memwr$\dataMem_0_3$Tile.v:5831$111_EN[7:0]$288 [0] }
+    Consolidated identical input bits for $mux cell $procmux$2742:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\dataMem_0_2$Tile.v:5825$110_EN[7:0]$285
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\dataMem_0_2$Tile.v:5825$110_EN[7:0]$285 [0]
+      New connections: $0$memwr$\dataMem_0_2$Tile.v:5825$110_EN[7:0]$285 [7:1] = { $0$memwr$\dataMem_0_2$Tile.v:5825$110_EN[7:0]$285 [0] $0$memwr$\dataMem_0_2$Tile.v:5825$110_EN[7:0]$285 [0] $0$memwr$\dataMem_0_2$Tile.v:5825$110_EN[7:0]$285 [0] $0$memwr$\dataMem_0_2$Tile.v:5825$110_EN[7:0]$285 [0] $0$memwr$\dataMem_0_2$Tile.v:5825$110_EN[7:0]$285 [0] $0$memwr$\dataMem_0_2$Tile.v:5825$110_EN[7:0]$285 [0] $0$memwr$\dataMem_0_2$Tile.v:5825$110_EN[7:0]$285 [0] }
+    Consolidated identical input bits for $mux cell $procmux$2751:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\dataMem_0_1$Tile.v:5819$109_EN[7:0]$282
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\dataMem_0_1$Tile.v:5819$109_EN[7:0]$282 [0]
+      New connections: $0$memwr$\dataMem_0_1$Tile.v:5819$109_EN[7:0]$282 [7:1] = { $0$memwr$\dataMem_0_1$Tile.v:5819$109_EN[7:0]$282 [0] $0$memwr$\dataMem_0_1$Tile.v:5819$109_EN[7:0]$282 [0] $0$memwr$\dataMem_0_1$Tile.v:5819$109_EN[7:0]$282 [0] $0$memwr$\dataMem_0_1$Tile.v:5819$109_EN[7:0]$282 [0] $0$memwr$\dataMem_0_1$Tile.v:5819$109_EN[7:0]$282 [0] $0$memwr$\dataMem_0_1$Tile.v:5819$109_EN[7:0]$282 [0] $0$memwr$\dataMem_0_1$Tile.v:5819$109_EN[7:0]$282 [0] }
+    Consolidated identical input bits for $mux cell $procmux$2760:
+      Old ports: A=8'00000000, B=8'11111111, Y=$0$memwr$\dataMem_0_0$Tile.v:5813$108_EN[7:0]$279
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\dataMem_0_0$Tile.v:5813$108_EN[7:0]$279 [0]
+      New connections: $0$memwr$\dataMem_0_0$Tile.v:5813$108_EN[7:0]$279 [7:1] = { $0$memwr$\dataMem_0_0$Tile.v:5813$108_EN[7:0]$279 [0] $0$memwr$\dataMem_0_0$Tile.v:5813$108_EN[7:0]$279 [0] $0$memwr$\dataMem_0_0$Tile.v:5813$108_EN[7:0]$279 [0] $0$memwr$\dataMem_0_0$Tile.v:5813$108_EN[7:0]$279 [0] $0$memwr$\dataMem_0_0$Tile.v:5813$108_EN[7:0]$279 [0] $0$memwr$\dataMem_0_0$Tile.v:5813$108_EN[7:0]$279 [0] $0$memwr$\dataMem_0_0$Tile.v:5813$108_EN[7:0]$279 [0] }
+    Consolidated identical input bits for $mux cell $procmux$2769:
+      Old ports: A=20'00000000000000000000, B=20'11111111111111111111, Y=$0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0]
+      New connections: $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [19:1] = { $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] $0$memwr$\metaMem_tag$Tile.v:5807$107_EN[19:0]$276 [0] }
+  Optimizing cells in module \Cache.
+  Optimizing cells in module \Control.
+  Optimizing cells in module \Core.
+  Optimizing cells in module \Datapath.
+  Optimizing cells in module \ImmGenWire.
+  Optimizing cells in module \MemArbiter.
+  Optimizing cells in module \RegFile.
+    Consolidated identical input bits for $mux cell $procmux$2531:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0]
+      New connections: $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [31:1] = { $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] $0$memwr$\regs$Tile.v:2296$1167_EN[31:0]$1179 [0] }
+  Optimizing cells in module \RegFile.
+  Optimizing cells in module \Tile.
+Performed a total of 18 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALUArea'.
+Finding identical cells in module `\BrCondArea'.
+Finding identical cells in module `\CSR'.
+<suppressed ~177 debug messages>
+Finding identical cells in module `\Cache'.
+<suppressed ~15 debug messages>
+Finding identical cells in module `\Control'.
+Finding identical cells in module `\Core'.
+Finding identical cells in module `\Datapath'.
+<suppressed ~21 debug messages>
+Finding identical cells in module `\ImmGenWire'.
+Finding identical cells in module `\MemArbiter'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\RegFile'.
+Finding identical cells in module `\Tile'.
+Removed a total of 72 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALUArea..
+Finding unused cells or wires in module \BrCondArea..
+Finding unused cells or wires in module \CSR..
+Finding unused cells or wires in module \Cache..
+Finding unused cells or wires in module \Control..
+Finding unused cells or wires in module \Core..
+Finding unused cells or wires in module \Datapath..
+Finding unused cells or wires in module \ImmGenWire..
+Finding unused cells or wires in module \MemArbiter..
+Finding unused cells or wires in module \RegFile..
+Finding unused cells or wires in module \Tile..
+Removed 0 unused cells and 75 unused wires.
+<suppressed ~5 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALUArea.
+Optimizing module BrCondArea.
+Optimizing module CSR.
+Optimizing module Cache.
+Optimizing module Control.
+Optimizing module Core.
+Optimizing module Datapath.
+Optimizing module ImmGenWire.
+Optimizing module MemArbiter.
+Optimizing module RegFile.
+Optimizing module Tile.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ALUArea..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \BrCondArea..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \CSR..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \Cache..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \Control..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \Core..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \Datapath..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ImmGenWire..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \MemArbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \RegFile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \Tile..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~190 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ALUArea.
+  Optimizing cells in module \BrCondArea.
+  Optimizing cells in module \CSR.
+  Optimizing cells in module \Cache.
+  Optimizing cells in module \Control.
+  Optimizing cells in module \Core.
+  Optimizing cells in module \Datapath.
+  Optimizing cells in module \ImmGenWire.
+  Optimizing cells in module \MemArbiter.
+  Optimizing cells in module \RegFile.
+  Optimizing cells in module \Tile.
+Performed a total of 0 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALUArea'.
+Finding identical cells in module `\BrCondArea'.
+Finding identical cells in module `\CSR'.
+Finding identical cells in module `\Cache'.
+Finding identical cells in module `\Control'.
+Finding identical cells in module `\Core'.
+Finding identical cells in module `\Datapath'.
+Finding identical cells in module `\ImmGenWire'.
+Finding identical cells in module `\MemArbiter'.
+Finding identical cells in module `\RegFile'.
+Finding identical cells in module `\Tile'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALUArea..
+Finding unused cells or wires in module \BrCondArea..
+Finding unused cells or wires in module \CSR..
+Finding unused cells or wires in module \Cache..
+Finding unused cells or wires in module \Control..
+Finding unused cells or wires in module \Core..
+Finding unused cells or wires in module \Datapath..
+Finding unused cells or wires in module \ImmGenWire..
+Finding unused cells or wires in module \MemArbiter..
+Finding unused cells or wires in module \RegFile..
+Finding unused cells or wires in module \Tile..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALUArea.
+Optimizing module BrCondArea.
+Optimizing module CSR.
+Optimizing module Cache.
+Optimizing module Control.
+Optimizing module Core.
+Optimizing module Datapath.
+Optimizing module ImmGenWire.
+Optimizing module MemArbiter.
+Optimizing module RegFile.
+Optimizing module Tile.
+
+2.7.14. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port A of cell ALUArea.$sub$Tile.v:2434$1095 ($sub).
+Removed top 1 bits (of 33) from port Y of cell ALUArea.$sub$Tile.v:2434$1095 ($sub).
+Removed top 1 bits (of 33) from port Y of cell ALUArea.$add$Tile.v:2438$1097 ($add).
+Removed top 16 bits (of 32) from port A of cell ALUArea.$or$Tile.v:2455$1103 ($or).
+Removed top 8 bits (of 32) from port A of cell ALUArea.$and$Tile.v:2458$1104 ($and).
+Removed top 8 bits (of 32) from port B of cell ALUArea.$and$Tile.v:2458$1104 ($and).
+Removed top 8 bits (of 32) from port Y of cell ALUArea.$and$Tile.v:2458$1104 ($and).
+Removed top 8 bits (of 32) from port A of cell ALUArea.$or$Tile.v:2463$1107 ($or).
+Removed top 4 bits (of 32) from port A of cell ALUArea.$and$Tile.v:2466$1108 ($and).
+Removed top 4 bits (of 32) from port B of cell ALUArea.$and$Tile.v:2466$1108 ($and).
+Removed top 4 bits (of 32) from port Y of cell ALUArea.$and$Tile.v:2466$1108 ($and).
+Removed top 4 bits (of 32) from port A of cell ALUArea.$or$Tile.v:2471$1111 ($or).
+Removed top 2 bits (of 32) from port A of cell ALUArea.$and$Tile.v:2474$1112 ($and).
+Removed top 2 bits (of 32) from port B of cell ALUArea.$and$Tile.v:2474$1112 ($and).
+Removed top 2 bits (of 32) from port Y of cell ALUArea.$and$Tile.v:2474$1112 ($and).
+Removed top 2 bits (of 32) from port A of cell ALUArea.$or$Tile.v:2479$1115 ($or).
+Removed top 1 bits (of 32) from port A of cell ALUArea.$and$Tile.v:2482$1116 ($and).
+Removed top 1 bits (of 32) from port B of cell ALUArea.$and$Tile.v:2482$1116 ($and).
+Removed top 1 bits (of 32) from port Y of cell ALUArea.$and$Tile.v:2482$1116 ($and).
+Removed top 1 bits (of 32) from port A of cell ALUArea.$or$Tile.v:2487$1119 ($or).
+Removed top 1 bits (of 33) from port Y of cell ALUArea.$sshr$Tile.v:2493$1122 ($sshr).
+Removed top 16 bits (of 32) from port A of cell ALUArea.$or$Tile.v:2501$1125 ($or).
+Removed top 8 bits (of 32) from port A of cell ALUArea.$and$Tile.v:2504$1126 ($and).
+Removed top 8 bits (of 32) from port B of cell ALUArea.$and$Tile.v:2504$1126 ($and).
+Removed top 8 bits (of 32) from port Y of cell ALUArea.$and$Tile.v:2504$1126 ($and).
+Removed top 8 bits (of 32) from port A of cell ALUArea.$or$Tile.v:2509$1129 ($or).
+Removed top 4 bits (of 32) from port A of cell ALUArea.$and$Tile.v:2512$1130 ($and).
+Removed top 4 bits (of 32) from port B of cell ALUArea.$and$Tile.v:2512$1130 ($and).
+Removed top 4 bits (of 32) from port Y of cell ALUArea.$and$Tile.v:2512$1130 ($and).
+Removed top 4 bits (of 32) from port A of cell ALUArea.$or$Tile.v:2517$1133 ($or).
+Removed top 2 bits (of 32) from port A of cell ALUArea.$and$Tile.v:2520$1134 ($and).
+Removed top 2 bits (of 32) from port B of cell ALUArea.$and$Tile.v:2520$1134 ($and).
+Removed top 2 bits (of 32) from port Y of cell ALUArea.$and$Tile.v:2520$1134 ($and).
+Removed top 2 bits (of 32) from port A of cell ALUArea.$or$Tile.v:2525$1137 ($or).
+Removed top 1 bits (of 32) from port A of cell ALUArea.$and$Tile.v:2528$1138 ($and).
+Removed top 1 bits (of 32) from port B of cell ALUArea.$and$Tile.v:2528$1138 ($and).
+Removed top 1 bits (of 32) from port Y of cell ALUArea.$and$Tile.v:2528$1138 ($and).
+Removed top 1 bits (of 32) from port A of cell ALUArea.$or$Tile.v:2533$1141 ($or).
+Removed top 3 bits (of 4) from port B of cell ALUArea.$eq$Tile.v:2535$1143 ($eq).
+Removed top 1 bits (of 4) from port B of cell ALUArea.$eq$Tile.v:2537$1145 ($eq).
+Removed top 1 bits (of 4) from port B of cell ALUArea.$eq$Tile.v:2538$1146 ($eq).
+Removed top 1 bits (of 4) from port B of cell ALUArea.$eq$Tile.v:2543$1151 ($eq).
+Removed top 2 bits (of 4) from port B of cell ALUArea.$eq$Tile.v:2544$1152 ($eq).
+Removed top 2 bits (of 4) from port B of cell ALUArea.$eq$Tile.v:2546$1154 ($eq).
+Removed top 1 bits (of 4) from port B of cell ALUArea.$eq$Tile.v:2548$1156 ($eq).
+Removed top 8 bits (of 32) from wire ALUArea._T_103.
+Removed top 4 bits (of 32) from wire ALUArea._T_113.
+Removed top 2 bits (of 32) from wire ALUArea._T_123.
+Removed top 1 bits (of 32) from wire ALUArea._T_133.
+Removed top 8 bits (of 32) from wire ALUArea._T_46.
+Removed top 4 bits (of 32) from wire ALUArea._T_56.
+Removed top 2 bits (of 32) from wire ALUArea._T_66.
+Removed top 1 bits (of 32) from wire ALUArea._T_76.
+Removed top 3 bits (of 32) from wire ALUArea._T_98.
+Removed top 1 bits (of 33) from port Y of cell BrCondArea.$sub$Tile.v:2693$1057 ($sub).
+Removed top 1 bits (of 3) from port B of cell BrCondArea.$eq$Tile.v:2706$1065 ($eq).
+Removed top 1 bits (of 3) from port B of cell BrCondArea.$eq$Tile.v:2711$1070 ($eq).
+Removed top 2 bits (of 3) from port B of cell BrCondArea.$eq$Tile.v:2717$1076 ($eq).
+Removed top 2 bits (of 12) from port A of cell CSR.$eq$Tile.v:601$1200 ($eq).
+Removed top 2 bits (of 12) from port A of cell CSR.$eq$Tile.v:602$1201 ($eq).
+Removed top 2 bits (of 12) from port A of cell CSR.$eq$Tile.v:603$1202 ($eq).
+Removed top 2 bits (of 12) from port A of cell CSR.$eq$Tile.v:604$1203 ($eq).
+Removed top 1 bits (of 12) from port A of cell CSR.$eq$Tile.v:605$1204 ($eq).
+Removed top 1 bits (of 12) from port A of cell CSR.$eq$Tile.v:606$1205 ($eq).
+Removed top 2 bits (of 12) from port A of cell CSR.$eq$Tile.v:607$1206 ($eq).
+Removed top 2 bits (of 12) from port A of cell CSR.$eq$Tile.v:608$1207 ($eq).
+Removed top 2 bits (of 12) from port A of cell CSR.$eq$Tile.v:609$1208 ($eq).
+Removed top 2 bits (of 12) from port A of cell CSR.$eq$Tile.v:610$1209 ($eq).
+Removed top 2 bits (of 12) from port A of cell CSR.$eq$Tile.v:611$1210 ($eq).
+Removed top 1 bits (of 12) from port A of cell CSR.$eq$Tile.v:612$1211 ($eq).
+Removed top 1 bits (of 12) from port A of cell CSR.$eq$Tile.v:613$1212 ($eq).
+Removed top 2 bits (of 12) from port A of cell CSR.$eq$Tile.v:614$1213 ($eq).
+Removed top 26 bits (of 32) from mux cell CSR.$ternary$Tile.v:615$1214 ($mux).
+Removed top 2 bits (of 12) from port B of cell CSR.$eq$Tile.v:687$1282 ($eq).
+Removed top 2 bits (of 12) from port B of cell CSR.$eq$Tile.v:689$1284 ($eq).
+Removed top 2 bits (of 3) from port B of cell CSR.$eq$Tile.v:691$1286 ($eq).
+Removed top 1 bits (of 3) from port A of cell CSR.$eq$Tile.v:699$1293 ($eq).
+Removed top 1 bits (of 3) from port A of cell CSR.$eq$Tile.v:701$1295 ($eq).
+Removed top 2 bits (of 3) from port A of cell CSR.$eq$Tile.v:703$1297 ($eq).
+Removed top 1 bits (of 3) from port A of cell CSR.$eq$Tile.v:712$1303 ($eq).
+Removed top 2 bits (of 3) from port A of cell CSR.$eq$Tile.v:714$1305 ($eq).
+Removed top 1 bits (of 2) from port A of cell CSR.$eq$Tile.v:718$1309 ($eq).
+Removed top 23 bits (of 32) from port A of cell CSR.$add$Tile.v:739$1327 ($add).
+Removed top 24 bits (of 32) from port B of cell CSR.$add$Tile.v:739$1327 ($add).
+Removed top 23 bits (of 33) from port Y of cell CSR.$add$Tile.v:739$1327 ($add).
+Removed top 31 bits (of 32) from port B of cell CSR.$add$Tile.v:741$1328 ($add).
+Removed top 1 bits (of 33) from port Y of cell CSR.$add$Tile.v:741$1328 ($add).
+Removed top 31 bits (of 32) from port B of cell CSR.$add$Tile.v:745$1331 ($add).
+Removed top 1 bits (of 33) from port Y of cell CSR.$add$Tile.v:745$1331 ($add).
+Removed top 31 bits (of 32) from port B of cell CSR.$add$Tile.v:748$1333 ($add).
+Removed top 1 bits (of 33) from port Y of cell CSR.$add$Tile.v:748$1333 ($add).
+Removed top 31 bits (of 32) from port B of cell CSR.$add$Tile.v:752$1336 ($add).
+Removed top 1 bits (of 33) from port Y of cell CSR.$add$Tile.v:752$1336 ($add).
+Removed top 27 bits (of 32) from port B of cell CSR.$ne$Tile.v:755$1338 ($ne).
+Removed top 31 bits (of 32) from port B of cell CSR.$add$Tile.v:762$1345 ($add).
+Removed top 1 bits (of 33) from port Y of cell CSR.$add$Tile.v:762$1345 ($add).
+Removed top 31 bits (of 32) from port B of cell CSR.$add$Tile.v:768$1350 ($add).
+Removed top 1 bits (of 33) from port Y of cell CSR.$add$Tile.v:768$1350 ($add).
+Removed top 2 bits (of 4) from port B of cell CSR.$add$Tile.v:775$1353 ($add).
+Removed top 1 bits (of 5) from port Y of cell CSR.$add$Tile.v:775$1353 ($add).
+Removed top 1 bits (of 2) from mux cell CSR.$ternary$Tile.v:777$1354 ($mux).
+Removed top 2 bits (of 12) from port B of cell CSR.$eq$Tile.v:785$1362 ($eq).
+Removed top 2 bits (of 12) from port B of cell CSR.$eq$Tile.v:790$1363 ($eq).
+Removed top 2 bits (of 12) from port B of cell CSR.$eq$Tile.v:792$1364 ($eq).
+Removed top 1 bits (of 12) from port B of cell CSR.$eq$Tile.v:793$1365 ($eq).
+Removed top 1 bits (of 12) from port B of cell CSR.$eq$Tile.v:794$1366 ($eq).
+Removed top 2 bits (of 12) from port B of cell CSR.$eq$Tile.v:795$1367 ($eq).
+Removed top 2 bits (of 12) from port B of cell CSR.$eq$Tile.v:796$1368 ($eq).
+Removed top 2 bits (of 12) from port B of cell CSR.$eq$Tile.v:797$1369 ($eq).
+Removed top 2 bits (of 12) from port B of cell CSR.$eq$Tile.v:801$1372 ($eq).
+Removed top 2 bits (of 12) from port B of cell CSR.$eq$Tile.v:803$1374 ($eq).
+Removed top 1 bits (of 12) from port B of cell CSR.$eq$Tile.v:804$1375 ($eq).
+Removed top 1 bits (of 12) from port B of cell CSR.$eq$Tile.v:805$1376 ($eq).
+Removed top 3 bits (of 35) from mux cell CSR.$ternary$Tile.v:867$1438 ($mux).
+Removed top 3 bits (of 35) from mux cell CSR.$ternary$Tile.v:879$1450 ($mux).
+Removed top 3 bits (of 35) from mux cell CSR.$ternary$Tile.v:892$1463 ($mux).
+Removed top 3 bits (of 35) from mux cell CSR.$ternary$Tile.v:906$1477 ($mux).
+Removed top 3 bits (of 35) from mux cell CSR.$ternary$Tile.v:920$1491 ($mux).
+Removed top 3 bits (of 35) from mux cell CSR.$ternary$Tile.v:935$1506 ($mux).
+Removed top 3 bits (of 35) from mux cell CSR.$ternary$Tile.v:952$1523 ($mux).
+Removed top 3 bits (of 35) from mux cell CSR.$ternary$Tile.v:973$1544 ($mux).
+Removed top 3 bits (of 35) from mux cell CSR.$ternary$Tile.v:994$1565 ($mux).
+Removed top 3 bits (of 35) from mux cell CSR.$ternary$Tile.v:1015$1586 ($mux).
+Removed top 3 bits (of 35) from mux cell CSR.$ternary$Tile.v:1024$1595 ($mux).
+Removed top 3 bits (of 35) from mux cell CSR.$ternary$Tile.v:1045$1616 ($mux).
+Removed top 3 bits (of 35) from wire CSR._GEN_100.
+Removed top 3 bits (of 35) from wire CSR._GEN_114.
+Removed top 3 bits (of 35) from wire CSR._GEN_146.
+Removed top 3 bits (of 35) from wire CSR._GEN_167.
+Removed top 3 bits (of 35) from wire CSR._GEN_188.
+Removed top 5 bits (of 35) from wire CSR._GEN_264.
+Removed top 3 bits (of 35) from wire CSR._GEN_61.
+Removed top 3 bits (of 35) from wire CSR._GEN_86.
+Removed top 4 bits (of 10) from wire CSR._T_107.
+Removed top 24 bits (of 26) from wire CSR._T_130.
+Removed top 24 bits (of 28) from wire CSR._T_131.
+Removed top 24 bits (of 26) from wire CSR._T_140.
+Removed top 24 bits (of 28) from wire CSR._T_141.
+Removed top 26 bits (of 32) from wire CSR._T_267.
+Removed top 2 bits (of 32) from wire CSR._T_294.
+Removed top 23 bits (of 33) from wire CSR._T_573.
+Removed top 1 bits (of 2) from wire CSR._T_624.
+Removed top 2 bits (of 32) from wire CSR._T_650.
+Removed top 3 bits (of 35) from wire CSR._T_652.
+Removed top 24 bits (of 32) from wire CSR.mie.
+Removed top 24 bits (of 32) from wire CSR.mip.
+Removed top 26 bits (of 32) from wire CSR.mstatus.
+Removed top 1 bits (of 2) from port Y of cell Cache.$add$Tile.v:5269$142 ($add).
+Removed top 1 bits (of 2) from port Y of cell Cache.$add$Tile.v:5274$146 ($add).
+Removed top 2 bits (of 3) from port B of cell Cache.$eq$Tile.v:5279$150 ($eq).
+Removed top 1 bits (of 3) from port B of cell Cache.$eq$Tile.v:5280$151 ($eq).
+Removed top 255 bits (of 256) from port Y of cell Cache.$shr$Tile.v:5284$154 ($shr).
+Removed top 1 bits (of 2) from port A of cell Cache.$eq$Tile.v:5322$168 ($eq).
+Removed top 15 bits (of 19) from port A of cell Cache.$shl$Tile.v:5337$184 ($shl).
+Removed top 4 bits (of 20) from mux cell Cache.$ternary$Tile.v:5339$185 ($mux).
+Removed top 255 bits (of 256) from port A of cell Cache.$shl$Tile.v:5344$187 ($shl).
+Removed top 255 bits (of 256) from port Y of cell Cache.$shr$Tile.v:5419$221 ($shr).
+Removed top 2 bits (of 3) from port A of cell Cache.$eq$Tile.v:5426$227 ($eq).
+Removed top 1 bits (of 3) from port A of cell Cache.$eq$Tile.v:5436$237 ($eq).
+Removed top 1 bits (of 3) from port A of cell Cache.$eq$Tile.v:5441$242 ($eq).
+Removed top 1 bits (of 3) from mux cell Cache.$procmux$2851 ($mux).
+Removed top 1 bits (of 3) from mux cell Cache.$procmux$2892 ($mux).
+Removed top 1 bits (of 3) from mux cell Cache.$procmux$2894 ($mux).
+Removed top 3 bits (of 19) from port Y of cell Cache.$shl$Tile.v:5337$184 ($shl).
+Removed top 1 bits (of 3) from wire Cache.$procmux$2851_Y.
+Removed top 1 bits (of 3) from wire Cache.$procmux$2892_Y.
+Removed top 1 bits (of 3) from wire Cache.$procmux$2894_Y.
+Removed top 3 bits (of 19) from wire Cache._T_268.
+Removed top 4 bits (of 20) from wire Cache.wmask.
+Removed top 25 bits (of 32) from port B of cell Control.$and$Tile.v:4006$394 ($and).
+Removed top 26 bits (of 32) from port A of cell Control.$eq$Tile.v:4007$395 ($eq).
+Removed top 27 bits (of 32) from port A of cell Control.$eq$Tile.v:4008$396 ($eq).
+Removed top 25 bits (of 32) from port A of cell Control.$eq$Tile.v:4009$397 ($eq).
+Removed top 17 bits (of 32) from port B of cell Control.$and$Tile.v:4010$398 ($and).
+Removed top 25 bits (of 32) from port A of cell Control.$eq$Tile.v:4011$399 ($eq).
+Removed top 25 bits (of 32) from port A of cell Control.$eq$Tile.v:4012$400 ($eq).
+Removed top 19 bits (of 32) from port A of cell Control.$eq$Tile.v:4013$401 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4014$402 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4015$403 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4016$404 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4017$405 ($eq).
+Removed top 30 bits (of 32) from port A of cell Control.$eq$Tile.v:4018$406 ($eq).
+Removed top 19 bits (of 32) from port A of cell Control.$eq$Tile.v:4019$407 ($eq).
+Removed top 18 bits (of 32) from port A of cell Control.$eq$Tile.v:4020$408 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4021$409 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4022$410 ($eq).
+Removed top 26 bits (of 32) from port A of cell Control.$eq$Tile.v:4023$411 ($eq).
+Removed top 19 bits (of 32) from port A of cell Control.$eq$Tile.v:4024$412 ($eq).
+Removed top 18 bits (of 32) from port A of cell Control.$eq$Tile.v:4025$413 ($eq).
+Removed top 27 bits (of 32) from port A of cell Control.$eq$Tile.v:4026$414 ($eq).
+Removed top 18 bits (of 32) from port A of cell Control.$eq$Tile.v:4027$415 ($eq).
+Removed top 18 bits (of 32) from port A of cell Control.$eq$Tile.v:4028$416 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4029$417 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4030$418 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4031$419 ($eq).
+Removed top 19 bits (of 32) from port A of cell Control.$eq$Tile.v:4033$421 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4034$422 ($eq).
+Removed top 1 bits (of 32) from port A of cell Control.$eq$Tile.v:4035$423 ($eq).
+Removed top 26 bits (of 32) from port A of cell Control.$eq$Tile.v:4036$424 ($eq).
+Removed top 1 bits (of 32) from port A of cell Control.$eq$Tile.v:4037$425 ($eq).
+Removed top 19 bits (of 32) from port A of cell Control.$eq$Tile.v:4038$426 ($eq).
+Removed top 18 bits (of 32) from port A of cell Control.$eq$Tile.v:4039$427 ($eq).
+Removed top 18 bits (of 32) from port A of cell Control.$eq$Tile.v:4040$428 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4041$429 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4042$430 ($eq).
+Removed top 1 bits (of 32) from port A of cell Control.$eq$Tile.v:4043$431 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4044$432 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4045$433 ($eq).
+Removed top 28 bits (of 32) from port A of cell Control.$eq$Tile.v:4047$435 ($eq).
+Removed top 19 bits (of 32) from port A of cell Control.$eq$Tile.v:4048$436 ($eq).
+Removed top 19 bits (of 32) from port A of cell Control.$eq$Tile.v:4049$437 ($eq).
+Removed top 18 bits (of 32) from port A of cell Control.$eq$Tile.v:4050$438 ($eq).
+Removed top 18 bits (of 32) from port A of cell Control.$eq$Tile.v:4051$439 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4052$440 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4053$441 ($eq).
+Removed top 17 bits (of 32) from port A of cell Control.$eq$Tile.v:4054$442 ($eq).
+Removed top 25 bits (of 32) from port A of cell Control.$eq$Tile.v:4055$443 ($eq).
+Removed top 11 bits (of 32) from port A of cell Control.$eq$Tile.v:4056$444 ($eq).
+Removed top 3 bits (of 32) from port A of cell Control.$eq$Tile.v:4057$445 ($eq).
+Removed top 3 bits (of 32) from port A of cell Control.$eq$Tile.v:4058$446 ($eq).
+Removed top 1 bits (of 4) from mux cell Control.$ternary$Tile.v:4229$617 ($mux).
+Removed top 1 bits (of 4) from mux cell Control.$ternary$Tile.v:4230$618 ($mux).
+Removed top 1 bits (of 4) from mux cell Control.$ternary$Tile.v:4231$619 ($mux).
+Removed top 1 bits (of 4) from mux cell Control.$ternary$Tile.v:4232$620 ($mux).
+Removed top 1 bits (of 4) from mux cell Control.$ternary$Tile.v:4233$621 ($mux).
+Removed top 1 bits (of 2) from mux cell Control.$ternary$Tile.v:4328$716 ($mux).
+Removed top 1 bits (of 4) from wire Control._T_428.
+Removed top 1 bits (of 4) from wire Control._T_429.
+Removed top 1 bits (of 4) from wire Control._T_430.
+Removed top 1 bits (of 2) from wire Control._T_596.
+Removed top 1 bits (of 2) from port B of cell Datapath.$eq$Tile.v:3050$941 ($eq).
+Removed top 30 bits (of 33) from port B of cell Datapath.$add$Tile.v:3056$946 ($add).
+Removed top 1 bits (of 34) from port Y of cell Datapath.$add$Tile.v:3056$946 ($add).
+Removed top 1 bits (of 33) from mux cell Datapath.$ternary$Tile.v:3086$972 ($mux).
+Removed top 3 bits (of 8) from port A of cell Datapath.$or$Tile.v:3099$979 ($or).
+Removed top 4 bits (of 8) from port B of cell Datapath.$or$Tile.v:3099$979 ($or).
+Removed top 3 bits (of 8) from port Y of cell Datapath.$or$Tile.v:3099$979 ($or).
+Removed top 255 bits (of 287) from port A of cell Datapath.$shl$Tile.v:3105$984 ($shl).
+Removed top 3 bits (of 8) from port B of cell Datapath.$shl$Tile.v:3105$984 ($shl).
+Removed top 255 bits (of 287) from port Y of cell Datapath.$shl$Tile.v:3105$984 ($shl).
+Removed top 3 bits (of 5) from port A of cell Datapath.$shl$Tile.v:3108$986 ($shl).
+Removed top 3 bits (of 4) from port A of cell Datapath.$shl$Tile.v:3109$987 ($shl).
+Removed top 1 bits (of 2) from port A of cell Datapath.$eq$Tile.v:3114$992 ($eq).
+Removed top 1 bits (of 5) from mux cell Datapath.$ternary$Tile.v:3115$993 ($mux).
+Removed top 3 bits (of 8) from port A of cell Datapath.$or$Tile.v:3151$1024 ($or).
+Removed top 4 bits (of 8) from port B of cell Datapath.$or$Tile.v:3151$1024 ($or).
+Removed top 3 bits (of 8) from port Y of cell Datapath.$or$Tile.v:3151$1024 ($or).
+Removed top 3 bits (of 8) from port B of cell Datapath.$shr$Tile.v:3152$1025 ($shr).
+Removed top 16 bits (of 32) from port Y of cell Datapath.$shr$Tile.v:3152$1025 ($shr).
+Removed top 1 bits (of 33) from mux cell Datapath.$ternary$Tile.v:3161$1027 ($mux).
+Removed top 1 bits (of 33) from mux cell Datapath.$ternary$Tile.v:3163$1029 ($mux).
+Removed top 1 bits (of 3) from port A of cell Datapath.$eq$Tile.v:3164$1030 ($eq).
+Removed top 1 bits (of 3) from port A of cell Datapath.$eq$Tile.v:3166$1032 ($eq).
+Removed top 30 bits (of 33) from port B of cell Datapath.$add$Tile.v:3169$1034 ($add).
+Removed top 1 bits (of 34) from port Y of cell Datapath.$add$Tile.v:3169$1034 ($add).
+Removed top 1 bits (of 33) from mux cell Datapath.$ternary$Tile.v:3174$1036 ($mux).
+Removed top 1 bits (of 34) from mux cell Datapath.$ternary$Tile.v:3176$1038 ($mux).
+Removed top 1 bits (of 2) from port A of cell Datapath.$eq$Tile.v:3177$1039 ($eq).
+Removed top 2 bits (of 34) from mux cell Datapath.$ternary$Tile.v:3178$1040 ($mux).
+Removed top 1 bits (of 5) from mux cell Datapath.$ternary$Tile.v:3113$991 ($mux).
+Removed top 1 bits (of 33) from mux cell Datapath.$ternary$Tile.v:3167$1033 ($mux).
+Removed top 1 bits (of 33) from mux cell Datapath.$ternary$Tile.v:3176$1038 ($mux).
+Removed top 1 bits (of 5) from port Y of cell Datapath.$shl$Tile.v:3108$986 ($shl).
+Removed top 1 bits (of 33) from mux cell Datapath.$ternary$Tile.v:3165$1031 ($mux).
+Removed top 1 bits (of 33) from port Y of cell Datapath.$add$Tile.v:3169$1034 ($add).
+Removed top 1 bits (of 33) from port A of cell Datapath.$add$Tile.v:3169$1034 ($add).
+Removed top 2 bits (of 33) from wire Datapath._GEN_24.
+Removed top 5 bits (of 35) from wire Datapath._GEN_25.
+Removed top 1 bits (of 32) from wire Datapath._T_164.
+Removed top 1 bits (of 33) from wire Datapath._T_166.
+Removed top 2 bits (of 32) from wire Datapath._T_204.
+Removed top 3 bits (of 8) from wire Datapath._T_208.
+Removed top 1 bits (of 5) from wire Datapath._T_226.
+Removed top 1 bits (of 5) from wire Datapath._T_233.
+Removed top 3 bits (of 8) from wire Datapath._T_257.
+Removed top 1 bits (of 33) from wire Datapath._T_271.
+Removed top 1 bits (of 33) from wire Datapath._T_273.
+Removed top 1 bits (of 33) from wire Datapath._T_275.
+Removed top 2 bits (of 34) from wire Datapath._T_279.
+Removed top 1 bits (of 33) from wire Datapath.load.
+Removed top 3 bits (of 8) from wire Datapath.loffset.
+Removed top 3 bits (of 8) from wire Datapath.woffset.
+Removed top 10 bits (of 12) from port B of cell ImmGenWire.$and$Tile.v:2640$1082 ($and).
+Removed top 1 bits (of 3) from port A of cell ImmGenWire.$eq$Tile.v:2646$1087 ($eq).
+Removed top 1 bits (of 3) from port A of cell ImmGenWire.$eq$Tile.v:2650$1091 ($eq).
+Removed top 2 bits (of 3) from port A of cell ImmGenWire.$eq$Tile.v:2652$1093 ($eq).
+Removed top 1 bits (of 3) from port B of cell MemArbiter.$eq$Tile.v:6043$60 ($eq).
+Removed top 2 bits (of 3) from port B of cell MemArbiter.$eq$Tile.v:6058$75 ($eq).
+Removed top 1 bits (of 3) from port B of cell MemArbiter.$eq$Tile.v:6060$77 ($eq).
+Removed top 2 bits (of 3) from port A of cell MemArbiter.$eq$Tile.v:6072$89 ($eq).
+Removed top 1 bits (of 3) from port A of cell MemArbiter.$eq$Tile.v:6076$93 ($eq).
+Removed top 1 bits (of 3) from port A of cell MemArbiter.$eq$Tile.v:6077$94 ($eq).
+Removed top 22 bits (of 32) from port B of cell Tile.$eq$Tile.v:6592$7 ($eq).
+Removed top 1 bits (of 3) from port B of cell Tile.$eq$Tile.v:6603$16 ($eq).
+Removed top 5 bits (of 7) from port B of cell Tile.$eq$Tile.v:6604$17 ($eq).
+Removed top 22 bits (of 32) from port B of cell Tile.$eq$Tile.v:6643$37 ($eq).
+Removed top 22 bits (of 32) from port B of cell Tile.$ne$Tile.v:6649$42 ($ne).
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALUArea..
+Finding unused cells or wires in module \BrCondArea..
+Finding unused cells or wires in module \CSR..
+Finding unused cells or wires in module \Cache..
+Finding unused cells or wires in module \Control..
+Finding unused cells or wires in module \Core..
+Finding unused cells or wires in module \Datapath..
+Finding unused cells or wires in module \ImmGenWire..
+Finding unused cells or wires in module \MemArbiter..
+Finding unused cells or wires in module \RegFile..
+Finding unused cells or wires in module \Tile..
+Removed 0 unused cells and 55 unused wires.
+<suppressed ~5 debug messages>
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALUArea.
+Optimizing module BrCondArea.
+Optimizing module CSR.
+Optimizing module Cache.
+Optimizing module Control.
+Optimizing module Core.
+Optimizing module Datapath.
+Optimizing module ImmGenWire.
+Optimizing module MemArbiter.
+Optimizing module RegFile.
+Optimizing module Tile.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALUArea'.
+Finding identical cells in module `\BrCondArea'.
+Finding identical cells in module `\CSR'.
+Finding identical cells in module `\Cache'.
+Finding identical cells in module `\Control'.
+Finding identical cells in module `\Core'.
+Finding identical cells in module `\Datapath'.
+Finding identical cells in module `\ImmGenWire'.
+Finding identical cells in module `\MemArbiter'.
+Finding identical cells in module `\RegFile'.
+Finding identical cells in module `\Tile'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALUArea..
+Finding unused cells or wires in module \BrCondArea..
+Finding unused cells or wires in module \CSR..
+Finding unused cells or wires in module \Cache..
+Finding unused cells or wires in module \Control..
+Finding unused cells or wires in module \Core..
+Finding unused cells or wires in module \Datapath..
+Finding unused cells or wires in module \ImmGenWire..
+Finding unused cells or wires in module \MemArbiter..
+Finding unused cells or wires in module \RegFile..
+Finding unused cells or wires in module \Tile..
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== ALUArea ===
+
+   Number of wires:                131
+   Number of wire bits:           3211
+   Number of public wires:         131
+   Number of public wire bits:    3211
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 62
+     $add                            1
+     $and                           20
+     $eq                            11
+     $logic_not                      1
+     $mux                           12
+     $or                            14
+     $sshr                           1
+     $sub                            1
+     $xor                            1
+
+=== BrCondArea ===
+
+   Number of wires:                 34
+   Number of wire bits:            193
+   Number of public wires:          34
+   Number of public wire bits:     193
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 25
+     $and                            6
+     $eq                             7
+     $mux                            2
+     $not                            3
+     $or                             5
+     $reduce_bool                    1
+     $sub                            1
+
+=== CSR ===
+
+   Number of wires:                557
+   Number of wire bits:          10123
+   Number of public wires:         298
+   Number of public wire bits:    3497
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                485
+     $add                            8
+     $and                           15
+     $dff                           21
+     $eq                            59
+     $le                             1
+     $logic_not                      4
+     $mux                          317
+     $ne                             1
+     $not                           11
+     $or                            45
+     $reduce_bool                    3
+
+=== Cache ===
+
+   Number of wires:                454
+   Number of wire bits:           8567
+   Number of public wires:         332
+   Number of public wire bits:    6315
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                263
+     $add                            2
+     $and                           32
+     $dff                           30
+     $eq                            13
+     $logic_not                      1
+     $mem                           17
+     $mux                          147
+     $not                            6
+     $or                             9
+     $reduce_bool                    2
+     $shl                            2
+     $shr                            2
+
+=== Control ===
+
+   Number of wires:                557
+   Number of wire bits:           1197
+   Number of public wires:         557
+   Number of public wire bits:    1197
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                543
+     $and                            4
+     $eq                            49
+     $mux                          490
+
+=== Core ===
+
+   Number of wires:                 76
+   Number of wire bits:            998
+   Number of public wires:          76
+   Number of public wire bits:     998
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     Control                         1
+     Datapath                        1
+
+=== Datapath ===
+
+   Number of wires:                242
+   Number of wire bits:           4113
+   Number of public wires:         214
+   Number of public wire bits:    3635
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                121
+     $add                            2
+     $and                           11
+     $dff                           15
+     $eq                            16
+     $logic_not                      1
+     $mux                           50
+     $not                            4
+     $or                             9
+     $reduce_bool                    4
+     $shl                            3
+     $shr                            1
+     ALUArea                         1
+     BrCondArea                      1
+     CSR                             1
+     ImmGenWire                      1
+     RegFile                         1
+
+=== ImmGenWire ===
+
+   Number of wires:                 47
+   Number of wire bits:            593
+   Number of public wires:          47
+   Number of public wire bits:     593
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 13
+     $and                            1
+     $eq                             6
+     $mux                            6
+
+=== MemArbiter ===
+
+   Number of wires:                 90
+   Number of wire bits:            617
+   Number of public wires:          78
+   Number of public wire bits:     581
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 50
+     $and                           23
+     $dff                            1
+     $eq                             8
+     $logic_not                      1
+     $mux                           13
+     $not                            2
+     $or                             2
+
+=== RegFile ===
+
+   Number of wires:                 25
+   Number of wire bits:            363
+   Number of public wires:          22
+   Number of public wire bits:     294
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 10
+     $and                            1
+     $mem                            1
+     $mux                            5
+     $reduce_bool                    3
+
+=== Tile ===
+
+   Number of wires:                198
+   Number of wire bits:           2273
+   Number of public wires:         175
+   Number of public wire bits:    2250
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 35
+     $anyconst                       3
+     $assert                         1
+     $assume                         2
+     $dff                            5
+     $eq                             6
+     $logic_and                      3
+     $logic_not                      4
+     $logic_or                       5
+     $ne                             2
+     Cache                           2
+     Core                            1
+     MemArbiter                      1
+
+=== design hierarchy ===
+
+   Tile                              1
+     Cache                           2
+     Core                            1
+       Control                       1
+       Datapath                      1
+         ALUArea                     1
+         BrCondArea                  1
+         CSR                         1
+         ImmGenWire                  1
+         RegFile                     1
+     MemArbiter                      1
+
+   Number of wires:               2865
+   Number of wire bits:          40815
+   Number of public wires:        2296
+   Number of public wire bits:   29079
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1861
+     $add                           15
+     $and                          145
+     $anyconst                       3
+     $assert                         1
+     $assume                         2
+     $dff                          102
+     $eq                           188
+     $le                             1
+     $logic_and                      3
+     $logic_not                     13
+     $logic_or                       5
+     $mem                           35
+     $mux                         1189
+     $ne                             3
+     $not                           32
+     $or                            93
+     $reduce_bool                   15
+     $shl                            7
+     $shr                            5
+     $sshr                           1
+     $sub                            2
+     $xor                            1
+
+2.13. Executing CHECK pass (checking for obvious problems).
+Checking module ALUArea...
+Checking module BrCondArea...
+Checking module CSR...
+Checking module Cache...
+Checking module Control...
+Checking module Core...
+Checking module Datapath...
+Checking module ImmGenWire...
+Checking module MemArbiter...
+Checking module RegFile...
+Checking module Tile...
+Found and reported 0 problems.
+
+3. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+4. Executing ASYNC2SYNC pass.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALUArea..
+Finding unused cells or wires in module \BrCondArea..
+Finding unused cells or wires in module \CSR..
+Finding unused cells or wires in module \Cache..
+Finding unused cells or wires in module \Control..
+Finding unused cells or wires in module \Core..
+Finding unused cells or wires in module \Datapath..
+Finding unused cells or wires in module \ImmGenWire..
+Finding unused cells or wires in module \MemArbiter..
+Finding unused cells or wires in module \RegFile..
+Finding unused cells or wires in module \Tile..
+Removed 2 unused cells and 2 unused wires.
+<suppressed ~3 debug messages>
+
+6. Executing SETUNDEF pass (replace undef values with defined constants).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALUArea.
+Optimizing module BrCondArea.
+Optimizing module CSR.
+Optimizing module Cache.
+Optimizing module Control.
+Optimizing module Core.
+Optimizing module Datapath.
+Optimizing module ImmGenWire.
+Optimizing module MemArbiter.
+Optimizing module RegFile.
+Optimizing module Tile.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALUArea'.
+Finding identical cells in module `\BrCondArea'.
+Finding identical cells in module `\CSR'.
+Finding identical cells in module `\Cache'.
+Finding identical cells in module `\Control'.
+Finding identical cells in module `\Core'.
+Finding identical cells in module `\Datapath'.
+Finding identical cells in module `\ImmGenWire'.
+Finding identical cells in module `\MemArbiter'.
+Finding identical cells in module `\RegFile'.
+Finding identical cells in module `\Tile'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$2963 ($dff) from module CSR (D = $procmux$1939_Y, Q = \mtohost, rval = 0).
+Adding EN signal on $auto$opt_dff.cc:702:run$3303 ($sdff) from module CSR (D = \wdata, Q = \mtohost).
+Adding EN signal on $procdff$2962 ($dff) from module CSR (D = $procmux$1980_Y, Q = \mbadaddr).
+Adding EN signal on $procdff$2961 ($dff) from module CSR (D = $procmux$2007_Y, Q = \mcause).
+Adding SRST signal on $auto$opt_dff.cc:764:run$3390 ($dffe) from module CSR (D = $procmux$2004_Y [31:4], Q = \mcause [31:4], rval = 28'0000000000000000000000000000).
+Adding EN signal on $procdff$2960 ($dff) from module CSR (D = \_GEN_218 [31:0], Q = \mepc).
+Adding SRST signal on $auto$opt_dff.cc:764:run$3416 ($dffe) from module CSR (D = \_GEN_209 [1:0], Q = \mepc [1:0], rval = 2'00).
+Adding EN signal on $procdff$2959 ($dff) from module CSR (D = \wdata, Q = \mscratch).
+Adding EN signal on $procdff$2958 ($dff) from module CSR (D = \wdata, Q = \mtimecmp).
+Adding SRST signal on $procdff$2957 ($dff) from module CSR (D = $procmux$2083_Y, Q = \MSIE, rval = 1'0).
+Adding EN signal on $auto$opt_dff.cc:702:run$3458 ($sdff) from module CSR (D = \wdata [3], Q = \MSIE).
+Adding SRST signal on $procdff$2956 ($dff) from module CSR (D = $procmux$2098_Y, Q = \MSIP, rval = 1'0).
+Adding EN signal on $auto$opt_dff.cc:702:run$3472 ($sdff) from module CSR (D = \wdata [3], Q = \MSIP).
+Adding SRST signal on $procdff$2955 ($dff) from module CSR (D = $procmux$2115_Y, Q = \MTIE, rval = 1'0).
+Adding EN signal on $auto$opt_dff.cc:702:run$3484 ($sdff) from module CSR (D = \wdata [7], Q = \MTIE).
+Adding SRST signal on $procdff$2954 ($dff) from module CSR (D = $procmux$2130_Y, Q = \MTIP, rval = 1'0).
+Adding EN signal on $auto$opt_dff.cc:702:run$3498 ($sdff) from module CSR (D = \wdata [7], Q = \MTIP).
+Adding SRST signal on $procdff$2953 ($dff) from module CSR (D = $procmux$2145_Y, Q = \IE1, rval = 1'0).
+Adding EN signal on $auto$opt_dff.cc:702:run$3510 ($sdff) from module CSR (D = $procmux$2143_Y, Q = \IE1).
+Adding SRST signal on $procdff$2952 ($dff) from module CSR (D = $procmux$2160_Y, Q = \IE, rval = 1'0).
+Adding EN signal on $auto$opt_dff.cc:702:run$3520 ($sdff) from module CSR (D = $procmux$2158_Y, Q = \IE).
+Adding SRST signal on $procdff$2951 ($dff) from module CSR (D = $procmux$2175_Y, Q = \PRV1, rval = 2'11).
+Adding EN signal on $auto$opt_dff.cc:702:run$3530 ($sdff) from module CSR (D = $procmux$2173_Y, Q = \PRV1).
+Adding SRST signal on $procdff$2950 ($dff) from module CSR (D = $procmux$2190_Y, Q = \PRV, rval = 2'11).
+Adding EN signal on $auto$opt_dff.cc:702:run$3540 ($sdff) from module CSR (D = $procmux$2188_Y, Q = \PRV).
+Adding SRST signal on $procdff$2949 ($dff) from module CSR (D = $procmux$2276_Y, Q = \instreth, rval = 0).
+Adding SRST signal on $procdff$2948 ($dff) from module CSR (D = $procmux$2353_Y, Q = \instret, rval = 0).
+Adding SRST signal on $procdff$2947 ($dff) from module CSR (D = $procmux$2433_Y, Q = \cycleh, rval = 0).
+Adding SRST signal on $procdff$2946 ($dff) from module CSR (D = $procmux$1757_Y, Q = \cycle, rval = 0).
+Adding SRST signal on $procdff$2945 ($dff) from module CSR (D = $procmux$2525_Y, Q = \timeh, rval = 0).
+Adding SRST signal on $procdff$2944 ($dff) from module CSR (D = $procmux$1832_Y, Q = \time$, rval = 0).
+Adding EN signal on $procdff$3012 ($dff) from module Cache (D = \io_nasti_r_bits_data, Q = \refill_buf_1).
+Adding EN signal on $procdff$3011 ($dff) from module Cache (D = \io_nasti_r_bits_data, Q = \refill_buf_0).
+Adding SRST signal on $procdff$3007 ($dff) from module Cache (D = $procmux$2787_Y, Q = \value_1, rval = 1'0).
+Adding EN signal on $auto$opt_dff.cc:702:run$3564 ($sdff) from module Cache (D = \_T_126, Q = \value_1).
+Adding SRST signal on $procdff$3006 ($dff) from module Cache (D = $procmux$2792_Y, Q = \value, rval = 1'0).
+Adding EN signal on $auto$opt_dff.cc:702:run$3566 ($sdff) from module Cache (D = \_T_118, Q = \value).
+Adding EN signal on $procdff$3005 ($dff) from module Cache (D = \io_cpu_req_bits_mask, Q = \cpu_mask).
+Adding EN signal on $procdff$3004 ($dff) from module Cache (D = \io_cpu_req_bits_data, Q = \cpu_data).
+Adding EN signal on $procdff$3003 ($dff) from module Cache (D = \io_cpu_req_bits_addr, Q = \addr_reg).
+Adding EN signal on $procdff$3002 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \dataMem_3_3__T_210_addr_pipe_0).
+Adding EN signal on $procdff$3001 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \dataMem_3_2__T_210_addr_pipe_0).
+Adding EN signal on $procdff$3000 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \dataMem_3_1__T_210_addr_pipe_0).
+Adding EN signal on $procdff$2999 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \dataMem_3_0__T_210_addr_pipe_0).
+Adding EN signal on $procdff$2998 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \dataMem_2_3__T_190_addr_pipe_0).
+Adding EN signal on $procdff$2997 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \dataMem_2_2__T_190_addr_pipe_0).
+Adding EN signal on $procdff$2996 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \dataMem_2_1__T_190_addr_pipe_0).
+Adding EN signal on $procdff$2995 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \dataMem_2_0__T_190_addr_pipe_0).
+Adding EN signal on $procdff$2994 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \dataMem_1_3__T_170_addr_pipe_0).
+Adding EN signal on $procdff$2993 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \dataMem_1_2__T_170_addr_pipe_0).
+Adding EN signal on $procdff$2992 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \dataMem_1_1__T_170_addr_pipe_0).
+Adding EN signal on $procdff$2991 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \dataMem_1_0__T_170_addr_pipe_0).
+Adding EN signal on $procdff$2990 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \dataMem_0_3__T_150_addr_pipe_0).
+Adding EN signal on $procdff$2989 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \dataMem_0_2__T_150_addr_pipe_0).
+Adding EN signal on $procdff$2988 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \dataMem_0_1__T_150_addr_pipe_0).
+Adding EN signal on $procdff$2987 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \dataMem_0_0__T_150_addr_pipe_0).
+Adding EN signal on $procdff$2986 ($dff) from module Cache (D = \io_cpu_req_bits_addr [11:4], Q = \metaMem_tag_rmeta_addr_pipe_0).
+Adding SRST signal on $procdff$2985 ($dff) from module Cache (D = $procmux$2840_Y, Q = \d, rval = 256'0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000).
+Adding EN signal on $auto$opt_dff.cc:702:run$3588 ($sdff) from module Cache (D = $procmux$2838_Y, Q = \d).
+Adding SRST signal on $procdff$2984 ($dff) from module Cache (D = $procmux$2845_Y, Q = \v, rval = 256'0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000).
+Adding EN signal on $auto$opt_dff.cc:702:run$3590 ($sdff) from module Cache (D = \_T_279, Q = \v).
+Adding SRST signal on $procdff$2983 ($dff) from module Cache (D = $procmux$2906_Y, Q = \state, rval = 3'000).
+Adding EN signal on $auto$opt_dff.cc:702:run$3592 ($sdff) from module Cache (D = $procmux$2906_Y, Q = \state).
+Adding SRST signal on $procdff$2982 ($dff) from module Datapath (D = \npc, Q = \pc, rval = 33'000000000000000000000000111111100).
+Adding EN signal on $auto$opt_dff.cc:702:run$3606 ($sdff) from module Datapath (D = \_T_174 [32], Q = \pc [32]).
+Adding SRST signal on $procdff$2981 ($dff) from module Datapath (D = $procmux$2555_Y, Q = \pc_check, rval = 1'0).
+Adding EN signal on $auto$opt_dff.cc:702:run$3614 ($sdff) from module Datapath (D = \_T_161, Q = \pc_check).
+Adding SRST signal on $procdff$2980 ($dff) from module Datapath (D = $procmux$2560_Y, Q = \illegal, rval = 1'0).
+Adding EN signal on $auto$opt_dff.cc:702:run$3616 ($sdff) from module Datapath (D = \io_ctrl_illegal, Q = \illegal).
+Adding SRST signal on $procdff$2979 ($dff) from module Datapath (D = $procmux$2565_Y, Q = \csr_cmd, rval = 3'000).
+Adding EN signal on $auto$opt_dff.cc:702:run$3618 ($sdff) from module Datapath (D = \io_ctrl_csr_cmd, Q = \csr_cmd).
+Adding SRST signal on $procdff$2978 ($dff) from module Datapath (D = $procmux$2570_Y, Q = \wb_en, rval = 1'0).
+Adding EN signal on $auto$opt_dff.cc:702:run$3620 ($sdff) from module Datapath (D = \io_ctrl_wb_en, Q = \wb_en).
+Adding EN signal on $procdff$2977 ($dff) from module Datapath (D = \io_ctrl_wb_sel, Q = \wb_sel).
+Adding SRST signal on $procdff$2976 ($dff) from module Datapath (D = $procmux$2579_Y, Q = \ld_type, rval = 3'000).
+Adding EN signal on $auto$opt_dff.cc:702:run$3627 ($sdff) from module Datapath (D = \io_ctrl_ld_type, Q = \ld_type).
+Adding SRST signal on $procdff$2975 ($dff) from module Datapath (D = $procmux$2584_Y, Q = \st_type, rval = 2'00).
+Adding EN signal on $auto$opt_dff.cc:702:run$3629 ($sdff) from module Datapath (D = \io_ctrl_st_type, Q = \st_type).
+Adding EN signal on $procdff$2974 ($dff) from module Datapath (D = $procmux$2593_Y, Q = \csr_in).
+Adding EN signal on $procdff$2973 ($dff) from module Datapath (D = \alu_io_out, Q = \ew_alu).
+Adding EN signal on $procdff$2972 ($dff) from module Datapath (D = \fe_pc, Q = \ew_pc).
+Adding SRST signal on $procdff$2971 ($dff) from module Datapath (D = $procmux$2609_Y, Q = \ew_inst, rval = 19).
+Adding EN signal on $auto$opt_dff.cc:702:run$3646 ($sdff) from module Datapath (D = \fe_inst, Q = \ew_inst).
+Adding EN signal on $procdff$2970 ($dff) from module Datapath (D = \pc, Q = \fe_pc).
+Adding SRST signal on $procdff$2969 ($dff) from module Datapath (D = $procmux$2619_Y, Q = \fe_inst, rval = 19).
+Adding EN signal on $auto$opt_dff.cc:702:run$3653 ($sdff) from module Datapath (D = \inst, Q = \fe_inst).
+Adding SRST signal on $procdff$3064 ($dff) from module MemArbiter (D = $procmux$2939_Y, Q = \state, rval = 3'000).
+Adding EN signal on $auto$opt_dff.cc:702:run$3655 ($sdff) from module MemArbiter (D = $procmux$2939_Y, Q = \state).
+
+7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALUArea..
+Finding unused cells or wires in module \BrCondArea..
+Finding unused cells or wires in module \CSR..
+Finding unused cells or wires in module \Cache..
+Finding unused cells or wires in module \Control..
+Finding unused cells or wires in module \Core..
+Finding unused cells or wires in module \Datapath..
+Finding unused cells or wires in module \ImmGenWire..
+Finding unused cells or wires in module \MemArbiter..
+Finding unused cells or wires in module \RegFile..
+Finding unused cells or wires in module \Tile..
+Removed 151 unused cells and 151 unused wires.
+<suppressed ~156 debug messages>
+
+7.5. Rerunning OPT passes. (Removed registers in this run.)
+
+7.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALUArea.
+Optimizing module BrCondArea.
+Optimizing module CSR.
+<suppressed ~7 debug messages>
+Optimizing module Cache.
+<suppressed ~1 debug messages>
+Optimizing module Control.
+Optimizing module Core.
+Optimizing module Datapath.
+Optimizing module ImmGenWire.
+Optimizing module MemArbiter.
+<suppressed ~1 debug messages>
+Optimizing module RegFile.
+Optimizing module Tile.
+
+7.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALUArea'.
+Finding identical cells in module `\BrCondArea'.
+Finding identical cells in module `\CSR'.
+<suppressed ~225 debug messages>
+Finding identical cells in module `\Cache'.
+<suppressed ~48 debug messages>
+Finding identical cells in module `\Control'.
+Finding identical cells in module `\Core'.
+Finding identical cells in module `\Datapath'.
+<suppressed ~27 debug messages>
+Finding identical cells in module `\ImmGenWire'.
+Finding identical cells in module `\MemArbiter'.
+Finding identical cells in module `\RegFile'.
+Finding identical cells in module `\Tile'.
+Removed a total of 100 cells.
+
+7.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALUArea..
+Finding unused cells or wires in module \BrCondArea..
+Finding unused cells or wires in module \CSR..
+Finding unused cells or wires in module \Cache..
+Finding unused cells or wires in module \Control..
+Finding unused cells or wires in module \Core..
+Finding unused cells or wires in module \Datapath..
+Finding unused cells or wires in module \ImmGenWire..
+Finding unused cells or wires in module \MemArbiter..
+Finding unused cells or wires in module \RegFile..
+Finding unused cells or wires in module \Tile..
+Removed 0 unused cells and 84 unused wires.
+<suppressed ~2 debug messages>
+
+7.10. Finished fast OPT passes.
+
+8. Executing CHECK pass (checking for obvious problems).
+Checking module ALUArea...
+Checking module BrCondArea...
+Checking module CSR...
+Checking module Cache...
+Checking module Control...
+Checking module Core...
+Checking module Datapath...
+Checking module ImmGenWire...
+Checking module MemArbiter...
+Checking module RegFile...
+Checking module Tile...
+Found and reported 0 problems.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \Tile
+Used module:     \MemArbiter
+Used module:     \Core
+Used module:         \Control
+Used module:         \Datapath
+Used module:             \ALUArea
+Used module:             \BrCondArea
+Used module:             \CSR
+Used module:             \ImmGenWire
+Used module:             \RegFile
+Used module:     \Cache
+
+9.2. Analyzing design hierarchy..
+Top module:  \Tile
+Used module:     \MemArbiter
+Used module:     \Core
+Used module:         \Control
+Used module:         \Datapath
+Used module:             \ALUArea
+Used module:             \BrCondArea
+Used module:             \CSR
+Used module:             \ImmGenWire
+Used module:             \RegFile
+Used module:     \Cache
+Removed 0 unused modules.
+Module Tile directly or indirectly contains formal properties -> setting "keep" attribute.
+
+10. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 4f5a276be2, CPU: user 4.37s system 0.09s, MEM: 41.44 MB peak
+Yosys 0.9+4052 (git sha1 a58571d0, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Time spent: 26% 8x opt_clean (1 sec), 25% 3x check (1 sec), ...

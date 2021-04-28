@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites disabled="0" errors="0" failures="0" tests="1" time="152">
+<testsuite disabled="0" errors="0" failures="0" name="Tile" skipped="0" tests="1" time="152">
+<properties>
+<property name="os" value="posix"/>
+</properties>
+<testcase classname="Tile" name="taskTile" status="PASS" time="152">
+<system-out>SBY 16:30:20 [Tile_taskTile] Removing directory 'Tile_taskTile'.
+SBY 16:30:20 [Tile_taskTile] Copy 'Tile.v' to 'Tile_taskTile/src/Tile.v'.
+SBY 16:30:20 [Tile_taskTile] engine_0: smtbmc z3
+SBY 16:30:20 [Tile_taskTile] base: starting process &quot;cd Tile_taskTile/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 16:30:25 [Tile_taskTile] base: finished (returncode=0)
+SBY 16:30:25 [Tile_taskTile] smt2: starting process &quot;cd Tile_taskTile/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 16:30:25 [Tile_taskTile] smt2: finished (returncode=0)
+SBY 16:30:25 [Tile_taskTile] engine_0: starting process &quot;cd Tile_taskTile; yosys-smtbmc -s z3 --presat --noprogress -t 5  --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 16:30:26 [Tile_taskTile] engine_0: ##   0:00:00  Solver: z3
+SBY 16:30:26 [Tile_taskTile] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY 16:30:26 [Tile_taskTile] engine_0: ##   0:00:00  Checking assertions in step 0..
+SBY 16:30:26 [Tile_taskTile] engine_0: ##   0:00:00  Checking assumptions in step 1..
+SBY 16:30:28 [Tile_taskTile] engine_0: ##   0:00:02  Checking assertions in step 1..
+SBY 16:30:28 [Tile_taskTile] engine_0: ##   0:00:02  Checking assumptions in step 2..
+SBY 16:30:33 [Tile_taskTile] engine_0: ##   0:00:07  Checking assertions in step 2..
+SBY 16:30:33 [Tile_taskTile] engine_0: ##   0:00:07  Checking assumptions in step 3..
+SBY 16:30:51 [Tile_taskTile] engine_0: ##   0:00:24  Checking assertions in step 3..
+SBY 16:30:51 [Tile_taskTile] engine_0: ##   0:00:24  Checking assumptions in step 4..
+SBY 16:31:51 [Tile_taskTile] engine_0: ##   0:01:24  waiting for solver (1 minute)
+SBY 16:32:52 [Tile_taskTile] engine_0: ##   0:02:26  Checking assertions in step 4..
+SBY 16:32:53 [Tile_taskTile] engine_0: ##   0:02:27  Status: passed
+SBY 16:32:53 [Tile_taskTile] engine_0: finished (returncode=0)
+SBY 16:32:53 [Tile_taskTile] engine_0: Status returned by engine: pass
+SBY 16:32:53 [Tile_taskTile] summary: Elapsed clock time [H:MM:SS (secs)]: 0:02:32 (152)
+SBY 16:32:53 [Tile_taskTile] summary: Elapsed process time [H:MM:SS (secs)]: 0:02:32 (152)
+SBY 16:32:53 [Tile_taskTile] summary: engine_0 (smtbmc z3) returned pass
+SBY 16:32:53 [Tile_taskTile] DONE (PASS, rc=0)
+</system-out></testcase></testsuite></testsuites>
