@@ -1,0 +1,16 @@
+[options]
+
+mode bmc
+depth 2
+
+[engines]
+smtbmc z3
+
+[script]
+read -formal __lft__corr.v
+
+prep -top Tile
+
+
+[files]
+__lft__corr.v

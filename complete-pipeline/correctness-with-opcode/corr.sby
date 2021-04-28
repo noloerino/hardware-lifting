@@ -1,0 +1,31 @@
+[tasks]
+taskBMC task_bmc task_corr
+taskProve task_prove task_corr
+
+[options]
+task_prove: 
+mode prove
+--
+
+task_bmc:
+mode bmc
+depth 2
+--
+
+[engines]
+task_bmc: 
+smtbmc z3
+--
+
+[script]
+task_corr:
+read -formal __lft__corr.v
+
+prep -top Tile
+--
+
+
+[files]
+task_corr:
+__lft__corr.v
+--
