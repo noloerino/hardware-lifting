@@ -2754,6 +2754,8 @@ module Datapath(
   input  [2:0]  io_ctrl_csr_cmd,
   input         io_ctrl_illegal,
   
+  output [32:0] io__lft__dpath__inst,
+  output [32:0] io__lft__dpath__fe_inst,
   output [32:0] io__lft__dpath__pc,
   output [32:0] io__lft__dpath__fe_pc,
   output [32:0] io__lft__dpath__ew_pc,
@@ -3210,6 +3212,8 @@ module Datapath(
   assign brCond_io_rs1 = rs1;
   assign brCond_io_rs2 = rs2;
   assign brCond_io_br_type = io_ctrl_br_type;
+  assign io__lft__dpath__inst = inst;
+  assign io__lft__dpath__fe_inst = fe_inst;
   assign io__lft__dpath__pc = pc;
   assign io__lft__dpath__fe_pc = fe_pc;
   assign io__lft__dpath__ew_pc = ew_pc;
@@ -4566,6 +4570,8 @@ module Core(
   output [3:0]  io_dcache_req_bits_mask,
   input         io_dcache_resp_valid,
   input  [31:0] io_dcache_resp_bits_data,
+  output [32:0] io__lft__core__inst,
+  output [32:0] io__lft__core__fe_inst,
   output [32:0] io__lft__core__pc,
   output [32:0] io__lft__core__fe_pc,
   output [32:0] io__lft__core__ew_pc,
@@ -4656,6 +4662,8 @@ module Core(
     .io_ctrl_wb_en(dpath_io_ctrl_wb_en),
     .io_ctrl_csr_cmd(dpath_io_ctrl_csr_cmd),
     .io_ctrl_illegal(dpath_io_ctrl_illegal),
+    .io__lft__dpath__inst(io__lft__core__inst),
+    .io__lft__dpath__fe_inst(io__lft__core__fe_inst),
     .io__lft__dpath__pc(io__lft__core__pc),
     .io__lft__dpath__fe_pc(io__lft__core__fe_pc),
     .io__lft__dpath__ew_pc(io__lft__core__ew_pc),
@@ -6313,6 +6321,8 @@ module Tile(
   wire [63:0] arb_io_nasti_r_bits_data; // @[Tile.scala 109:22]
   wire  arb_io_nasti_r_bits_last; // @[Tile.scala 109:22]
   
+  wire [32:0] __lft__tile__inst;
+  wire [32:0] __lft__tile__fe_inst;
   wire [32:0] __lft__tile__pc;
   wire [32:0] __lft__tile__fe_pc;
   wire [32:0] __lft__tile__ew_pc;
@@ -6345,6 +6355,8 @@ module Tile(
     .io_dcache_req_bits_mask(core_io_dcache_req_bits_mask),
     .io_dcache_resp_valid(core_io_dcache_resp_valid),
     .io_dcache_resp_bits_data(core_io_dcache_resp_bits_data),
+    .io__lft__core__inst(__lft__tile__inst),
+    .io__lft__core__fe_inst(__lft__tile__fe_inst),
     .io__lft__core__pc(__lft__tile__pc),
     .io__lft__core__fe_pc(__lft__tile__fe_pc),
     .io__lft__core__ew_pc(__lft__tile__ew_pc),
@@ -6547,8 +6559,8 @@ module Tile(
     Signals available to yosys: to add more propagate through
     the modules
   */
-  // .io__lft__core__pc(__lft__tile__pc),
-  // .io__lft__core__fe_pc(__lft__tile__fe_pc),
+  // .io__lft__core__ew_pc(__lft__tile__pc),
+  // .io__lft__core__ew_pc(__lft__tile__fe_pc),
   // .io__lft__core__ew_pc(__lft__tile__ew_pc),
   // .io__lft__core__regFile_io_waddr(__lft__tile__regFile_io_waddr),
   // .io__lft__core__regFile_io_wdata(__lft__tile__regFile_io_wdata),
@@ -6561,54 +6573,6 @@ module Tile(
   // .io__lft__core__alu_io_alu_op(__lft__tile__alu_io_alu_op),
   // .io__lft__core__alu_io_out(__lft__tile__alu_io_out),
   // .io__lft__core__alu_io_sum(__lft__tile__alu_io_sum)
-
-  // `ifdef FORMAL
-
-  // (* anyconst *) reg [32:0] __lft__past_pc;
-  // (* anyconst *) reg [31:0] __lft__shadow__reg1;
-  // (* anyconst *) reg [31:0] __lft__shadow__reg2;
-  // (* anyconst *) reg [5:0] __lft__shadow__opcode;
-
-  // reg __lft__seen;
-  // reg __lft__initial;
-  // reg [2:0] __lft__counter;
-
-
-  // initial begin
-  //   __lft__initial <= 1'b0;
-  //   __lft__counter <= 3'b000;
-  //   __lft__seen <= 1'b0;
-  // end
-
-
-  // always @(posedge clock) begin
-
-  //   // assume(past_pc > 5);
-  //   // assume(past_pc < 10);
-
-  //   if (__lft__tile__fe_pc == __lft__past_pc) begin
-  //     __lft__seen <= 1;
-  //   end
-
-  //   if (__lft__counter != 3'b110) begin
-  //     __lft__counter <= __lft__counter + 3'b001;
-  //   end
-
-  //   // assume (__lft__tile__alu_io_alu_op == 1);
-  //   assume ((__lft__tile__fe_pc != past_pc) ||
-  //     ((__lft__tile__alu_io_alu_op == 1) &&
-  //     (__lft__shadow__reg1 == __lft__tile__regFile_io_rdata1) &&
-  //     (__lft__shadow__reg2 == __lft__tile__regFile_io_rdata2))
-  //     );
-
-
-  //   assert (
-  //     (__lft__seen < 3'b011) || (__lft__past_pc != __lft__tile__ew_pc) ||
-  //     __lft__shadow__reg1 + __lft__shadow__reg2 == __lft__tile__alu_io_out);
-  // end
-  // `endif
-
-
 
   `ifdef FORMAL
   reg [3:0] counter = 0; // Used for debugging
@@ -6623,7 +6587,9 @@ module Tile(
 
   // Checks that it's an add not to x0
   wire [31:0] fe_inst = __lft__tile__fe_inst;
-  wire is_add = fe_inst[31:25] == 7'b0100000 &&
+  `define SUB_F7 (7'b0100000)
+  `define ADD_F7 (7'b0000000)
+  wire is_add = fe_inst[31:25] == `ADD_F7 &&
     fe_inst[14:12] == 3'b0 &&
     fe_inst[6:0] == 7'b0110011 &&
     fe_inst[11:7] != 7'b0
@@ -6632,10 +6598,25 @@ module Tile(
   (* anyconst *) reg [32:0] past_pc;
   (* anyconst *) reg [31:0] __lft__shadow__reg1;
   (* anyconst *) reg [31:0] __lft__shadow__reg2;
+  reg init = 1;
   always @(posedge clock) begin
-    assume(!(started) || (
+    // assume(reset == init);
+    init <= 0;
+    if (init) begin
+        assume(
+            __lft__tile__pc == 0 &&
+            __lft__tile__fe_pc == 0 &&
+            __lft__tile__ew_pc == 0
+        );
+    end
+    assume(
+      // reset == init &&
+      !reset &&
+      (past_pc != __lft__tile__fe_pc) ||
+      // !(started) || 
+      (
       is_add &&
-      past_pc == __lft__tile__fe_pc &&
+      // past_pc == __lft__tile__fe_pc &&
       (__lft__shadow__reg1 == __lft__tile__regFile_io_rdata1) &&
       (__lft__shadow__reg2 == __lft__tile__regFile_io_rdata2)
       )
@@ -6648,37 +6629,5 @@ module Tile(
     );
   end
   `endif
-
-
-
-  // `ifdef FORMAL
-  
-  // (* anyconst *) reg [32:0] past_pc;
-  // (* anyconst *) reg [31:0] __lft__shadow__reg1;
-  // (* anyconst *) reg [31:0] __lft__shadow__reg2;
-  // reg __lft__seen;
-  // initial __lft__seen = 1'b0;
-
-  // always @(posedge clock) begin
-  //   assume(past_pc > 5);
-  //   assume(past_pc < 10);
-
-  //   if (__lft__tile__fe_pc == past_pc) 
-  //     __lft__seen <= 1;
-  //   else
-  //     __lft__seen <= 0;
-
-  //   assume (!(__lft__tile__fe_pc == past_pc) |
-  //     (
-  //       // (__lft__tile__alu_io_alu_op == 0) &
-  //     (__lft__shadow__reg1 == __lft__tile__regFile_io_rdata1) &
-  //     (__lft__shadow__reg2 == __lft__tile__regFile_io_rdata2))
-  //     );
-
-  //   assert (! (__lft__seen) | !(__lft__tile__ew_pc == past_pc) |
-  //     !(__lft__tile__alu_io_alu_op == 0) |
-  //     (__lft__tile__alu_io_A + __lft__tile__alu_io_B == __lft__tile__alu_io_out));
-  // end
-  // `endif
 
 endmodule
