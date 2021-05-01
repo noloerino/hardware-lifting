@@ -1,0 +1,16 @@
+# running in Tile_taskAlu/src/
+
+
+read -formal Tile_alu.v
+prep -top Tile
+
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -cover -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il
