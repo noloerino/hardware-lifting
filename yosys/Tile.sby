@@ -10,7 +10,7 @@ mode prove
 
 task_bmc:
 mode bmc
-depth 5
+depth 10
 --
 
 [engines]
@@ -20,7 +20,7 @@ smtbmc z3
 
 [script]
 task_tile:
-read -formal Tile.v
+read -formal Tile.sv
 prep -top Tile
 --
 
@@ -31,5 +31,5 @@ prep -top Tile
 
 [files]
 task_tile:
-Tile.v
+Tile.sv
 --
