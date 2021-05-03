@@ -23,7 +23,9 @@ operands = {}
 
 def get_expr_from_smt(smt):
 	if isinstance(smt, list):
-		assert(len(smt) == 3)
+		if len(smt) != 3:
+			return False
+
 		if smt[0] == '_':
 			return smt[1][2:]
 
@@ -42,15 +44,25 @@ def main(argv):
 
 	# mine the function and perform structural checks
 	astrepr = get_ast(function_norm)
-	assert len(astrepr) == 1
+	if len(astrepr) != 1:
+		print("false")
+		return False
+
 	astrepr = astrepr[0]
-	assert((astrepr[0] == 'define') and (astrepr[1] == '-') and (astrepr[2] == 'fun'))
+	if ((astrepr[0] != 'define') or (astrepr[1] != '-') or (astrepr[2] != 'fun')):
+		print("false")
+		return False
 
 	# check number of tokens from function
-	assert(len(astrepr) == 7)
+	if len(astrepr) != 7:
+		print("false")
+		return False
 
 	# check operands to the function and catch their order
-	assert(len(astrepr[4]) == 2)
+	if len(astrepr[4]) != 2:
+		print("false")
+		return False
+
 	operands[astrepr[4][0][0]] = '__lft__tile__alu_io_A'
 	operands[astrepr[4][1][0]] = '__lft__tile__alu_io_B'
 

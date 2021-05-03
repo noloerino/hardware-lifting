@@ -3,7 +3,9 @@ modelfile = "supporting/model.smt"
 # name of the I/O oracle binary that is supposed to be called
 oraclename = {
 	"add" : "./oracles/add-io",
-	"sub" : "./oracles/sub-io"
+	"sub" : "./oracles/sub-io",
+	"funcand" : "./oracles/and-io",
+	"funcor" : "./oracles/or-io"
 	}
 # can have many functions with different names
 # synthfunname = "add"

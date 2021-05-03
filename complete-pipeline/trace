@@ -1,0 +1,170 @@
+12:22 adwait@beluga:CS219/hardware-lifting/complete-pipeline $ delphi --cvc4 aluops.sl
+Expanding (corr-oracle _synthbool_add)
+Expanding corr-oracle
+Expanding (tuple)
+Expanding _synthbool_add
+Expanding (corr-oracle _synthbool_sub)
+Expanding corr-oracle
+Expanding (tuple)
+Expanding _synthbool_sub
+Expanding (=> (not correct) (= (add reg1 reg2) regD))
+Expanding (not correct)
+Expanding correct
+Expanding (= (add reg1 reg2) regD)
+Expanding (add reg1 reg2)
+Expanding add
+Expanding (tuple)
+Expanding reg1
+Expanding reg2
+Expanding regD
+Expanding (=> (not correct) (= (sub reg1 reg2) regD))
+Expanding (not correct)
+Expanding correct
+Expanding (= (sub reg1 reg2) regD)
+Expanding (sub reg1 reg2)
+Expanding sub
+Expanding (tuple)
+Expanding reg1
+Expanding reg2
+Expanding regD
+Start OGIS
+SYNTH iteration 1
+Solving query:
+(set-logic ALL)
+(synth-fun add (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(synth-fun sub (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(check-synth)
+
+No solution, increase program size to 2
+SYNTH iteration 2
+Solving query:
+(set-logic ALL)
+(synth-fun add (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(synth-fun sub (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(check-synth)
+
+No solution, increase program size to 3
+SYNTH iteration 3
+Solving query:
+(set-logic ALL)
+(synth-fun add (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(synth-fun sub (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(check-synth)
+
+No solution, increase program size to 4
+SYNTH iteration 4
+Solving query:
+(set-logic ALL)
+(synth-fun add (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(synth-fun sub (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(check-synth)
+
+No solution, increase program size to 5
+SYNTH iteration 5
+Solving query:
+(set-logic ALL)
+(synth-fun add (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(synth-fun sub (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(check-synth)
+
+No solution, increase program size to 6
+SYNTH iteration 6
+Solving query:
+(set-logic ALL)
+(synth-fun add (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(synth-fun sub (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(check-synth)
+
+No solution, increase program size to 7
+SYNTH iteration 7
+Solving query:
+(set-logic ALL)
+(synth-fun add (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(synth-fun sub (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(check-synth)
+
+No solution, increase program size to 8
+SYNTH iteration 8
+Solving query:
+(set-logic ALL)
+(synth-fun add (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(synth-fun sub (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(check-synth)
+
+No solution, increase program size to 9
+SYNTH iteration 9
+Solving query:
+(set-logic ALL)
+(synth-fun add (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(synth-fun sub (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(check-synth)
+
+No solution, increase program size to 10
+SYNTH iteration 10
+Solving query:
+(set-logic ALL)
+(synth-fun add (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(synth-fun sub (( parameter0 (_ BitVec 8))( parameter1 (_ BitVec 8)))
+ (_ BitVec 8)
+ )
+
+(check-synth)
+
+No solution,  reached max program size

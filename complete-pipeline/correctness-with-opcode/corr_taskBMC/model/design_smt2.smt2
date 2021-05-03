@@ -1262,7 +1262,7 @@
 (define-fun |CSR_n _T_103| ((state |CSR_s|)) (_ BitVec 4) (concat (|CSR#8| state) (concat (|CSR#7| state) (|CSR#6| state))))
 ; yosys-smt2-wire _T_102 3
 (define-fun |CSR_n _T_102| ((state |CSR_s|)) (_ BitVec 3) (concat (|CSR#8| state) (|CSR#7| state)))
-(define-fun |CSR#237| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (concat ((_ extract 31 2) (|CSR#97| state)) #b00) #b00000000000000000000000000000000)) ; { $auto$wreduce.cc:454:run$3064 [31:13] \_GEN_61 }
+(define-fun |CSR#237| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (concat ((_ extract 31 2) (|CSR#97| state)) #b00) #b00000000000000000000000000000000)) ; { $auto$wreduce.cc:454:run$3062 [31:13] \_GEN_61 }
 (define-fun |CSR#238| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) #b00000000000000000000000000000000 (|CSR#237| state))) ; \_GEN_73 [31:0]
 (define-fun |CSR#239| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) #b00000000000000000000000000000000 (|CSR#238| state))) ; \_GEN_86
 ; yosys-smt2-wire _GEN_86 32
@@ -1344,278 +1344,278 @@
 ; yosys-smt2-register IE 1
 ; yosys-smt2-wire IE 1
 (define-fun |CSR_n IE| ((state |CSR_s|)) Bool (= ((_ extract 0 0) (|CSR#6| state)) #b1))
-(define-fun |CSR#253| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#97| state) (|CSR#229| state))) ; $procmux$1670_Y
-(define-fun |CSR#254| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#229| state) (|CSR#253| state))) ; $procmux$1673_Y
-(define-fun |CSR#255| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#229| state) (|CSR#254| state))) ; $procmux$1676_Y
-(define-fun |CSR#256| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#229| state) (|CSR#255| state))) ; $procmux$1679_Y
-(define-fun |CSR#257| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#229| state) (|CSR#256| state))) ; $procmux$1682_Y
-(define-fun |CSR#258| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#229| state) (|CSR#257| state))) ; $procmux$1685_Y
-(define-fun |CSR#259| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#229| state) (|CSR#258| state))) ; $procmux$1688_Y
-(define-fun |CSR#260| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#229| state) (|CSR#259| state))) ; $procmux$1691_Y
-(define-fun |CSR#261| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#229| state) (|CSR#260| state))) ; $procmux$1694_Y
-(define-fun |CSR#262| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#229| state) (|CSR#261| state))) ; $procmux$1697_Y
-(define-fun |CSR#263| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#229| state) (|CSR#262| state))) ; $procmux$1700_Y
-(define-fun |CSR#264| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#229| state) (|CSR#263| state))) ; $procmux$1703_Y
-(define-fun |CSR#265| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#229| state) (|CSR#264| state))) ; $procmux$1706_Y
-(define-fun |CSR#266| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#265| state) (|CSR#229| state))) ; $procmux$1708_Y
-(define-fun |CSR#267| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#229| state) (|CSR#266| state))) ; $procmux$1711_Y
-(define-fun |CSR#268| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#229| state) (|CSR#267| state))) ; $procmux$1714_Y
-(define-fun |CSR#269| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#229| state) (|CSR#268| state))) ; $procmux$1716_Y
-(define-fun |CSR#270| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#269| state))) ; $auto$rtlil.cc:2224:Mux$3757
-(define-fun |CSR#271| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#193| state) (|CSR#97| state) (|CSR#241| state))) ; $procmux$2252_Y
-(define-fun |CSR#272| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#241| state) (|CSR#271| state))) ; $procmux$2255_Y
-(define-fun |CSR#273| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#241| state) (|CSR#272| state))) ; $procmux$2258_Y
-(define-fun |CSR#274| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#241| state) (|CSR#273| state))) ; $procmux$2261_Y
-(define-fun |CSR#275| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#241| state) (|CSR#274| state))) ; $procmux$2264_Y
-(define-fun |CSR#276| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#241| state) (|CSR#275| state))) ; $procmux$2267_Y
-(define-fun |CSR#277| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#241| state) (|CSR#276| state))) ; $procmux$2270_Y
-(define-fun |CSR#278| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#241| state) (|CSR#277| state))) ; $procmux$2273_Y
-(define-fun |CSR#279| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#241| state) (|CSR#278| state))) ; $procmux$2276_Y
-(define-fun |CSR#280| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#241| state) (|CSR#279| state))) ; $procmux$2279_Y
-(define-fun |CSR#281| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#241| state) (|CSR#280| state))) ; $procmux$2282_Y
-(define-fun |CSR#282| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#241| state) (|CSR#281| state))) ; $procmux$2285_Y
-(define-fun |CSR#283| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#241| state) (|CSR#282| state))) ; $procmux$2288_Y
-(define-fun |CSR#284| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#241| state) (|CSR#283| state))) ; $procmux$2293_Y
-(define-fun |CSR#285| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#241| state) (|CSR#284| state))) ; $procmux$2298_Y
-(define-fun |CSR#286| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#285| state) (|CSR#241| state))) ; $procmux$2300_Y
-(define-fun |CSR#287| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#241| state) (|CSR#286| state))) ; $procmux$2305_Y
-(define-fun |CSR#288| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#241| state) (|CSR#287| state))) ; $procmux$2310_Y
-(define-fun |CSR#289| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#241| state) (|CSR#288| state))) ; $procmux$2312_Y
-(define-fun |CSR#290| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#289| state))) ; $auto$rtlil.cc:2224:Mux$3761
-(define-fun |CSR#291| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#192| state) (|CSR#97| state) (|CSR#250| state))) ; $procmux$2329_Y
-(define-fun |CSR#292| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#193| state) (|CSR#250| state) (|CSR#291| state))) ; $procmux$2332_Y
-(define-fun |CSR#293| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#250| state) (|CSR#292| state))) ; $procmux$2335_Y
-(define-fun |CSR#294| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#250| state) (|CSR#293| state))) ; $procmux$2338_Y
-(define-fun |CSR#295| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#250| state) (|CSR#294| state))) ; $procmux$2341_Y
-(define-fun |CSR#296| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#250| state) (|CSR#295| state))) ; $procmux$2344_Y
-(define-fun |CSR#297| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#250| state) (|CSR#296| state))) ; $procmux$2347_Y
-(define-fun |CSR#298| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#250| state) (|CSR#297| state))) ; $procmux$2350_Y
-(define-fun |CSR#299| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#250| state) (|CSR#298| state))) ; $procmux$2353_Y
-(define-fun |CSR#300| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#250| state) (|CSR#299| state))) ; $procmux$2356_Y
-(define-fun |CSR#301| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#250| state) (|CSR#300| state))) ; $procmux$2359_Y
-(define-fun |CSR#302| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#250| state) (|CSR#301| state))) ; $procmux$2362_Y
-(define-fun |CSR#303| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#250| state) (|CSR#302| state))) ; $procmux$2365_Y
-(define-fun |CSR#304| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#250| state) (|CSR#303| state))) ; $procmux$2368_Y
-(define-fun |CSR#305| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#250| state) (|CSR#304| state))) ; $procmux$2373_Y
-(define-fun |CSR#306| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#250| state) (|CSR#305| state))) ; $procmux$2378_Y
-(define-fun |CSR#307| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#306| state) (|CSR#250| state))) ; $procmux$2380_Y
-(define-fun |CSR#308| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#250| state) (|CSR#307| state))) ; $procmux$2385_Y
-(define-fun |CSR#309| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#250| state) (|CSR#308| state))) ; $procmux$2390_Y
-(define-fun |CSR#310| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#250| state) (|CSR#309| state))) ; $procmux$2392_Y
-(define-fun |CSR#311| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#310| state))) ; $auto$rtlil.cc:2224:Mux$3759
-(define-fun |CSR#312| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#190| state) (|CSR#97| state) (|CSR#240| state))) ; $procmux$2166_Y
-(define-fun |CSR#313| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#191| state) (|CSR#240| state) (|CSR#312| state))) ; $procmux$2169_Y
-(define-fun |CSR#314| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#192| state) (|CSR#240| state) (|CSR#313| state))) ; $procmux$2172_Y
-(define-fun |CSR#315| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#193| state) (|CSR#240| state) (|CSR#314| state))) ; $procmux$2175_Y
-(define-fun |CSR#316| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#240| state) (|CSR#315| state))) ; $procmux$2178_Y
-(define-fun |CSR#317| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#240| state) (|CSR#316| state))) ; $procmux$2181_Y
-(define-fun |CSR#318| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#240| state) (|CSR#317| state))) ; $procmux$2184_Y
-(define-fun |CSR#319| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#240| state) (|CSR#318| state))) ; $procmux$2187_Y
-(define-fun |CSR#320| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#240| state) (|CSR#319| state))) ; $procmux$2190_Y
-(define-fun |CSR#321| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#240| state) (|CSR#320| state))) ; $procmux$2193_Y
-(define-fun |CSR#322| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#240| state) (|CSR#321| state))) ; $procmux$2196_Y
-(define-fun |CSR#323| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#240| state) (|CSR#322| state))) ; $procmux$2199_Y
-(define-fun |CSR#324| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#240| state) (|CSR#323| state))) ; $procmux$2202_Y
-(define-fun |CSR#325| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#240| state) (|CSR#324| state))) ; $procmux$2205_Y
-(define-fun |CSR#326| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#240| state) (|CSR#325| state))) ; $procmux$2208_Y
-(define-fun |CSR#327| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#240| state) (|CSR#326| state))) ; $procmux$2211_Y
-(define-fun |CSR#328| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#240| state) (|CSR#327| state))) ; $procmux$2216_Y
-(define-fun |CSR#329| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#240| state) (|CSR#328| state))) ; $procmux$2221_Y
-(define-fun |CSR#330| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#329| state) (|CSR#240| state))) ; $procmux$2223_Y
-(define-fun |CSR#331| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#240| state) (|CSR#330| state))) ; $procmux$2228_Y
-(define-fun |CSR#332| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#240| state) (|CSR#331| state))) ; $procmux$2233_Y
-(define-fun |CSR#333| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#240| state) (|CSR#332| state))) ; $procmux$2235_Y
-(define-fun |CSR#334| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#333| state))) ; $auto$rtlil.cc:2224:Mux$3763
-(define-fun |CSR#335| ((state |CSR_s|)) (_ BitVec 1) (bvnot (|CSR#183| state))) ; $auto$rtlil.cc:2127:Not$3272
-(define-fun |CSR#336| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#208| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3274
-(define-fun |CSR#337| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#207| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3276
-(define-fun |CSR#338| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (= ((_ extract 0 0) (|CSR#337| state)) #b1) (|CSR#206| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3424
-(define-fun |CSR#339| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#338| state) ((_ extract 7 7) (|CSR#97| state)) (|CSR#47| state))) ; $auto$rtlil.cc:2224:Mux$3727
-(define-fun |CSR#340| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#339| state))) ; $auto$rtlil.cc:2224:Mux$3729
-(define-fun |CSR#341| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#338| state) ((_ extract 3 3) (|CSR#97| state)) (|CSR#46| state))) ; $auto$rtlil.cc:2224:Mux$3735
-(define-fun |CSR#342| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#341| state))) ; $auto$rtlil.cc:2224:Mux$3737
-(define-fun |CSR#343| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#206| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3278
-(define-fun |CSR#344| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#205| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3280
-(define-fun |CSR#345| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#204| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3282
-(define-fun |CSR#346| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (= ((_ extract 0 0) (|CSR#337| state)) #b1) (= ((_ extract 0 0) (|CSR#343| state)) #b1) (= ((_ extract 0 0) (|CSR#344| state)) #b1) (= ((_ extract 0 0) (|CSR#345| state)) #b1) (|CSR#203| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3410
-(define-fun |CSR#347| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#346| state) (|CSR#97| state) (|CSR#43| state))) ; $auto$rtlil.cc:2224:Mux$3739
-(define-fun |CSR#348| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#97| state) (|CSR#235| state))) ; $procmux$1733_Y
-(define-fun |CSR#349| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#235| state) (|CSR#348| state))) ; $procmux$1736_Y
-(define-fun |CSR#350| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#235| state) (|CSR#349| state))) ; $procmux$1739_Y
-(define-fun |CSR#351| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#235| state) (|CSR#350| state))) ; $procmux$1742_Y
-(define-fun |CSR#352| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#235| state) (|CSR#351| state))) ; $procmux$1745_Y
-(define-fun |CSR#353| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#235| state) (|CSR#352| state))) ; $procmux$1748_Y
-(define-fun |CSR#354| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#235| state) (|CSR#353| state))) ; $procmux$1751_Y
-(define-fun |CSR#355| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#235| state) (|CSR#354| state))) ; $procmux$1754_Y
-(define-fun |CSR#356| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#235| state) (|CSR#355| state))) ; $procmux$1757_Y
-(define-fun |CSR#357| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#235| state) (|CSR#356| state))) ; $procmux$1760_Y
-(define-fun |CSR#358| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#97| state) (|CSR#357| state))) ; $procmux$1772_Y
-(define-fun |CSR#359| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#235| state) (|CSR#358| state))) ; $procmux$1775_Y
-(define-fun |CSR#360| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#235| state) (|CSR#359| state))) ; $procmux$1778_Y
-(define-fun |CSR#361| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#235| state) (|CSR#360| state))) ; $procmux$1781_Y
-(define-fun |CSR#362| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#361| state) (|CSR#235| state))) ; $procmux$1783_Y
-(define-fun |CSR#363| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#235| state) (|CSR#362| state))) ; $procmux$1786_Y
-(define-fun |CSR#364| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#235| state) (|CSR#363| state))) ; $procmux$1789_Y
-(define-fun |CSR#365| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#235| state) (|CSR#364| state))) ; $procmux$1791_Y
-(define-fun |CSR#366| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#365| state))) ; $auto$rtlil.cc:2224:Mux$3753
-(define-fun |CSR#367| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#191| state) (|CSR#97| state) (|CSR#251| state))) ; $procmux$2409_Y
-(define-fun |CSR#368| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#192| state) (|CSR#251| state) (|CSR#367| state))) ; $procmux$2412_Y
-(define-fun |CSR#369| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#193| state) (|CSR#251| state) (|CSR#368| state))) ; $procmux$2415_Y
-(define-fun |CSR#370| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#251| state) (|CSR#369| state))) ; $procmux$2418_Y
-(define-fun |CSR#371| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#251| state) (|CSR#370| state))) ; $procmux$2421_Y
-(define-fun |CSR#372| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#251| state) (|CSR#371| state))) ; $procmux$2424_Y
-(define-fun |CSR#373| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#251| state) (|CSR#372| state))) ; $procmux$2427_Y
-(define-fun |CSR#374| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#251| state) (|CSR#373| state))) ; $procmux$2430_Y
-(define-fun |CSR#375| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#251| state) (|CSR#374| state))) ; $procmux$2433_Y
-(define-fun |CSR#376| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#251| state) (|CSR#375| state))) ; $procmux$2436_Y
-(define-fun |CSR#377| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#251| state) (|CSR#376| state))) ; $procmux$2439_Y
-(define-fun |CSR#378| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#251| state) (|CSR#377| state))) ; $procmux$2442_Y
-(define-fun |CSR#379| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#97| state) (|CSR#378| state))) ; $procmux$2454_Y
-(define-fun |CSR#380| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#251| state) (|CSR#379| state))) ; $procmux$2457_Y
-(define-fun |CSR#381| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#251| state) (|CSR#380| state))) ; $procmux$2460_Y
-(define-fun |CSR#382| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#251| state) (|CSR#381| state))) ; $procmux$2465_Y
-(define-fun |CSR#383| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#251| state) (|CSR#382| state))) ; $procmux$2470_Y
-(define-fun |CSR#384| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#383| state) (|CSR#251| state))) ; $procmux$2472_Y
-(define-fun |CSR#385| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#251| state) (|CSR#384| state))) ; $procmux$2477_Y
-(define-fun |CSR#386| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#251| state) (|CSR#385| state))) ; $procmux$2482_Y
-(define-fun |CSR#387| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#251| state) (|CSR#386| state))) ; $procmux$2484_Y
-(define-fun |CSR#388| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#387| state))) ; $auto$rtlil.cc:2224:Mux$3755
-(define-fun |CSR#389| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#203| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3284
-(define-fun |CSR#390| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#202| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (= ((_ extract 0 0) (|CSR#337| state)) #b1) (= ((_ extract 0 0) (|CSR#343| state)) #b1) (= ((_ extract 0 0) (|CSR#344| state)) #b1) (= ((_ extract 0 0) (|CSR#345| state)) #b1) (= ((_ extract 0 0) (|CSR#389| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3391
-(define-fun |CSR#391| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#390| state) (|CSR#97| state) (|CSR#34| state))) ; $auto$rtlil.cc:2224:Mux$3741
-(define-fun |CSR#392| ((state |CSR_s|)) Bool (or  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#175| state)) #b1) (= ((_ extract 0 0) (|CSR#183| state)) #b1))) ; $auto$opt_dff.cc:217:make_patterns_logic$3288
-(define-fun |CSR#393| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state))))))))))) #b00000000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3349
-(define-fun |CSR#394| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state)))))))))) #b0000000011)) ; $auto$opt_dff.cc:217:make_patterns_logic$3296
-(define-fun |CSR#395| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state))))))))) #b100000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3298
-(define-fun |CSR#396| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state)))))))) #b10000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3300
-(define-fun |CSR#397| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state))))))) #b1000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3302
-(define-fun |CSR#398| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state)))))) #b100001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3304
-(define-fun |CSR#399| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state))))) #b10001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3306
-(define-fun |CSR#400| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state)))) #b1001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3308
-(define-fun |CSR#401| ((state |CSR_s|)) Bool (distinct (concat (|CSR#183| state) (|CSR#175| state)) #b10)) ; $auto$opt_dff.cc:217:make_patterns_logic$3310
-(define-fun |CSR#402| ((state |CSR_s|)) Bool (and  (|CSR#392| state) (|CSR#393| state) (|CSR#394| state) (|CSR#395| state) (|CSR#396| state) (|CSR#397| state) (|CSR#398| state) (|CSR#399| state) (|CSR#400| state) (|CSR#401| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3369
-(define-fun |CSR#403| ((state |CSR_s|)) (_ BitVec 30) (ite (|CSR#402| state) ((_ extract 31 2) (|CSR#249| state)) (|CSR#31| state))) ; $auto$rtlil.cc:2224:Mux$3743
-(define-fun |CSR#404| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) #b00 ((_ extract 1 0) (|CSR#248| state)))) ; $auto$rtlil.cc:2224:Mux$3765
-(define-fun |CSR#405| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#402| state) (|CSR#404| state) (|CSR#30| state))) ; $auto$rtlil.cc:2224:Mux$3767
-(define-fun |CSR#406| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#199| state) #b00000000000000000000000000000000)) ; $procmux$1943_Y
-(define-fun |CSR#407| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) #b00000000000000000000000000000000 (|CSR#406| state))) ; $procmux$1945_Y
-(define-fun |CSR#408| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) #b00000000000000000000000000000000 (|CSR#407| state))) ; $procmux$1947_Y
-(define-fun |CSR#409| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) #b00000000000000000000000000000000 (|CSR#408| state))) ; $procmux$1949_Y
-(define-fun |CSR#410| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) #b00000000000000000000000000000000 (|CSR#409| state))) ; $procmux$1951_Y
-(define-fun |CSR#411| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) #b00000000000000000000000000000000 (|CSR#410| state))) ; $procmux$1953_Y
-(define-fun |CSR#412| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) #b00000000000000000000000000000000 (|CSR#411| state))) ; $procmux$1955_Y
-(define-fun |CSR#413| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) #b00000000000000000000000000000000 (|CSR#412| state))) ; $procmux$1957_Y
-(define-fun |CSR#414| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) #b00000000000000000000000000000000 (|CSR#413| state))) ; $procmux$1959_Y
-(define-fun |CSR#415| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#414| state) #b00000000000000000000000000000000)) ; $procmux$1961_Y
-(define-fun |CSR#416| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) #b00000000000000000000000000000000 (|CSR#415| state))) ; $procmux$1963_Y
-(define-fun |CSR#417| ((state |CSR_s|)) (_ BitVec 28) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) #b0000000000000000000000000000 ((_ extract 31 4) (|CSR#416| state)))) ; $auto$rtlil.cc:2224:Mux$3769
-(define-fun |CSR#418| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#200| state) #b1 #b0) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state)))))))))))) #b000000000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3321
-(define-fun |CSR#419| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state))))))))))) #b00000000101)) ; $auto$opt_dff.cc:217:make_patterns_logic$3294
-(define-fun |CSR#420| ((state |CSR_s|)) Bool (and  (|CSR#392| state) (|CSR#418| state) (|CSR#419| state) (|CSR#394| state) (|CSR#395| state) (|CSR#396| state) (|CSR#397| state) (|CSR#398| state) (|CSR#399| state) (|CSR#400| state) (|CSR#401| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3343
-(define-fun |CSR#421| ((state |CSR_s|)) (_ BitVec 28) (ite (|CSR#420| state) (|CSR#417| state) (|CSR#27| state))) ; $auto$rtlil.cc:2224:Mux$3771
-(define-fun |CSR#422| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (concat #b0000000000000000000000000000 (|CSR#216| state)) (|CSR#416| state))) ; $procmux$1966_Y
-(define-fun |CSR#423| ((state |CSR_s|)) (_ BitVec 4) (ite (|CSR#420| state) ((_ extract 3 0) (|CSR#422| state)) (|CSR#26| state))) ; $auto$rtlil.cc:2224:Mux$3745
-(define-fun |CSR#424| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#97| state) #b00000000000000000000000000000000)) ; $procmux$1912_Y
-(define-fun |CSR#425| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) #b00000000000000000000000000000000 (|CSR#424| state))) ; $procmux$1914_Y
-(define-fun |CSR#426| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) #b00000000000000000000000000000000 (|CSR#425| state))) ; $procmux$1916_Y
-(define-fun |CSR#427| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) #b00000000000000000000000000000000 (|CSR#426| state))) ; $procmux$1918_Y
-(define-fun |CSR#428| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) #b00000000000000000000000000000000 (|CSR#427| state))) ; $procmux$1920_Y
-(define-fun |CSR#429| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) #b00000000000000000000000000000000 (|CSR#428| state))) ; $procmux$1922_Y
-(define-fun |CSR#430| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) #b00000000000000000000000000000000 (|CSR#429| state))) ; $procmux$1924_Y
-(define-fun |CSR#431| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) #b00000000000000000000000000000000 (|CSR#430| state))) ; $procmux$1926_Y
-(define-fun |CSR#432| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) #b00000000000000000000000000000000 (|CSR#431| state))) ; $procmux$1928_Y
-(define-fun |CSR#433| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) #b00000000000000000000000000000000 (|CSR#432| state))) ; $procmux$1930_Y
-(define-fun |CSR#434| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#433| state) #b00000000000000000000000000000000)) ; $procmux$1932_Y
-(define-fun |CSR#435| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) #b00000000000000000000000000000000 (|CSR#434| state))) ; $procmux$1934_Y
-(define-fun |CSR#436| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#210| state)) #b1) (concat (|CSR#188| state) (concat (ite (|CSR#102| state) #b1 #b0) (|CSR#98| state))) #b00000000000000000000000000000000)) ; $procmux$1937_Y
-(define-fun |CSR#437| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#436| state) (|CSR#435| state))) ; $procmux$1939_Y
-(define-fun |CSR#438| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#198| state) #b1 #b0) (concat (ite (|CSR#200| state) #b1 #b0) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state))))))))))))) #b0000000000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3290
-(define-fun |CSR#439| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#200| state) #b1 #b0) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state)))))))))))) #b000000001001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3292
-(define-fun |CSR#440| ((state |CSR_s|)) Bool (distinct (concat (|CSR#210| state) (|CSR#175| state)) #b01)) ; $auto$opt_dff.cc:217:make_patterns_logic$3312
-(define-fun |CSR#441| ((state |CSR_s|)) Bool (and  (|CSR#392| state) (|CSR#438| state) (|CSR#439| state) (|CSR#419| state) (|CSR#394| state) (|CSR#395| state) (|CSR#396| state) (|CSR#397| state) (|CSR#398| state) (|CSR#399| state) (|CSR#400| state) (|CSR#401| state) (|CSR#440| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3316
-(define-fun |CSR#442| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#441| state) (|CSR#437| state) (|CSR#23| state))) ; $auto$rtlil.cc:2224:Mux$3747
-(define-fun |CSR#443| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (|CSR#207| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3436
-(define-fun |CSR#444| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#443| state) ((_ extract 7 7) (|CSR#97| state)) (|CSR#20| state))) ; $auto$rtlil.cc:2224:Mux$3723
-(define-fun |CSR#445| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#444| state))) ; $auto$rtlil.cc:2224:Mux$3725
-(define-fun |CSR#446| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#443| state) ((_ extract 3 3) (|CSR#97| state)) (|CSR#19| state))) ; $auto$rtlil.cc:2224:Mux$3731
-(define-fun |CSR#447| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#446| state))) ; $auto$rtlil.cc:2224:Mux$3733
-(define-fun |CSR#448| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#202| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3260
-(define-fun |CSR#449| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#201| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3262
-(define-fun |CSR#450| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#200| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3264
-(define-fun |CSR#451| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#198| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3266
-(define-fun |CSR#452| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#448| state)) #b1) (= ((_ extract 0 0) (|CSR#449| state)) #b1) (= ((_ extract 0 0) (|CSR#450| state)) #b1) (= ((_ extract 0 0) (|CSR#451| state)) #b1) (|CSR#197| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (= ((_ extract 0 0) (|CSR#337| state)) #b1) (= ((_ extract 0 0) (|CSR#343| state)) #b1) (= ((_ extract 0 0) (|CSR#344| state)) #b1) (= ((_ extract 0 0) (|CSR#345| state)) #b1) (= ((_ extract 0 0) (|CSR#389| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3285
-(define-fun |CSR#453| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#452| state) (|CSR#97| state) (|CSR#16| state))) ; $auto$rtlil.cc:2224:Mux$3749
-(define-fun |CSR#454| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#453| state))) ; $auto$rtlil.cc:2224:Mux$3751
-(define-fun |CSR#455| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#97| state) (|CSR#252| state))) ; $procmux$1808_Y
-(define-fun |CSR#456| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#252| state) (|CSR#455| state))) ; $procmux$1811_Y
-(define-fun |CSR#457| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#252| state) (|CSR#456| state))) ; $procmux$1814_Y
-(define-fun |CSR#458| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#252| state) (|CSR#457| state))) ; $procmux$1817_Y
-(define-fun |CSR#459| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#252| state) (|CSR#458| state))) ; $procmux$1820_Y
-(define-fun |CSR#460| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#252| state) (|CSR#459| state))) ; $procmux$1823_Y
-(define-fun |CSR#461| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#252| state) (|CSR#460| state))) ; $procmux$1826_Y
-(define-fun |CSR#462| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#252| state) (|CSR#461| state))) ; $procmux$1829_Y
-(define-fun |CSR#463| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#252| state) (|CSR#462| state))) ; $procmux$1832_Y
-(define-fun |CSR#464| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#252| state) (|CSR#463| state))) ; $procmux$1835_Y
-(define-fun |CSR#465| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#252| state) (|CSR#464| state))) ; $procmux$1840_Y
-(define-fun |CSR#466| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#252| state) (|CSR#465| state))) ; $procmux$1845_Y
-(define-fun |CSR#467| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#466| state) (|CSR#252| state))) ; $procmux$1847_Y
-(define-fun |CSR#468| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#252| state) (|CSR#467| state))) ; $procmux$1852_Y
-(define-fun |CSR#469| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#252| state) (|CSR#468| state))) ; $procmux$1857_Y
+(define-fun |CSR#253| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#97| state) (|CSR#229| state))) ; $procmux$1668_Y
+(define-fun |CSR#254| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#229| state) (|CSR#253| state))) ; $procmux$1671_Y
+(define-fun |CSR#255| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#229| state) (|CSR#254| state))) ; $procmux$1674_Y
+(define-fun |CSR#256| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#229| state) (|CSR#255| state))) ; $procmux$1677_Y
+(define-fun |CSR#257| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#229| state) (|CSR#256| state))) ; $procmux$1680_Y
+(define-fun |CSR#258| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#229| state) (|CSR#257| state))) ; $procmux$1683_Y
+(define-fun |CSR#259| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#229| state) (|CSR#258| state))) ; $procmux$1686_Y
+(define-fun |CSR#260| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#229| state) (|CSR#259| state))) ; $procmux$1689_Y
+(define-fun |CSR#261| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#229| state) (|CSR#260| state))) ; $procmux$1692_Y
+(define-fun |CSR#262| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#229| state) (|CSR#261| state))) ; $procmux$1695_Y
+(define-fun |CSR#263| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#229| state) (|CSR#262| state))) ; $procmux$1698_Y
+(define-fun |CSR#264| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#229| state) (|CSR#263| state))) ; $procmux$1701_Y
+(define-fun |CSR#265| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#229| state) (|CSR#264| state))) ; $procmux$1704_Y
+(define-fun |CSR#266| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#265| state) (|CSR#229| state))) ; $procmux$1706_Y
+(define-fun |CSR#267| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#229| state) (|CSR#266| state))) ; $procmux$1709_Y
+(define-fun |CSR#268| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#229| state) (|CSR#267| state))) ; $procmux$1712_Y
+(define-fun |CSR#269| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#229| state) (|CSR#268| state))) ; $procmux$1714_Y
+(define-fun |CSR#270| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#269| state))) ; $auto$rtlil.cc:2224:Mux$3755
+(define-fun |CSR#271| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#193| state) (|CSR#97| state) (|CSR#241| state))) ; $procmux$2250_Y
+(define-fun |CSR#272| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#241| state) (|CSR#271| state))) ; $procmux$2253_Y
+(define-fun |CSR#273| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#241| state) (|CSR#272| state))) ; $procmux$2256_Y
+(define-fun |CSR#274| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#241| state) (|CSR#273| state))) ; $procmux$2259_Y
+(define-fun |CSR#275| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#241| state) (|CSR#274| state))) ; $procmux$2262_Y
+(define-fun |CSR#276| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#241| state) (|CSR#275| state))) ; $procmux$2265_Y
+(define-fun |CSR#277| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#241| state) (|CSR#276| state))) ; $procmux$2268_Y
+(define-fun |CSR#278| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#241| state) (|CSR#277| state))) ; $procmux$2271_Y
+(define-fun |CSR#279| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#241| state) (|CSR#278| state))) ; $procmux$2274_Y
+(define-fun |CSR#280| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#241| state) (|CSR#279| state))) ; $procmux$2277_Y
+(define-fun |CSR#281| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#241| state) (|CSR#280| state))) ; $procmux$2280_Y
+(define-fun |CSR#282| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#241| state) (|CSR#281| state))) ; $procmux$2283_Y
+(define-fun |CSR#283| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#241| state) (|CSR#282| state))) ; $procmux$2286_Y
+(define-fun |CSR#284| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#241| state) (|CSR#283| state))) ; $procmux$2291_Y
+(define-fun |CSR#285| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#241| state) (|CSR#284| state))) ; $procmux$2296_Y
+(define-fun |CSR#286| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#285| state) (|CSR#241| state))) ; $procmux$2298_Y
+(define-fun |CSR#287| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#241| state) (|CSR#286| state))) ; $procmux$2303_Y
+(define-fun |CSR#288| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#241| state) (|CSR#287| state))) ; $procmux$2308_Y
+(define-fun |CSR#289| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#241| state) (|CSR#288| state))) ; $procmux$2310_Y
+(define-fun |CSR#290| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#289| state))) ; $auto$rtlil.cc:2224:Mux$3759
+(define-fun |CSR#291| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#192| state) (|CSR#97| state) (|CSR#250| state))) ; $procmux$2327_Y
+(define-fun |CSR#292| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#193| state) (|CSR#250| state) (|CSR#291| state))) ; $procmux$2330_Y
+(define-fun |CSR#293| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#250| state) (|CSR#292| state))) ; $procmux$2333_Y
+(define-fun |CSR#294| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#250| state) (|CSR#293| state))) ; $procmux$2336_Y
+(define-fun |CSR#295| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#250| state) (|CSR#294| state))) ; $procmux$2339_Y
+(define-fun |CSR#296| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#250| state) (|CSR#295| state))) ; $procmux$2342_Y
+(define-fun |CSR#297| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#250| state) (|CSR#296| state))) ; $procmux$2345_Y
+(define-fun |CSR#298| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#250| state) (|CSR#297| state))) ; $procmux$2348_Y
+(define-fun |CSR#299| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#250| state) (|CSR#298| state))) ; $procmux$2351_Y
+(define-fun |CSR#300| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#250| state) (|CSR#299| state))) ; $procmux$2354_Y
+(define-fun |CSR#301| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#250| state) (|CSR#300| state))) ; $procmux$2357_Y
+(define-fun |CSR#302| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#250| state) (|CSR#301| state))) ; $procmux$2360_Y
+(define-fun |CSR#303| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#250| state) (|CSR#302| state))) ; $procmux$2363_Y
+(define-fun |CSR#304| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#250| state) (|CSR#303| state))) ; $procmux$2366_Y
+(define-fun |CSR#305| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#250| state) (|CSR#304| state))) ; $procmux$2371_Y
+(define-fun |CSR#306| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#250| state) (|CSR#305| state))) ; $procmux$2376_Y
+(define-fun |CSR#307| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#306| state) (|CSR#250| state))) ; $procmux$2378_Y
+(define-fun |CSR#308| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#250| state) (|CSR#307| state))) ; $procmux$2383_Y
+(define-fun |CSR#309| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#250| state) (|CSR#308| state))) ; $procmux$2388_Y
+(define-fun |CSR#310| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#250| state) (|CSR#309| state))) ; $procmux$2390_Y
+(define-fun |CSR#311| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#310| state))) ; $auto$rtlil.cc:2224:Mux$3757
+(define-fun |CSR#312| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#190| state) (|CSR#97| state) (|CSR#240| state))) ; $procmux$2164_Y
+(define-fun |CSR#313| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#191| state) (|CSR#240| state) (|CSR#312| state))) ; $procmux$2167_Y
+(define-fun |CSR#314| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#192| state) (|CSR#240| state) (|CSR#313| state))) ; $procmux$2170_Y
+(define-fun |CSR#315| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#193| state) (|CSR#240| state) (|CSR#314| state))) ; $procmux$2173_Y
+(define-fun |CSR#316| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#240| state) (|CSR#315| state))) ; $procmux$2176_Y
+(define-fun |CSR#317| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#240| state) (|CSR#316| state))) ; $procmux$2179_Y
+(define-fun |CSR#318| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#240| state) (|CSR#317| state))) ; $procmux$2182_Y
+(define-fun |CSR#319| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#240| state) (|CSR#318| state))) ; $procmux$2185_Y
+(define-fun |CSR#320| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#240| state) (|CSR#319| state))) ; $procmux$2188_Y
+(define-fun |CSR#321| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#240| state) (|CSR#320| state))) ; $procmux$2191_Y
+(define-fun |CSR#322| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#240| state) (|CSR#321| state))) ; $procmux$2194_Y
+(define-fun |CSR#323| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#240| state) (|CSR#322| state))) ; $procmux$2197_Y
+(define-fun |CSR#324| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#240| state) (|CSR#323| state))) ; $procmux$2200_Y
+(define-fun |CSR#325| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#240| state) (|CSR#324| state))) ; $procmux$2203_Y
+(define-fun |CSR#326| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#240| state) (|CSR#325| state))) ; $procmux$2206_Y
+(define-fun |CSR#327| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#240| state) (|CSR#326| state))) ; $procmux$2209_Y
+(define-fun |CSR#328| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#240| state) (|CSR#327| state))) ; $procmux$2214_Y
+(define-fun |CSR#329| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#240| state) (|CSR#328| state))) ; $procmux$2219_Y
+(define-fun |CSR#330| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#329| state) (|CSR#240| state))) ; $procmux$2221_Y
+(define-fun |CSR#331| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#240| state) (|CSR#330| state))) ; $procmux$2226_Y
+(define-fun |CSR#332| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#240| state) (|CSR#331| state))) ; $procmux$2231_Y
+(define-fun |CSR#333| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#240| state) (|CSR#332| state))) ; $procmux$2233_Y
+(define-fun |CSR#334| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#333| state))) ; $auto$rtlil.cc:2224:Mux$3761
+(define-fun |CSR#335| ((state |CSR_s|)) (_ BitVec 1) (bvnot (|CSR#183| state))) ; $auto$rtlil.cc:2127:Not$3270
+(define-fun |CSR#336| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#208| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3272
+(define-fun |CSR#337| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#207| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3274
+(define-fun |CSR#338| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (= ((_ extract 0 0) (|CSR#337| state)) #b1) (|CSR#206| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3422
+(define-fun |CSR#339| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#338| state) ((_ extract 7 7) (|CSR#97| state)) (|CSR#47| state))) ; $auto$rtlil.cc:2224:Mux$3725
+(define-fun |CSR#340| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#339| state))) ; $auto$rtlil.cc:2224:Mux$3727
+(define-fun |CSR#341| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#338| state) ((_ extract 3 3) (|CSR#97| state)) (|CSR#46| state))) ; $auto$rtlil.cc:2224:Mux$3733
+(define-fun |CSR#342| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#341| state))) ; $auto$rtlil.cc:2224:Mux$3735
+(define-fun |CSR#343| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#206| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3276
+(define-fun |CSR#344| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#205| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3278
+(define-fun |CSR#345| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#204| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3280
+(define-fun |CSR#346| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (= ((_ extract 0 0) (|CSR#337| state)) #b1) (= ((_ extract 0 0) (|CSR#343| state)) #b1) (= ((_ extract 0 0) (|CSR#344| state)) #b1) (= ((_ extract 0 0) (|CSR#345| state)) #b1) (|CSR#203| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3408
+(define-fun |CSR#347| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#346| state) (|CSR#97| state) (|CSR#43| state))) ; $auto$rtlil.cc:2224:Mux$3737
+(define-fun |CSR#348| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#97| state) (|CSR#235| state))) ; $procmux$1731_Y
+(define-fun |CSR#349| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#235| state) (|CSR#348| state))) ; $procmux$1734_Y
+(define-fun |CSR#350| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#235| state) (|CSR#349| state))) ; $procmux$1737_Y
+(define-fun |CSR#351| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#235| state) (|CSR#350| state))) ; $procmux$1740_Y
+(define-fun |CSR#352| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#235| state) (|CSR#351| state))) ; $procmux$1743_Y
+(define-fun |CSR#353| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#235| state) (|CSR#352| state))) ; $procmux$1746_Y
+(define-fun |CSR#354| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#235| state) (|CSR#353| state))) ; $procmux$1749_Y
+(define-fun |CSR#355| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#235| state) (|CSR#354| state))) ; $procmux$1752_Y
+(define-fun |CSR#356| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#235| state) (|CSR#355| state))) ; $procmux$1755_Y
+(define-fun |CSR#357| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#235| state) (|CSR#356| state))) ; $procmux$1758_Y
+(define-fun |CSR#358| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#97| state) (|CSR#357| state))) ; $procmux$1770_Y
+(define-fun |CSR#359| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#235| state) (|CSR#358| state))) ; $procmux$1773_Y
+(define-fun |CSR#360| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#235| state) (|CSR#359| state))) ; $procmux$1776_Y
+(define-fun |CSR#361| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#235| state) (|CSR#360| state))) ; $procmux$1779_Y
+(define-fun |CSR#362| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#361| state) (|CSR#235| state))) ; $procmux$1781_Y
+(define-fun |CSR#363| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#235| state) (|CSR#362| state))) ; $procmux$1784_Y
+(define-fun |CSR#364| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#235| state) (|CSR#363| state))) ; $procmux$1787_Y
+(define-fun |CSR#365| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#235| state) (|CSR#364| state))) ; $procmux$1789_Y
+(define-fun |CSR#366| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#365| state))) ; $auto$rtlil.cc:2224:Mux$3751
+(define-fun |CSR#367| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#191| state) (|CSR#97| state) (|CSR#251| state))) ; $procmux$2407_Y
+(define-fun |CSR#368| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#192| state) (|CSR#251| state) (|CSR#367| state))) ; $procmux$2410_Y
+(define-fun |CSR#369| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#193| state) (|CSR#251| state) (|CSR#368| state))) ; $procmux$2413_Y
+(define-fun |CSR#370| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#251| state) (|CSR#369| state))) ; $procmux$2416_Y
+(define-fun |CSR#371| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#251| state) (|CSR#370| state))) ; $procmux$2419_Y
+(define-fun |CSR#372| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#251| state) (|CSR#371| state))) ; $procmux$2422_Y
+(define-fun |CSR#373| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#251| state) (|CSR#372| state))) ; $procmux$2425_Y
+(define-fun |CSR#374| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#251| state) (|CSR#373| state))) ; $procmux$2428_Y
+(define-fun |CSR#375| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#251| state) (|CSR#374| state))) ; $procmux$2431_Y
+(define-fun |CSR#376| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#251| state) (|CSR#375| state))) ; $procmux$2434_Y
+(define-fun |CSR#377| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#251| state) (|CSR#376| state))) ; $procmux$2437_Y
+(define-fun |CSR#378| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#251| state) (|CSR#377| state))) ; $procmux$2440_Y
+(define-fun |CSR#379| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#97| state) (|CSR#378| state))) ; $procmux$2452_Y
+(define-fun |CSR#380| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#251| state) (|CSR#379| state))) ; $procmux$2455_Y
+(define-fun |CSR#381| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#251| state) (|CSR#380| state))) ; $procmux$2458_Y
+(define-fun |CSR#382| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#251| state) (|CSR#381| state))) ; $procmux$2463_Y
+(define-fun |CSR#383| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#251| state) (|CSR#382| state))) ; $procmux$2468_Y
+(define-fun |CSR#384| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#383| state) (|CSR#251| state))) ; $procmux$2470_Y
+(define-fun |CSR#385| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#251| state) (|CSR#384| state))) ; $procmux$2475_Y
+(define-fun |CSR#386| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#251| state) (|CSR#385| state))) ; $procmux$2480_Y
+(define-fun |CSR#387| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#251| state) (|CSR#386| state))) ; $procmux$2482_Y
+(define-fun |CSR#388| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#387| state))) ; $auto$rtlil.cc:2224:Mux$3753
+(define-fun |CSR#389| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#203| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3282
+(define-fun |CSR#390| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#202| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (= ((_ extract 0 0) (|CSR#337| state)) #b1) (= ((_ extract 0 0) (|CSR#343| state)) #b1) (= ((_ extract 0 0) (|CSR#344| state)) #b1) (= ((_ extract 0 0) (|CSR#345| state)) #b1) (= ((_ extract 0 0) (|CSR#389| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3389
+(define-fun |CSR#391| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#390| state) (|CSR#97| state) (|CSR#34| state))) ; $auto$rtlil.cc:2224:Mux$3739
+(define-fun |CSR#392| ((state |CSR_s|)) Bool (or  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#175| state)) #b1) (= ((_ extract 0 0) (|CSR#183| state)) #b1))) ; $auto$opt_dff.cc:217:make_patterns_logic$3286
+(define-fun |CSR#393| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state))))))))))) #b00000000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3347
+(define-fun |CSR#394| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state)))))))))) #b0000000011)) ; $auto$opt_dff.cc:217:make_patterns_logic$3294
+(define-fun |CSR#395| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state))))))))) #b100000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3296
+(define-fun |CSR#396| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state)))))))) #b10000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3298
+(define-fun |CSR#397| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state))))))) #b1000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3300
+(define-fun |CSR#398| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state)))))) #b100001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3302
+(define-fun |CSR#399| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state))))) #b10001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3304
+(define-fun |CSR#400| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state)))) #b1001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3306
+(define-fun |CSR#401| ((state |CSR_s|)) Bool (distinct (concat (|CSR#183| state) (|CSR#175| state)) #b10)) ; $auto$opt_dff.cc:217:make_patterns_logic$3308
+(define-fun |CSR#402| ((state |CSR_s|)) Bool (and  (|CSR#392| state) (|CSR#393| state) (|CSR#394| state) (|CSR#395| state) (|CSR#396| state) (|CSR#397| state) (|CSR#398| state) (|CSR#399| state) (|CSR#400| state) (|CSR#401| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3367
+(define-fun |CSR#403| ((state |CSR_s|)) (_ BitVec 30) (ite (|CSR#402| state) ((_ extract 31 2) (|CSR#249| state)) (|CSR#31| state))) ; $auto$rtlil.cc:2224:Mux$3741
+(define-fun |CSR#404| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) #b00 ((_ extract 1 0) (|CSR#248| state)))) ; $auto$rtlil.cc:2224:Mux$3763
+(define-fun |CSR#405| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#402| state) (|CSR#404| state) (|CSR#30| state))) ; $auto$rtlil.cc:2224:Mux$3765
+(define-fun |CSR#406| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#199| state) #b00000000000000000000000000000000)) ; $procmux$1941_Y
+(define-fun |CSR#407| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) #b00000000000000000000000000000000 (|CSR#406| state))) ; $procmux$1943_Y
+(define-fun |CSR#408| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) #b00000000000000000000000000000000 (|CSR#407| state))) ; $procmux$1945_Y
+(define-fun |CSR#409| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) #b00000000000000000000000000000000 (|CSR#408| state))) ; $procmux$1947_Y
+(define-fun |CSR#410| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) #b00000000000000000000000000000000 (|CSR#409| state))) ; $procmux$1949_Y
+(define-fun |CSR#411| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) #b00000000000000000000000000000000 (|CSR#410| state))) ; $procmux$1951_Y
+(define-fun |CSR#412| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) #b00000000000000000000000000000000 (|CSR#411| state))) ; $procmux$1953_Y
+(define-fun |CSR#413| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) #b00000000000000000000000000000000 (|CSR#412| state))) ; $procmux$1955_Y
+(define-fun |CSR#414| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) #b00000000000000000000000000000000 (|CSR#413| state))) ; $procmux$1957_Y
+(define-fun |CSR#415| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#414| state) #b00000000000000000000000000000000)) ; $procmux$1959_Y
+(define-fun |CSR#416| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) #b00000000000000000000000000000000 (|CSR#415| state))) ; $procmux$1961_Y
+(define-fun |CSR#417| ((state |CSR_s|)) (_ BitVec 28) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) #b0000000000000000000000000000 ((_ extract 31 4) (|CSR#416| state)))) ; $auto$rtlil.cc:2224:Mux$3767
+(define-fun |CSR#418| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#200| state) #b1 #b0) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state)))))))))))) #b000000000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3319
+(define-fun |CSR#419| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state))))))))))) #b00000000101)) ; $auto$opt_dff.cc:217:make_patterns_logic$3292
+(define-fun |CSR#420| ((state |CSR_s|)) Bool (and  (|CSR#392| state) (|CSR#418| state) (|CSR#419| state) (|CSR#394| state) (|CSR#395| state) (|CSR#396| state) (|CSR#397| state) (|CSR#398| state) (|CSR#399| state) (|CSR#400| state) (|CSR#401| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3341
+(define-fun |CSR#421| ((state |CSR_s|)) (_ BitVec 28) (ite (|CSR#420| state) (|CSR#417| state) (|CSR#27| state))) ; $auto$rtlil.cc:2224:Mux$3769
+(define-fun |CSR#422| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (concat #b0000000000000000000000000000 (|CSR#216| state)) (|CSR#416| state))) ; $procmux$1964_Y
+(define-fun |CSR#423| ((state |CSR_s|)) (_ BitVec 4) (ite (|CSR#420| state) ((_ extract 3 0) (|CSR#422| state)) (|CSR#26| state))) ; $auto$rtlil.cc:2224:Mux$3743
+(define-fun |CSR#424| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#97| state) #b00000000000000000000000000000000)) ; $procmux$1910_Y
+(define-fun |CSR#425| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) #b00000000000000000000000000000000 (|CSR#424| state))) ; $procmux$1912_Y
+(define-fun |CSR#426| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) #b00000000000000000000000000000000 (|CSR#425| state))) ; $procmux$1914_Y
+(define-fun |CSR#427| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) #b00000000000000000000000000000000 (|CSR#426| state))) ; $procmux$1916_Y
+(define-fun |CSR#428| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) #b00000000000000000000000000000000 (|CSR#427| state))) ; $procmux$1918_Y
+(define-fun |CSR#429| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) #b00000000000000000000000000000000 (|CSR#428| state))) ; $procmux$1920_Y
+(define-fun |CSR#430| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) #b00000000000000000000000000000000 (|CSR#429| state))) ; $procmux$1922_Y
+(define-fun |CSR#431| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) #b00000000000000000000000000000000 (|CSR#430| state))) ; $procmux$1924_Y
+(define-fun |CSR#432| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) #b00000000000000000000000000000000 (|CSR#431| state))) ; $procmux$1926_Y
+(define-fun |CSR#433| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) #b00000000000000000000000000000000 (|CSR#432| state))) ; $procmux$1928_Y
+(define-fun |CSR#434| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#433| state) #b00000000000000000000000000000000)) ; $procmux$1930_Y
+(define-fun |CSR#435| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) #b00000000000000000000000000000000 (|CSR#434| state))) ; $procmux$1932_Y
+(define-fun |CSR#436| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#210| state)) #b1) (concat (|CSR#188| state) (concat (ite (|CSR#102| state) #b1 #b0) (|CSR#98| state))) #b00000000000000000000000000000000)) ; $procmux$1935_Y
+(define-fun |CSR#437| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#436| state) (|CSR#435| state))) ; $procmux$1937_Y
+(define-fun |CSR#438| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#198| state) #b1 #b0) (concat (ite (|CSR#200| state) #b1 #b0) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state))))))))))))) #b0000000000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3288
+(define-fun |CSR#439| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#200| state) #b1 #b0) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state)))))))))))) #b000000001001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3290
+(define-fun |CSR#440| ((state |CSR_s|)) Bool (distinct (concat (|CSR#210| state) (|CSR#175| state)) #b01)) ; $auto$opt_dff.cc:217:make_patterns_logic$3310
+(define-fun |CSR#441| ((state |CSR_s|)) Bool (and  (|CSR#392| state) (|CSR#438| state) (|CSR#439| state) (|CSR#419| state) (|CSR#394| state) (|CSR#395| state) (|CSR#396| state) (|CSR#397| state) (|CSR#398| state) (|CSR#399| state) (|CSR#400| state) (|CSR#401| state) (|CSR#440| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3314
+(define-fun |CSR#442| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#441| state) (|CSR#437| state) (|CSR#23| state))) ; $auto$rtlil.cc:2224:Mux$3745
+(define-fun |CSR#443| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (|CSR#207| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3434
+(define-fun |CSR#444| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#443| state) ((_ extract 7 7) (|CSR#97| state)) (|CSR#20| state))) ; $auto$rtlil.cc:2224:Mux$3721
+(define-fun |CSR#445| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#444| state))) ; $auto$rtlil.cc:2224:Mux$3723
+(define-fun |CSR#446| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#443| state) ((_ extract 3 3) (|CSR#97| state)) (|CSR#19| state))) ; $auto$rtlil.cc:2224:Mux$3729
+(define-fun |CSR#447| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#446| state))) ; $auto$rtlil.cc:2224:Mux$3731
+(define-fun |CSR#448| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#202| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3258
+(define-fun |CSR#449| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#201| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3260
+(define-fun |CSR#450| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#200| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3262
+(define-fun |CSR#451| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#198| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3264
+(define-fun |CSR#452| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#448| state)) #b1) (= ((_ extract 0 0) (|CSR#449| state)) #b1) (= ((_ extract 0 0) (|CSR#450| state)) #b1) (= ((_ extract 0 0) (|CSR#451| state)) #b1) (|CSR#197| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (= ((_ extract 0 0) (|CSR#337| state)) #b1) (= ((_ extract 0 0) (|CSR#343| state)) #b1) (= ((_ extract 0 0) (|CSR#344| state)) #b1) (= ((_ extract 0 0) (|CSR#345| state)) #b1) (= ((_ extract 0 0) (|CSR#389| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3283
+(define-fun |CSR#453| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#452| state) (|CSR#97| state) (|CSR#16| state))) ; $auto$rtlil.cc:2224:Mux$3747
+(define-fun |CSR#454| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#453| state))) ; $auto$rtlil.cc:2224:Mux$3749
+(define-fun |CSR#455| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#97| state) (|CSR#252| state))) ; $procmux$1806_Y
+(define-fun |CSR#456| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#252| state) (|CSR#455| state))) ; $procmux$1809_Y
+(define-fun |CSR#457| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#252| state) (|CSR#456| state))) ; $procmux$1812_Y
+(define-fun |CSR#458| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#252| state) (|CSR#457| state))) ; $procmux$1815_Y
+(define-fun |CSR#459| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#252| state) (|CSR#458| state))) ; $procmux$1818_Y
+(define-fun |CSR#460| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#252| state) (|CSR#459| state))) ; $procmux$1821_Y
+(define-fun |CSR#461| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#252| state) (|CSR#460| state))) ; $procmux$1824_Y
+(define-fun |CSR#462| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#252| state) (|CSR#461| state))) ; $procmux$1827_Y
+(define-fun |CSR#463| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#252| state) (|CSR#462| state))) ; $procmux$1830_Y
+(define-fun |CSR#464| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#252| state) (|CSR#463| state))) ; $procmux$1833_Y
+(define-fun |CSR#465| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#252| state) (|CSR#464| state))) ; $procmux$1838_Y
+(define-fun |CSR#466| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#252| state) (|CSR#465| state))) ; $procmux$1843_Y
+(define-fun |CSR#467| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#466| state) (|CSR#252| state))) ; $procmux$1845_Y
+(define-fun |CSR#468| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#252| state) (|CSR#467| state))) ; $procmux$1850_Y
+(define-fun |CSR#469| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#252| state) (|CSR#468| state))) ; $procmux$1855_Y
 (define-fun |CSR#470| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#252| state) (|CSR#469| state))) ; $0\mfromhost[31:0]
-(define-fun |CSR#471| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#208| state) ((_ extract 5 4) (|CSR#97| state)) #b00)) ; $procmux$2124_Y
-(define-fun |CSR#472| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#471| state) #b00)) ; $procmux$2126_Y
-(define-fun |CSR#473| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) #b00 (|CSR#472| state))) ; $procmux$2129_Y
-(define-fun |CSR#474| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#7| state) (|CSR#473| state))) ; $procmux$2132_Y
-(define-fun |CSR#475| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state)))) #b0001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3468
-(define-fun |CSR#476| ((state |CSR_s|)) Bool (and  (|CSR#392| state) (|CSR#475| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3472
-(define-fun |CSR#477| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#476| state) (|CSR#474| state) (|CSR#9| state))) ; $auto$rtlil.cc:2224:Mux$3711
-(define-fun |CSR#478| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#106| state) #b11 (|CSR#477| state))) ; $auto$rtlil.cc:2224:Mux$3713
-(define-fun |CSR#479| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#208| state) ((_ extract 3 3) (|CSR#97| state)) #b0)) ; $procmux$2094_Y
-(define-fun |CSR#480| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#479| state) #b0)) ; $procmux$2096_Y
-(define-fun |CSR#481| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) #b1 (|CSR#480| state))) ; $procmux$2099_Y
-(define-fun |CSR#482| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#6| state) (|CSR#481| state))) ; $procmux$2102_Y
-(define-fun |CSR#483| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#476| state) (|CSR#482| state) (|CSR#8| state))) ; $auto$rtlil.cc:2224:Mux$3719
-(define-fun |CSR#484| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#483| state))) ; $auto$rtlil.cc:2224:Mux$3721
-(define-fun |CSR#485| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#208| state) ((_ extract 2 1) (|CSR#97| state)) #b00)) ; $procmux$2139_Y
-(define-fun |CSR#486| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#485| state) #b00)) ; $procmux$2141_Y
-(define-fun |CSR#487| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#9| state) (|CSR#486| state))) ; $procmux$2144_Y
-(define-fun |CSR#488| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) #b11 (|CSR#487| state))) ; $procmux$2147_Y
-(define-fun |CSR#489| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#476| state) (|CSR#488| state) (|CSR#7| state))) ; $auto$rtlil.cc:2224:Mux$3707
-(define-fun |CSR#490| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#106| state) #b11 (|CSR#489| state))) ; $auto$rtlil.cc:2224:Mux$3709
-(define-fun |CSR#491| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#208| state) ((_ extract 0 0) (|CSR#97| state)) #b0)) ; $procmux$2109_Y
-(define-fun |CSR#492| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#491| state) #b0)) ; $procmux$2111_Y
-(define-fun |CSR#493| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#8| state) (|CSR#492| state))) ; $procmux$2114_Y
-(define-fun |CSR#494| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) #b0 (|CSR#493| state))) ; $procmux$2117_Y
-(define-fun |CSR#495| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#476| state) (|CSR#494| state) (|CSR#6| state))) ; $auto$rtlil.cc:2224:Mux$3715
-(define-fun |CSR#496| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#495| state))) ; $auto$rtlil.cc:2224:Mux$3717
+(define-fun |CSR#471| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#208| state) ((_ extract 5 4) (|CSR#97| state)) #b00)) ; $procmux$2122_Y
+(define-fun |CSR#472| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#471| state) #b00)) ; $procmux$2124_Y
+(define-fun |CSR#473| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) #b00 (|CSR#472| state))) ; $procmux$2127_Y
+(define-fun |CSR#474| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#7| state) (|CSR#473| state))) ; $procmux$2130_Y
+(define-fun |CSR#475| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state)))) #b0001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3466
+(define-fun |CSR#476| ((state |CSR_s|)) Bool (and  (|CSR#392| state) (|CSR#475| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3470
+(define-fun |CSR#477| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#476| state) (|CSR#474| state) (|CSR#9| state))) ; $auto$rtlil.cc:2224:Mux$3709
+(define-fun |CSR#478| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#106| state) #b11 (|CSR#477| state))) ; $auto$rtlil.cc:2224:Mux$3711
+(define-fun |CSR#479| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#208| state) ((_ extract 3 3) (|CSR#97| state)) #b0)) ; $procmux$2092_Y
+(define-fun |CSR#480| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#479| state) #b0)) ; $procmux$2094_Y
+(define-fun |CSR#481| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) #b1 (|CSR#480| state))) ; $procmux$2097_Y
+(define-fun |CSR#482| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#6| state) (|CSR#481| state))) ; $procmux$2100_Y
+(define-fun |CSR#483| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#476| state) (|CSR#482| state) (|CSR#8| state))) ; $auto$rtlil.cc:2224:Mux$3717
+(define-fun |CSR#484| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#483| state))) ; $auto$rtlil.cc:2224:Mux$3719
+(define-fun |CSR#485| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#208| state) ((_ extract 2 1) (|CSR#97| state)) #b00)) ; $procmux$2137_Y
+(define-fun |CSR#486| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#485| state) #b00)) ; $procmux$2139_Y
+(define-fun |CSR#487| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#9| state) (|CSR#486| state))) ; $procmux$2142_Y
+(define-fun |CSR#488| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) #b11 (|CSR#487| state))) ; $procmux$2145_Y
+(define-fun |CSR#489| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#476| state) (|CSR#488| state) (|CSR#7| state))) ; $auto$rtlil.cc:2224:Mux$3705
+(define-fun |CSR#490| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#106| state) #b11 (|CSR#489| state))) ; $auto$rtlil.cc:2224:Mux$3707
+(define-fun |CSR#491| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#208| state) ((_ extract 0 0) (|CSR#97| state)) #b0)) ; $procmux$2107_Y
+(define-fun |CSR#492| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#491| state) #b0)) ; $procmux$2109_Y
+(define-fun |CSR#493| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#8| state) (|CSR#492| state))) ; $procmux$2112_Y
+(define-fun |CSR#494| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) #b0 (|CSR#493| state))) ; $procmux$2115_Y
+(define-fun |CSR#495| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#476| state) (|CSR#494| state) (|CSR#6| state))) ; $auto$rtlil.cc:2224:Mux$3713
+(define-fun |CSR#496| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#495| state))) ; $auto$rtlil.cc:2224:Mux$3715
 (define-fun |CSR_a| ((state |CSR_s|)) Bool true)
 (define-fun |CSR_u| ((state |CSR_s|)) Bool true)
 (define-fun |CSR_i| ((state |CSR_s|)) Bool true)
 (define-fun |CSR_h| ((state |CSR_s|)) Bool true)
 (define-fun |CSR_t| ((state |CSR_s|) (next_state |CSR_s|)) Bool (and
-  (= (|CSR#270| state) (|CSR#73| next_state)) ; $auto$opt_dff.cc:702:run$3508 \cycle
-  (= (|CSR#290| state) (|CSR#68| next_state)) ; $auto$opt_dff.cc:702:run$3506 \instret
-  (= (|CSR#311| state) (|CSR#65| next_state)) ; $auto$opt_dff.cc:702:run$3507 \cycleh
-  (= (|CSR#334| state) (|CSR#60| next_state)) ; $auto$opt_dff.cc:702:run$3505 \instreth
-  (= (|CSR#340| state) (|CSR#47| next_state)) ; $auto$opt_dff.cc:764:run$3452 \MTIE
-  (= (|CSR#342| state) (|CSR#46| next_state)) ; $auto$opt_dff.cc:764:run$3426 \MSIE
-  (= (|CSR#347| state) (|CSR#43| next_state)) ; $auto$opt_dff.cc:764:run$3412 \mtimecmp
-  (= (|CSR#366| state) (|CSR#40| next_state)) ; $auto$opt_dff.cc:702:run$3510 \time$
-  (= (|CSR#388| state) (|CSR#37| next_state)) ; $auto$opt_dff.cc:702:run$3509 \timeh
-  (= (|CSR#391| state) (|CSR#34| next_state)) ; $auto$opt_dff.cc:764:run$3393 \mscratch
-  (= (|CSR#403| state) (|CSR#31| next_state)) ; $auto$opt_dff.cc:764:run$3371 \mepc [31:2]
-  (= (|CSR#405| state) (|CSR#30| next_state)) ; $auto$opt_dff.cc:702:run$3372 \mepc [1:0]
-  (= (|CSR#421| state) (|CSR#27| next_state)) ; $auto$opt_dff.cc:702:run$3346 \mcause [31:4]
-  (= (|CSR#423| state) (|CSR#26| next_state)) ; $auto$opt_dff.cc:764:run$3345 \mcause [3:0]
-  (= (|CSR#442| state) (|CSR#23| next_state)) ; $auto$opt_dff.cc:764:run$3318 \mbadaddr
-  (= (|CSR#445| state) (|CSR#20| next_state)) ; $auto$opt_dff.cc:764:run$3464 \MTIP
-  (= (|CSR#447| state) (|CSR#19| next_state)) ; $auto$opt_dff.cc:764:run$3438 \MSIP
-  (= (|CSR#454| state) (|CSR#16| next_state)) ; $auto$opt_dff.cc:764:run$3287 \mtohost
-  (= (|CSR#470| state) (|CSR#13| next_state)) ; $procdff$2923 \mfromhost
-  (= (|CSR#478| state) (|CSR#9| next_state)) ; $auto$opt_dff.cc:764:run$3494 \PRV1
-  (= (|CSR#484| state) (|CSR#8| next_state)) ; $auto$opt_dff.cc:764:run$3474 \IE1
-  (= (|CSR#490| state) (|CSR#7| next_state)) ; $auto$opt_dff.cc:764:run$3504 \PRV
-  (= (|CSR#496| state) (|CSR#6| next_state)) ; $auto$opt_dff.cc:764:run$3484 \IE
+  (= (|CSR#270| state) (|CSR#73| next_state)) ; $auto$opt_dff.cc:702:run$3506 \cycle
+  (= (|CSR#290| state) (|CSR#68| next_state)) ; $auto$opt_dff.cc:702:run$3504 \instret
+  (= (|CSR#311| state) (|CSR#65| next_state)) ; $auto$opt_dff.cc:702:run$3505 \cycleh
+  (= (|CSR#334| state) (|CSR#60| next_state)) ; $auto$opt_dff.cc:702:run$3503 \instreth
+  (= (|CSR#340| state) (|CSR#47| next_state)) ; $auto$opt_dff.cc:764:run$3450 \MTIE
+  (= (|CSR#342| state) (|CSR#46| next_state)) ; $auto$opt_dff.cc:764:run$3424 \MSIE
+  (= (|CSR#347| state) (|CSR#43| next_state)) ; $auto$opt_dff.cc:764:run$3410 \mtimecmp
+  (= (|CSR#366| state) (|CSR#40| next_state)) ; $auto$opt_dff.cc:702:run$3508 \time$
+  (= (|CSR#388| state) (|CSR#37| next_state)) ; $auto$opt_dff.cc:702:run$3507 \timeh
+  (= (|CSR#391| state) (|CSR#34| next_state)) ; $auto$opt_dff.cc:764:run$3391 \mscratch
+  (= (|CSR#403| state) (|CSR#31| next_state)) ; $auto$opt_dff.cc:764:run$3369 \mepc [31:2]
+  (= (|CSR#405| state) (|CSR#30| next_state)) ; $auto$opt_dff.cc:702:run$3370 \mepc [1:0]
+  (= (|CSR#421| state) (|CSR#27| next_state)) ; $auto$opt_dff.cc:702:run$3344 \mcause [31:4]
+  (= (|CSR#423| state) (|CSR#26| next_state)) ; $auto$opt_dff.cc:764:run$3343 \mcause [3:0]
+  (= (|CSR#442| state) (|CSR#23| next_state)) ; $auto$opt_dff.cc:764:run$3316 \mbadaddr
+  (= (|CSR#445| state) (|CSR#20| next_state)) ; $auto$opt_dff.cc:764:run$3462 \MTIP
+  (= (|CSR#447| state) (|CSR#19| next_state)) ; $auto$opt_dff.cc:764:run$3436 \MSIP
+  (= (|CSR#454| state) (|CSR#16| next_state)) ; $auto$opt_dff.cc:764:run$3285 \mtohost
+  (= (|CSR#470| state) (|CSR#13| next_state)) ; $procdff$2921 \mfromhost
+  (= (|CSR#478| state) (|CSR#9| next_state)) ; $auto$opt_dff.cc:764:run$3492 \PRV1
+  (= (|CSR#484| state) (|CSR#8| next_state)) ; $auto$opt_dff.cc:764:run$3472 \IE1
+  (= (|CSR#490| state) (|CSR#7| next_state)) ; $auto$opt_dff.cc:764:run$3502 \PRV
+  (= (|CSR#496| state) (|CSR#6| next_state)) ; $auto$opt_dff.cc:764:run$3482 \IE
 )) ; end of module CSR
 ; yosys-smt2-module Cache
 (declare-sort |Cache_s| 0)
@@ -1929,11 +1929,11 @@
 ; yosys-smt2-output io_cpu_resp_valid 1
 ; yosys-smt2-wire io_cpu_resp_valid 1
 (define-fun |Cache_n io_cpu_resp_valid| ((state |Cache_s|)) Bool (= ((_ extract 0 0) (|Cache#118| state)) #b1))
-(define-fun |Cache#119| ((state |Cache_s|)) Bool (= #b01 ((_ extract 3 2) (|Cache#13| state)))) ; $eq$__lft__corr.v:5307$130_Y
+(define-fun |Cache#119| ((state |Cache_s|)) Bool (= #b01 ((_ extract 3 2) (|Cache#13| state)))) ; $eq$__lft__corr.v:5307$128_Y
 (define-fun |Cache#120| ((state |Cache_s|)) (_ BitVec 32) (ite (|Cache#119| state) ((_ extract 63 32) (|Cache#84| state)) ((_ extract 31 0) (|Cache#84| state)))) ; \_GEN_12
-(define-fun |Cache#121| ((state |Cache_s|)) Bool (= #b10 ((_ extract 3 2) (|Cache#13| state)))) ; $eq$__lft__corr.v:5308$132_Y
+(define-fun |Cache#121| ((state |Cache_s|)) Bool (= #b10 ((_ extract 3 2) (|Cache#13| state)))) ; $eq$__lft__corr.v:5308$130_Y
 (define-fun |Cache#122| ((state |Cache_s|)) (_ BitVec 32) (ite (|Cache#121| state) ((_ extract 95 64) (|Cache#84| state)) (|Cache#120| state))) ; \_GEN_13
-(define-fun |Cache#123| ((state |Cache_s|)) Bool (= #b11 ((_ extract 3 2) (|Cache#13| state)))) ; $eq$__lft__corr.v:5309$134_Y
+(define-fun |Cache#123| ((state |Cache_s|)) Bool (= #b11 ((_ extract 3 2) (|Cache#13| state)))) ; $eq$__lft__corr.v:5309$132_Y
 (define-fun |Cache#124| ((state |Cache_s|)) (_ BitVec 32) (ite (|Cache#123| state) ((_ extract 127 96) (|Cache#84| state)) (|Cache#122| state))) ; \io_cpu_resp_bits_data
 ; yosys-smt2-output io_cpu_resp_bits_data 32
 ; yosys-smt2-wire io_cpu_resp_bits_data 32
@@ -2554,272 +2554,272 @@
 (define-fun |Cache_n _GEN_100| ((state |Cache_s|)) (_ BitVec 64) (|Cache#89| state))
 ; yosys-smt2-wire _GEN_10 128
 (define-fun |Cache_n _GEN_10| ((state |Cache_s|)) (_ BitVec 128) (|Cache#83| state))
-(define-fun |Cache#163| ((state |Cache_s|)) (_ BitVec 256) (ite (= ((_ extract 0 0) (|Cache#20| state)) #b1) (|Cache#154| state) (|Cache#155| state))) ; $procmux$2797_Y
-(define-fun |Cache#164| ((state |Cache_s|)) (_ BitVec 256) (ite (= ((_ extract 0 0) (|Cache#36| state)) #b1) (|Cache#163| state) (|Cache#86| state))) ; $auto$rtlil.cc:2224:Mux$3683
-(define-fun |Cache#165| ((state |Cache_s|)) (_ BitVec 256) (ite (|Cache#41| state) #b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 (|Cache#164| state))) ; $auto$rtlil.cc:2224:Mux$3685
-(define-fun |Cache#166| ((state |Cache_s|)) Bool (and  (= ((_ extract 0 0) (|Cache#18| state)) #b1) (= ((_ extract 0 0) (|Cache#17| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3511
-(define-fun |Cache#167| ((state |Cache_s|)) (_ BitVec 64) (ite (|Cache#166| state) (|Cache#39| state) (|Cache#49| state))) ; $auto$rtlil.cc:2224:Mux$3705
-(define-fun |Cache#168| ((state |Cache_s|)) (_ BitVec 1) (bvnot (|Cache#18| state))) ; $auto$rtlil.cc:2127:Not$3515
-(define-fun |Cache#169| ((state |Cache_s|)) Bool (and  (= ((_ extract 0 0) (|Cache#168| state)) #b1) (= ((_ extract 0 0) (|Cache#17| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3516
-(define-fun |Cache#170| ((state |Cache_s|)) (_ BitVec 64) (ite (|Cache#169| state) (|Cache#39| state) (|Cache#38| state))) ; $auto$rtlil.cc:2224:Mux$3703
-(define-fun |Cache#171| ((state |Cache_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|Cache#118| state)) #b1) (|Cache#126| state) (|Cache#37| state))) ; $auto$rtlil.cc:2224:Mux$3691
-(define-fun |Cache#172| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#48| state)) #b1) ((_ extract 11 4) (|Cache#127| state)) (|Cache#26| state))) ; $auto$rtlil.cc:2224:Mux$3687
-(define-fun |Cache#173| ((state |Cache_s|)) (_ BitVec 256) (ite (= ((_ extract 0 0) (|Cache#36| state)) #b1) (|Cache#156| state) (|Cache#23| state))) ; $auto$rtlil.cc:2224:Mux$3679
-(define-fun |Cache#174| ((state |Cache_s|)) (_ BitVec 256) (ite (|Cache#41| state) #b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 (|Cache#173| state))) ; $auto$rtlil.cc:2224:Mux$3681
-(define-fun |Cache#175| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#17| state)) #b1) (|Cache#161| state) (|Cache#18| state))) ; $auto$rtlil.cc:2224:Mux$3695
-(define-fun |Cache#176| ((state |Cache_s|)) (_ BitVec 1) (ite (|Cache#41| state) #b0 (|Cache#175| state))) ; $auto$rtlil.cc:2224:Mux$3697
-(define-fun |Cache#177| ((state |Cache_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|Cache#118| state)) #b1) (|Cache#127| state) (|Cache#13| state))) ; $auto$rtlil.cc:2224:Mux$3689
-(define-fun |Cache#178| ((state |Cache_s|)) (_ BitVec 4) (ite (= ((_ extract 0 0) (|Cache#118| state)) #b1) (|Cache#125| state) (|Cache#12| state))) ; $auto$rtlil.cc:2224:Mux$3693
-(define-fun |Cache#179| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#9| state)) #b1) (|Cache#159| state) (|Cache#10| state))) ; $auto$rtlil.cc:2224:Mux$3699
-(define-fun |Cache#180| ((state |Cache_s|)) (_ BitVec 1) (ite (|Cache#41| state) #b0 (|Cache#179| state))) ; $auto$rtlil.cc:2224:Mux$3701
-(define-fun |Cache#181| ((state |Cache_s|)) (_ BitVec 2) (ite (|Cache#115| state) #b10 #b00)) ; $auto$wreduce.cc:454:run$3079 [1:0]
-(define-fun |Cache#182| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#19| state)) #b1) (concat #b0 (|Cache#181| state)) #b000)) ; $procmux$2812_Y
-(define-fun |Cache#183| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#145| state) (|Cache#182| state) #b000)) ; $procmux$2814_Y
-(define-fun |Cache#184| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#147| state)) #b1) #b110 (|Cache#1| state))) ; $procmux$2817_Y
-(define-fun |Cache#185| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#103| state) (|Cache#184| state) (|Cache#183| state))) ; $procmux$2819_Y
-(define-fun |Cache#186| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#146| state)) #b1) #b101 #b000)) ; $procmux$2822_Y
-(define-fun |Cache#187| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#91| state) (|Cache#186| state) (|Cache#185| state))) ; $procmux$2824_Y
-(define-fun |Cache#188| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#11| state)) #b1) #b100 #b000)) ; $procmux$2827_Y
-(define-fun |Cache#189| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#2| state) (|Cache#188| state) (|Cache#187| state))) ; $procmux$2829_Y
-(define-fun |Cache#190| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#148| state)) #b1) #b011 (|Cache#184| state))) ; $procmux$2835_Y
-(define-fun |Cache#191| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#96| state)) #b1) #b000 (|Cache#190| state))) ; $procmux$2838_Y
-(define-fun |Cache#192| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#3| state) (|Cache#191| state) (|Cache#189| state))) ; $procmux$2840_Y
-(define-fun |Cache#193| ((state |Cache_s|)) (_ BitVec 2) (ite (|Cache#149| state) #b10 #b01)) ; $auto$wreduce.cc:454:run$3080 [1:0]
-(define-fun |Cache#194| ((state |Cache_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|Cache#47| state)) #b1) (|Cache#193| state) #b00)) ; $auto$wreduce.cc:454:run$3081 [1:0]
-(define-fun |Cache#195| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#29| state)) #b1) (concat #b0 (|Cache#194| state)) (|Cache#190| state))) ; $procmux$2855_Y
-(define-fun |Cache#196| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#5| state) (|Cache#195| state) (|Cache#192| state))) ; $procmux$2857_Y
-(define-fun |Cache#197| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#47| state)) #b1) (concat #b0 (|Cache#193| state)) #b000)) ; $procmux$2863_Y
-(define-fun |Cache#198| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#7| state) (|Cache#197| state) (|Cache#196| state))) ; $procmux$2865_Y
-(define-fun |Cache#199| ((state |Cache_s|)) Bool (distinct (concat (ite (|Cache#2| state) #b1 #b0) (concat (ite (|Cache#3| state) #b1 #b0) (concat (ite (|Cache#5| state) #b1 #b0) (concat (ite (|Cache#7| state) #b1 #b0) (|Cache#11| state))))) #b10000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3548
-(define-fun |Cache#200| ((state |Cache_s|)) Bool (distinct (concat (ite (|Cache#7| state) #b1 #b0) (|Cache#47| state)) #b10)) ; $auto$opt_dff.cc:217:make_patterns_logic$3550
-(define-fun |Cache#201| ((state |Cache_s|)) Bool (distinct (concat (ite (|Cache#145| state) #b1 #b0) (concat (ite (|Cache#103| state) #b1 #b0) (concat (ite (|Cache#91| state) #b1 #b0) (concat (ite (|Cache#2| state) #b1 #b0) (concat (ite (|Cache#3| state) #b1 #b0) (concat (ite (|Cache#5| state) #b1 #b0) (concat (ite (|Cache#7| state) #b1 #b0) (|Cache#19| state)))))))) #b10000000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3552
-(define-fun |Cache#202| ((state |Cache_s|)) Bool (or  (|Cache#7| state) (|Cache#5| state) (|Cache#3| state) (|Cache#2| state) (|Cache#91| state) (|Cache#103| state) (|Cache#145| state))) ; $auto$opt_dff.cc:217:make_patterns_logic$3554
-(define-fun |Cache#203| ((state |Cache_s|)) Bool (distinct (concat (|Cache#146| state) (concat (ite (|Cache#91| state) #b1 #b0) (concat (ite (|Cache#2| state) #b1 #b0) (concat (ite (|Cache#3| state) #b1 #b0) (concat (ite (|Cache#5| state) #b1 #b0) (ite (|Cache#7| state) #b1 #b0)))))) #b010000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3556
-(define-fun |Cache#204| ((state |Cache_s|)) Bool (and  (|Cache#199| state) (|Cache#200| state) (|Cache#201| state) (|Cache#202| state) (|Cache#203| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3558
-(define-fun |Cache#205| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#204| state) (|Cache#198| state) (|Cache#1| state))) ; $auto$rtlil.cc:2224:Mux$3675
-(define-fun |Cache#206| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#41| state) #b000 (|Cache#205| state))) ; $auto$rtlil.cc:2224:Mux$3677
-; yosys-smt2-anyseq Cache#207 8 $auto$setundef.cc:501:execute$3170
-(declare-fun |Cache#207| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3171
-(define-fun |Cache#208| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#85| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#207| state))) ; $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_ADDR[7:0]$236
-; yosys-smt2-anyseq Cache#209 20 $auto$setundef.cc:501:execute$3168
-(declare-fun |Cache#209| (|Cache_s|) (_ BitVec 20)) ; $auto$rtlil.cc:2817:Anyseq$3169
-(define-fun |Cache#210| ((state |Cache_s|)) (_ BitVec 20) (ite (= ((_ extract 0 0) (|Cache#85| state)) #b1) ((_ extract 31 12) (|Cache#13| state)) (|Cache#209| state))) ; $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_DATA[19:0]$237
-(define-fun |Cache#211| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#85| state)) #b1) #b1 #b0)) ; $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19]
-(define-fun |Cache_m:W0A metaMem_tag| ((state |Cache_s|)) (_ BitVec 8) (|Cache#208| state)) ; $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_ADDR[7:0]$236
-(define-fun |Cache_m:W0D metaMem_tag| ((state |Cache_s|)) (_ BitVec 20) (|Cache#210| state)) ; $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_DATA[19:0]$237
-(define-fun |Cache_m:W0M metaMem_tag| ((state |Cache_s|)) (_ BitVec 20) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (|Cache#211| state))))))))))))))))))))) ; { $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$69_EN[19:0]$238 [19] }
+(define-fun |Cache#163| ((state |Cache_s|)) (_ BitVec 256) (ite (= ((_ extract 0 0) (|Cache#20| state)) #b1) (|Cache#154| state) (|Cache#155| state))) ; $procmux$2795_Y
+(define-fun |Cache#164| ((state |Cache_s|)) (_ BitVec 256) (ite (= ((_ extract 0 0) (|Cache#36| state)) #b1) (|Cache#163| state) (|Cache#86| state))) ; $auto$rtlil.cc:2224:Mux$3681
+(define-fun |Cache#165| ((state |Cache_s|)) (_ BitVec 256) (ite (|Cache#41| state) #b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 (|Cache#164| state))) ; $auto$rtlil.cc:2224:Mux$3683
+(define-fun |Cache#166| ((state |Cache_s|)) Bool (and  (= ((_ extract 0 0) (|Cache#18| state)) #b1) (= ((_ extract 0 0) (|Cache#17| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3509
+(define-fun |Cache#167| ((state |Cache_s|)) (_ BitVec 64) (ite (|Cache#166| state) (|Cache#39| state) (|Cache#49| state))) ; $auto$rtlil.cc:2224:Mux$3703
+(define-fun |Cache#168| ((state |Cache_s|)) (_ BitVec 1) (bvnot (|Cache#18| state))) ; $auto$rtlil.cc:2127:Not$3513
+(define-fun |Cache#169| ((state |Cache_s|)) Bool (and  (= ((_ extract 0 0) (|Cache#168| state)) #b1) (= ((_ extract 0 0) (|Cache#17| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3514
+(define-fun |Cache#170| ((state |Cache_s|)) (_ BitVec 64) (ite (|Cache#169| state) (|Cache#39| state) (|Cache#38| state))) ; $auto$rtlil.cc:2224:Mux$3701
+(define-fun |Cache#171| ((state |Cache_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|Cache#118| state)) #b1) (|Cache#126| state) (|Cache#37| state))) ; $auto$rtlil.cc:2224:Mux$3689
+(define-fun |Cache#172| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#48| state)) #b1) ((_ extract 11 4) (|Cache#127| state)) (|Cache#26| state))) ; $auto$rtlil.cc:2224:Mux$3685
+(define-fun |Cache#173| ((state |Cache_s|)) (_ BitVec 256) (ite (= ((_ extract 0 0) (|Cache#36| state)) #b1) (|Cache#156| state) (|Cache#23| state))) ; $auto$rtlil.cc:2224:Mux$3677
+(define-fun |Cache#174| ((state |Cache_s|)) (_ BitVec 256) (ite (|Cache#41| state) #b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 (|Cache#173| state))) ; $auto$rtlil.cc:2224:Mux$3679
+(define-fun |Cache#175| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#17| state)) #b1) (|Cache#161| state) (|Cache#18| state))) ; $auto$rtlil.cc:2224:Mux$3693
+(define-fun |Cache#176| ((state |Cache_s|)) (_ BitVec 1) (ite (|Cache#41| state) #b0 (|Cache#175| state))) ; $auto$rtlil.cc:2224:Mux$3695
+(define-fun |Cache#177| ((state |Cache_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|Cache#118| state)) #b1) (|Cache#127| state) (|Cache#13| state))) ; $auto$rtlil.cc:2224:Mux$3687
+(define-fun |Cache#178| ((state |Cache_s|)) (_ BitVec 4) (ite (= ((_ extract 0 0) (|Cache#118| state)) #b1) (|Cache#125| state) (|Cache#12| state))) ; $auto$rtlil.cc:2224:Mux$3691
+(define-fun |Cache#179| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#9| state)) #b1) (|Cache#159| state) (|Cache#10| state))) ; $auto$rtlil.cc:2224:Mux$3697
+(define-fun |Cache#180| ((state |Cache_s|)) (_ BitVec 1) (ite (|Cache#41| state) #b0 (|Cache#179| state))) ; $auto$rtlil.cc:2224:Mux$3699
+(define-fun |Cache#181| ((state |Cache_s|)) (_ BitVec 2) (ite (|Cache#115| state) #b10 #b00)) ; $auto$wreduce.cc:454:run$3077 [1:0]
+(define-fun |Cache#182| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#19| state)) #b1) (concat #b0 (|Cache#181| state)) #b000)) ; $procmux$2810_Y
+(define-fun |Cache#183| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#145| state) (|Cache#182| state) #b000)) ; $procmux$2812_Y
+(define-fun |Cache#184| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#147| state)) #b1) #b110 (|Cache#1| state))) ; $procmux$2815_Y
+(define-fun |Cache#185| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#103| state) (|Cache#184| state) (|Cache#183| state))) ; $procmux$2817_Y
+(define-fun |Cache#186| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#146| state)) #b1) #b101 #b000)) ; $procmux$2820_Y
+(define-fun |Cache#187| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#91| state) (|Cache#186| state) (|Cache#185| state))) ; $procmux$2822_Y
+(define-fun |Cache#188| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#11| state)) #b1) #b100 #b000)) ; $procmux$2825_Y
+(define-fun |Cache#189| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#2| state) (|Cache#188| state) (|Cache#187| state))) ; $procmux$2827_Y
+(define-fun |Cache#190| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#148| state)) #b1) #b011 (|Cache#184| state))) ; $procmux$2833_Y
+(define-fun |Cache#191| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#96| state)) #b1) #b000 (|Cache#190| state))) ; $procmux$2836_Y
+(define-fun |Cache#192| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#3| state) (|Cache#191| state) (|Cache#189| state))) ; $procmux$2838_Y
+(define-fun |Cache#193| ((state |Cache_s|)) (_ BitVec 2) (ite (|Cache#149| state) #b10 #b01)) ; $auto$wreduce.cc:454:run$3078 [1:0]
+(define-fun |Cache#194| ((state |Cache_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|Cache#47| state)) #b1) (|Cache#193| state) #b00)) ; $auto$wreduce.cc:454:run$3079 [1:0]
+(define-fun |Cache#195| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#29| state)) #b1) (concat #b0 (|Cache#194| state)) (|Cache#190| state))) ; $procmux$2853_Y
+(define-fun |Cache#196| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#5| state) (|Cache#195| state) (|Cache#192| state))) ; $procmux$2855_Y
+(define-fun |Cache#197| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#47| state)) #b1) (concat #b0 (|Cache#193| state)) #b000)) ; $procmux$2861_Y
+(define-fun |Cache#198| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#7| state) (|Cache#197| state) (|Cache#196| state))) ; $procmux$2863_Y
+(define-fun |Cache#199| ((state |Cache_s|)) Bool (distinct (concat (ite (|Cache#2| state) #b1 #b0) (concat (ite (|Cache#3| state) #b1 #b0) (concat (ite (|Cache#5| state) #b1 #b0) (concat (ite (|Cache#7| state) #b1 #b0) (|Cache#11| state))))) #b10000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3546
+(define-fun |Cache#200| ((state |Cache_s|)) Bool (distinct (concat (ite (|Cache#7| state) #b1 #b0) (|Cache#47| state)) #b10)) ; $auto$opt_dff.cc:217:make_patterns_logic$3548
+(define-fun |Cache#201| ((state |Cache_s|)) Bool (distinct (concat (ite (|Cache#145| state) #b1 #b0) (concat (ite (|Cache#103| state) #b1 #b0) (concat (ite (|Cache#91| state) #b1 #b0) (concat (ite (|Cache#2| state) #b1 #b0) (concat (ite (|Cache#3| state) #b1 #b0) (concat (ite (|Cache#5| state) #b1 #b0) (concat (ite (|Cache#7| state) #b1 #b0) (|Cache#19| state)))))))) #b10000000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3550
+(define-fun |Cache#202| ((state |Cache_s|)) Bool (or  (|Cache#7| state) (|Cache#5| state) (|Cache#3| state) (|Cache#2| state) (|Cache#91| state) (|Cache#103| state) (|Cache#145| state))) ; $auto$opt_dff.cc:217:make_patterns_logic$3552
+(define-fun |Cache#203| ((state |Cache_s|)) Bool (distinct (concat (|Cache#146| state) (concat (ite (|Cache#91| state) #b1 #b0) (concat (ite (|Cache#2| state) #b1 #b0) (concat (ite (|Cache#3| state) #b1 #b0) (concat (ite (|Cache#5| state) #b1 #b0) (ite (|Cache#7| state) #b1 #b0)))))) #b010000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3554
+(define-fun |Cache#204| ((state |Cache_s|)) Bool (and  (|Cache#199| state) (|Cache#200| state) (|Cache#201| state) (|Cache#202| state) (|Cache#203| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3556
+(define-fun |Cache#205| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#204| state) (|Cache#198| state) (|Cache#1| state))) ; $auto$rtlil.cc:2224:Mux$3673
+(define-fun |Cache#206| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#41| state) #b000 (|Cache#205| state))) ; $auto$rtlil.cc:2224:Mux$3675
+; yosys-smt2-anyseq Cache#207 8 $auto$setundef.cc:501:execute$3168
+(declare-fun |Cache#207| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3169
+(define-fun |Cache#208| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#85| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#207| state))) ; $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_ADDR[7:0]$234
+; yosys-smt2-anyseq Cache#209 20 $auto$setundef.cc:501:execute$3166
+(declare-fun |Cache#209| (|Cache_s|) (_ BitVec 20)) ; $auto$rtlil.cc:2817:Anyseq$3167
+(define-fun |Cache#210| ((state |Cache_s|)) (_ BitVec 20) (ite (= ((_ extract 0 0) (|Cache#85| state)) #b1) ((_ extract 31 12) (|Cache#13| state)) (|Cache#209| state))) ; $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_DATA[19:0]$235
+(define-fun |Cache#211| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#85| state)) #b1) #b1 #b0)) ; $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19]
+(define-fun |Cache_m:W0A metaMem_tag| ((state |Cache_s|)) (_ BitVec 8) (|Cache#208| state)) ; $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_ADDR[7:0]$234
+(define-fun |Cache_m:W0D metaMem_tag| ((state |Cache_s|)) (_ BitVec 20) (|Cache#210| state)) ; $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_DATA[19:0]$235
+(define-fun |Cache_m:W0M metaMem_tag| ((state |Cache_s|)) (_ BitVec 20) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (|Cache#211| state))))))))))))))))))))) ; { $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] }
 (define-fun |Cache#25#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 20)) (store (|Cache#25#0| state) (|Cache_m:W0A metaMem_tag| state) (bvor (bvand (|Cache_m:W0D metaMem_tag| state) (|Cache_m:W0M metaMem_tag| state)) (bvand (select (|Cache#25#0| state) (|Cache_m:W0A metaMem_tag| state)) (bvnot (|Cache_m:W0M metaMem_tag| state)))))) ; metaMem_tag
-; yosys-smt2-anyseq Cache#212 8 $auto$setundef.cc:501:execute$3106
-(declare-fun |Cache#212| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3107
-(define-fun |Cache#213| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#128| state))) ; $and$__lft__corr.v:5887$351_Y
-(define-fun |Cache#214| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#213| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#212| state))) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5888$85_ADDR[7:0]$284
-; yosys-smt2-anyseq Cache#215 8 $auto$setundef.cc:501:execute$3104
-(declare-fun |Cache#215| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3105
-(define-fun |Cache#216| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#213| state)) #b1) ((_ extract 127 120) (|Cache#40| state)) (|Cache#215| state))) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5888$85_DATA[7:0]$285
-(define-fun |Cache#217| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#213| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5888$85_EN[7:0]$286 [7]
-(define-fun |Cache_m:W0A dataMem_3_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#214| state)) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5888$85_ADDR[7:0]$284
-(define-fun |Cache_m:W0D dataMem_3_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#216| state)) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5888$85_DATA[7:0]$285
-(define-fun |Cache_m:W0M dataMem_3_3| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (|Cache#217| state))))))))) ; { $0$memwr$\dataMem_3_3$__lft__corr.v:5888$85_EN[7:0]$286 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$85_EN[7:0]$286 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$85_EN[7:0]$286 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$85_EN[7:0]$286 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$85_EN[7:0]$286 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$85_EN[7:0]$286 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$85_EN[7:0]$286 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$85_EN[7:0]$286 [7] }
+; yosys-smt2-anyseq Cache#212 8 $auto$setundef.cc:501:execute$3104
+(declare-fun |Cache#212| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3105
+(define-fun |Cache#213| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#128| state))) ; $and$__lft__corr.v:5887$349_Y
+(define-fun |Cache#214| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#213| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#212| state))) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_ADDR[7:0]$282
+; yosys-smt2-anyseq Cache#215 8 $auto$setundef.cc:501:execute$3102
+(declare-fun |Cache#215| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3103
+(define-fun |Cache#216| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#213| state)) #b1) ((_ extract 127 120) (|Cache#40| state)) (|Cache#215| state))) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_DATA[7:0]$283
+(define-fun |Cache#217| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#213| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7]
+(define-fun |Cache_m:W0A dataMem_3_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#214| state)) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_ADDR[7:0]$282
+(define-fun |Cache_m:W0D dataMem_3_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#216| state)) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_DATA[7:0]$283
+(define-fun |Cache_m:W0M dataMem_3_3| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (|Cache#217| state))))))))) ; { $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7] }
 (define-fun |Cache#81#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#81#0| state) (|Cache_m:W0A dataMem_3_3| state) (bvor (bvand (|Cache_m:W0D dataMem_3_3| state) (|Cache_m:W0M dataMem_3_3| state)) (bvand (select (|Cache#81#0| state) (|Cache_m:W0A dataMem_3_3| state)) (bvnot (|Cache_m:W0M dataMem_3_3| state)))))) ; dataMem_3_3
-; yosys-smt2-anyseq Cache#218 8 $auto$setundef.cc:501:execute$3110
-(declare-fun |Cache#218| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3111
-(define-fun |Cache#219| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#129| state))) ; $and$__lft__corr.v:5881$347_Y
-(define-fun |Cache#220| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#219| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#218| state))) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5882$84_ADDR[7:0]$281
-; yosys-smt2-anyseq Cache#221 8 $auto$setundef.cc:501:execute$3108
-(declare-fun |Cache#221| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3109
-(define-fun |Cache#222| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#219| state)) #b1) ((_ extract 119 112) (|Cache#40| state)) (|Cache#221| state))) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5882$84_DATA[7:0]$282
-(define-fun |Cache#223| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#219| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5882$84_EN[7:0]$283 [7]
-(define-fun |Cache_m:W0A dataMem_3_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#220| state)) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5882$84_ADDR[7:0]$281
-(define-fun |Cache_m:W0D dataMem_3_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#222| state)) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5882$84_DATA[7:0]$282
-(define-fun |Cache_m:W0M dataMem_3_2| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (|Cache#223| state))))))))) ; { $0$memwr$\dataMem_3_2$__lft__corr.v:5882$84_EN[7:0]$283 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$84_EN[7:0]$283 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$84_EN[7:0]$283 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$84_EN[7:0]$283 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$84_EN[7:0]$283 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$84_EN[7:0]$283 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$84_EN[7:0]$283 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$84_EN[7:0]$283 [7] }
+; yosys-smt2-anyseq Cache#218 8 $auto$setundef.cc:501:execute$3108
+(declare-fun |Cache#218| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3109
+(define-fun |Cache#219| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#129| state))) ; $and$__lft__corr.v:5881$345_Y
+(define-fun |Cache#220| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#219| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#218| state))) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_ADDR[7:0]$279
+; yosys-smt2-anyseq Cache#221 8 $auto$setundef.cc:501:execute$3106
+(declare-fun |Cache#221| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3107
+(define-fun |Cache#222| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#219| state)) #b1) ((_ extract 119 112) (|Cache#40| state)) (|Cache#221| state))) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_DATA[7:0]$280
+(define-fun |Cache#223| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#219| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7]
+(define-fun |Cache_m:W0A dataMem_3_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#220| state)) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_ADDR[7:0]$279
+(define-fun |Cache_m:W0D dataMem_3_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#222| state)) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_DATA[7:0]$280
+(define-fun |Cache_m:W0M dataMem_3_2| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (|Cache#223| state))))))))) ; { $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7] }
 (define-fun |Cache#79#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#79#0| state) (|Cache_m:W0A dataMem_3_2| state) (bvor (bvand (|Cache_m:W0D dataMem_3_2| state) (|Cache_m:W0M dataMem_3_2| state)) (bvand (select (|Cache#79#0| state) (|Cache_m:W0A dataMem_3_2| state)) (bvnot (|Cache_m:W0M dataMem_3_2| state)))))) ; dataMem_3_2
-; yosys-smt2-anyseq Cache#224 8 $auto$setundef.cc:501:execute$3114
-(declare-fun |Cache#224| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3115
-(define-fun |Cache#225| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#130| state))) ; $and$__lft__corr.v:5875$343_Y
-(define-fun |Cache#226| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#225| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#224| state))) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5876$83_ADDR[7:0]$278
-; yosys-smt2-anyseq Cache#227 8 $auto$setundef.cc:501:execute$3112
-(declare-fun |Cache#227| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3113
-(define-fun |Cache#228| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#225| state)) #b1) ((_ extract 111 104) (|Cache#40| state)) (|Cache#227| state))) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5876$83_DATA[7:0]$279
-(define-fun |Cache#229| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#225| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5876$83_EN[7:0]$280 [7]
-(define-fun |Cache_m:W0A dataMem_3_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#226| state)) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5876$83_ADDR[7:0]$278
-(define-fun |Cache_m:W0D dataMem_3_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#228| state)) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5876$83_DATA[7:0]$279
-(define-fun |Cache_m:W0M dataMem_3_1| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (|Cache#229| state))))))))) ; { $0$memwr$\dataMem_3_1$__lft__corr.v:5876$83_EN[7:0]$280 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$83_EN[7:0]$280 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$83_EN[7:0]$280 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$83_EN[7:0]$280 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$83_EN[7:0]$280 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$83_EN[7:0]$280 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$83_EN[7:0]$280 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$83_EN[7:0]$280 [7] }
+; yosys-smt2-anyseq Cache#224 8 $auto$setundef.cc:501:execute$3112
+(declare-fun |Cache#224| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3113
+(define-fun |Cache#225| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#130| state))) ; $and$__lft__corr.v:5875$341_Y
+(define-fun |Cache#226| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#225| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#224| state))) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_ADDR[7:0]$276
+; yosys-smt2-anyseq Cache#227 8 $auto$setundef.cc:501:execute$3110
+(declare-fun |Cache#227| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3111
+(define-fun |Cache#228| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#225| state)) #b1) ((_ extract 111 104) (|Cache#40| state)) (|Cache#227| state))) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_DATA[7:0]$277
+(define-fun |Cache#229| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#225| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7]
+(define-fun |Cache_m:W0A dataMem_3_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#226| state)) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_ADDR[7:0]$276
+(define-fun |Cache_m:W0D dataMem_3_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#228| state)) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_DATA[7:0]$277
+(define-fun |Cache_m:W0M dataMem_3_1| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (|Cache#229| state))))))))) ; { $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7] }
 (define-fun |Cache#77#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#77#0| state) (|Cache_m:W0A dataMem_3_1| state) (bvor (bvand (|Cache_m:W0D dataMem_3_1| state) (|Cache_m:W0M dataMem_3_1| state)) (bvand (select (|Cache#77#0| state) (|Cache_m:W0A dataMem_3_1| state)) (bvnot (|Cache_m:W0M dataMem_3_1| state)))))) ; dataMem_3_1
-; yosys-smt2-anyseq Cache#230 8 $auto$setundef.cc:501:execute$3118
-(declare-fun |Cache#230| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3119
-(define-fun |Cache#231| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#131| state))) ; $and$__lft__corr.v:5869$339_Y
-(define-fun |Cache#232| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#231| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#230| state))) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5870$82_ADDR[7:0]$275
-; yosys-smt2-anyseq Cache#233 8 $auto$setundef.cc:501:execute$3116
-(declare-fun |Cache#233| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3117
-(define-fun |Cache#234| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#231| state)) #b1) ((_ extract 103 96) (|Cache#40| state)) (|Cache#233| state))) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5870$82_DATA[7:0]$276
-(define-fun |Cache#235| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#231| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5870$82_EN[7:0]$277 [7]
-(define-fun |Cache_m:W0A dataMem_3_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#232| state)) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5870$82_ADDR[7:0]$275
-(define-fun |Cache_m:W0D dataMem_3_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#234| state)) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5870$82_DATA[7:0]$276
-(define-fun |Cache_m:W0M dataMem_3_0| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (|Cache#235| state))))))))) ; { $0$memwr$\dataMem_3_0$__lft__corr.v:5870$82_EN[7:0]$277 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$82_EN[7:0]$277 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$82_EN[7:0]$277 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$82_EN[7:0]$277 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$82_EN[7:0]$277 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$82_EN[7:0]$277 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$82_EN[7:0]$277 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$82_EN[7:0]$277 [7] }
+; yosys-smt2-anyseq Cache#230 8 $auto$setundef.cc:501:execute$3116
+(declare-fun |Cache#230| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3117
+(define-fun |Cache#231| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#131| state))) ; $and$__lft__corr.v:5869$337_Y
+(define-fun |Cache#232| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#231| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#230| state))) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_ADDR[7:0]$273
+; yosys-smt2-anyseq Cache#233 8 $auto$setundef.cc:501:execute$3114
+(declare-fun |Cache#233| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3115
+(define-fun |Cache#234| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#231| state)) #b1) ((_ extract 103 96) (|Cache#40| state)) (|Cache#233| state))) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_DATA[7:0]$274
+(define-fun |Cache#235| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#231| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7]
+(define-fun |Cache_m:W0A dataMem_3_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#232| state)) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_ADDR[7:0]$273
+(define-fun |Cache_m:W0D dataMem_3_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#234| state)) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_DATA[7:0]$274
+(define-fun |Cache_m:W0M dataMem_3_0| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (|Cache#235| state))))))))) ; { $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7] }
 (define-fun |Cache#75#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#75#0| state) (|Cache_m:W0A dataMem_3_0| state) (bvor (bvand (|Cache_m:W0D dataMem_3_0| state) (|Cache_m:W0M dataMem_3_0| state)) (bvand (select (|Cache#75#0| state) (|Cache_m:W0A dataMem_3_0| state)) (bvnot (|Cache_m:W0M dataMem_3_0| state)))))) ; dataMem_3_0
-; yosys-smt2-anyseq Cache#236 8 $auto$setundef.cc:501:execute$3122
-(declare-fun |Cache#236| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3123
-(define-fun |Cache#237| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#132| state))) ; $and$__lft__corr.v:5863$335_Y
-(define-fun |Cache#238| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#237| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#236| state))) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5864$81_ADDR[7:0]$272
-; yosys-smt2-anyseq Cache#239 8 $auto$setundef.cc:501:execute$3120
-(declare-fun |Cache#239| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3121
-(define-fun |Cache#240| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#237| state)) #b1) ((_ extract 95 88) (|Cache#40| state)) (|Cache#239| state))) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5864$81_DATA[7:0]$273
-(define-fun |Cache#241| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#237| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5864$81_EN[7:0]$274 [7]
-(define-fun |Cache_m:W0A dataMem_2_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#238| state)) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5864$81_ADDR[7:0]$272
-(define-fun |Cache_m:W0D dataMem_2_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#240| state)) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5864$81_DATA[7:0]$273
-(define-fun |Cache_m:W0M dataMem_2_3| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (|Cache#241| state))))))))) ; { $0$memwr$\dataMem_2_3$__lft__corr.v:5864$81_EN[7:0]$274 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$81_EN[7:0]$274 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$81_EN[7:0]$274 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$81_EN[7:0]$274 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$81_EN[7:0]$274 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$81_EN[7:0]$274 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$81_EN[7:0]$274 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$81_EN[7:0]$274 [7] }
+; yosys-smt2-anyseq Cache#236 8 $auto$setundef.cc:501:execute$3120
+(declare-fun |Cache#236| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3121
+(define-fun |Cache#237| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#132| state))) ; $and$__lft__corr.v:5863$333_Y
+(define-fun |Cache#238| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#237| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#236| state))) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_ADDR[7:0]$270
+; yosys-smt2-anyseq Cache#239 8 $auto$setundef.cc:501:execute$3118
+(declare-fun |Cache#239| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3119
+(define-fun |Cache#240| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#237| state)) #b1) ((_ extract 95 88) (|Cache#40| state)) (|Cache#239| state))) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_DATA[7:0]$271
+(define-fun |Cache#241| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#237| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7]
+(define-fun |Cache_m:W0A dataMem_2_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#238| state)) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_ADDR[7:0]$270
+(define-fun |Cache_m:W0D dataMem_2_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#240| state)) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_DATA[7:0]$271
+(define-fun |Cache_m:W0M dataMem_2_3| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (|Cache#241| state))))))))) ; { $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7] }
 (define-fun |Cache#73#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#73#0| state) (|Cache_m:W0A dataMem_2_3| state) (bvor (bvand (|Cache_m:W0D dataMem_2_3| state) (|Cache_m:W0M dataMem_2_3| state)) (bvand (select (|Cache#73#0| state) (|Cache_m:W0A dataMem_2_3| state)) (bvnot (|Cache_m:W0M dataMem_2_3| state)))))) ; dataMem_2_3
-; yosys-smt2-anyseq Cache#242 8 $auto$setundef.cc:501:execute$3126
-(declare-fun |Cache#242| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3127
-(define-fun |Cache#243| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#133| state))) ; $and$__lft__corr.v:5857$331_Y
-(define-fun |Cache#244| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#243| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#242| state))) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5858$80_ADDR[7:0]$269
-; yosys-smt2-anyseq Cache#245 8 $auto$setundef.cc:501:execute$3124
-(declare-fun |Cache#245| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3125
-(define-fun |Cache#246| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#243| state)) #b1) ((_ extract 87 80) (|Cache#40| state)) (|Cache#245| state))) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5858$80_DATA[7:0]$270
-(define-fun |Cache#247| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#243| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5858$80_EN[7:0]$271 [7]
-(define-fun |Cache_m:W0A dataMem_2_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#244| state)) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5858$80_ADDR[7:0]$269
-(define-fun |Cache_m:W0D dataMem_2_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#246| state)) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5858$80_DATA[7:0]$270
-(define-fun |Cache_m:W0M dataMem_2_2| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (|Cache#247| state))))))))) ; { $0$memwr$\dataMem_2_2$__lft__corr.v:5858$80_EN[7:0]$271 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$80_EN[7:0]$271 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$80_EN[7:0]$271 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$80_EN[7:0]$271 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$80_EN[7:0]$271 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$80_EN[7:0]$271 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$80_EN[7:0]$271 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$80_EN[7:0]$271 [7] }
+; yosys-smt2-anyseq Cache#242 8 $auto$setundef.cc:501:execute$3124
+(declare-fun |Cache#242| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3125
+(define-fun |Cache#243| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#133| state))) ; $and$__lft__corr.v:5857$329_Y
+(define-fun |Cache#244| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#243| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#242| state))) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_ADDR[7:0]$267
+; yosys-smt2-anyseq Cache#245 8 $auto$setundef.cc:501:execute$3122
+(declare-fun |Cache#245| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3123
+(define-fun |Cache#246| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#243| state)) #b1) ((_ extract 87 80) (|Cache#40| state)) (|Cache#245| state))) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_DATA[7:0]$268
+(define-fun |Cache#247| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#243| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7]
+(define-fun |Cache_m:W0A dataMem_2_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#244| state)) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_ADDR[7:0]$267
+(define-fun |Cache_m:W0D dataMem_2_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#246| state)) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_DATA[7:0]$268
+(define-fun |Cache_m:W0M dataMem_2_2| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (|Cache#247| state))))))))) ; { $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7] }
 (define-fun |Cache#71#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#71#0| state) (|Cache_m:W0A dataMem_2_2| state) (bvor (bvand (|Cache_m:W0D dataMem_2_2| state) (|Cache_m:W0M dataMem_2_2| state)) (bvand (select (|Cache#71#0| state) (|Cache_m:W0A dataMem_2_2| state)) (bvnot (|Cache_m:W0M dataMem_2_2| state)))))) ; dataMem_2_2
-; yosys-smt2-anyseq Cache#248 8 $auto$setundef.cc:501:execute$3130
-(declare-fun |Cache#248| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3131
-(define-fun |Cache#249| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#134| state))) ; $and$__lft__corr.v:5851$327_Y
-(define-fun |Cache#250| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#249| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#248| state))) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5852$79_ADDR[7:0]$266
-; yosys-smt2-anyseq Cache#251 8 $auto$setundef.cc:501:execute$3128
-(declare-fun |Cache#251| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3129
-(define-fun |Cache#252| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#249| state)) #b1) ((_ extract 79 72) (|Cache#40| state)) (|Cache#251| state))) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5852$79_DATA[7:0]$267
-(define-fun |Cache#253| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#249| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5852$79_EN[7:0]$268 [7]
-(define-fun |Cache_m:W0A dataMem_2_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#250| state)) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5852$79_ADDR[7:0]$266
-(define-fun |Cache_m:W0D dataMem_2_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#252| state)) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5852$79_DATA[7:0]$267
-(define-fun |Cache_m:W0M dataMem_2_1| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (|Cache#253| state))))))))) ; { $0$memwr$\dataMem_2_1$__lft__corr.v:5852$79_EN[7:0]$268 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$79_EN[7:0]$268 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$79_EN[7:0]$268 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$79_EN[7:0]$268 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$79_EN[7:0]$268 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$79_EN[7:0]$268 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$79_EN[7:0]$268 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$79_EN[7:0]$268 [7] }
+; yosys-smt2-anyseq Cache#248 8 $auto$setundef.cc:501:execute$3128
+(declare-fun |Cache#248| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3129
+(define-fun |Cache#249| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#134| state))) ; $and$__lft__corr.v:5851$325_Y
+(define-fun |Cache#250| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#249| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#248| state))) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_ADDR[7:0]$264
+; yosys-smt2-anyseq Cache#251 8 $auto$setundef.cc:501:execute$3126
+(declare-fun |Cache#251| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3127
+(define-fun |Cache#252| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#249| state)) #b1) ((_ extract 79 72) (|Cache#40| state)) (|Cache#251| state))) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_DATA[7:0]$265
+(define-fun |Cache#253| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#249| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7]
+(define-fun |Cache_m:W0A dataMem_2_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#250| state)) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_ADDR[7:0]$264
+(define-fun |Cache_m:W0D dataMem_2_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#252| state)) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_DATA[7:0]$265
+(define-fun |Cache_m:W0M dataMem_2_1| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (|Cache#253| state))))))))) ; { $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7] }
 (define-fun |Cache#69#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#69#0| state) (|Cache_m:W0A dataMem_2_1| state) (bvor (bvand (|Cache_m:W0D dataMem_2_1| state) (|Cache_m:W0M dataMem_2_1| state)) (bvand (select (|Cache#69#0| state) (|Cache_m:W0A dataMem_2_1| state)) (bvnot (|Cache_m:W0M dataMem_2_1| state)))))) ; dataMem_2_1
-; yosys-smt2-anyseq Cache#254 8 $auto$setundef.cc:501:execute$3134
-(declare-fun |Cache#254| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3135
-(define-fun |Cache#255| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#135| state))) ; $and$__lft__corr.v:5845$323_Y
-(define-fun |Cache#256| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#255| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#254| state))) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5846$78_ADDR[7:0]$263
-; yosys-smt2-anyseq Cache#257 8 $auto$setundef.cc:501:execute$3132
-(declare-fun |Cache#257| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3133
-(define-fun |Cache#258| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#255| state)) #b1) ((_ extract 71 64) (|Cache#40| state)) (|Cache#257| state))) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5846$78_DATA[7:0]$264
-(define-fun |Cache#259| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#255| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5846$78_EN[7:0]$265 [7]
-(define-fun |Cache_m:W0A dataMem_2_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#256| state)) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5846$78_ADDR[7:0]$263
-(define-fun |Cache_m:W0D dataMem_2_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#258| state)) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5846$78_DATA[7:0]$264
-(define-fun |Cache_m:W0M dataMem_2_0| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (|Cache#259| state))))))))) ; { $0$memwr$\dataMem_2_0$__lft__corr.v:5846$78_EN[7:0]$265 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$78_EN[7:0]$265 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$78_EN[7:0]$265 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$78_EN[7:0]$265 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$78_EN[7:0]$265 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$78_EN[7:0]$265 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$78_EN[7:0]$265 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$78_EN[7:0]$265 [7] }
+; yosys-smt2-anyseq Cache#254 8 $auto$setundef.cc:501:execute$3132
+(declare-fun |Cache#254| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3133
+(define-fun |Cache#255| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#135| state))) ; $and$__lft__corr.v:5845$321_Y
+(define-fun |Cache#256| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#255| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#254| state))) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_ADDR[7:0]$261
+; yosys-smt2-anyseq Cache#257 8 $auto$setundef.cc:501:execute$3130
+(declare-fun |Cache#257| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3131
+(define-fun |Cache#258| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#255| state)) #b1) ((_ extract 71 64) (|Cache#40| state)) (|Cache#257| state))) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_DATA[7:0]$262
+(define-fun |Cache#259| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#255| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7]
+(define-fun |Cache_m:W0A dataMem_2_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#256| state)) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_ADDR[7:0]$261
+(define-fun |Cache_m:W0D dataMem_2_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#258| state)) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_DATA[7:0]$262
+(define-fun |Cache_m:W0M dataMem_2_0| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (|Cache#259| state))))))))) ; { $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7] }
 (define-fun |Cache#67#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#67#0| state) (|Cache_m:W0A dataMem_2_0| state) (bvor (bvand (|Cache_m:W0D dataMem_2_0| state) (|Cache_m:W0M dataMem_2_0| state)) (bvand (select (|Cache#67#0| state) (|Cache_m:W0A dataMem_2_0| state)) (bvnot (|Cache_m:W0M dataMem_2_0| state)))))) ; dataMem_2_0
-; yosys-smt2-anyseq Cache#260 8 $auto$setundef.cc:501:execute$3138
-(declare-fun |Cache#260| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3139
-(define-fun |Cache#261| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#136| state))) ; $and$__lft__corr.v:5839$319_Y
-(define-fun |Cache#262| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#261| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#260| state))) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5840$77_ADDR[7:0]$260
-; yosys-smt2-anyseq Cache#263 8 $auto$setundef.cc:501:execute$3136
-(declare-fun |Cache#263| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3137
-(define-fun |Cache#264| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#261| state)) #b1) ((_ extract 63 56) (|Cache#40| state)) (|Cache#263| state))) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5840$77_DATA[7:0]$261
-(define-fun |Cache#265| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#261| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5840$77_EN[7:0]$262 [7]
-(define-fun |Cache_m:W0A dataMem_1_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#262| state)) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5840$77_ADDR[7:0]$260
-(define-fun |Cache_m:W0D dataMem_1_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#264| state)) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5840$77_DATA[7:0]$261
-(define-fun |Cache_m:W0M dataMem_1_3| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (|Cache#265| state))))))))) ; { $0$memwr$\dataMem_1_3$__lft__corr.v:5840$77_EN[7:0]$262 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$77_EN[7:0]$262 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$77_EN[7:0]$262 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$77_EN[7:0]$262 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$77_EN[7:0]$262 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$77_EN[7:0]$262 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$77_EN[7:0]$262 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$77_EN[7:0]$262 [7] }
+; yosys-smt2-anyseq Cache#260 8 $auto$setundef.cc:501:execute$3136
+(declare-fun |Cache#260| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3137
+(define-fun |Cache#261| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#136| state))) ; $and$__lft__corr.v:5839$317_Y
+(define-fun |Cache#262| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#261| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#260| state))) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_ADDR[7:0]$258
+; yosys-smt2-anyseq Cache#263 8 $auto$setundef.cc:501:execute$3134
+(declare-fun |Cache#263| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3135
+(define-fun |Cache#264| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#261| state)) #b1) ((_ extract 63 56) (|Cache#40| state)) (|Cache#263| state))) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_DATA[7:0]$259
+(define-fun |Cache#265| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#261| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7]
+(define-fun |Cache_m:W0A dataMem_1_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#262| state)) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_ADDR[7:0]$258
+(define-fun |Cache_m:W0D dataMem_1_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#264| state)) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_DATA[7:0]$259
+(define-fun |Cache_m:W0M dataMem_1_3| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (|Cache#265| state))))))))) ; { $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7] }
 (define-fun |Cache#65#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#65#0| state) (|Cache_m:W0A dataMem_1_3| state) (bvor (bvand (|Cache_m:W0D dataMem_1_3| state) (|Cache_m:W0M dataMem_1_3| state)) (bvand (select (|Cache#65#0| state) (|Cache_m:W0A dataMem_1_3| state)) (bvnot (|Cache_m:W0M dataMem_1_3| state)))))) ; dataMem_1_3
-; yosys-smt2-anyseq Cache#266 8 $auto$setundef.cc:501:execute$3142
-(declare-fun |Cache#266| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3143
-(define-fun |Cache#267| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#137| state))) ; $and$__lft__corr.v:5833$315_Y
-(define-fun |Cache#268| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#267| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#266| state))) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5834$76_ADDR[7:0]$257
-; yosys-smt2-anyseq Cache#269 8 $auto$setundef.cc:501:execute$3140
-(declare-fun |Cache#269| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3141
-(define-fun |Cache#270| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#267| state)) #b1) ((_ extract 55 48) (|Cache#40| state)) (|Cache#269| state))) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5834$76_DATA[7:0]$258
-(define-fun |Cache#271| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#267| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5834$76_EN[7:0]$259 [7]
-(define-fun |Cache_m:W0A dataMem_1_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#268| state)) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5834$76_ADDR[7:0]$257
-(define-fun |Cache_m:W0D dataMem_1_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#270| state)) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5834$76_DATA[7:0]$258
-(define-fun |Cache_m:W0M dataMem_1_2| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (|Cache#271| state))))))))) ; { $0$memwr$\dataMem_1_2$__lft__corr.v:5834$76_EN[7:0]$259 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$76_EN[7:0]$259 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$76_EN[7:0]$259 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$76_EN[7:0]$259 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$76_EN[7:0]$259 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$76_EN[7:0]$259 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$76_EN[7:0]$259 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$76_EN[7:0]$259 [7] }
+; yosys-smt2-anyseq Cache#266 8 $auto$setundef.cc:501:execute$3140
+(declare-fun |Cache#266| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3141
+(define-fun |Cache#267| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#137| state))) ; $and$__lft__corr.v:5833$313_Y
+(define-fun |Cache#268| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#267| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#266| state))) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_ADDR[7:0]$255
+; yosys-smt2-anyseq Cache#269 8 $auto$setundef.cc:501:execute$3138
+(declare-fun |Cache#269| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3139
+(define-fun |Cache#270| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#267| state)) #b1) ((_ extract 55 48) (|Cache#40| state)) (|Cache#269| state))) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_DATA[7:0]$256
+(define-fun |Cache#271| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#267| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7]
+(define-fun |Cache_m:W0A dataMem_1_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#268| state)) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_ADDR[7:0]$255
+(define-fun |Cache_m:W0D dataMem_1_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#270| state)) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_DATA[7:0]$256
+(define-fun |Cache_m:W0M dataMem_1_2| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (|Cache#271| state))))))))) ; { $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7] }
 (define-fun |Cache#63#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#63#0| state) (|Cache_m:W0A dataMem_1_2| state) (bvor (bvand (|Cache_m:W0D dataMem_1_2| state) (|Cache_m:W0M dataMem_1_2| state)) (bvand (select (|Cache#63#0| state) (|Cache_m:W0A dataMem_1_2| state)) (bvnot (|Cache_m:W0M dataMem_1_2| state)))))) ; dataMem_1_2
-; yosys-smt2-anyseq Cache#272 8 $auto$setundef.cc:501:execute$3146
-(declare-fun |Cache#272| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3147
-(define-fun |Cache#273| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#138| state))) ; $and$__lft__corr.v:5827$311_Y
-(define-fun |Cache#274| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#273| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#272| state))) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5828$75_ADDR[7:0]$254
-; yosys-smt2-anyseq Cache#275 8 $auto$setundef.cc:501:execute$3144
-(declare-fun |Cache#275| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3145
-(define-fun |Cache#276| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#273| state)) #b1) ((_ extract 47 40) (|Cache#40| state)) (|Cache#275| state))) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5828$75_DATA[7:0]$255
-(define-fun |Cache#277| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#273| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5828$75_EN[7:0]$256 [7]
-(define-fun |Cache_m:W0A dataMem_1_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#274| state)) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5828$75_ADDR[7:0]$254
-(define-fun |Cache_m:W0D dataMem_1_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#276| state)) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5828$75_DATA[7:0]$255
-(define-fun |Cache_m:W0M dataMem_1_1| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (|Cache#277| state))))))))) ; { $0$memwr$\dataMem_1_1$__lft__corr.v:5828$75_EN[7:0]$256 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$75_EN[7:0]$256 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$75_EN[7:0]$256 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$75_EN[7:0]$256 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$75_EN[7:0]$256 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$75_EN[7:0]$256 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$75_EN[7:0]$256 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$75_EN[7:0]$256 [7] }
+; yosys-smt2-anyseq Cache#272 8 $auto$setundef.cc:501:execute$3144
+(declare-fun |Cache#272| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3145
+(define-fun |Cache#273| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#138| state))) ; $and$__lft__corr.v:5827$309_Y
+(define-fun |Cache#274| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#273| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#272| state))) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_ADDR[7:0]$252
+; yosys-smt2-anyseq Cache#275 8 $auto$setundef.cc:501:execute$3142
+(declare-fun |Cache#275| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3143
+(define-fun |Cache#276| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#273| state)) #b1) ((_ extract 47 40) (|Cache#40| state)) (|Cache#275| state))) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_DATA[7:0]$253
+(define-fun |Cache#277| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#273| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7]
+(define-fun |Cache_m:W0A dataMem_1_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#274| state)) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_ADDR[7:0]$252
+(define-fun |Cache_m:W0D dataMem_1_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#276| state)) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_DATA[7:0]$253
+(define-fun |Cache_m:W0M dataMem_1_1| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (|Cache#277| state))))))))) ; { $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7] }
 (define-fun |Cache#61#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#61#0| state) (|Cache_m:W0A dataMem_1_1| state) (bvor (bvand (|Cache_m:W0D dataMem_1_1| state) (|Cache_m:W0M dataMem_1_1| state)) (bvand (select (|Cache#61#0| state) (|Cache_m:W0A dataMem_1_1| state)) (bvnot (|Cache_m:W0M dataMem_1_1| state)))))) ; dataMem_1_1
-; yosys-smt2-anyseq Cache#278 8 $auto$setundef.cc:501:execute$3150
-(declare-fun |Cache#278| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3151
-(define-fun |Cache#279| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#139| state))) ; $and$__lft__corr.v:5821$307_Y
-(define-fun |Cache#280| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#279| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#278| state))) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5822$74_ADDR[7:0]$251
-; yosys-smt2-anyseq Cache#281 8 $auto$setundef.cc:501:execute$3148
-(declare-fun |Cache#281| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3149
-(define-fun |Cache#282| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#279| state)) #b1) ((_ extract 39 32) (|Cache#40| state)) (|Cache#281| state))) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5822$74_DATA[7:0]$252
-(define-fun |Cache#283| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#279| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5822$74_EN[7:0]$253 [7]
-(define-fun |Cache_m:W0A dataMem_1_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#280| state)) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5822$74_ADDR[7:0]$251
-(define-fun |Cache_m:W0D dataMem_1_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#282| state)) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5822$74_DATA[7:0]$252
-(define-fun |Cache_m:W0M dataMem_1_0| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (|Cache#283| state))))))))) ; { $0$memwr$\dataMem_1_0$__lft__corr.v:5822$74_EN[7:0]$253 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$74_EN[7:0]$253 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$74_EN[7:0]$253 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$74_EN[7:0]$253 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$74_EN[7:0]$253 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$74_EN[7:0]$253 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$74_EN[7:0]$253 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$74_EN[7:0]$253 [7] }
+; yosys-smt2-anyseq Cache#278 8 $auto$setundef.cc:501:execute$3148
+(declare-fun |Cache#278| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3149
+(define-fun |Cache#279| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#139| state))) ; $and$__lft__corr.v:5821$305_Y
+(define-fun |Cache#280| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#279| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#278| state))) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_ADDR[7:0]$249
+; yosys-smt2-anyseq Cache#281 8 $auto$setundef.cc:501:execute$3146
+(declare-fun |Cache#281| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3147
+(define-fun |Cache#282| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#279| state)) #b1) ((_ extract 39 32) (|Cache#40| state)) (|Cache#281| state))) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_DATA[7:0]$250
+(define-fun |Cache#283| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#279| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7]
+(define-fun |Cache_m:W0A dataMem_1_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#280| state)) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_ADDR[7:0]$249
+(define-fun |Cache_m:W0D dataMem_1_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#282| state)) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_DATA[7:0]$250
+(define-fun |Cache_m:W0M dataMem_1_0| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (|Cache#283| state))))))))) ; { $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7] }
 (define-fun |Cache#59#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#59#0| state) (|Cache_m:W0A dataMem_1_0| state) (bvor (bvand (|Cache_m:W0D dataMem_1_0| state) (|Cache_m:W0M dataMem_1_0| state)) (bvand (select (|Cache#59#0| state) (|Cache_m:W0A dataMem_1_0| state)) (bvnot (|Cache_m:W0M dataMem_1_0| state)))))) ; dataMem_1_0
-; yosys-smt2-anyseq Cache#284 8 $auto$setundef.cc:501:execute$3154
-(declare-fun |Cache#284| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3155
-(define-fun |Cache#285| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#140| state))) ; $and$__lft__corr.v:5815$303_Y
-(define-fun |Cache#286| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#285| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#284| state))) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5816$73_ADDR[7:0]$248
-; yosys-smt2-anyseq Cache#287 8 $auto$setundef.cc:501:execute$3152
-(declare-fun |Cache#287| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3153
-(define-fun |Cache#288| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#285| state)) #b1) ((_ extract 31 24) (|Cache#40| state)) (|Cache#287| state))) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5816$73_DATA[7:0]$249
-(define-fun |Cache#289| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#285| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5816$73_EN[7:0]$250 [7]
-(define-fun |Cache_m:W0A dataMem_0_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#286| state)) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5816$73_ADDR[7:0]$248
-(define-fun |Cache_m:W0D dataMem_0_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#288| state)) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5816$73_DATA[7:0]$249
-(define-fun |Cache_m:W0M dataMem_0_3| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (|Cache#289| state))))))))) ; { $0$memwr$\dataMem_0_3$__lft__corr.v:5816$73_EN[7:0]$250 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$73_EN[7:0]$250 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$73_EN[7:0]$250 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$73_EN[7:0]$250 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$73_EN[7:0]$250 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$73_EN[7:0]$250 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$73_EN[7:0]$250 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$73_EN[7:0]$250 [7] }
+; yosys-smt2-anyseq Cache#284 8 $auto$setundef.cc:501:execute$3152
+(declare-fun |Cache#284| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3153
+(define-fun |Cache#285| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#140| state))) ; $and$__lft__corr.v:5815$301_Y
+(define-fun |Cache#286| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#285| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#284| state))) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_ADDR[7:0]$246
+; yosys-smt2-anyseq Cache#287 8 $auto$setundef.cc:501:execute$3150
+(declare-fun |Cache#287| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3151
+(define-fun |Cache#288| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#285| state)) #b1) ((_ extract 31 24) (|Cache#40| state)) (|Cache#287| state))) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_DATA[7:0]$247
+(define-fun |Cache#289| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#285| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7]
+(define-fun |Cache_m:W0A dataMem_0_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#286| state)) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_ADDR[7:0]$246
+(define-fun |Cache_m:W0D dataMem_0_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#288| state)) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_DATA[7:0]$247
+(define-fun |Cache_m:W0M dataMem_0_3| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (|Cache#289| state))))))))) ; { $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7] }
 (define-fun |Cache#57#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#57#0| state) (|Cache_m:W0A dataMem_0_3| state) (bvor (bvand (|Cache_m:W0D dataMem_0_3| state) (|Cache_m:W0M dataMem_0_3| state)) (bvand (select (|Cache#57#0| state) (|Cache_m:W0A dataMem_0_3| state)) (bvnot (|Cache_m:W0M dataMem_0_3| state)))))) ; dataMem_0_3
-; yosys-smt2-anyseq Cache#290 8 $auto$setundef.cc:501:execute$3158
-(declare-fun |Cache#290| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3159
-(define-fun |Cache#291| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#141| state))) ; $and$__lft__corr.v:5809$299_Y
-(define-fun |Cache#292| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#291| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#290| state))) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5810$72_ADDR[7:0]$245
-; yosys-smt2-anyseq Cache#293 8 $auto$setundef.cc:501:execute$3156
-(declare-fun |Cache#293| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3157
-(define-fun |Cache#294| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#291| state)) #b1) ((_ extract 23 16) (|Cache#40| state)) (|Cache#293| state))) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5810$72_DATA[7:0]$246
-(define-fun |Cache#295| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#291| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5810$72_EN[7:0]$247 [7]
-(define-fun |Cache_m:W0A dataMem_0_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#292| state)) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5810$72_ADDR[7:0]$245
-(define-fun |Cache_m:W0D dataMem_0_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#294| state)) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5810$72_DATA[7:0]$246
-(define-fun |Cache_m:W0M dataMem_0_2| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (|Cache#295| state))))))))) ; { $0$memwr$\dataMem_0_2$__lft__corr.v:5810$72_EN[7:0]$247 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$72_EN[7:0]$247 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$72_EN[7:0]$247 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$72_EN[7:0]$247 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$72_EN[7:0]$247 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$72_EN[7:0]$247 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$72_EN[7:0]$247 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$72_EN[7:0]$247 [7] }
+; yosys-smt2-anyseq Cache#290 8 $auto$setundef.cc:501:execute$3156
+(declare-fun |Cache#290| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3157
+(define-fun |Cache#291| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#141| state))) ; $and$__lft__corr.v:5809$297_Y
+(define-fun |Cache#292| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#291| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#290| state))) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_ADDR[7:0]$243
+; yosys-smt2-anyseq Cache#293 8 $auto$setundef.cc:501:execute$3154
+(declare-fun |Cache#293| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3155
+(define-fun |Cache#294| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#291| state)) #b1) ((_ extract 23 16) (|Cache#40| state)) (|Cache#293| state))) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_DATA[7:0]$244
+(define-fun |Cache#295| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#291| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7]
+(define-fun |Cache_m:W0A dataMem_0_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#292| state)) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_ADDR[7:0]$243
+(define-fun |Cache_m:W0D dataMem_0_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#294| state)) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_DATA[7:0]$244
+(define-fun |Cache_m:W0M dataMem_0_2| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (|Cache#295| state))))))))) ; { $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7] }
 (define-fun |Cache#55#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#55#0| state) (|Cache_m:W0A dataMem_0_2| state) (bvor (bvand (|Cache_m:W0D dataMem_0_2| state) (|Cache_m:W0M dataMem_0_2| state)) (bvand (select (|Cache#55#0| state) (|Cache_m:W0A dataMem_0_2| state)) (bvnot (|Cache_m:W0M dataMem_0_2| state)))))) ; dataMem_0_2
-; yosys-smt2-anyseq Cache#296 8 $auto$setundef.cc:501:execute$3162
-(declare-fun |Cache#296| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3163
-(define-fun |Cache#297| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#142| state))) ; $and$__lft__corr.v:5803$295_Y
-(define-fun |Cache#298| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#297| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#296| state))) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5804$71_ADDR[7:0]$242
-; yosys-smt2-anyseq Cache#299 8 $auto$setundef.cc:501:execute$3160
-(declare-fun |Cache#299| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3161
-(define-fun |Cache#300| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#297| state)) #b1) ((_ extract 15 8) (|Cache#40| state)) (|Cache#299| state))) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5804$71_DATA[7:0]$243
-(define-fun |Cache#301| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#297| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5804$71_EN[7:0]$244 [7]
-(define-fun |Cache_m:W0A dataMem_0_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#298| state)) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5804$71_ADDR[7:0]$242
-(define-fun |Cache_m:W0D dataMem_0_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#300| state)) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5804$71_DATA[7:0]$243
-(define-fun |Cache_m:W0M dataMem_0_1| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (|Cache#301| state))))))))) ; { $0$memwr$\dataMem_0_1$__lft__corr.v:5804$71_EN[7:0]$244 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$71_EN[7:0]$244 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$71_EN[7:0]$244 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$71_EN[7:0]$244 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$71_EN[7:0]$244 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$71_EN[7:0]$244 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$71_EN[7:0]$244 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$71_EN[7:0]$244 [7] }
+; yosys-smt2-anyseq Cache#296 8 $auto$setundef.cc:501:execute$3160
+(declare-fun |Cache#296| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3161
+(define-fun |Cache#297| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#142| state))) ; $and$__lft__corr.v:5803$293_Y
+(define-fun |Cache#298| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#297| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#296| state))) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_ADDR[7:0]$240
+; yosys-smt2-anyseq Cache#299 8 $auto$setundef.cc:501:execute$3158
+(declare-fun |Cache#299| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3159
+(define-fun |Cache#300| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#297| state)) #b1) ((_ extract 15 8) (|Cache#40| state)) (|Cache#299| state))) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_DATA[7:0]$241
+(define-fun |Cache#301| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#297| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7]
+(define-fun |Cache_m:W0A dataMem_0_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#298| state)) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_ADDR[7:0]$240
+(define-fun |Cache_m:W0D dataMem_0_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#300| state)) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_DATA[7:0]$241
+(define-fun |Cache_m:W0M dataMem_0_1| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (|Cache#301| state))))))))) ; { $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7] }
 (define-fun |Cache#53#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#53#0| state) (|Cache_m:W0A dataMem_0_1| state) (bvor (bvand (|Cache_m:W0D dataMem_0_1| state) (|Cache_m:W0M dataMem_0_1| state)) (bvand (select (|Cache#53#0| state) (|Cache_m:W0A dataMem_0_1| state)) (bvnot (|Cache_m:W0M dataMem_0_1| state)))))) ; dataMem_0_1
-; yosys-smt2-anyseq Cache#302 8 $auto$setundef.cc:501:execute$3166
-(declare-fun |Cache#302| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3167
-(define-fun |Cache#303| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#143| state))) ; $and$__lft__corr.v:5797$291_Y
-(define-fun |Cache#304| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#303| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#302| state))) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5798$70_ADDR[7:0]$239
-; yosys-smt2-anyseq Cache#305 8 $auto$setundef.cc:501:execute$3164
-(declare-fun |Cache#305| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3165
-(define-fun |Cache#306| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#303| state)) #b1) ((_ extract 7 0) (|Cache#40| state)) (|Cache#305| state))) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5798$70_DATA[7:0]$240
-(define-fun |Cache#307| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#303| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5798$70_EN[7:0]$241 [7]
-(define-fun |Cache_m:W0A dataMem_0_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#304| state)) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5798$70_ADDR[7:0]$239
-(define-fun |Cache_m:W0D dataMem_0_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#306| state)) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5798$70_DATA[7:0]$240
-(define-fun |Cache_m:W0M dataMem_0_0| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (|Cache#307| state))))))))) ; { $0$memwr$\dataMem_0_0$__lft__corr.v:5798$70_EN[7:0]$241 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$70_EN[7:0]$241 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$70_EN[7:0]$241 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$70_EN[7:0]$241 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$70_EN[7:0]$241 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$70_EN[7:0]$241 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$70_EN[7:0]$241 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$70_EN[7:0]$241 [7] }
+; yosys-smt2-anyseq Cache#302 8 $auto$setundef.cc:501:execute$3164
+(declare-fun |Cache#302| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3165
+(define-fun |Cache#303| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#143| state))) ; $and$__lft__corr.v:5797$289_Y
+(define-fun |Cache#304| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#303| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#302| state))) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_ADDR[7:0]$237
+; yosys-smt2-anyseq Cache#305 8 $auto$setundef.cc:501:execute$3162
+(declare-fun |Cache#305| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3163
+(define-fun |Cache#306| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#303| state)) #b1) ((_ extract 7 0) (|Cache#40| state)) (|Cache#305| state))) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_DATA[7:0]$238
+(define-fun |Cache#307| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#303| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7]
+(define-fun |Cache_m:W0A dataMem_0_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#304| state)) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_ADDR[7:0]$237
+(define-fun |Cache_m:W0D dataMem_0_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#306| state)) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_DATA[7:0]$238
+(define-fun |Cache_m:W0M dataMem_0_0| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (|Cache#307| state))))))))) ; { $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7] }
 (define-fun |Cache#51#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#51#0| state) (|Cache_m:W0A dataMem_0_0| state) (bvor (bvand (|Cache_m:W0D dataMem_0_0| state) (|Cache_m:W0M dataMem_0_0| state)) (bvand (select (|Cache#51#0| state) (|Cache_m:W0A dataMem_0_0| state)) (bvnot (|Cache_m:W0M dataMem_0_0| state)))))) ; dataMem_0_0
 (define-fun |Cache_a| ((state |Cache_s|)) Bool true)
 (define-fun |Cache_u| ((state |Cache_s|)) Bool true)
 (define-fun |Cache_i| ((state |Cache_s|)) Bool true)
 (define-fun |Cache_h| ((state |Cache_s|)) Bool true)
 (define-fun |Cache_t| ((state |Cache_s|) (next_state |Cache_s|)) Bool (and
-  (= (|Cache#165| state) (|Cache#86| next_state)) ; $auto$opt_dff.cc:764:run$3544 \d
-  (= (|Cache#83| state) (|Cache#50| next_state)) ; $procdff$2969 \rdata_buf
-  (= (|Cache#167| state) (|Cache#49| next_state)) ; $auto$opt_dff.cc:764:run$3513 \refill_buf_1
-  (= (|Cache#48| state) (|Cache#42| next_state)) ; $procdff$2968 \ren_reg
-  (= (|Cache#170| state) (|Cache#38| next_state)) ; $auto$opt_dff.cc:764:run$3518 \refill_buf_0
-  (= (|Cache#171| state) (|Cache#37| next_state)) ; $auto$opt_dff.cc:764:run$3524 \cpu_data
-  (= (|Cache#20| state) (|Cache#30| next_state)) ; $procdff$2967 \is_alloc_reg
-  (= (|Cache#172| state) (|Cache#26| next_state)) ; $auto$opt_dff.cc:764:run$3526 \dataMem_3_3__T_210_addr_pipe_0
-  (= (|Cache#174| state) (|Cache#23| next_state)) ; $auto$opt_dff.cc:764:run$3546 \v
-  (= (|Cache#176| state) (|Cache#18| next_state)) ; $auto$opt_dff.cc:764:run$3522 \value
-  (= (|Cache#177| state) (|Cache#13| next_state)) ; $auto$opt_dff.cc:764:run$3525 \addr_reg
-  (= (|Cache#178| state) (|Cache#12| next_state)) ; $auto$opt_dff.cc:764:run$3523 \cpu_mask
-  (= (|Cache#180| state) (|Cache#10| next_state)) ; $auto$opt_dff.cc:764:run$3520 \value_1
-  (= (|Cache#206| state) (|Cache#1| next_state)) ; $auto$opt_dff.cc:764:run$3560 \state
+  (= (|Cache#165| state) (|Cache#86| next_state)) ; $auto$opt_dff.cc:764:run$3542 \d
+  (= (|Cache#83| state) (|Cache#50| next_state)) ; $procdff$2967 \rdata_buf
+  (= (|Cache#167| state) (|Cache#49| next_state)) ; $auto$opt_dff.cc:764:run$3511 \refill_buf_1
+  (= (|Cache#48| state) (|Cache#42| next_state)) ; $procdff$2966 \ren_reg
+  (= (|Cache#170| state) (|Cache#38| next_state)) ; $auto$opt_dff.cc:764:run$3516 \refill_buf_0
+  (= (|Cache#171| state) (|Cache#37| next_state)) ; $auto$opt_dff.cc:764:run$3522 \cpu_data
+  (= (|Cache#20| state) (|Cache#30| next_state)) ; $procdff$2965 \is_alloc_reg
+  (= (|Cache#172| state) (|Cache#26| next_state)) ; $auto$opt_dff.cc:764:run$3524 \dataMem_3_3__T_210_addr_pipe_0
+  (= (|Cache#174| state) (|Cache#23| next_state)) ; $auto$opt_dff.cc:764:run$3544 \v
+  (= (|Cache#176| state) (|Cache#18| next_state)) ; $auto$opt_dff.cc:764:run$3520 \value
+  (= (|Cache#177| state) (|Cache#13| next_state)) ; $auto$opt_dff.cc:764:run$3523 \addr_reg
+  (= (|Cache#178| state) (|Cache#12| next_state)) ; $auto$opt_dff.cc:764:run$3521 \cpu_mask
+  (= (|Cache#180| state) (|Cache#10| next_state)) ; $auto$opt_dff.cc:764:run$3518 \value_1
+  (= (|Cache#206| state) (|Cache#1| next_state)) ; $auto$opt_dff.cc:764:run$3558 \state
   (= (|Cache#25#1| state) (|Cache#25#0| next_state)) ; metaMem_tag
   (= (|Cache#81#1| state) (|Cache#81#0| next_state)) ; dataMem_3_3
   (= (|Cache#79#1| state) (|Cache#79#0| next_state)) ; dataMem_3_2
@@ -4902,30 +4902,30 @@
 (define-fun |MemArbiter_n _T_221| ((state |MemArbiter_s|)) Bool (= ((_ extract 0 0) (|MemArbiter#24| state)) #b1))
 ; yosys-smt2-wire _T_220 1
 (define-fun |MemArbiter_n _T_220| ((state |MemArbiter_s|)) Bool (|MemArbiter#23| state))
-(define-fun |MemArbiter#59| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#47| state)) #b1) #b000 #b000)) ; $procmux$2870_Y
-(define-fun |MemArbiter#60| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#48| state) (|MemArbiter#59| state) #b000)) ; $procmux$2872_Y
-(define-fun |MemArbiter#61| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#50| state)) #b1) #b100 #b000)) ; $procmux$2875_Y
-(define-fun |MemArbiter#62| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#51| state) (|MemArbiter#61| state) (|MemArbiter#60| state))) ; $procmux$2877_Y
-(define-fun |MemArbiter#63| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#54| state)) #b1) #b000 (|MemArbiter#0| state))) ; $procmux$2880_Y
-(define-fun |MemArbiter#64| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#52| state) (|MemArbiter#63| state) (|MemArbiter#62| state))) ; $procmux$2882_Y
-(define-fun |MemArbiter#65| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#55| state) (|MemArbiter#63| state) (|MemArbiter#64| state))) ; $procmux$2887_Y
-(define-fun |MemArbiter#66| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#56| state)) #b1) #b001 #b000)) ; $procmux$2890_Y
-(define-fun |MemArbiter#67| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#57| state)) #b1) #b010 (|MemArbiter#66| state))) ; $procmux$2893_Y
-(define-fun |MemArbiter#68| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#58| state)) #b1) #b011 (|MemArbiter#67| state))) ; $procmux$2896_Y
-(define-fun |MemArbiter#69| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#23| state) (|MemArbiter#68| state) (|MemArbiter#65| state))) ; $procmux$2898_Y
-(define-fun |MemArbiter#70| ((state |MemArbiter_s|)) Bool (or  (|MemArbiter#23| state) (|MemArbiter#55| state) (|MemArbiter#52| state) (|MemArbiter#51| state) (|MemArbiter#48| state))) ; $auto$opt_dff.cc:217:make_patterns_logic$3611
-(define-fun |MemArbiter#71| ((state |MemArbiter_s|)) Bool (distinct (concat (|MemArbiter#47| state) (concat (ite (|MemArbiter#48| state) #b1 #b0) (concat (ite (|MemArbiter#51| state) #b1 #b0) (concat (ite (|MemArbiter#52| state) #b1 #b0) (concat (ite (|MemArbiter#55| state) #b1 #b0) (ite (|MemArbiter#23| state) #b1 #b0)))))) #b010000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3613
-(define-fun |MemArbiter#72| ((state |MemArbiter_s|)) Bool (distinct (concat (|MemArbiter#50| state) (concat (ite (|MemArbiter#51| state) #b1 #b0) (concat (ite (|MemArbiter#52| state) #b1 #b0) (concat (ite (|MemArbiter#55| state) #b1 #b0) (ite (|MemArbiter#23| state) #b1 #b0))))) #b01000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3615
-(define-fun |MemArbiter#73| ((state |MemArbiter_s|)) Bool (distinct (concat (|MemArbiter#56| state) (concat (|MemArbiter#57| state) (concat (|MemArbiter#58| state) (ite (|MemArbiter#23| state) #b1 #b0)))) #b0001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3617
-(define-fun |MemArbiter#74| ((state |MemArbiter_s|)) Bool (and  (|MemArbiter#70| state) (|MemArbiter#71| state) (|MemArbiter#72| state) (|MemArbiter#73| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3619
-(define-fun |MemArbiter#75| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#74| state) (|MemArbiter#69| state) (|MemArbiter#0| state))) ; $auto$rtlil.cc:2224:Mux$3623
-(define-fun |MemArbiter#76| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#1| state) #b000 (|MemArbiter#75| state))) ; $auto$rtlil.cc:2224:Mux$3625
+(define-fun |MemArbiter#59| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#47| state)) #b1) #b000 #b000)) ; $procmux$2868_Y
+(define-fun |MemArbiter#60| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#48| state) (|MemArbiter#59| state) #b000)) ; $procmux$2870_Y
+(define-fun |MemArbiter#61| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#50| state)) #b1) #b100 #b000)) ; $procmux$2873_Y
+(define-fun |MemArbiter#62| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#51| state) (|MemArbiter#61| state) (|MemArbiter#60| state))) ; $procmux$2875_Y
+(define-fun |MemArbiter#63| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#54| state)) #b1) #b000 (|MemArbiter#0| state))) ; $procmux$2878_Y
+(define-fun |MemArbiter#64| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#52| state) (|MemArbiter#63| state) (|MemArbiter#62| state))) ; $procmux$2880_Y
+(define-fun |MemArbiter#65| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#55| state) (|MemArbiter#63| state) (|MemArbiter#64| state))) ; $procmux$2885_Y
+(define-fun |MemArbiter#66| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#56| state)) #b1) #b001 #b000)) ; $procmux$2888_Y
+(define-fun |MemArbiter#67| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#57| state)) #b1) #b010 (|MemArbiter#66| state))) ; $procmux$2891_Y
+(define-fun |MemArbiter#68| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#58| state)) #b1) #b011 (|MemArbiter#67| state))) ; $procmux$2894_Y
+(define-fun |MemArbiter#69| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#23| state) (|MemArbiter#68| state) (|MemArbiter#65| state))) ; $procmux$2896_Y
+(define-fun |MemArbiter#70| ((state |MemArbiter_s|)) Bool (or  (|MemArbiter#23| state) (|MemArbiter#55| state) (|MemArbiter#52| state) (|MemArbiter#51| state) (|MemArbiter#48| state))) ; $auto$opt_dff.cc:217:make_patterns_logic$3609
+(define-fun |MemArbiter#71| ((state |MemArbiter_s|)) Bool (distinct (concat (|MemArbiter#47| state) (concat (ite (|MemArbiter#48| state) #b1 #b0) (concat (ite (|MemArbiter#51| state) #b1 #b0) (concat (ite (|MemArbiter#52| state) #b1 #b0) (concat (ite (|MemArbiter#55| state) #b1 #b0) (ite (|MemArbiter#23| state) #b1 #b0)))))) #b010000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3611
+(define-fun |MemArbiter#72| ((state |MemArbiter_s|)) Bool (distinct (concat (|MemArbiter#50| state) (concat (ite (|MemArbiter#51| state) #b1 #b0) (concat (ite (|MemArbiter#52| state) #b1 #b0) (concat (ite (|MemArbiter#55| state) #b1 #b0) (ite (|MemArbiter#23| state) #b1 #b0))))) #b01000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3613
+(define-fun |MemArbiter#73| ((state |MemArbiter_s|)) Bool (distinct (concat (|MemArbiter#56| state) (concat (|MemArbiter#57| state) (concat (|MemArbiter#58| state) (ite (|MemArbiter#23| state) #b1 #b0)))) #b0001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3615
+(define-fun |MemArbiter#74| ((state |MemArbiter_s|)) Bool (and  (|MemArbiter#70| state) (|MemArbiter#71| state) (|MemArbiter#72| state) (|MemArbiter#73| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3617
+(define-fun |MemArbiter#75| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#74| state) (|MemArbiter#69| state) (|MemArbiter#0| state))) ; $auto$rtlil.cc:2224:Mux$3621
+(define-fun |MemArbiter#76| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#1| state) #b000 (|MemArbiter#75| state))) ; $auto$rtlil.cc:2224:Mux$3623
 (define-fun |MemArbiter_a| ((state |MemArbiter_s|)) Bool true)
 (define-fun |MemArbiter_u| ((state |MemArbiter_s|)) Bool true)
 (define-fun |MemArbiter_i| ((state |MemArbiter_s|)) Bool true)
 (define-fun |MemArbiter_h| ((state |MemArbiter_s|)) Bool true)
 (define-fun |MemArbiter_t| ((state |MemArbiter_s|) (next_state |MemArbiter_s|)) Bool 
-  (= (|MemArbiter#76| state) (|MemArbiter#0| next_state)) ; $auto$opt_dff.cc:764:run$3621 \state
+  (= (|MemArbiter#76| state) (|MemArbiter#0| next_state)) ; $auto$opt_dff.cc:764:run$3619 \state
 ) ; end of module MemArbiter
 ; yosys-smt2-module RegFile
 (declare-sort |RegFile_s| 0)
@@ -5004,16 +5004,16 @@
 (define-fun |RegFile_n _T_25| ((state |RegFile_s|)) (_ BitVec 32) (|RegFile#13| state))
 ; yosys-smt2-wire _T_22 1
 (define-fun |RegFile_n _T_22| ((state |RegFile_s|)) Bool (|RegFile#12| state))
-; yosys-smt2-anyseq RegFile#15 5 $auto$setundef.cc:501:execute$3252
-(declare-fun |RegFile#15| (|RegFile_s|) (_ BitVec 5)) ; $auto$rtlil.cc:2817:Anyseq$3253
-(define-fun |RegFile#16| ((state |RegFile_s|)) (_ BitVec 5) (ite (= ((_ extract 0 0) (|RegFile#3| state)) #b1) (|RegFile#1| state) (|RegFile#15| state))) ; $0$memwr$\regs$__lft__corr.v:2296$1126_ADDR[4:0]$1136
-; yosys-smt2-anyseq RegFile#17 32 $auto$setundef.cc:501:execute$3250
-(declare-fun |RegFile#17| (|RegFile_s|) (_ BitVec 32)) ; $auto$rtlil.cc:2817:Anyseq$3251
-(define-fun |RegFile#18| ((state |RegFile_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|RegFile#3| state)) #b1) (|RegFile#4| state) (|RegFile#17| state))) ; $0$memwr$\regs$__lft__corr.v:2296$1126_DATA[31:0]$1137
-(define-fun |RegFile#19| ((state |RegFile_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|RegFile#3| state)) #b1) #b1 #b0)) ; $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31]
-(define-fun |RegFile_m:W0A regs| ((state |RegFile_s|)) (_ BitVec 5) (|RegFile#16| state)) ; $0$memwr$\regs$__lft__corr.v:2296$1126_ADDR[4:0]$1136
-(define-fun |RegFile_m:W0D regs| ((state |RegFile_s|)) (_ BitVec 32) (|RegFile#18| state)) ; $0$memwr$\regs$__lft__corr.v:2296$1126_DATA[31:0]$1137
-(define-fun |RegFile_m:W0M regs| ((state |RegFile_s|)) (_ BitVec 32) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (|RegFile#19| state))))))))))))))))))))))))))))))))) ; { $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] $0$memwr$\regs$__lft__corr.v:2296$1126_EN[31:0]$1138 [31] }
+; yosys-smt2-anyseq RegFile#15 5 $auto$setundef.cc:501:execute$3250
+(declare-fun |RegFile#15| (|RegFile_s|) (_ BitVec 5)) ; $auto$rtlil.cc:2817:Anyseq$3251
+(define-fun |RegFile#16| ((state |RegFile_s|)) (_ BitVec 5) (ite (= ((_ extract 0 0) (|RegFile#3| state)) #b1) (|RegFile#1| state) (|RegFile#15| state))) ; $0$memwr$\regs$__lft__corr.v:2296$1124_ADDR[4:0]$1134
+; yosys-smt2-anyseq RegFile#17 32 $auto$setundef.cc:501:execute$3248
+(declare-fun |RegFile#17| (|RegFile_s|) (_ BitVec 32)) ; $auto$rtlil.cc:2817:Anyseq$3249
+(define-fun |RegFile#18| ((state |RegFile_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|RegFile#3| state)) #b1) (|RegFile#4| state) (|RegFile#17| state))) ; $0$memwr$\regs$__lft__corr.v:2296$1124_DATA[31:0]$1135
+(define-fun |RegFile#19| ((state |RegFile_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|RegFile#3| state)) #b1) #b1 #b0)) ; $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31]
+(define-fun |RegFile_m:W0A regs| ((state |RegFile_s|)) (_ BitVec 5) (|RegFile#16| state)) ; $0$memwr$\regs$__lft__corr.v:2296$1124_ADDR[4:0]$1134
+(define-fun |RegFile_m:W0D regs| ((state |RegFile_s|)) (_ BitVec 32) (|RegFile#18| state)) ; $0$memwr$\regs$__lft__corr.v:2296$1124_DATA[31:0]$1135
+(define-fun |RegFile_m:W0M regs| ((state |RegFile_s|)) (_ BitVec 32) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (|RegFile#19| state))))))))))))))))))))))))))))))))) ; { $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] }
 (define-fun |RegFile#5#1| ((state |RegFile_s|)) (Array (_ BitVec 5) (_ BitVec 32)) (store (|RegFile#5#0| state) (|RegFile_m:W0A regs| state) (bvor (bvand (|RegFile_m:W0D regs| state) (|RegFile_m:W0M regs| state)) (bvand (select (|RegFile#5#0| state) (|RegFile_m:W0A regs| state)) (bvnot (|RegFile_m:W0M regs| state)))))) ; regs
 (define-fun |RegFile_a| ((state |RegFile_s|)) Bool true)
 (define-fun |RegFile_u| ((state |RegFile_s|)) Bool true)
@@ -5649,36 +5649,36 @@
 (define-fun |Datapath_n _GEN_25| ((state |Datapath_s|)) (_ BitVec 30) ((_ extract 31 2) (|Datapath#98| state)))
 ; yosys-smt2-wire _GEN_24 31
 (define-fun |Datapath_n _GEN_24| ((state |Datapath_s|)) (_ BitVec 31) ((_ extract 31 1) (|Datapath#0| state)))
-(define-fun |Datapath#130| ((state |Datapath_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (|Datapath#104| state) (|Datapath#115| state))) ; $auto$rtlil.cc:2224:Mux$3657
-(define-fun |Datapath#131| ((state |Datapath_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b000 (|Datapath#130| state))) ; $auto$rtlil.cc:2224:Mux$3659
-(define-fun |Datapath#132| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#119| state) (|Datapath#110| state) (|Datapath#29| state))) ; $procmux$2552_Y
-(define-fun |Datapath#133| ((state |Datapath_s|)) (_ BitVec 1) (bvnot (|Datapath#122| state))) ; $auto$rtlil.cc:2127:Not$3578
-(define-fun |Datapath#134| ((state |Datapath_s|)) Bool (and  (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (= ((_ extract 0 0) (|Datapath#133| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3579
-(define-fun |Datapath#135| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#134| state) (|Datapath#132| state) (|Datapath#114| state))) ; $auto$rtlil.cc:2224:Mux$3641
-(define-fun |Datapath#136| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (ite (|Datapath#103| state) #b1 #b0) (|Datapath#113| state))) ; $auto$rtlil.cc:2224:Mux$3661
-(define-fun |Datapath#137| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b0 (|Datapath#136| state))) ; $auto$rtlil.cc:2224:Mux$3663
-(define-fun |Datapath#138| ((state |Datapath_s|)) (_ BitVec 33) (ite (= ((_ extract 0 0) (|Datapath#11| state)) #b1) (|Datapath#109| state) (concat (|Datapath#64| state) (|Datapath#63| state)))) ; $auto$rtlil.cc:2224:Mux$3631
-(define-fun |Datapath#139| ((state |Datapath_s|)) Bool (distinct (concat (ite (|Datapath#67| state) #b1 #b0) (concat (ite (|Datapath#33| state) #b1 #b0) (concat (ite (|Datapath#73| state) #b1 #b0) (|Datapath#71| state)))) #b1000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3562
-(define-fun |Datapath#140| ((state |Datapath_s|)) Bool (and  (|Datapath#139| state) (= ((_ extract 0 0) (|Datapath#57| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3566
-(define-fun |Datapath#141| ((state |Datapath_s|)) (_ BitVec 1) (ite (|Datapath#140| state) ((_ extract 32 32) (|Datapath#75| state)) (|Datapath#64| state))) ; $auto$rtlil.cc:2224:Mux$3669
-(define-fun |Datapath#142| ((state |Datapath_s|)) (_ BitVec 1) (ite (|Datapath#30| state) #b0 (|Datapath#141| state))) ; $auto$rtlil.cc:2224:Mux$3671
-(define-fun |Datapath#143| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#30| state) #b00000000000000000000000111111100 ((_ extract 31 0) (|Datapath#76| state)))) ; $auto$rtlil.cc:2224:Mux$3673
-(define-fun |Datapath#144| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (ite (|Datapath#69| state) #b1 #b0) (|Datapath#62| state))) ; $auto$rtlil.cc:2224:Mux$3665
-(define-fun |Datapath#145| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b0 (|Datapath#144| state))) ; $auto$rtlil.cc:2224:Mux$3667
-(define-fun |Datapath#146| ((state |Datapath_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (|Datapath#84| state) (|Datapath#45| state))) ; $auto$rtlil.cc:2224:Mux$3647
-(define-fun |Datapath#147| ((state |Datapath_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b000 (|Datapath#146| state))) ; $auto$rtlil.cc:2224:Mux$3649
-(define-fun |Datapath#148| ((state |Datapath_s|)) (_ BitVec 33) (ite (|Datapath#134| state) (|Datapath#109| state) (|Datapath#38| state))) ; $auto$rtlil.cc:2224:Mux$3637
-(define-fun |Datapath#149| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#134| state) (|Datapath#1| state) (|Datapath#20| state))) ; $auto$rtlil.cc:2224:Mux$3639
-(define-fun |Datapath#150| ((state |Datapath_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|Datapath#128| state)) #b1) #b00000000000000000000000000010011 (|Datapath#78| state))) ; $procmux$2576_Y
-(define-fun |Datapath#151| ((state |Datapath_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|Datapath#11| state)) #b1) (|Datapath#13| state) (|Datapath#150| state))) ; $auto$rtlil.cc:2224:Mux$3627
-(define-fun |Datapath#152| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#30| state) #b00000000000000000000000000010011 (|Datapath#151| state))) ; $auto$rtlil.cc:2224:Mux$3629
-(define-fun |Datapath#153| ((state |Datapath_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (concat (ite (|Datapath#82| state) #b1 #b0) (ite (|Datapath#81| state) #b1 #b0)) (|Datapath#12| state))) ; $auto$rtlil.cc:2224:Mux$3643
-(define-fun |Datapath#154| ((state |Datapath_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b00 (|Datapath#153| state))) ; $auto$rtlil.cc:2224:Mux$3645
-(define-fun |Datapath#155| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (ite (|Datapath#100| state) #b1 #b0) (|Datapath#5| state))) ; $auto$rtlil.cc:2224:Mux$3653
-(define-fun |Datapath#156| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b0 (|Datapath#155| state))) ; $auto$rtlil.cc:2224:Mux$3655
-(define-fun |Datapath#157| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#134| state) (|Datapath#13| state) (|Datapath#4| state))) ; $auto$rtlil.cc:2224:Mux$3633
-(define-fun |Datapath#158| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#30| state) #b00000000000000000000000000010011 (|Datapath#157| state))) ; $auto$rtlil.cc:2224:Mux$3635
-(define-fun |Datapath#159| ((state |Datapath_s|)) (_ BitVec 2) (ite (|Datapath#134| state) (|Datapath#99| state) (|Datapath#3| state))) ; $auto$rtlil.cc:2224:Mux$3651
+(define-fun |Datapath#130| ((state |Datapath_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (|Datapath#104| state) (|Datapath#115| state))) ; $auto$rtlil.cc:2224:Mux$3655
+(define-fun |Datapath#131| ((state |Datapath_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b000 (|Datapath#130| state))) ; $auto$rtlil.cc:2224:Mux$3657
+(define-fun |Datapath#132| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#119| state) (|Datapath#110| state) (|Datapath#29| state))) ; $procmux$2550_Y
+(define-fun |Datapath#133| ((state |Datapath_s|)) (_ BitVec 1) (bvnot (|Datapath#122| state))) ; $auto$rtlil.cc:2127:Not$3576
+(define-fun |Datapath#134| ((state |Datapath_s|)) Bool (and  (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (= ((_ extract 0 0) (|Datapath#133| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3577
+(define-fun |Datapath#135| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#134| state) (|Datapath#132| state) (|Datapath#114| state))) ; $auto$rtlil.cc:2224:Mux$3639
+(define-fun |Datapath#136| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (ite (|Datapath#103| state) #b1 #b0) (|Datapath#113| state))) ; $auto$rtlil.cc:2224:Mux$3659
+(define-fun |Datapath#137| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b0 (|Datapath#136| state))) ; $auto$rtlil.cc:2224:Mux$3661
+(define-fun |Datapath#138| ((state |Datapath_s|)) (_ BitVec 33) (ite (= ((_ extract 0 0) (|Datapath#11| state)) #b1) (|Datapath#109| state) (concat (|Datapath#64| state) (|Datapath#63| state)))) ; $auto$rtlil.cc:2224:Mux$3629
+(define-fun |Datapath#139| ((state |Datapath_s|)) Bool (distinct (concat (ite (|Datapath#67| state) #b1 #b0) (concat (ite (|Datapath#33| state) #b1 #b0) (concat (ite (|Datapath#73| state) #b1 #b0) (|Datapath#71| state)))) #b1000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3560
+(define-fun |Datapath#140| ((state |Datapath_s|)) Bool (and  (|Datapath#139| state) (= ((_ extract 0 0) (|Datapath#57| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3564
+(define-fun |Datapath#141| ((state |Datapath_s|)) (_ BitVec 1) (ite (|Datapath#140| state) ((_ extract 32 32) (|Datapath#75| state)) (|Datapath#64| state))) ; $auto$rtlil.cc:2224:Mux$3667
+(define-fun |Datapath#142| ((state |Datapath_s|)) (_ BitVec 1) (ite (|Datapath#30| state) #b0 (|Datapath#141| state))) ; $auto$rtlil.cc:2224:Mux$3669
+(define-fun |Datapath#143| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#30| state) #b00000000000000000000000111111100 ((_ extract 31 0) (|Datapath#76| state)))) ; $auto$rtlil.cc:2224:Mux$3671
+(define-fun |Datapath#144| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (ite (|Datapath#69| state) #b1 #b0) (|Datapath#62| state))) ; $auto$rtlil.cc:2224:Mux$3663
+(define-fun |Datapath#145| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b0 (|Datapath#144| state))) ; $auto$rtlil.cc:2224:Mux$3665
+(define-fun |Datapath#146| ((state |Datapath_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (|Datapath#84| state) (|Datapath#45| state))) ; $auto$rtlil.cc:2224:Mux$3645
+(define-fun |Datapath#147| ((state |Datapath_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b000 (|Datapath#146| state))) ; $auto$rtlil.cc:2224:Mux$3647
+(define-fun |Datapath#148| ((state |Datapath_s|)) (_ BitVec 33) (ite (|Datapath#134| state) (|Datapath#109| state) (|Datapath#38| state))) ; $auto$rtlil.cc:2224:Mux$3635
+(define-fun |Datapath#149| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#134| state) (|Datapath#1| state) (|Datapath#20| state))) ; $auto$rtlil.cc:2224:Mux$3637
+(define-fun |Datapath#150| ((state |Datapath_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|Datapath#128| state)) #b1) #b00000000000000000000000000010011 (|Datapath#78| state))) ; $procmux$2574_Y
+(define-fun |Datapath#151| ((state |Datapath_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|Datapath#11| state)) #b1) (|Datapath#13| state) (|Datapath#150| state))) ; $auto$rtlil.cc:2224:Mux$3625
+(define-fun |Datapath#152| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#30| state) #b00000000000000000000000000010011 (|Datapath#151| state))) ; $auto$rtlil.cc:2224:Mux$3627
+(define-fun |Datapath#153| ((state |Datapath_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (concat (ite (|Datapath#82| state) #b1 #b0) (ite (|Datapath#81| state) #b1 #b0)) (|Datapath#12| state))) ; $auto$rtlil.cc:2224:Mux$3641
+(define-fun |Datapath#154| ((state |Datapath_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b00 (|Datapath#153| state))) ; $auto$rtlil.cc:2224:Mux$3643
+(define-fun |Datapath#155| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (ite (|Datapath#100| state) #b1 #b0) (|Datapath#5| state))) ; $auto$rtlil.cc:2224:Mux$3651
+(define-fun |Datapath#156| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b0 (|Datapath#155| state))) ; $auto$rtlil.cc:2224:Mux$3653
+(define-fun |Datapath#157| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#134| state) (|Datapath#13| state) (|Datapath#4| state))) ; $auto$rtlil.cc:2224:Mux$3631
+(define-fun |Datapath#158| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#30| state) #b00000000000000000000000000010011 (|Datapath#157| state))) ; $auto$rtlil.cc:2224:Mux$3633
+(define-fun |Datapath#159| ((state |Datapath_s|)) (_ BitVec 2) (ite (|Datapath#134| state) (|Datapath#99| state) (|Datapath#3| state))) ; $auto$rtlil.cc:2224:Mux$3649
 (define-fun |Datapath_a| ((state |Datapath_s|)) Bool (and
   (|ALUArea_a| (|Datapath_h alu| state))
   (|BrCondArea_a| (|Datapath_h brCond| state))
@@ -5752,22 +5752,22 @@
   (|RegFile_h| (|Datapath_h regFile| state))
 ))
 (define-fun |Datapath_t| ((state |Datapath_s|) (next_state |Datapath_s|)) Bool (and
-  (= (|Datapath#131| state) (|Datapath#115| next_state)) ; $auto$opt_dff.cc:764:run$3574 \csr_cmd
-  (= (|Datapath#135| state) (|Datapath#114| next_state)) ; $auto$opt_dff.cc:764:run$3590 \csr_in
-  (= (|Datapath#137| state) (|Datapath#113| next_state)) ; $auto$opt_dff.cc:764:run$3572 \illegal
-  (= (|Datapath#138| state) (|Datapath#109| next_state)) ; $auto$opt_dff.cc:764:run$3607 \fe_pc
-  (= (|Datapath#142| state) (|Datapath#64| next_state)) ; $auto$opt_dff.cc:764:run$3568 \pc [32]
-  (= (|Datapath#143| state) (|Datapath#63| next_state)) ; $auto$opt_dff.cc:702:run$3561 \pc [31:0]
-  (= (|Datapath#145| state) (|Datapath#62| next_state)) ; $auto$opt_dff.cc:764:run$3570 \pc_check
-  (= (|Datapath#147| state) (|Datapath#45| next_state)) ; $auto$opt_dff.cc:764:run$3583 \ld_type
-  (= (|Datapath#148| state) (|Datapath#38| next_state)) ; $auto$opt_dff.cc:764:run$3600 \ew_pc
-  (= (|Datapath#149| state) (|Datapath#20| next_state)) ; $auto$opt_dff.cc:764:run$3595 \ew_alu
-  (= (|Datapath#152| state) (|Datapath#13| next_state)) ; $auto$opt_dff.cc:764:run$3609 \fe_inst
-  (= (|Datapath#154| state) (|Datapath#12| next_state)) ; $auto$opt_dff.cc:764:run$3585 \st_type
-  (= (ite (|Datapath#30| state) #b1 #b0) (|Datapath#6| next_state)) ; $procdff$2940 \started
-  (= (|Datapath#156| state) (|Datapath#5| next_state)) ; $auto$opt_dff.cc:764:run$3576 \wb_en
-  (= (|Datapath#158| state) (|Datapath#4| next_state)) ; $auto$opt_dff.cc:764:run$3606 \ew_inst
-  (= (|Datapath#159| state) (|Datapath#3| next_state)) ; $auto$opt_dff.cc:764:run$3581 \wb_sel
+  (= (|Datapath#131| state) (|Datapath#115| next_state)) ; $auto$opt_dff.cc:764:run$3572 \csr_cmd
+  (= (|Datapath#135| state) (|Datapath#114| next_state)) ; $auto$opt_dff.cc:764:run$3588 \csr_in
+  (= (|Datapath#137| state) (|Datapath#113| next_state)) ; $auto$opt_dff.cc:764:run$3570 \illegal
+  (= (|Datapath#138| state) (|Datapath#109| next_state)) ; $auto$opt_dff.cc:764:run$3605 \fe_pc
+  (= (|Datapath#142| state) (|Datapath#64| next_state)) ; $auto$opt_dff.cc:764:run$3566 \pc [32]
+  (= (|Datapath#143| state) (|Datapath#63| next_state)) ; $auto$opt_dff.cc:702:run$3559 \pc [31:0]
+  (= (|Datapath#145| state) (|Datapath#62| next_state)) ; $auto$opt_dff.cc:764:run$3568 \pc_check
+  (= (|Datapath#147| state) (|Datapath#45| next_state)) ; $auto$opt_dff.cc:764:run$3581 \ld_type
+  (= (|Datapath#148| state) (|Datapath#38| next_state)) ; $auto$opt_dff.cc:764:run$3598 \ew_pc
+  (= (|Datapath#149| state) (|Datapath#20| next_state)) ; $auto$opt_dff.cc:764:run$3593 \ew_alu
+  (= (|Datapath#152| state) (|Datapath#13| next_state)) ; $auto$opt_dff.cc:764:run$3607 \fe_inst
+  (= (|Datapath#154| state) (|Datapath#12| next_state)) ; $auto$opt_dff.cc:764:run$3583 \st_type
+  (= (ite (|Datapath#30| state) #b1 #b0) (|Datapath#6| next_state)) ; $procdff$2938 \started
+  (= (|Datapath#156| state) (|Datapath#5| next_state)) ; $auto$opt_dff.cc:764:run$3574 \wb_en
+  (= (|Datapath#158| state) (|Datapath#4| next_state)) ; $auto$opt_dff.cc:764:run$3604 \ew_inst
+  (= (|Datapath#159| state) (|Datapath#3| next_state)) ; $auto$opt_dff.cc:764:run$3579 \wb_sel
   (|ALUArea_t| (|Datapath_h alu| state) (|Datapath_h alu| next_state))
   (|BrCondArea_t| (|Datapath_h brCond| state) (|Datapath_h brCond| next_state))
   (|CSR_t| (|Datapath_h csr| state) (|Datapath_h csr| next_state))
@@ -6570,12 +6570,12 @@
 (declare-fun |Tile#80| (|Tile_s|) (_ BitVec 1)) ; $formal$__lft__corr.v:6570$1_EN
 ; yosys-smt2-register $formal$__lft__corr.v:6570$1_EN 1
 (define-fun |Tile_n $formal$__lft__corr.v:6570$1_EN| ((state |Tile_s|)) Bool (= ((_ extract 0 0) (|Tile#80| state)) #b1))
-(define-fun |Tile#81| ((state |Tile_s|)) Bool (= (|Tile#51| state) #b0110)) ; $0$formal$__lft__corr.v:6570$1_CHECK[0:0]$4
+(define-fun |Tile#81| ((state |Tile_s|)) Bool (= (|Tile#51| state) #b0011)) ; $0$formal$__lft__corr.v:6570$1_CHECK[0:0]$4
 ; yosys-smt2-assume 0 __lft__corr.v:6570.32-6571.43
-(define-fun |Tile_u 0| ((state |Tile_s|)) Bool (or (|Tile#81| state) (not true))) ; $assume$__lft__corr.v:6570$13
-; yosys-smt2-assert 0 __lft__corr.v:6571.44-6572.107
-(define-fun |Tile_a 0| ((state |Tile_s|)) Bool (or (= ((_ extract 0 0) (|Tile#79| state)) #b1) (not (= ((_ extract 0 0) (|Tile#80| state)) #b1)))) ; $assert$__lft__corr.v:6571$14
-(define-fun |Tile#82| ((state |Tile_s|)) (_ BitVec 32) (bvshl (|Tile#53| state) (concat #b000000000000000000000000000 ((_ extract 4 0) (|Tile#52| state))))) ; $shl$__lft__corr.v:6572$11_Y
+(define-fun |Tile_u 0| ((state |Tile_s|)) Bool (or (|Tile#81| state) (not true))) ; $assume$__lft__corr.v:6570$11
+; yosys-smt2-assert 0 __lft__corr.v:6571.44-6572.90
+(define-fun |Tile_a 0| ((state |Tile_s|)) Bool (or (= ((_ extract 0 0) (|Tile#79| state)) #b1) (not (= ((_ extract 0 0) (|Tile#80| state)) #b1)))) ; $assert$__lft__corr.v:6571$12
+(define-fun |Tile#82| ((state |Tile_s|)) (_ BitVec 32) (bvor (|Tile#52| state) (|Tile#53| state))) ; $or$__lft__corr.v:6572$9_Y
 (define-fun |Tile#83| ((state |Tile_s|)) Bool (= (|Tile#82| state) (|Tile#50| state))) ; $0$formal$__lft__corr.v:6571$2_CHECK[0:0]$6
 (define-fun |Tile_a| ((state |Tile_s|)) Bool (and
   (|Tile_a 0| state)
@@ -6726,8 +6726,8 @@
   (|Cache_h| (|Tile_h icache| state))
 ))
 (define-fun |Tile_t| ((state |Tile_s|) (next_state |Tile_s|)) Bool (and
-  (= #b1 (|Tile#80| next_state)) ; $procdff$3025 $formal$__lft__corr.v:6570$1_EN
-  (= (ite (|Tile#83| state) #b1 #b0) (|Tile#79| next_state)) ; $procdff$3026 $formal$__lft__corr.v:6571$2_CHECK
+  (= #b1 (|Tile#80| next_state)) ; $procdff$3023 $formal$__lft__corr.v:6570$1_EN
+  (= (ite (|Tile#83| state) #b1 #b0) (|Tile#79| next_state)) ; $procdff$3024 $formal$__lft__corr.v:6571$2_CHECK
   (|Cache_t| (|Tile_h dcache| state) (|Tile_h dcache| next_state))
   (|MemArbiter_t| (|Tile_h arb| state) (|Tile_h arb| next_state))
   (|Core_t| (|Tile_h core| state) (|Tile_h core| next_state))

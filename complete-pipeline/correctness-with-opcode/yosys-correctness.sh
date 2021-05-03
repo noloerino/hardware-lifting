@@ -5,8 +5,8 @@ FORMALFILE=__lft__formal.v
 INSTRFILE=__lft__corr.v
 
 
-# cd correctness
-returnval=$(./generate_formalfile.py "$1" "$2")
+cd correctness-with-opcode
+returnval=$(./generate_formalfile.py "$1")
 
 # echo $returnval
 
@@ -24,7 +24,7 @@ else
 	else
 			echo "false"
 	fi
-	rm -f $INSTRFILE
+	# rm -f $INSTRFILE
 fi
-rm -f $FORMALFILE
+# rm -f $FORMALFILE
 cd ..

@@ -12,7 +12,9 @@ FORMALFILE = '__lft__formal.v'
 # not used in the correctness-with-opcode
 FUNCNAME_TO_RISC_OPCODE = {
 	'add' : '0',
-	'sub' : '1'
+	'sub' : '1',
+	'funcand' : '2',
+	'funcor' : '3'
 }
 
 SMT_TO_SVA_OPERATOR = {
@@ -56,8 +58,8 @@ def get_expr_from_smt(smt):
 
 def main(argv):
 
-	opcode = argv[0]
-	function = argv[1]
+	# opcode = argv[0]
+	function = argv[0]
 	function_norm = normalize_str(function)
 
 	# print(opcode)
@@ -111,7 +113,7 @@ def main(argv):
 		assert (({verilog_op}) == __lft__tile__alu_io_out);
 		end
 		`endif
-	'''.format(risc_op=opcode, 
+	'''.format(risc_op=FUNCNAME_TO_RISC_OPCODE[funcname], 
 		verilog_op=get_expr_from_smt(funcdef))
 
 	ffhandler = open(FORMALFILE, 'w')

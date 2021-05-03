@@ -10,7 +10,7 @@ returnval=$(./generate_formalfile.py "$1")
 
 # echo $returnval
 
-if [ "$returnval" = "false" ]
+if [ "$returnval" != "true" ]
 then
 	echo "false"
 else	
