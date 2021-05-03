@@ -1,0 +1,21 @@
+usage:
+
+./script.sh <src1 reg> <src2 reg> <dest reg> <reg src1 value> <reg src2 value> <op>
+
+example:
+
+./script.sh 1 2 3 100 200 add
+
+example output:
+300 (in hex) 
+
+example explanation:
+register a1 stores 100, a2 stores 200, result is stored in a3 which ideally should be 100+200 = 300
+
+supported ops:
+add
+sub
+or
+xor
+and
+ult
