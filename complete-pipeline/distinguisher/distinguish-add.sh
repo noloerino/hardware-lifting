@@ -28,7 +28,7 @@ then
     echo "trying next function" > $LOGFILE
 else
 	echo "done with iteration" > $LOGFILE
-	./parseop.py add
+	./parseop-new.py add
 	break
 fi
 

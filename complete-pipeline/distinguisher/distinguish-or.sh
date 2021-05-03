@@ -28,7 +28,7 @@ then
     echo "trying next function" > $LOGFILE
 else
 	echo "done with iteration" > $LOGFILE
-	./parseop.py funcor
+	./parseop-new.py funcor
 	break
 fi
 

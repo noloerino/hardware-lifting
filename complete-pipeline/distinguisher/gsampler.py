@@ -111,9 +111,12 @@ def generate_smt_statements(function_to_check):
 '''.format(' '.join(ilist), function_to_check, ' '.join(ilist))
 
     smtstmts = declarestmts + '\n' + assertionstmts
-    smtstmts += '\n(check-sat)\n(get-model)'
-    return smtstmts
+    smtstmts += '\n(check-sat)\n'
 
+    for i in range(1, len(configfile.inputwidths)+1):
+        smtstmts += "(get-value (i{}))\n".format(i)
+
+    return smtstmts
 
 def main(argv):
     logfile_name = PREVFUNCFILE

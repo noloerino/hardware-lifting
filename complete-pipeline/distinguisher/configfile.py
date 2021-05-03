@@ -2,7 +2,7 @@ modelfile = "supporting/model.smt"
 
 # name of the I/O oracle binary that is supposed to be called
 oraclename = {
-	"add" : "./oracles/add-io",
+	"add" : "./io-oracle-aluops/script.sh",
 	"sub" : "./oracles/sub-io",
 	"funcand" : "./oracles/and-io",
 	"funcor" : "./oracles/or-io"

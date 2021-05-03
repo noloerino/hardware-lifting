@@ -301,6 +301,6 @@ Creating SMT-LIBv2 representation of module Datapath.
 Creating SMT-LIBv2 representation of module Core.
 Creating SMT-LIBv2 representation of module Tile.
 
-End of script. Logfile hash: 094c4ef255, CPU: user 0.23s system 0.01s, MEM: 16.03 MB peak
+End of script. Logfile hash: 094c4ef255, CPU: user 0.14s system 0.00s, MEM: 16.10 MB peak
 Yosys 0.9+4052 (git sha1 a58571d0, clang 6.0.0-1ubuntu2 -fPIC -Os)
-Time spent: 68% 2x write_smt2 (0 sec), 28% 2x read_ilang (0 sec), ...
+Time spent: 71% 2x write_smt2 (0 sec), 25% 2x read_ilang (0 sec), ...

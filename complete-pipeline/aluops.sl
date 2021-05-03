@@ -118,85 +118,138 @@
 ; (constraint (corr-oracle-add add))
 ; (constraint (corr-oracle-sub sub))
 
-; distinguishing oracle
-(oracle-constraint 
-	./distinguisher/distinguish-add.sh 
+(oracle-constraint
+	./random-io-oracles/random-add.py
 	(
-		(add (-> (_ BitVec 8)(_ BitVec 8) (_ BitVec 8)))
-		; (f2 (-> (_ BitVec 8) (_ BitVec 4) (_ BitVec 8) (_ BitVec 8)))
 		)
 	(
-		(correct Bool)
-		; (opcode (_ BitVec 4))
-		; (rega (_ BitVec 2)) 
-		; (regb (_ BitVec 2)) 
-
 		(reg1 (_ BitVec 8)) 
 		(reg2 (_ BitVec 8)) 
-		; (i_addr (_ BitVec 4)) 
-		; (reg3 (_ BitVec 8))
-		; (reg4 (_ BitVec 8))
 		(regOut (_ BitVec 8)) 
 		)
-	(=> (not correct) 
-			(= 	(add reg1 reg2) 
-				regOut))
+	(= 	(add reg1 reg2) 
+				regOut)
 	)
 
-(oracle-constraint 
-	./distinguisher/distinguish-sub.sh 
+(oracle-constraint
+	./random-io-oracles/random-sub.py
 	(
-		(sub (-> (_ BitVec 8) (_ BitVec 8) (_ BitVec 8)))
-		; (f2 (-> (_ BitVec 8) (_ BitVec 4) (_ BitVec 8) (_ BitVec 8)))
 		)
 	(
-		(correct Bool)
-		; (opcode (_ BitVec 4))
 		(reg1 (_ BitVec 8)) 
-		; (i_addr (_ BitVec 4)) 
-		(reg2 (_ BitVec 8))
-		(regD (_ BitVec 8))
+		(reg2 (_ BitVec 8)) 
+		(regOut (_ BitVec 8)) 
 		)
-	(=> (not correct) 
-			(= 	(sub reg1 reg2) 
-				regD))
-	)
-(oracle-constraint 
-	./distinguisher/distinguish-or.sh 
-	(
-		(funcor (-> (_ BitVec 8) (_ BitVec 8) (_ BitVec 8)))
-		; (f2 (-> (_ BitVec 8) (_ BitVec 4) (_ BitVec 8) (_ BitVec 8)))
-		)
-	(
-		(correct Bool)
-		; (opcode (_ BitVec 4))
-		(reg1 (_ BitVec 8)) 
-		; (i_addr (_ BitVec 4)) 
-		(reg2 (_ BitVec 8))
-		(regD (_ BitVec 8))
-		)
-	(=> (not correct) 
-			(= 	(funcor reg1 reg2) 
-				regD))
+	(= 	(sub reg1 reg2) 
+				regOut)
 	)
 
-(oracle-constraint 
-	./distinguisher/distinguish-and.sh 
+(oracle-constraint
+	./random-io-oracles/random-or.py
 	(
-		(funcand (-> (_ BitVec 8) (_ BitVec 8) (_ BitVec 8)))
-		; (f2 (-> (_ BitVec 8) (_ BitVec 4) (_ BitVec 8) (_ BitVec 8)))
 		)
 	(
-		(correct Bool)
-		; (opcode (_ BitVec 4))
 		(reg1 (_ BitVec 8)) 
-		; (i_addr (_ BitVec 4)) 
-		(reg2 (_ BitVec 8))
-		(regD (_ BitVec 8))
+		(reg2 (_ BitVec 8)) 
+		(regOut (_ BitVec 8)) 
 		)
-	(=> (not correct) 
-			(= 	(funcand reg1 reg2) 
-				regD))
+	(= 	(funcor reg1 reg2) 
+				regOut)
 	)
+
+(oracle-constraint
+	./random-io-oracles/random-and.py
+	(
+		)
+	(
+		(reg1 (_ BitVec 8)) 
+		(reg2 (_ BitVec 8)) 
+		(regOut (_ BitVec 8)) 
+		)
+	(= 	(funcand reg1 reg2) 
+				regOut)
+	)
+
+
+; distinguishing oracle
+; (oracle-constraint 
+; 	./distinguisher/distinguish-add.sh 
+; 	(
+; 		(add (-> (_ BitVec 8)(_ BitVec 8) (_ BitVec 8)))
+; 		; (f2 (-> (_ BitVec 8) (_ BitVec 4) (_ BitVec 8) (_ BitVec 8)))
+; 		)
+; 	(
+; 		(correct Bool)
+; 		; (opcode (_ BitVec 4))
+; 		; (rega (_ BitVec 2)) 
+; 		; (regb (_ BitVec 2)) 
+
+; 		(reg1 (_ BitVec 8)) 
+; 		(reg2 (_ BitVec 8)) 
+; 		; (i_addr (_ BitVec 4)) 
+; 		; (reg3 (_ BitVec 8))
+; 		; (reg4 (_ BitVec 8))
+; 		(regOut (_ BitVec 8)) 
+; 		)
+; 	(=> (not correct) 
+; 			(= 	(add reg1 reg2) 
+; 				regOut))
+; 	)
+
+; (oracle-constraint 
+; 	./distinguisher/distinguish-sub.sh 
+; 	(
+; 		(sub (-> (_ BitVec 8) (_ BitVec 8) (_ BitVec 8)))
+; 		; (f2 (-> (_ BitVec 8) (_ BitVec 4) (_ BitVec 8) (_ BitVec 8)))
+; 		)
+; 	(
+; 		(correct Bool)
+; 		; (opcode (_ BitVec 4))
+; 		(reg1 (_ BitVec 8)) 
+; 		; (i_addr (_ BitVec 4)) 
+; 		(reg2 (_ BitVec 8))
+; 		(regD (_ BitVec 8))
+; 		)
+; 	(=> (not correct) 
+; 			(= 	(sub reg1 reg2) 
+; 				regD))
+; 	)
+; (oracle-constraint 
+; 	./distinguisher/distinguish-or.sh 
+; 	(
+; 		(funcor (-> (_ BitVec 8) (_ BitVec 8) (_ BitVec 8)))
+; 		; (f2 (-> (_ BitVec 8) (_ BitVec 4) (_ BitVec 8) (_ BitVec 8)))
+; 		)
+; 	(
+; 		(correct Bool)
+; 		; (opcode (_ BitVec 4))
+; 		(reg1 (_ BitVec 8)) 
+; 		; (i_addr (_ BitVec 4)) 
+; 		(reg2 (_ BitVec 8))
+; 		(regD (_ BitVec 8))
+; 		)
+; 	(=> (not correct) 
+; 			(= 	(funcor reg1 reg2) 
+; 				regD))
+; 	)
+
+; (oracle-constraint 
+; 	./distinguisher/distinguish-and.sh 
+; 	(
+; 		(funcand (-> (_ BitVec 8) (_ BitVec 8) (_ BitVec 8)))
+; 		; (f2 (-> (_ BitVec 8) (_ BitVec 4) (_ BitVec 8) (_ BitVec 8)))
+; 		)
+; 	(
+; 		(correct Bool)
+; 		; (opcode (_ BitVec 4))
+; 		(reg1 (_ BitVec 8)) 
+; 		; (i_addr (_ BitVec 4)) 
+; 		(reg2 (_ BitVec 8))
+; 		(regD (_ BitVec 8))
+; 		)
+; 	(=> (not correct) 
+; 			(= 	(funcand reg1 reg2) 
+; 				regD))
+; 	)
 
 (check-synth)

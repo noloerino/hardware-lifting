@@ -1797,6 +1797,6 @@ Module Tile directly or indirectly contains formal properties -> setting "keep" 
 10. Executing RTLIL backend.
 Output filename: ../model/design.il
 
-End of script. Logfile hash: 6e5796dc39, CPU: user 3.12s system 0.02s, MEM: 41.03 MB peak
+End of script. Logfile hash: 6e5796dc39, CPU: user 2.45s system 0.01s, MEM: 41.01 MB peak
 Yosys 0.9+4052 (git sha1 a58571d0, clang 6.0.0-1ubuntu2 -fPIC -Os)
-Time spent: 26% 8x opt_clean (0 sec), 26% 3x check (0 sec), ...
+Time spent: 29% 3x check (0 sec), 26% 8x opt_clean (0 sec), ...
