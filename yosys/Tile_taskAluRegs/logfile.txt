@@ -1,0 +1,29 @@
+SBY 15:50:05 [Tile_taskAlu] Removing directory 'Tile_taskAlu'.
+SBY 15:50:05 [Tile_taskAlu] Copy 'Tile_alu.v' to 'Tile_taskAlu/src/Tile_alu.v'.
+SBY 15:50:05 [Tile_taskAlu] engine_0: smtbmc z3
+SBY 15:50:05 [Tile_taskAlu] base: starting process "cd Tile_taskAlu/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 15:50:06 [Tile_taskAlu] base: finished (returncode=0)
+SBY 15:50:06 [Tile_taskAlu] smt2: starting process "cd Tile_taskAlu/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 15:50:06 [Tile_taskAlu] smt2: finished (returncode=0)
+SBY 15:50:06 [Tile_taskAlu] engine_0: starting process "cd Tile_taskAlu; yosys-smtbmc -s z3 --presat --noprogress -t 6  --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 15:50:06 [Tile_taskAlu] engine_0: ##   0:00:00  Solver: z3
+SBY 15:50:06 [Tile_taskAlu] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY 15:50:06 [Tile_taskAlu] engine_0: ##   0:00:00  Checking assertions in step 0..
+SBY 15:50:06 [Tile_taskAlu] engine_0: ##   0:00:00  Checking assumptions in step 1..
+SBY 15:50:07 [Tile_taskAlu] engine_0: ##   0:00:00  Checking assertions in step 1..
+SBY 15:50:07 [Tile_taskAlu] engine_0: ##   0:00:00  Checking assumptions in step 2..
+SBY 15:50:07 [Tile_taskAlu] engine_0: ##   0:00:01  Checking assertions in step 2..
+SBY 15:50:07 [Tile_taskAlu] engine_0: ##   0:00:01  Checking assumptions in step 3..
+SBY 15:50:20 [Tile_taskAlu] engine_0: ##   0:00:14  Checking assertions in step 3..
+SBY 15:50:20 [Tile_taskAlu] engine_0: ##   0:00:14  Checking assumptions in step 4..
+SBY 15:50:51 [Tile_taskAlu] engine_0: ##   0:00:44  Checking assertions in step 4..
+SBY 15:50:51 [Tile_taskAlu] engine_0: ##   0:00:44  Checking assumptions in step 5..
+SBY 15:51:51 [Tile_taskAlu] engine_0: ##   0:01:44  waiting for solver (1 minute)
+SBY 15:53:22 [Tile_taskAlu] engine_0: ##   0:03:15  Checking assertions in step 5..
+SBY 15:53:22 [Tile_taskAlu] engine_0: ##   0:03:15  Status: passed
+SBY 15:53:22 [Tile_taskAlu] engine_0: finished (returncode=0)
+SBY 15:53:22 [Tile_taskAlu] engine_0: Status returned by engine: pass
+SBY 15:53:22 [Tile_taskAlu] summary: Elapsed clock time [H:MM:SS (secs)]: 0:03:17 (197)
+SBY 15:53:22 [Tile_taskAlu] summary: Elapsed process time [H:MM:SS (secs)]: 0:03:17 (197)
+SBY 15:53:22 [Tile_taskAlu] summary: engine_0 (smtbmc z3) returned pass
+SBY 15:53:22 [Tile_taskAlu] DONE (PASS, rc=0)

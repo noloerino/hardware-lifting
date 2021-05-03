@@ -1,0 +1,17 @@
+[options]
+
+mode bmc
+depth 6
+
+[engines]
+smtbmc z3
+
+[script]
+
+
+read -formal Tile_alu.v
+prep -top Tile
+
+[files]
+
+Tile_alu.v

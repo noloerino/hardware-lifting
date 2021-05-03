@@ -1,6 +1,6 @@
 [tasks]
 taskTile task_bmc task_tile
-taskTileOld task_bmc task_tileold
+taskTileAluRegs task_bmc task_tile_alu_regs
 taskTileProve task_prove task_tile
 
 [options]
@@ -10,7 +10,7 @@ mode prove
 
 task_bmc:
 mode bmc
-depth 5
+depth 10
 --
 
 [engines]
@@ -20,16 +20,20 @@ smtbmc z3
 
 [script]
 task_tile:
-read -formal Tile.v
+read -formal Tile.sv
 prep -top Tile
 --
 
-task_tileold:
-read -formal Tileold.v
+task_tile_alu_regs:
+read -formal Tile_alu.sv
 prep -top Tile
 --
 
 [files]
 task_tile:
-Tile.v
+Tile.sv
+--
+
+task_tile_alu_regs:
+Tile_alu.sv
 --

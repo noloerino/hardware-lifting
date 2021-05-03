@@ -2754,8 +2754,10 @@ module Datapath(
   input  [2:0]  io_ctrl_csr_cmd,
   input         io_ctrl_illegal,
   
+  output [32:0] io__lft__dpath__stall,
   output [32:0] io__lft__dpath__pc,
   output [32:0] io__lft__dpath__fe_pc,
+  output [31:0] io__lft__dpath__fe_inst,
   output [32:0] io__lft__dpath__ew_pc,
   
   output [31:0] io__lft__dpath__regFile_io_rdata1,
@@ -2840,6 +2842,13 @@ module Datapath(
   reg [31:0] _RAND_13;
   reg [32:0] pc; // @[Datapath.scala 53:21]
   reg [63:0] _RAND_14;
+
+  `ifdef FORMAL
+  // initial pc = 0;
+  // initial fe_pc = 0;
+  // initial ew_pc = 0;
+  `endif
+
   wire  _T_151; // @[Datapath.scala 52:15]
   wire  _T_153; // @[Datapath.scala 52:40]
   wire  stall; // @[Datapath.scala 52:37]
@@ -3210,9 +3219,12 @@ module Datapath(
   assign brCond_io_rs1 = rs1;
   assign brCond_io_rs2 = rs2;
   assign brCond_io_br_type = io_ctrl_br_type;
+
+  assign io__lft__dpath__stall = stall;
   assign io__lft__dpath__pc = pc;
   assign io__lft__dpath__fe_pc = fe_pc;
   assign io__lft__dpath__ew_pc = ew_pc;
+  assign io__lft__dpath__fe_inst = fe_inst;
   assign io__lft__dpath__regFile_io_waddr = regFile_io_waddr;
   assign io__lft__dpath__regFile_io_wdata = regFile_io_wdata;
   assign io__lft__dpath__regFile_io_raddr1 = regFile_io_raddr1;
@@ -4566,9 +4578,11 @@ module Core(
   output [3:0]  io_dcache_req_bits_mask,
   input         io_dcache_resp_valid,
   input  [31:0] io_dcache_resp_bits_data,
+  output [32:0] io__lft__core__stall,
   output [32:0] io__lft__core__pc,
   output [32:0] io__lft__core__fe_pc,
   output [32:0] io__lft__core__ew_pc,
+  output [31:0] io__lft__core__fe_inst,
   output [31:0] io__lft__core__regFile_io_rdata1,
   output [31:0] io__lft__core__regFile_io_rdata2,
   output [4:0] io__lft__core__regFile_io_raddr1,
@@ -4656,9 +4670,11 @@ module Core(
     .io_ctrl_wb_en(dpath_io_ctrl_wb_en),
     .io_ctrl_csr_cmd(dpath_io_ctrl_csr_cmd),
     .io_ctrl_illegal(dpath_io_ctrl_illegal),
+    .io__lft__dpath__stall(io__lft__core__stall),
     .io__lft__dpath__pc(io__lft__core__pc),
     .io__lft__dpath__fe_pc(io__lft__core__fe_pc),
     .io__lft__dpath__ew_pc(io__lft__core__ew_pc),
+    .io__lft__dpath__fe_inst(io__lft__core__fe_inst),
     .io__lft__dpath__regFile_io_rdata1(io__lft__core__regFile_io_rdata1),
     .io__lft__dpath__regFile_io_rdata2(io__lft__core__regFile_io_rdata2),
     .io__lft__dpath__regFile_io_raddr1(io__lft__core__regFile_io_raddr1),
@@ -6313,9 +6329,11 @@ module Tile(
   wire [63:0] arb_io_nasti_r_bits_data; // @[Tile.scala 109:22]
   wire  arb_io_nasti_r_bits_last; // @[Tile.scala 109:22]
   
+  wire [32:0] __lft__tile__stall;
   wire [32:0] __lft__tile__pc;
   wire [32:0] __lft__tile__fe_pc;
   wire [32:0] __lft__tile__ew_pc;
+  wire [31:0] __lft__tile__fe_inst;
   wire [4:0] __lft__tile__regFile_io_waddr;
   wire [31:0] __lft__tile__regFile_io_wdata;
   wire [4:0] __lft__tile__regFile_io_raddr1;
@@ -6345,9 +6363,11 @@ module Tile(
     .io_dcache_req_bits_mask(core_io_dcache_req_bits_mask),
     .io_dcache_resp_valid(core_io_dcache_resp_valid),
     .io_dcache_resp_bits_data(core_io_dcache_resp_bits_data),
+    .io__lft__core__stall(__lft__tile__stall),
     .io__lft__core__pc(__lft__tile__pc),
     .io__lft__core__fe_pc(__lft__tile__fe_pc),
     .io__lft__core__ew_pc(__lft__tile__ew_pc),
+    .io__lft__core__fe_inst(__lft__tile__fe_inst),
     .io__lft__core__regFile_io_waddr(__lft__tile__regFile_io_waddr),
     .io__lft__core__regFile_io_wdata(__lft__tile__regFile_io_wdata),
     .io__lft__core__regFile_io_raddr1(__lft__tile__regFile_io_raddr1),
@@ -6542,143 +6562,71 @@ module Tile(
   assign arb_io_nasti_r_bits_data = io_nasti_r_bits_data;
   assign arb_io_nasti_r_bits_last = io_nasti_r_bits_last;
 
-
-  /*
-    Signals available to yosys: to add more propagate through
-    the modules
-  */
-  // .io__lft__core__pc(__lft__tile__pc),
-  // .io__lft__core__fe_pc(__lft__tile__fe_pc),
-  // .io__lft__core__ew_pc(__lft__tile__ew_pc),
-  // .io__lft__core__regFile_io_waddr(__lft__tile__regFile_io_waddr),
-  // .io__lft__core__regFile_io_wdata(__lft__tile__regFile_io_wdata),
-  // .io__lft__core__regFile_io_raddr1(__lft__tile__regFile_io_raddr1),
-  // .io__lft__core__regFile_io_raddr2(__lft__tile__regFile_io_raddr2),
-  // .io__lft__core__regFile_io_rdata1(__lft__tile__regFile_io_rdata1),
-  // .io__lft__core__regFile_io_rdata2(__lft__tile__regFile_io_rdata2),
-  // .io__lft__core__alu_io_A(__lft__tile__alu_io_A),
-  // .io__lft__core__alu_io_B(__lft__tile__alu_io_B),
-  // .io__lft__core__alu_io_alu_op(__lft__tile__alu_io_alu_op),
-  // .io__lft__core__alu_io_out(__lft__tile__alu_io_out),
-  // .io__lft__core__alu_io_sum(__lft__tile__alu_io_sum)
-
-  // `ifdef FORMAL
-
-  // (* anyconst *) reg [32:0] __lft__past_pc;
-  // (* anyconst *) reg [31:0] __lft__shadow__reg1;
-  // (* anyconst *) reg [31:0] __lft__shadow__reg2;
-  // (* anyconst *) reg [5:0] __lft__shadow__opcode;
-
-  // reg __lft__seen;
-  // reg __lft__initial;
-  // reg [2:0] __lft__counter;
-
-
-  // initial begin
-  //   __lft__initial <= 1'b0;
-  //   __lft__counter <= 3'b000;
-  //   __lft__seen <= 1'b0;
-  // end
-
-
-  // always @(posedge clock) begin
-
-  //   // assume(past_pc > 5);
-  //   // assume(past_pc < 10);
-
-  //   if (__lft__tile__fe_pc == __lft__past_pc) begin
-  //     __lft__seen <= 1;
-  //   end
-
-  //   if (__lft__counter != 3'b110) begin
-  //     __lft__counter <= __lft__counter + 3'b001;
-  //   end
-
-  //   // assume (__lft__tile__alu_io_alu_op == 1);
-  //   assume ((__lft__tile__fe_pc != past_pc) ||
-  //     ((__lft__tile__alu_io_alu_op == 1) &&
-  //     (__lft__shadow__reg1 == __lft__tile__regFile_io_rdata1) &&
-  //     (__lft__shadow__reg2 == __lft__tile__regFile_io_rdata2))
-  //     );
-
-
-  //   assert (
-  //     (__lft__seen < 3'b011) || (__lft__past_pc != __lft__tile__ew_pc) ||
-  //     __lft__shadow__reg1 + __lft__shadow__reg2 == __lft__tile__alu_io_out);
-  // end
-  // `endif
-
-
-
   `ifdef FORMAL
-  reg [3:0] counter = 0; // Used for debugging
-  always @(posedge clock) begin
-    counter = counter + 1;
-  end
-
-  reg started = 0; // Identifies if the instruction has started decode
-  always @(posedge clock) begin
-    started = __lft__tile__fe_pc == 32'h200 || started;
-  end
-
-  // Checks that it's an add not to x0
   wire [31:0] fe_inst = __lft__tile__fe_inst;
-  wire is_add = fe_inst[31:25] == 7'b0100000 &&
+  `define SUB_F7 (7'b0100000)
+  `define ADD_F7 (7'b0000000)
+  // Change ADD to SUB and verify that the model check fails
+  wire is_add = fe_inst[31:25] == `SUB_F7 &&
     fe_inst[14:12] == 3'b0 &&
     fe_inst[6:0] == 7'b0110011 &&
     fe_inst[11:7] != 7'b0
     ;
 
-  (* anyconst *) reg [32:0] past_pc;
-  (* anyconst *) reg [31:0] __lft__shadow__reg1;
-  (* anyconst *) reg [31:0] __lft__shadow__reg2;
+  reg init = 1;
+  (* anyconst *) reg [31:0] tgt_rs1;
+  (* anyconst *) reg [31:0] tgt_rs2;
+
+  reg issued = 0;
+
+  reg [3:0] counter = 0; // Used for debugging
   always @(posedge clock) begin
-    assume(!(started) || (
-      is_add &&
-      past_pc == __lft__tile__fe_pc &&
-      (__lft__shadow__reg1 == __lft__tile__regFile_io_rdata1) &&
-      (__lft__shadow__reg2 == __lft__tile__regFile_io_rdata2)
-      )
-    );
-    assert(
-      // counter < 3'b011 && // Deliberately fail to see an example trace
-      !(started && __lft__tile__ew_pc == past_pc) || (
-      __lft__shadow__reg1 + __lft__shadow__reg2 == __lft__tile__regFile_io_wdata
-      )
-    );
+    counter = counter + 1;
+  end
+
+  // Eventually, if the user specifies a stream of assembly instructions
+  // we will generate a TGT_PC variable for each inst and a corresponding assumption
+  `define TGT_PC (32'h200)
+  always @(posedge clock) begin
+    // Only reset on the first cycle
+    assume(reset == init);
+    init <= 0;
+
+    if (reset) begin
+      issued <= 0;
+      // These assumptions are needed to ensure that EW_PC isn't initialized to TGT_PC
+      // which screws up issue detection in event of a stall, since EW_PC will continue
+      // to hold its (meaningless) initial value
+      assume(
+        __lft__tile__pc == 0 &&
+        __lft__tile__fe_pc == 0 &&
+        __lft__tile__ew_pc == 0
+      );
+    end
+    // Observe when an instruction enters the pipeline
+    if (!reset && __lft__tile__pc == `TGT_PC) begin
+      issued <= 1;
+    end
+    // Check that a reset didn't occur last cycle
+    // and assume shadow values when an instruction hits this stage
+    if (!reset && !$past(reset) && issued && __lft__tile__fe_pc == `TGT_PC) begin
+      assume(
+        is_add &&
+        tgt_rs1 == __lft__tile__regFile_io_rdata1 &&
+        tgt_rs2 == __lft__tile__regFile_io_rdata2
+      );
+    end
+    // Check that a reset didn't occur in the last 2 cycles
+    // and apply assertions
+    if (!reset && !$past(reset) && !$past(reset, 2) &&
+        issued && __lft__tile__ew_pc == `TGT_PC) begin
+      assert(
+        tgt_rs1 + tgt_rs2 == __lft__tile__regFile_io_wdata
+      );
+    end
+    // Uncomment to force a crash to see an example trace
+    // assert(reset || __lft__tile__pc != 32'h204);
   end
   `endif
-
-
-
-  // `ifdef FORMAL
-  
-  // (* anyconst *) reg [32:0] past_pc;
-  // (* anyconst *) reg [31:0] __lft__shadow__reg1;
-  // (* anyconst *) reg [31:0] __lft__shadow__reg2;
-  // reg __lft__seen;
-  // initial __lft__seen = 1'b0;
-
-  // always @(posedge clock) begin
-  //   assume(past_pc > 5);
-  //   assume(past_pc < 10);
-
-  //   if (__lft__tile__fe_pc == past_pc) 
-  //     __lft__seen <= 1;
-  //   else
-  //     __lft__seen <= 0;
-
-  //   assume (!(__lft__tile__fe_pc == past_pc) |
-  //     (
-  //       // (__lft__tile__alu_io_alu_op == 0) &
-  //     (__lft__shadow__reg1 == __lft__tile__regFile_io_rdata1) &
-  //     (__lft__shadow__reg2 == __lft__tile__regFile_io_rdata2))
-  //     );
-
-  //   assert (! (__lft__seen) | !(__lft__tile__ew_pc == past_pc) |
-  //     !(__lft__tile__alu_io_alu_op == 0) |
-  //     (__lft__tile__alu_io_A + __lft__tile__alu_io_B == __lft__tile__alu_io_out));
-  // end
-  // `endif
 
 endmodule
