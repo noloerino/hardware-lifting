@@ -18,9 +18,6 @@ outputwidths = [8]
 allVals = [regA, regB] + regInit + [regOut]
 widths = inputwidths + outputwidths
 
-
-
-
 zipped = list(zip(allVals, widths))
 
 print(' '.join(['(_ bv{} {})'.format(i[0], i[1]) for i in zipped]))

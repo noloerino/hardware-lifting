@@ -1,0 +1,4 @@
+Elapsed clock time [H:MM:SS (secs)]: 0:03:15 (195)
+Elapsed process time [H:MM:SS (secs)]: 0:03:15 (195)
+engine_0 (smtbmc z3) returned FAIL
+counterexample trace: corr_taskBMC/engine_0/trace.vcd

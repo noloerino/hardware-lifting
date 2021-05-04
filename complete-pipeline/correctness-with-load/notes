@@ -1,0 +1,66 @@
+
+
+
+- remove the fwrite instructions
+
+
+
+- added a line in rscv.out to mark the stupid instruction
+
+
+
+state that needs to be sampled:
+PC : 0000004b0 : b000000000000000000000010010110000
+
+$var wire 32 T! regs(5) [31:0] $end
+$var wire 32 U! regs(6) [31:0] $end
+$var wire 32 V! regs(7) [31:0] $end
+
+fe_pc : q : b0 0000 0000 0000 0000 0001 0010 1111 0000
+ew_pc : s
+
+
+
+alu_io_out : k
+alu_io_sum : l
+alu_io_A : i
+alu_io_B : j
+io_alu_op : M
+$var wire  1 K$ regFile_clock $end
+$var wire  5 b regFile_io_raddr1 [4:0] $end
+$var wire  5 c regFile_io_raddr2 [4:0] $end
+$var wire 32 d regFile_io_rdata1 [31:0] $end
+$var wire 32 e regFile_io_rdata2 [31:0] $end
+$var wire  5 g regFile_io_waddr [4:0] $end
+$var wire 32 h regFile_io_wdata [31:0] $end
+$var wire  1 f regFile_io_wen $end
+$scope module regFile $end
+
+(clock negedge on odd counts)
+linenumber @ count
+npc		: z @ 29072 @ 960
+pc 		: x @ 29159 @ 962
+fe_pc	: q @ 29435 @ 970
+ew_pc	: s @ 29547 @ 974 (29520)
+
+st r5 	: T! @ 29632 @ 976
+
+- addi r1, r2, r3 
+
+
+
+
+Additions:
+  output [32:0] io__lft__core__ew_pc,
+  output [31:0] io__lft__core__regFile_io_rdata1,
+  output [31:0] io__lft__core__regFile_io_rdata2,
+  output [4:0] io__lft__core__regFile_io_raddr1,
+  output [4:0] io__lft__core__regFile_io_raddr2,
+  output [31:0] io__lft__core__regFile_io_wdata,
+  output [4:0] io__lft__core__regFile_io_waddr,
+  output [31:0] io__lft__core__alu_io_A,
+  output [31:0] io__lft__core__alu_io_B,
+  output [3:0] io__lft__core__alu_io_alu_op,
+  output [31:0] io__lft__core__alu_io_out,
+  output [31:0] io__lft__core__alu_io_sum
+
