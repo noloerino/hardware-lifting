@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites disabled="0" errors="1" failures="0" tests="1" time="0">
+<testsuite disabled="0" errors="1" failures="0" name="corr" skipped="0" tests="1" time="0">
+<properties>
+<property name="os" value="posix"/>
+</properties>
+<testcase classname="corr" name="taskProve" status="ERROR" time="0">
+<error message="ERROR" type="ERROR"/>
+<system-out>SBY 20:15:09 [corr_taskBMC] Removing directory 'corr_taskBMC'.
+SBY 20:17:28 [corr_taskProve] Removing directory 'corr_taskProve'.
+SBY 20:17:28 [corr_taskProve] ERROR: Config file is lacking engine configuration.
+SBY 20:17:28 [corr_taskProve] DONE (ERROR, rc=16)
+</system-out></testcase></testsuite></testsuites>

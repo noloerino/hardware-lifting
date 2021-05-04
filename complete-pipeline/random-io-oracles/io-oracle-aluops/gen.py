@@ -19,20 +19,23 @@ loadInstA = hex(int(loadAv + "00000000" + loadAr + "0010011", 2))[2:].zfill(8)
 loadInstB = hex(int(loadBv + "00000000" + loadBr + "0010011", 2))[2:].zfill(8)
 
 
-if op == "add":
-	opInst = "0000000" + loadBr + loadAr + "000" + destRr + "0110011"
-elif op == "sub":
-	opInst = "0100000" + loadBr + loadAr + "000" + destRr + "0110011"
-elif op == "or":
-	opInst = "0000000" + loadBr + loadAr + "110" + destRr + "0110011"
-elif op == "and":
-	opInst = "0000000" + loadBr + loadAr + "111" + destRr + "0110011"
-elif op == "xor":
-	opInst = "0000000" + loadBr + loadAr + "100" + destRr + "0110011"
-elif op == "ult":
-	opInst = "0000000" + loadBr + loadAr + "011" + destRr + "0110011"
-else:
-	assert False, "Unsupported operation"
+op_list = op.split('_')
+opInst = op_list[1] + loadBr + loadAr + op_list[2] + destRr + op_list[3]
+
+# if op == "add":
+# 	opInst = "0000000" + loadBr + loadAr + "000" + destRr + "0110011"
+# elif op == "sub":
+# 	opInst = "0100000" + loadBr + loadAr + "000" + destRr + "0110011"
+# elif op == "or":
+# 	opInst = "0000000" + loadBr + loadAr + "110" + destRr + "0110011"
+# elif op == "and":
+# 	opInst = "0000000" + loadBr + loadAr + "111" + destRr + "0110011"
+# elif op == "xor":
+# 	opInst = "0000000" + loadBr + loadAr + "100" + destRr + "0110011"
+# elif op == "ult":
+# 	opInst = "0000000" + loadBr + loadAr + "011" + destRr + "0110011"
+# else:
+# 	assert False, "Unsupported operation"
 
 opInst = hex(int(opInst, 2))[2:].zfill(8)
 

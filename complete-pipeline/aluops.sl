@@ -1,59 +1,76 @@
 (set-logic BV)
 
 
-(synth-fun sub
-	((parameter0 (_ BitVec 8)) (parameter1 (_ BitVec 8))) (_ BitVec 8)
+; (synth-fun func_0100000_000_0110011
+; 	((parameter0 (_ BitVec 8)) (parameter1 (_ BitVec 8))) (_ BitVec 8)
+; 	; non-terminals
+; 	( (V0 (_ BitVec 8)) )
+; 	; grammar rules
+; 	; ( (V (_ BitVec 8) (parameter0 parameter1 (bvadd V V) (bvsub V V))) )
+; )
+
+; ; (define-fun add ((reg1 (_ BitVec 8)) (reg1 (_ BitVec 8))) (_ BitVec 8) (bvadd reg1 reg2))
+; (synth-fun func_0000000_000_0110011
+; 	((parameter0 (_ BitVec 8)) (parameter1 (_ BitVec 8))) (_ BitVec 8)
+; 	; non-terminals
+; 	( (V1 (_ BitVec 8)) )
+; 	; grammar rules
+; 	; ( (V1 (_ BitVec 8) (parameter0 parameter1 (bvadd V1 V1) (bvsub V1 V1) (bvand V1 V1) (bvor V1 V1))) )
+; )
+
+
+; (synth-fun func_0000000_111_0110011
+; 	((parameter0 (_ BitVec 8)) (parameter1 (_ BitVec 8))) (_ BitVec 8)
+; 	; non-terminals
+; 	( (V2 (_ BitVec 8)) )
+; 	; grammar rules
+; 	; ( (V2 (_ BitVec 8) (parameter0 parameter1 (bvadd V2 V2) (bvsub V2 V2) (bvand V2 V2) (bvor V2 V2))) )
+; )
+
+
+; (synth-fun func_0000000_110_0110011
+; 	((parameter0 (_ BitVec 8)) (parameter1 (_ BitVec 8))) (_ BitVec 8)
+; 	; non-terminals
+; 	( (V3 (_ BitVec 8)) )
+; 	; grammar rules
+; 	; ( (V3 (_ BitVec 8) (parameter0 parameter1 (bvadd V3 V3) (bvsub V3 V3) (bvand V3 V3) (bvor V3 V3))) )
+; )
+
+
+; (define-fun reg_src1_xxxxxxx_xxx_xxxxxxx ((parameter0 (_ BitVec 5)) (parameter1 (_ BitVec 5)) (parameter2 (_ BitVec 5))) (_ BitVec 5) parameter0)
+; (synth-fun reg_src1_xxxxxxx_xxx_0110011
+; 	((parameter0 (_ BitVec 5)) (parameter1 (_ BitVec 5)) (parameter2 (_ BitVec 5))) (_ BitVec 5)
+; 	; non-terminals
+; 	( (V4 (_ BitVec 5)) )
+; 	; grammar rules
+; 	( (V4 (_ BitVec 5) (parameter0 parameter1 (bvadd V4 V4) (bvsub V4 V4) (bvand V4 V4) (bvor V4 V4))) )
+; )
+
+; (synth-fun reg_src2_xxxxxxx_xxx_0110011
+; 	((parameter0 (_ BitVec 5)) (parameter1 (_ BitVec 5)) (parameter2 (_ BitVec 5))) (_ BitVec 5)
+; 	; non-terminals
+; 	( (V5 (_ BitVec 5)) )
+; 	; grammar rules
+; 	( (V5 (_ BitVec 5) (parameter0 parameter1 (bvadd V5 V5) (bvsub V5 V5) (bvand V5 V5) (bvor V5 V5))) )
+; )
+
+(synth-fun reg_dest_xxxxxxx_xxx_0110011
+	((parameter0 (_ BitVec 5)) (parameter1 (_ BitVec 5)) (parameter2 (_ BitVec 5))) (_ BitVec 5)
 	; non-terminals
-	(
-		(V (_ BitVec 8))
-	)
+	( (V5 (_ BitVec 5)) )
 	; grammar rules
-	(
-		(V (_ BitVec 8) (parameter0 parameter1 (bvadd V V) (bvsub V V)))
-	)
+	( (V5 (_ BitVec 5) (parameter0 parameter1 parameter2 (bvadd V5 V5) (bvsub V5 V5) (bvand V5 V5) (bvor V5 V5))) )
 )
 
-; (define-fun add ((reg1 (_ BitVec 8)) (reg1 (_ BitVec 8))) (_ BitVec 8) (bvadd reg1 reg2))
-(synth-fun add
-	((parameter0 (_ BitVec 8)) (parameter1 (_ BitVec 8))) (_ BitVec 8)
-	; non-terminals
-	(
-		(V1 (_ BitVec 8))
-	)
-	; grammar rules
-	(
-		(V1 (_ BitVec 8) (parameter0 parameter1 (bvadd V1 V1) (bvsub V1 V1) (bvand V1 V1) (bvor V1 V1)))
-	)
-)
 
+; (synth-fun reg_src1_xxxxxxx_xxx_0110011
+; 	((parameter0 (_ BitVec 5)) (parameter1 (_ BitVec 5)) (parameter2 (_ BitVec 5))) (_ BitVec 5)
+; 	; non-terminals
+; 	( (V4 (_ BitVec 5)) )
+; 	; grammar rules
+; 	( (V4 (_ BitVec 5) (parameter0 parameter1 (bvadd V4 V4) (bvsub V4 V4) (bvand V4 V4) (bvor V4 V4))) )
+; )
 
-(synth-fun funcand
-	((parameter0 (_ BitVec 8)) (parameter1 (_ BitVec 8))) (_ BitVec 8)
-	; non-terminals
-	(
-		(V2 (_ BitVec 8))
-	)
-	; grammar rules
-	(
-		(V2 (_ BitVec 8) (parameter0 parameter1 (bvadd V2 V2) (bvsub V2 V2) (bvand V2 V2) (bvor V2 V2)))
-	)
-)
-
-
-(synth-fun funcor
-	((parameter0 (_ BitVec 8)) (parameter1 (_ BitVec 8))) (_ BitVec 8)
-	; non-terminals
-	(
-		(V3 (_ BitVec 8))
-	)
-	; grammar rules
-	(
-		(V3 (_ BitVec 8) (parameter0 parameter1 (bvadd V3 V3) (bvsub V3 V3) (bvand V3 V3) (bvor V3 V3)))
-	)
-)
-
-; (synth-fun addOpcode () (_ BitVec 4))
-; (synth-fun subOpcode () (_ BitVec 4))
 
 ; (synth-fun aluTrans1 
 ; 	((opcode (_ BitVec 4)) (reg1 (_ BitVec 8)) (reg2 (_ BitVec 8)))
@@ -90,27 +107,34 @@
 ; 	(aluTrans1 (_ bv1 4) reg1 reg2)
 ; 	)
 
-(declare-oracle-fun corr-oracle ./correctness-with-opcode/yosys-correctness.sh
-	 ((-> (_ BitVec 8) (_ BitVec 8) (_ BitVec 8)))
+; (declare-oracle-fun corr-oracle ./correctness-with-opcode/yosys-correctness.sh
+; 	 ((-> (_ BitVec 8) (_ BitVec 8) (_ BitVec 8)))
+; 	Bool
+; 	)
+
+(declare-oracle-fun corr-oracle-reg ./correctness-with-reg/yosys-correctness-reg.sh
+	((-> (_ BitVec 5) (_ BitVec 5) (_ BitVec 5) (_ BitVec 5)))
 	Bool
 	)
 
 ; (declare-oracle-fun corr-oracle-add ./corr-add.sh
 ; 	((-> (_ BitVec 1) (_ BitVec 1) (_ BitVec 8) (_ BitVec 8) (_ BitVec 8) (_ BitVec 8) (_ BitVec 8)))
-; 	Bool
-; 	)
+; 	Bool )
 
 ; (declare-oracle-fun corr-oracle-sub ./corr-sub.sh
 ; 	((-> (_ BitVec 8) (_ BitVec 8) (_ BitVec 8)))
-; 	Bool
-; 	)
+; 	Bool )
 
 (constraint 
-	(and (corr-oracle sub) 
-	(and (corr-oracle funcand) 
-		(and (corr-oracle funcor) 
-	(corr-oracle add)))
-))
+	; (and 
+		; (corr-oracle func_0000000_000_0110011) 
+		; (and (corr-oracle funcand) 
+			; (and (corr-oracle funcor) 
+				; (corr-oracle add)))
+	(corr-oracle-reg reg_dest_xxxxxxx_xxx_0110011)
+)
+
+; )
 ; ))
 ; (constraint (and (corr-oracle-sub sub) (corr-oracle-add add)))
 ; (constraint (corr-oracle add))
@@ -118,64 +142,98 @@
 ; (constraint (corr-oracle-add add))
 ; (constraint (corr-oracle-sub sub))
 
-(oracle-constraint
-	./random-io-oracles/random-add.py
-	(
-		)
-	(
-		(reg1 (_ BitVec 8)) 
-		(reg2 (_ BitVec 8)) 
-		(regOut (_ BitVec 8)) 
-		)
-	(= 	(add reg1 reg2) 
-				regOut)
-	)
+; (declare-oracle-fun io-oracle ./random-io-oracles/random-gen.py
+; 	 ((-> (_ BitVec 8) (_ BitVec 8) (_ BitVec 8)))
+; 	Bool
+; 	)
+
+
+; (oracle-constraint
+; 	./random-io-oracles/random-reg.py
+
+; 	(
+; 		(reg_src2_xxxxxxx_xxx_0110011  (-> (_ BitVec 5) (_ BitVec 5) (_ BitVec 5) (_ BitVec 5)))
+; 		)
+; 	(
+; 		(regA (_ BitVec 5)) (regB (_ BitVec 5)) (regC (_ BitVec 5)) (regO (_ BitVec 5)) 
+; 		)
+; 	(= (reg_src2_xxxxxxx_xxx_0110011 regA regB regC)
+; 		regO)
+; 	)
 
 (oracle-constraint
-	./random-io-oracles/random-sub.py
+	./random-io-oracles/random-reg.py
+
 	(
+		(reg_dest_xxxxxxx_xxx_0110011  (-> (_ BitVec 5) (_ BitVec 5) (_ BitVec 5) (_ BitVec 5)))
 		)
 	(
-		(reg1 (_ BitVec 8)) 
-		(reg2 (_ BitVec 8)) 
-		(regOut (_ BitVec 8)) 
+		(regA (_ BitVec 5)) (regB (_ BitVec 5)) (regC (_ BitVec 5)) (regO (_ BitVec 5)) 
 		)
-	(= 	(sub reg1 reg2) 
-				regOut)
+	(= (reg_dest_xxxxxxx_xxx_0110011 regA regB regC)
+		regO)
 	)
 
-(oracle-constraint
-	./random-io-oracles/random-or.py
-	(
-		)
-	(
-		(reg1 (_ BitVec 8)) 
-		(reg2 (_ BitVec 8)) 
-		(regOut (_ BitVec 8)) 
-		)
-	(= 	(funcor reg1 reg2) 
-				regOut)
-	)
 
-(oracle-constraint
-	./random-io-oracles/random-and.py
-	(
-		)
-	(
-		(reg1 (_ BitVec 8)) 
-		(reg2 (_ BitVec 8)) 
-		(regOut (_ BitVec 8)) 
-		)
-	(= 	(funcand reg1 reg2) 
-				regOut)
-	)
+; (oracle-constraint
+; 	./random-io-oracles/random-gen.py
+; 	(
+; 		(func_0000000_000_0110011 (-> (_ BitVec 8) (_ BitVec 8) (_ BitVec 8)))
+; 		)
+; 	(
+; 		(reg1 (_ BitVec 8)) 
+; 		(reg2 (_ BitVec 8)) 
+; 		(regOut (_ BitVec 8)) 
+; 		)
+; 	(= 	(func_0000000_000_0110011 reg1 reg2) 
+; 				regOut)
+; 	)
+
+; (oracle-constraint
+; 	./random-io-oracles/random-sub.py
+; 	(
+; 		)
+; 	(
+; 		(reg1 (_ BitVec 8)) 
+; 		(reg2 (_ BitVec 8)) 
+; 		(regOut (_ BitVec 8)) 
+; 		)
+; 	(= 	(sub reg1 reg2) 
+; 				regOut)
+; 	)
+
+; (oracle-constraint
+; 	./random-io-oracles/random-or.py
+; 	(
+; 		)
+; 	(
+; 		(reg1 (_ BitVec 8)) 
+; 		(reg2 (_ BitVec 8)) 
+; 		(regOut (_ BitVec 8)) 
+; 		)
+; 	(= 	(funcor reg1 reg2) 
+; 				regOut)
+; 	)
+
+; (oracle-constraint
+; 	./random-io-oracles/random-and.py
+; 	(
+; 		)
+; 	(
+; 		(reg1 (_ BitVec 8)) 
+; 		(reg2 (_ BitVec 8)) 
+; 		(regOut (_ BitVec 8)) 
+; 		)
+; 	(= 	(funcand reg1 reg2) 
+; 				regOut)
+; 	)
 
 
 ; distinguishing oracle
 ; (oracle-constraint 
 ; 	./distinguisher/distinguish-add.sh 
 ; 	(
-; 		(add (-> (_ BitVec 8)(_ BitVec 8) (_ BitVec 8)))
+		; (add (-> (_ BitVec 8)(_ BitVec 8) (_ BitVec 8)))
 ; 		; (f2 (-> (_ BitVec 8) (_ BitVec 4) (_ BitVec 8) (_ BitVec 8)))
 ; 		)
 ; 	(

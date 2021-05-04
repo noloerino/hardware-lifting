@@ -1,5 +1,6 @@
 #!/usr/bin/python3.6
 
+import sys
 import random
 import subprocess
 import os
@@ -9,8 +10,6 @@ regA = 0
 # regB = random.randint(0,3)
 regB = 1
 regInit = random.sample(range(0,256), 2)
-
-
 
 oraclename= "./random-io-oracles/io-oracle-aluops/script.sh"
 args = [oraclename]
@@ -35,3 +34,6 @@ widths = inputwidths + outputwidths
 zipped = list(zip(allVals, widths))
 
 print(' '.join(['(_ bv{} {})'.format(i[0], i[1]) for i in zipped]))
+
+if __name__ == '__main__':
+	main(sys.argv[1:])

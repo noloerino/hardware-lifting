@@ -543,7 +543,7 @@
 (define-fun |CSR#82| ((state |CSR_s|)) Bool (= #b110000000010 (|CSR#10| state))) ; \_T_162
 (define-fun |CSR#83| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#82| state) (|CSR#68| state) (|CSR#81| state))) ; \_T_293
 (define-fun |CSR#84| ((state |CSR_s|)) Bool (= #b110000000001 (|CSR#10| state))) ; \_T_158
-(define-fun |CSR#85| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#84| state) (|CSR#40| state) (|CSR#83| state))) ; \_T_294
+(define-fun |CSR#85| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#84| state) (|CSR#40| state) (|CSR#83| state))) ; { $auto$wreduce.cc:454:run$3156 [31:30] \_T_294 }
 (define-fun |CSR#86| ((state |CSR_s|)) Bool (= #b110000000000 (|CSR#10| state))) ; \_T_154
 (define-fun |CSR#87| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#86| state) (|CSR#73| state) (|CSR#85| state))) ; \io_out
 (declare-fun |CSR#88| (|CSR_s|) (_ BitVec 32)) ; \io_in
@@ -1118,8 +1118,8 @@
 (define-fun |CSR_n _T_296| ((state |CSR_s|)) (_ BitVec 2) ((_ extract 9 8) (|CSR#10| state)))
 ; yosys-smt2-wire _T_295 32
 (define-fun |CSR_n _T_295| ((state |CSR_s|)) (_ BitVec 32) (|CSR#87| state))
-; yosys-smt2-wire _T_294 32
-(define-fun |CSR_n _T_294| ((state |CSR_s|)) (_ BitVec 32) (|CSR#85| state))
+; yosys-smt2-wire _T_294 30
+(define-fun |CSR_n _T_294| ((state |CSR_s|)) (_ BitVec 30) ((_ extract 29 0) (|CSR#85| state)))
 ; yosys-smt2-wire _T_293 32
 (define-fun |CSR_n _T_293| ((state |CSR_s|)) (_ BitVec 32) (|CSR#83| state))
 ; yosys-smt2-wire _T_292 32
@@ -1262,7 +1262,7 @@
 (define-fun |CSR_n _T_103| ((state |CSR_s|)) (_ BitVec 4) (concat (|CSR#8| state) (concat (|CSR#7| state) (|CSR#6| state))))
 ; yosys-smt2-wire _T_102 3
 (define-fun |CSR_n _T_102| ((state |CSR_s|)) (_ BitVec 3) (concat (|CSR#8| state) (|CSR#7| state)))
-(define-fun |CSR#237| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (concat ((_ extract 31 2) (|CSR#97| state)) #b00) #b00000000000000000000000000000000)) ; { $auto$wreduce.cc:454:run$3062 [31:13] \_GEN_61 }
+(define-fun |CSR#237| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (concat ((_ extract 31 2) (|CSR#97| state)) #b00) #b00000000000000000000000000000000)) ; { $auto$wreduce.cc:454:run$3148 [31:13] \_GEN_61 }
 (define-fun |CSR#238| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) #b00000000000000000000000000000000 (|CSR#237| state))) ; \_GEN_73 [31:0]
 (define-fun |CSR#239| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) #b00000000000000000000000000000000 (|CSR#238| state))) ; \_GEN_86
 ; yosys-smt2-wire _GEN_86 32
@@ -1344,278 +1344,278 @@
 ; yosys-smt2-register IE 1
 ; yosys-smt2-wire IE 1
 (define-fun |CSR_n IE| ((state |CSR_s|)) Bool (= ((_ extract 0 0) (|CSR#6| state)) #b1))
-(define-fun |CSR#253| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#97| state) (|CSR#229| state))) ; $procmux$1668_Y
-(define-fun |CSR#254| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#229| state) (|CSR#253| state))) ; $procmux$1671_Y
-(define-fun |CSR#255| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#229| state) (|CSR#254| state))) ; $procmux$1674_Y
-(define-fun |CSR#256| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#229| state) (|CSR#255| state))) ; $procmux$1677_Y
-(define-fun |CSR#257| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#229| state) (|CSR#256| state))) ; $procmux$1680_Y
-(define-fun |CSR#258| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#229| state) (|CSR#257| state))) ; $procmux$1683_Y
-(define-fun |CSR#259| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#229| state) (|CSR#258| state))) ; $procmux$1686_Y
-(define-fun |CSR#260| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#229| state) (|CSR#259| state))) ; $procmux$1689_Y
-(define-fun |CSR#261| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#229| state) (|CSR#260| state))) ; $procmux$1692_Y
-(define-fun |CSR#262| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#229| state) (|CSR#261| state))) ; $procmux$1695_Y
-(define-fun |CSR#263| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#229| state) (|CSR#262| state))) ; $procmux$1698_Y
-(define-fun |CSR#264| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#229| state) (|CSR#263| state))) ; $procmux$1701_Y
-(define-fun |CSR#265| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#229| state) (|CSR#264| state))) ; $procmux$1704_Y
-(define-fun |CSR#266| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#265| state) (|CSR#229| state))) ; $procmux$1706_Y
-(define-fun |CSR#267| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#229| state) (|CSR#266| state))) ; $procmux$1709_Y
-(define-fun |CSR#268| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#229| state) (|CSR#267| state))) ; $procmux$1712_Y
-(define-fun |CSR#269| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#229| state) (|CSR#268| state))) ; $procmux$1714_Y
-(define-fun |CSR#270| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#269| state))) ; $auto$rtlil.cc:2224:Mux$3755
-(define-fun |CSR#271| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#193| state) (|CSR#97| state) (|CSR#241| state))) ; $procmux$2250_Y
-(define-fun |CSR#272| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#241| state) (|CSR#271| state))) ; $procmux$2253_Y
-(define-fun |CSR#273| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#241| state) (|CSR#272| state))) ; $procmux$2256_Y
-(define-fun |CSR#274| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#241| state) (|CSR#273| state))) ; $procmux$2259_Y
-(define-fun |CSR#275| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#241| state) (|CSR#274| state))) ; $procmux$2262_Y
-(define-fun |CSR#276| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#241| state) (|CSR#275| state))) ; $procmux$2265_Y
-(define-fun |CSR#277| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#241| state) (|CSR#276| state))) ; $procmux$2268_Y
-(define-fun |CSR#278| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#241| state) (|CSR#277| state))) ; $procmux$2271_Y
-(define-fun |CSR#279| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#241| state) (|CSR#278| state))) ; $procmux$2274_Y
-(define-fun |CSR#280| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#241| state) (|CSR#279| state))) ; $procmux$2277_Y
-(define-fun |CSR#281| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#241| state) (|CSR#280| state))) ; $procmux$2280_Y
-(define-fun |CSR#282| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#241| state) (|CSR#281| state))) ; $procmux$2283_Y
-(define-fun |CSR#283| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#241| state) (|CSR#282| state))) ; $procmux$2286_Y
-(define-fun |CSR#284| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#241| state) (|CSR#283| state))) ; $procmux$2291_Y
-(define-fun |CSR#285| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#241| state) (|CSR#284| state))) ; $procmux$2296_Y
-(define-fun |CSR#286| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#285| state) (|CSR#241| state))) ; $procmux$2298_Y
-(define-fun |CSR#287| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#241| state) (|CSR#286| state))) ; $procmux$2303_Y
-(define-fun |CSR#288| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#241| state) (|CSR#287| state))) ; $procmux$2308_Y
-(define-fun |CSR#289| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#241| state) (|CSR#288| state))) ; $procmux$2310_Y
-(define-fun |CSR#290| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#289| state))) ; $auto$rtlil.cc:2224:Mux$3759
-(define-fun |CSR#291| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#192| state) (|CSR#97| state) (|CSR#250| state))) ; $procmux$2327_Y
-(define-fun |CSR#292| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#193| state) (|CSR#250| state) (|CSR#291| state))) ; $procmux$2330_Y
-(define-fun |CSR#293| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#250| state) (|CSR#292| state))) ; $procmux$2333_Y
-(define-fun |CSR#294| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#250| state) (|CSR#293| state))) ; $procmux$2336_Y
-(define-fun |CSR#295| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#250| state) (|CSR#294| state))) ; $procmux$2339_Y
-(define-fun |CSR#296| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#250| state) (|CSR#295| state))) ; $procmux$2342_Y
-(define-fun |CSR#297| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#250| state) (|CSR#296| state))) ; $procmux$2345_Y
-(define-fun |CSR#298| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#250| state) (|CSR#297| state))) ; $procmux$2348_Y
-(define-fun |CSR#299| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#250| state) (|CSR#298| state))) ; $procmux$2351_Y
-(define-fun |CSR#300| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#250| state) (|CSR#299| state))) ; $procmux$2354_Y
-(define-fun |CSR#301| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#250| state) (|CSR#300| state))) ; $procmux$2357_Y
-(define-fun |CSR#302| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#250| state) (|CSR#301| state))) ; $procmux$2360_Y
-(define-fun |CSR#303| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#250| state) (|CSR#302| state))) ; $procmux$2363_Y
-(define-fun |CSR#304| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#250| state) (|CSR#303| state))) ; $procmux$2366_Y
-(define-fun |CSR#305| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#250| state) (|CSR#304| state))) ; $procmux$2371_Y
-(define-fun |CSR#306| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#250| state) (|CSR#305| state))) ; $procmux$2376_Y
-(define-fun |CSR#307| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#306| state) (|CSR#250| state))) ; $procmux$2378_Y
-(define-fun |CSR#308| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#250| state) (|CSR#307| state))) ; $procmux$2383_Y
-(define-fun |CSR#309| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#250| state) (|CSR#308| state))) ; $procmux$2388_Y
-(define-fun |CSR#310| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#250| state) (|CSR#309| state))) ; $procmux$2390_Y
-(define-fun |CSR#311| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#310| state))) ; $auto$rtlil.cc:2224:Mux$3757
-(define-fun |CSR#312| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#190| state) (|CSR#97| state) (|CSR#240| state))) ; $procmux$2164_Y
-(define-fun |CSR#313| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#191| state) (|CSR#240| state) (|CSR#312| state))) ; $procmux$2167_Y
-(define-fun |CSR#314| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#192| state) (|CSR#240| state) (|CSR#313| state))) ; $procmux$2170_Y
-(define-fun |CSR#315| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#193| state) (|CSR#240| state) (|CSR#314| state))) ; $procmux$2173_Y
-(define-fun |CSR#316| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#240| state) (|CSR#315| state))) ; $procmux$2176_Y
-(define-fun |CSR#317| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#240| state) (|CSR#316| state))) ; $procmux$2179_Y
-(define-fun |CSR#318| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#240| state) (|CSR#317| state))) ; $procmux$2182_Y
-(define-fun |CSR#319| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#240| state) (|CSR#318| state))) ; $procmux$2185_Y
-(define-fun |CSR#320| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#240| state) (|CSR#319| state))) ; $procmux$2188_Y
-(define-fun |CSR#321| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#240| state) (|CSR#320| state))) ; $procmux$2191_Y
-(define-fun |CSR#322| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#240| state) (|CSR#321| state))) ; $procmux$2194_Y
-(define-fun |CSR#323| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#240| state) (|CSR#322| state))) ; $procmux$2197_Y
-(define-fun |CSR#324| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#240| state) (|CSR#323| state))) ; $procmux$2200_Y
-(define-fun |CSR#325| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#240| state) (|CSR#324| state))) ; $procmux$2203_Y
-(define-fun |CSR#326| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#240| state) (|CSR#325| state))) ; $procmux$2206_Y
-(define-fun |CSR#327| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#240| state) (|CSR#326| state))) ; $procmux$2209_Y
-(define-fun |CSR#328| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#240| state) (|CSR#327| state))) ; $procmux$2214_Y
-(define-fun |CSR#329| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#240| state) (|CSR#328| state))) ; $procmux$2219_Y
-(define-fun |CSR#330| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#329| state) (|CSR#240| state))) ; $procmux$2221_Y
-(define-fun |CSR#331| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#240| state) (|CSR#330| state))) ; $procmux$2226_Y
-(define-fun |CSR#332| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#240| state) (|CSR#331| state))) ; $procmux$2231_Y
-(define-fun |CSR#333| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#240| state) (|CSR#332| state))) ; $procmux$2233_Y
-(define-fun |CSR#334| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#333| state))) ; $auto$rtlil.cc:2224:Mux$3761
-(define-fun |CSR#335| ((state |CSR_s|)) (_ BitVec 1) (bvnot (|CSR#183| state))) ; $auto$rtlil.cc:2127:Not$3270
-(define-fun |CSR#336| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#208| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3272
-(define-fun |CSR#337| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#207| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3274
-(define-fun |CSR#338| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (= ((_ extract 0 0) (|CSR#337| state)) #b1) (|CSR#206| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3422
-(define-fun |CSR#339| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#338| state) ((_ extract 7 7) (|CSR#97| state)) (|CSR#47| state))) ; $auto$rtlil.cc:2224:Mux$3725
-(define-fun |CSR#340| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#339| state))) ; $auto$rtlil.cc:2224:Mux$3727
-(define-fun |CSR#341| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#338| state) ((_ extract 3 3) (|CSR#97| state)) (|CSR#46| state))) ; $auto$rtlil.cc:2224:Mux$3733
-(define-fun |CSR#342| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#341| state))) ; $auto$rtlil.cc:2224:Mux$3735
-(define-fun |CSR#343| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#206| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3276
-(define-fun |CSR#344| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#205| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3278
-(define-fun |CSR#345| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#204| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3280
-(define-fun |CSR#346| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (= ((_ extract 0 0) (|CSR#337| state)) #b1) (= ((_ extract 0 0) (|CSR#343| state)) #b1) (= ((_ extract 0 0) (|CSR#344| state)) #b1) (= ((_ extract 0 0) (|CSR#345| state)) #b1) (|CSR#203| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3408
-(define-fun |CSR#347| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#346| state) (|CSR#97| state) (|CSR#43| state))) ; $auto$rtlil.cc:2224:Mux$3737
-(define-fun |CSR#348| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#97| state) (|CSR#235| state))) ; $procmux$1731_Y
-(define-fun |CSR#349| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#235| state) (|CSR#348| state))) ; $procmux$1734_Y
-(define-fun |CSR#350| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#235| state) (|CSR#349| state))) ; $procmux$1737_Y
-(define-fun |CSR#351| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#235| state) (|CSR#350| state))) ; $procmux$1740_Y
-(define-fun |CSR#352| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#235| state) (|CSR#351| state))) ; $procmux$1743_Y
-(define-fun |CSR#353| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#235| state) (|CSR#352| state))) ; $procmux$1746_Y
-(define-fun |CSR#354| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#235| state) (|CSR#353| state))) ; $procmux$1749_Y
-(define-fun |CSR#355| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#235| state) (|CSR#354| state))) ; $procmux$1752_Y
-(define-fun |CSR#356| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#235| state) (|CSR#355| state))) ; $procmux$1755_Y
-(define-fun |CSR#357| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#235| state) (|CSR#356| state))) ; $procmux$1758_Y
-(define-fun |CSR#358| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#97| state) (|CSR#357| state))) ; $procmux$1770_Y
-(define-fun |CSR#359| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#235| state) (|CSR#358| state))) ; $procmux$1773_Y
-(define-fun |CSR#360| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#235| state) (|CSR#359| state))) ; $procmux$1776_Y
-(define-fun |CSR#361| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#235| state) (|CSR#360| state))) ; $procmux$1779_Y
-(define-fun |CSR#362| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#361| state) (|CSR#235| state))) ; $procmux$1781_Y
-(define-fun |CSR#363| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#235| state) (|CSR#362| state))) ; $procmux$1784_Y
-(define-fun |CSR#364| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#235| state) (|CSR#363| state))) ; $procmux$1787_Y
-(define-fun |CSR#365| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#235| state) (|CSR#364| state))) ; $procmux$1789_Y
-(define-fun |CSR#366| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#365| state))) ; $auto$rtlil.cc:2224:Mux$3751
-(define-fun |CSR#367| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#191| state) (|CSR#97| state) (|CSR#251| state))) ; $procmux$2407_Y
-(define-fun |CSR#368| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#192| state) (|CSR#251| state) (|CSR#367| state))) ; $procmux$2410_Y
-(define-fun |CSR#369| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#193| state) (|CSR#251| state) (|CSR#368| state))) ; $procmux$2413_Y
-(define-fun |CSR#370| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#251| state) (|CSR#369| state))) ; $procmux$2416_Y
-(define-fun |CSR#371| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#251| state) (|CSR#370| state))) ; $procmux$2419_Y
-(define-fun |CSR#372| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#251| state) (|CSR#371| state))) ; $procmux$2422_Y
-(define-fun |CSR#373| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#251| state) (|CSR#372| state))) ; $procmux$2425_Y
-(define-fun |CSR#374| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#251| state) (|CSR#373| state))) ; $procmux$2428_Y
-(define-fun |CSR#375| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#251| state) (|CSR#374| state))) ; $procmux$2431_Y
-(define-fun |CSR#376| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#251| state) (|CSR#375| state))) ; $procmux$2434_Y
-(define-fun |CSR#377| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#251| state) (|CSR#376| state))) ; $procmux$2437_Y
-(define-fun |CSR#378| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#251| state) (|CSR#377| state))) ; $procmux$2440_Y
-(define-fun |CSR#379| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#97| state) (|CSR#378| state))) ; $procmux$2452_Y
-(define-fun |CSR#380| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#251| state) (|CSR#379| state))) ; $procmux$2455_Y
-(define-fun |CSR#381| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#251| state) (|CSR#380| state))) ; $procmux$2458_Y
-(define-fun |CSR#382| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#251| state) (|CSR#381| state))) ; $procmux$2463_Y
-(define-fun |CSR#383| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#251| state) (|CSR#382| state))) ; $procmux$2468_Y
-(define-fun |CSR#384| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#383| state) (|CSR#251| state))) ; $procmux$2470_Y
-(define-fun |CSR#385| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#251| state) (|CSR#384| state))) ; $procmux$2475_Y
-(define-fun |CSR#386| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#251| state) (|CSR#385| state))) ; $procmux$2480_Y
-(define-fun |CSR#387| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#251| state) (|CSR#386| state))) ; $procmux$2482_Y
-(define-fun |CSR#388| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#387| state))) ; $auto$rtlil.cc:2224:Mux$3753
-(define-fun |CSR#389| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#203| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3282
-(define-fun |CSR#390| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#202| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (= ((_ extract 0 0) (|CSR#337| state)) #b1) (= ((_ extract 0 0) (|CSR#343| state)) #b1) (= ((_ extract 0 0) (|CSR#344| state)) #b1) (= ((_ extract 0 0) (|CSR#345| state)) #b1) (= ((_ extract 0 0) (|CSR#389| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3389
-(define-fun |CSR#391| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#390| state) (|CSR#97| state) (|CSR#34| state))) ; $auto$rtlil.cc:2224:Mux$3739
-(define-fun |CSR#392| ((state |CSR_s|)) Bool (or  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#175| state)) #b1) (= ((_ extract 0 0) (|CSR#183| state)) #b1))) ; $auto$opt_dff.cc:217:make_patterns_logic$3286
-(define-fun |CSR#393| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state))))))))))) #b00000000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3347
-(define-fun |CSR#394| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state)))))))))) #b0000000011)) ; $auto$opt_dff.cc:217:make_patterns_logic$3294
-(define-fun |CSR#395| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state))))))))) #b100000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3296
-(define-fun |CSR#396| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state)))))))) #b10000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3298
-(define-fun |CSR#397| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state))))))) #b1000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3300
-(define-fun |CSR#398| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state)))))) #b100001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3302
-(define-fun |CSR#399| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state))))) #b10001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3304
-(define-fun |CSR#400| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state)))) #b1001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3306
-(define-fun |CSR#401| ((state |CSR_s|)) Bool (distinct (concat (|CSR#183| state) (|CSR#175| state)) #b10)) ; $auto$opt_dff.cc:217:make_patterns_logic$3308
-(define-fun |CSR#402| ((state |CSR_s|)) Bool (and  (|CSR#392| state) (|CSR#393| state) (|CSR#394| state) (|CSR#395| state) (|CSR#396| state) (|CSR#397| state) (|CSR#398| state) (|CSR#399| state) (|CSR#400| state) (|CSR#401| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3367
-(define-fun |CSR#403| ((state |CSR_s|)) (_ BitVec 30) (ite (|CSR#402| state) ((_ extract 31 2) (|CSR#249| state)) (|CSR#31| state))) ; $auto$rtlil.cc:2224:Mux$3741
-(define-fun |CSR#404| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) #b00 ((_ extract 1 0) (|CSR#248| state)))) ; $auto$rtlil.cc:2224:Mux$3763
-(define-fun |CSR#405| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#402| state) (|CSR#404| state) (|CSR#30| state))) ; $auto$rtlil.cc:2224:Mux$3765
-(define-fun |CSR#406| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#199| state) #b00000000000000000000000000000000)) ; $procmux$1941_Y
-(define-fun |CSR#407| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) #b00000000000000000000000000000000 (|CSR#406| state))) ; $procmux$1943_Y
-(define-fun |CSR#408| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) #b00000000000000000000000000000000 (|CSR#407| state))) ; $procmux$1945_Y
-(define-fun |CSR#409| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) #b00000000000000000000000000000000 (|CSR#408| state))) ; $procmux$1947_Y
-(define-fun |CSR#410| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) #b00000000000000000000000000000000 (|CSR#409| state))) ; $procmux$1949_Y
-(define-fun |CSR#411| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) #b00000000000000000000000000000000 (|CSR#410| state))) ; $procmux$1951_Y
-(define-fun |CSR#412| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) #b00000000000000000000000000000000 (|CSR#411| state))) ; $procmux$1953_Y
-(define-fun |CSR#413| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) #b00000000000000000000000000000000 (|CSR#412| state))) ; $procmux$1955_Y
-(define-fun |CSR#414| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) #b00000000000000000000000000000000 (|CSR#413| state))) ; $procmux$1957_Y
-(define-fun |CSR#415| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#414| state) #b00000000000000000000000000000000)) ; $procmux$1959_Y
-(define-fun |CSR#416| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) #b00000000000000000000000000000000 (|CSR#415| state))) ; $procmux$1961_Y
-(define-fun |CSR#417| ((state |CSR_s|)) (_ BitVec 28) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) #b0000000000000000000000000000 ((_ extract 31 4) (|CSR#416| state)))) ; $auto$rtlil.cc:2224:Mux$3767
-(define-fun |CSR#418| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#200| state) #b1 #b0) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state)))))))))))) #b000000000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3319
-(define-fun |CSR#419| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state))))))))))) #b00000000101)) ; $auto$opt_dff.cc:217:make_patterns_logic$3292
-(define-fun |CSR#420| ((state |CSR_s|)) Bool (and  (|CSR#392| state) (|CSR#418| state) (|CSR#419| state) (|CSR#394| state) (|CSR#395| state) (|CSR#396| state) (|CSR#397| state) (|CSR#398| state) (|CSR#399| state) (|CSR#400| state) (|CSR#401| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3341
-(define-fun |CSR#421| ((state |CSR_s|)) (_ BitVec 28) (ite (|CSR#420| state) (|CSR#417| state) (|CSR#27| state))) ; $auto$rtlil.cc:2224:Mux$3769
-(define-fun |CSR#422| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (concat #b0000000000000000000000000000 (|CSR#216| state)) (|CSR#416| state))) ; $procmux$1964_Y
-(define-fun |CSR#423| ((state |CSR_s|)) (_ BitVec 4) (ite (|CSR#420| state) ((_ extract 3 0) (|CSR#422| state)) (|CSR#26| state))) ; $auto$rtlil.cc:2224:Mux$3743
-(define-fun |CSR#424| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#97| state) #b00000000000000000000000000000000)) ; $procmux$1910_Y
-(define-fun |CSR#425| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) #b00000000000000000000000000000000 (|CSR#424| state))) ; $procmux$1912_Y
-(define-fun |CSR#426| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) #b00000000000000000000000000000000 (|CSR#425| state))) ; $procmux$1914_Y
-(define-fun |CSR#427| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) #b00000000000000000000000000000000 (|CSR#426| state))) ; $procmux$1916_Y
-(define-fun |CSR#428| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) #b00000000000000000000000000000000 (|CSR#427| state))) ; $procmux$1918_Y
-(define-fun |CSR#429| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) #b00000000000000000000000000000000 (|CSR#428| state))) ; $procmux$1920_Y
-(define-fun |CSR#430| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) #b00000000000000000000000000000000 (|CSR#429| state))) ; $procmux$1922_Y
-(define-fun |CSR#431| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) #b00000000000000000000000000000000 (|CSR#430| state))) ; $procmux$1924_Y
-(define-fun |CSR#432| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) #b00000000000000000000000000000000 (|CSR#431| state))) ; $procmux$1926_Y
-(define-fun |CSR#433| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) #b00000000000000000000000000000000 (|CSR#432| state))) ; $procmux$1928_Y
-(define-fun |CSR#434| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#433| state) #b00000000000000000000000000000000)) ; $procmux$1930_Y
-(define-fun |CSR#435| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) #b00000000000000000000000000000000 (|CSR#434| state))) ; $procmux$1932_Y
-(define-fun |CSR#436| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#210| state)) #b1) (concat (|CSR#188| state) (concat (ite (|CSR#102| state) #b1 #b0) (|CSR#98| state))) #b00000000000000000000000000000000)) ; $procmux$1935_Y
-(define-fun |CSR#437| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#436| state) (|CSR#435| state))) ; $procmux$1937_Y
-(define-fun |CSR#438| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#198| state) #b1 #b0) (concat (ite (|CSR#200| state) #b1 #b0) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state))))))))))))) #b0000000000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3288
-(define-fun |CSR#439| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#200| state) #b1 #b0) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state)))))))))))) #b000000001001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3290
-(define-fun |CSR#440| ((state |CSR_s|)) Bool (distinct (concat (|CSR#210| state) (|CSR#175| state)) #b01)) ; $auto$opt_dff.cc:217:make_patterns_logic$3310
-(define-fun |CSR#441| ((state |CSR_s|)) Bool (and  (|CSR#392| state) (|CSR#438| state) (|CSR#439| state) (|CSR#419| state) (|CSR#394| state) (|CSR#395| state) (|CSR#396| state) (|CSR#397| state) (|CSR#398| state) (|CSR#399| state) (|CSR#400| state) (|CSR#401| state) (|CSR#440| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3314
-(define-fun |CSR#442| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#441| state) (|CSR#437| state) (|CSR#23| state))) ; $auto$rtlil.cc:2224:Mux$3745
-(define-fun |CSR#443| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (|CSR#207| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3434
-(define-fun |CSR#444| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#443| state) ((_ extract 7 7) (|CSR#97| state)) (|CSR#20| state))) ; $auto$rtlil.cc:2224:Mux$3721
-(define-fun |CSR#445| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#444| state))) ; $auto$rtlil.cc:2224:Mux$3723
-(define-fun |CSR#446| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#443| state) ((_ extract 3 3) (|CSR#97| state)) (|CSR#19| state))) ; $auto$rtlil.cc:2224:Mux$3729
-(define-fun |CSR#447| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#446| state))) ; $auto$rtlil.cc:2224:Mux$3731
-(define-fun |CSR#448| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#202| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3258
-(define-fun |CSR#449| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#201| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3260
-(define-fun |CSR#450| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#200| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3262
-(define-fun |CSR#451| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#198| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3264
-(define-fun |CSR#452| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#448| state)) #b1) (= ((_ extract 0 0) (|CSR#449| state)) #b1) (= ((_ extract 0 0) (|CSR#450| state)) #b1) (= ((_ extract 0 0) (|CSR#451| state)) #b1) (|CSR#197| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (= ((_ extract 0 0) (|CSR#337| state)) #b1) (= ((_ extract 0 0) (|CSR#343| state)) #b1) (= ((_ extract 0 0) (|CSR#344| state)) #b1) (= ((_ extract 0 0) (|CSR#345| state)) #b1) (= ((_ extract 0 0) (|CSR#389| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3283
-(define-fun |CSR#453| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#452| state) (|CSR#97| state) (|CSR#16| state))) ; $auto$rtlil.cc:2224:Mux$3747
-(define-fun |CSR#454| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#453| state))) ; $auto$rtlil.cc:2224:Mux$3749
-(define-fun |CSR#455| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#97| state) (|CSR#252| state))) ; $procmux$1806_Y
-(define-fun |CSR#456| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#252| state) (|CSR#455| state))) ; $procmux$1809_Y
-(define-fun |CSR#457| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#252| state) (|CSR#456| state))) ; $procmux$1812_Y
-(define-fun |CSR#458| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#252| state) (|CSR#457| state))) ; $procmux$1815_Y
-(define-fun |CSR#459| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#252| state) (|CSR#458| state))) ; $procmux$1818_Y
-(define-fun |CSR#460| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#252| state) (|CSR#459| state))) ; $procmux$1821_Y
-(define-fun |CSR#461| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#252| state) (|CSR#460| state))) ; $procmux$1824_Y
-(define-fun |CSR#462| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#252| state) (|CSR#461| state))) ; $procmux$1827_Y
-(define-fun |CSR#463| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#252| state) (|CSR#462| state))) ; $procmux$1830_Y
-(define-fun |CSR#464| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#252| state) (|CSR#463| state))) ; $procmux$1833_Y
-(define-fun |CSR#465| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#252| state) (|CSR#464| state))) ; $procmux$1838_Y
-(define-fun |CSR#466| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#252| state) (|CSR#465| state))) ; $procmux$1843_Y
-(define-fun |CSR#467| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#466| state) (|CSR#252| state))) ; $procmux$1845_Y
-(define-fun |CSR#468| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#252| state) (|CSR#467| state))) ; $procmux$1850_Y
-(define-fun |CSR#469| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#252| state) (|CSR#468| state))) ; $procmux$1855_Y
+(define-fun |CSR#253| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#97| state) (|CSR#229| state))) ; $procmux$1727_Y
+(define-fun |CSR#254| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#229| state) (|CSR#253| state))) ; $procmux$1730_Y
+(define-fun |CSR#255| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#229| state) (|CSR#254| state))) ; $procmux$1733_Y
+(define-fun |CSR#256| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#229| state) (|CSR#255| state))) ; $procmux$1736_Y
+(define-fun |CSR#257| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#229| state) (|CSR#256| state))) ; $procmux$1739_Y
+(define-fun |CSR#258| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#229| state) (|CSR#257| state))) ; $procmux$1742_Y
+(define-fun |CSR#259| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#229| state) (|CSR#258| state))) ; $procmux$1745_Y
+(define-fun |CSR#260| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#229| state) (|CSR#259| state))) ; $procmux$1748_Y
+(define-fun |CSR#261| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#229| state) (|CSR#260| state))) ; $procmux$1751_Y
+(define-fun |CSR#262| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#229| state) (|CSR#261| state))) ; $procmux$1754_Y
+(define-fun |CSR#263| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#229| state) (|CSR#262| state))) ; $procmux$1757_Y
+(define-fun |CSR#264| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#229| state) (|CSR#263| state))) ; $procmux$1760_Y
+(define-fun |CSR#265| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#229| state) (|CSR#264| state))) ; $procmux$1763_Y
+(define-fun |CSR#266| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#265| state) (|CSR#229| state))) ; $procmux$1765_Y
+(define-fun |CSR#267| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#229| state) (|CSR#266| state))) ; $procmux$1768_Y
+(define-fun |CSR#268| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#229| state) (|CSR#267| state))) ; $procmux$1771_Y
+(define-fun |CSR#269| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#229| state) (|CSR#268| state))) ; $procmux$1773_Y
+(define-fun |CSR#270| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#269| state))) ; $auto$rtlil.cc:2224:Mux$3854
+(define-fun |CSR#271| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#193| state) (|CSR#97| state) (|CSR#241| state))) ; $procmux$2309_Y
+(define-fun |CSR#272| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#241| state) (|CSR#271| state))) ; $procmux$2312_Y
+(define-fun |CSR#273| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#241| state) (|CSR#272| state))) ; $procmux$2315_Y
+(define-fun |CSR#274| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#241| state) (|CSR#273| state))) ; $procmux$2318_Y
+(define-fun |CSR#275| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#241| state) (|CSR#274| state))) ; $procmux$2321_Y
+(define-fun |CSR#276| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#241| state) (|CSR#275| state))) ; $procmux$2324_Y
+(define-fun |CSR#277| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#241| state) (|CSR#276| state))) ; $procmux$2327_Y
+(define-fun |CSR#278| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#241| state) (|CSR#277| state))) ; $procmux$2330_Y
+(define-fun |CSR#279| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#241| state) (|CSR#278| state))) ; $procmux$2333_Y
+(define-fun |CSR#280| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#241| state) (|CSR#279| state))) ; $procmux$2336_Y
+(define-fun |CSR#281| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#241| state) (|CSR#280| state))) ; $procmux$2339_Y
+(define-fun |CSR#282| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#241| state) (|CSR#281| state))) ; $procmux$2342_Y
+(define-fun |CSR#283| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#241| state) (|CSR#282| state))) ; $procmux$2345_Y
+(define-fun |CSR#284| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#241| state) (|CSR#283| state))) ; $procmux$2350_Y
+(define-fun |CSR#285| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#241| state) (|CSR#284| state))) ; $procmux$2355_Y
+(define-fun |CSR#286| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#285| state) (|CSR#241| state))) ; $procmux$2357_Y
+(define-fun |CSR#287| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#241| state) (|CSR#286| state))) ; $procmux$2362_Y
+(define-fun |CSR#288| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#241| state) (|CSR#287| state))) ; $procmux$2367_Y
+(define-fun |CSR#289| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#241| state) (|CSR#288| state))) ; $procmux$2369_Y
+(define-fun |CSR#290| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#289| state))) ; $auto$rtlil.cc:2224:Mux$3858
+(define-fun |CSR#291| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#192| state) (|CSR#97| state) (|CSR#250| state))) ; $procmux$2386_Y
+(define-fun |CSR#292| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#193| state) (|CSR#250| state) (|CSR#291| state))) ; $procmux$2389_Y
+(define-fun |CSR#293| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#250| state) (|CSR#292| state))) ; $procmux$2392_Y
+(define-fun |CSR#294| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#250| state) (|CSR#293| state))) ; $procmux$2395_Y
+(define-fun |CSR#295| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#250| state) (|CSR#294| state))) ; $procmux$2398_Y
+(define-fun |CSR#296| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#250| state) (|CSR#295| state))) ; $procmux$2401_Y
+(define-fun |CSR#297| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#250| state) (|CSR#296| state))) ; $procmux$2404_Y
+(define-fun |CSR#298| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#250| state) (|CSR#297| state))) ; $procmux$2407_Y
+(define-fun |CSR#299| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#250| state) (|CSR#298| state))) ; $procmux$2410_Y
+(define-fun |CSR#300| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#250| state) (|CSR#299| state))) ; $procmux$2413_Y
+(define-fun |CSR#301| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#250| state) (|CSR#300| state))) ; $procmux$2416_Y
+(define-fun |CSR#302| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#250| state) (|CSR#301| state))) ; $procmux$2419_Y
+(define-fun |CSR#303| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#250| state) (|CSR#302| state))) ; $procmux$2422_Y
+(define-fun |CSR#304| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#250| state) (|CSR#303| state))) ; $procmux$2425_Y
+(define-fun |CSR#305| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#250| state) (|CSR#304| state))) ; $procmux$2430_Y
+(define-fun |CSR#306| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#250| state) (|CSR#305| state))) ; $procmux$2435_Y
+(define-fun |CSR#307| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#306| state) (|CSR#250| state))) ; $procmux$2437_Y
+(define-fun |CSR#308| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#250| state) (|CSR#307| state))) ; $procmux$2442_Y
+(define-fun |CSR#309| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#250| state) (|CSR#308| state))) ; $procmux$2447_Y
+(define-fun |CSR#310| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#250| state) (|CSR#309| state))) ; $procmux$2449_Y
+(define-fun |CSR#311| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#310| state))) ; $auto$rtlil.cc:2224:Mux$3856
+(define-fun |CSR#312| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#190| state) (|CSR#97| state) (|CSR#240| state))) ; $procmux$2223_Y
+(define-fun |CSR#313| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#191| state) (|CSR#240| state) (|CSR#312| state))) ; $procmux$2226_Y
+(define-fun |CSR#314| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#192| state) (|CSR#240| state) (|CSR#313| state))) ; $procmux$2229_Y
+(define-fun |CSR#315| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#193| state) (|CSR#240| state) (|CSR#314| state))) ; $procmux$2232_Y
+(define-fun |CSR#316| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#240| state) (|CSR#315| state))) ; $procmux$2235_Y
+(define-fun |CSR#317| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#240| state) (|CSR#316| state))) ; $procmux$2238_Y
+(define-fun |CSR#318| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#240| state) (|CSR#317| state))) ; $procmux$2241_Y
+(define-fun |CSR#319| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#240| state) (|CSR#318| state))) ; $procmux$2244_Y
+(define-fun |CSR#320| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#240| state) (|CSR#319| state))) ; $procmux$2247_Y
+(define-fun |CSR#321| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#240| state) (|CSR#320| state))) ; $procmux$2250_Y
+(define-fun |CSR#322| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#240| state) (|CSR#321| state))) ; $procmux$2253_Y
+(define-fun |CSR#323| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#240| state) (|CSR#322| state))) ; $procmux$2256_Y
+(define-fun |CSR#324| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#240| state) (|CSR#323| state))) ; $procmux$2259_Y
+(define-fun |CSR#325| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#240| state) (|CSR#324| state))) ; $procmux$2262_Y
+(define-fun |CSR#326| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#240| state) (|CSR#325| state))) ; $procmux$2265_Y
+(define-fun |CSR#327| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#240| state) (|CSR#326| state))) ; $procmux$2268_Y
+(define-fun |CSR#328| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#240| state) (|CSR#327| state))) ; $procmux$2273_Y
+(define-fun |CSR#329| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#240| state) (|CSR#328| state))) ; $procmux$2278_Y
+(define-fun |CSR#330| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#329| state) (|CSR#240| state))) ; $procmux$2280_Y
+(define-fun |CSR#331| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#240| state) (|CSR#330| state))) ; $procmux$2285_Y
+(define-fun |CSR#332| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#240| state) (|CSR#331| state))) ; $procmux$2290_Y
+(define-fun |CSR#333| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#240| state) (|CSR#332| state))) ; $procmux$2292_Y
+(define-fun |CSR#334| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#333| state))) ; $auto$rtlil.cc:2224:Mux$3860
+(define-fun |CSR#335| ((state |CSR_s|)) (_ BitVec 1) (bvnot (|CSR#183| state))) ; $auto$rtlil.cc:2127:Not$3363
+(define-fun |CSR#336| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#208| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3365
+(define-fun |CSR#337| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#207| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3367
+(define-fun |CSR#338| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (= ((_ extract 0 0) (|CSR#337| state)) #b1) (|CSR#206| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3515
+(define-fun |CSR#339| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#338| state) ((_ extract 7 7) (|CSR#97| state)) (|CSR#47| state))) ; $auto$rtlil.cc:2224:Mux$3824
+(define-fun |CSR#340| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#339| state))) ; $auto$rtlil.cc:2224:Mux$3826
+(define-fun |CSR#341| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#338| state) ((_ extract 3 3) (|CSR#97| state)) (|CSR#46| state))) ; $auto$rtlil.cc:2224:Mux$3832
+(define-fun |CSR#342| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#341| state))) ; $auto$rtlil.cc:2224:Mux$3834
+(define-fun |CSR#343| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#206| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3369
+(define-fun |CSR#344| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#205| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3371
+(define-fun |CSR#345| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#204| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3373
+(define-fun |CSR#346| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (= ((_ extract 0 0) (|CSR#337| state)) #b1) (= ((_ extract 0 0) (|CSR#343| state)) #b1) (= ((_ extract 0 0) (|CSR#344| state)) #b1) (= ((_ extract 0 0) (|CSR#345| state)) #b1) (|CSR#203| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3501
+(define-fun |CSR#347| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#346| state) (|CSR#97| state) (|CSR#43| state))) ; $auto$rtlil.cc:2224:Mux$3836
+(define-fun |CSR#348| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#97| state) (|CSR#235| state))) ; $procmux$1790_Y
+(define-fun |CSR#349| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#235| state) (|CSR#348| state))) ; $procmux$1793_Y
+(define-fun |CSR#350| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#235| state) (|CSR#349| state))) ; $procmux$1796_Y
+(define-fun |CSR#351| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#235| state) (|CSR#350| state))) ; $procmux$1799_Y
+(define-fun |CSR#352| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#235| state) (|CSR#351| state))) ; $procmux$1802_Y
+(define-fun |CSR#353| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#235| state) (|CSR#352| state))) ; $procmux$1805_Y
+(define-fun |CSR#354| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#235| state) (|CSR#353| state))) ; $procmux$1808_Y
+(define-fun |CSR#355| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#235| state) (|CSR#354| state))) ; $procmux$1811_Y
+(define-fun |CSR#356| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#235| state) (|CSR#355| state))) ; $procmux$1814_Y
+(define-fun |CSR#357| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#235| state) (|CSR#356| state))) ; $procmux$1817_Y
+(define-fun |CSR#358| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#97| state) (|CSR#357| state))) ; $procmux$1829_Y
+(define-fun |CSR#359| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#235| state) (|CSR#358| state))) ; $procmux$1832_Y
+(define-fun |CSR#360| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#235| state) (|CSR#359| state))) ; $procmux$1835_Y
+(define-fun |CSR#361| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#235| state) (|CSR#360| state))) ; $procmux$1838_Y
+(define-fun |CSR#362| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#361| state) (|CSR#235| state))) ; $procmux$1840_Y
+(define-fun |CSR#363| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#235| state) (|CSR#362| state))) ; $procmux$1843_Y
+(define-fun |CSR#364| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#235| state) (|CSR#363| state))) ; $procmux$1846_Y
+(define-fun |CSR#365| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#235| state) (|CSR#364| state))) ; $procmux$1848_Y
+(define-fun |CSR#366| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#365| state))) ; $auto$rtlil.cc:2224:Mux$3850
+(define-fun |CSR#367| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#191| state) (|CSR#97| state) (|CSR#251| state))) ; $procmux$2466_Y
+(define-fun |CSR#368| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#192| state) (|CSR#251| state) (|CSR#367| state))) ; $procmux$2469_Y
+(define-fun |CSR#369| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#193| state) (|CSR#251| state) (|CSR#368| state))) ; $procmux$2472_Y
+(define-fun |CSR#370| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#194| state) (|CSR#251| state) (|CSR#369| state))) ; $procmux$2475_Y
+(define-fun |CSR#371| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#195| state) (|CSR#251| state) (|CSR#370| state))) ; $procmux$2478_Y
+(define-fun |CSR#372| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#251| state) (|CSR#371| state))) ; $procmux$2481_Y
+(define-fun |CSR#373| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#251| state) (|CSR#372| state))) ; $procmux$2484_Y
+(define-fun |CSR#374| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#251| state) (|CSR#373| state))) ; $procmux$2487_Y
+(define-fun |CSR#375| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#251| state) (|CSR#374| state))) ; $procmux$2490_Y
+(define-fun |CSR#376| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#251| state) (|CSR#375| state))) ; $procmux$2493_Y
+(define-fun |CSR#377| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#251| state) (|CSR#376| state))) ; $procmux$2496_Y
+(define-fun |CSR#378| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#251| state) (|CSR#377| state))) ; $procmux$2499_Y
+(define-fun |CSR#379| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#97| state) (|CSR#378| state))) ; $procmux$2511_Y
+(define-fun |CSR#380| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#251| state) (|CSR#379| state))) ; $procmux$2514_Y
+(define-fun |CSR#381| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#251| state) (|CSR#380| state))) ; $procmux$2517_Y
+(define-fun |CSR#382| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#251| state) (|CSR#381| state))) ; $procmux$2522_Y
+(define-fun |CSR#383| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#251| state) (|CSR#382| state))) ; $procmux$2527_Y
+(define-fun |CSR#384| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#383| state) (|CSR#251| state))) ; $procmux$2529_Y
+(define-fun |CSR#385| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#251| state) (|CSR#384| state))) ; $procmux$2534_Y
+(define-fun |CSR#386| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#251| state) (|CSR#385| state))) ; $procmux$2539_Y
+(define-fun |CSR#387| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#251| state) (|CSR#386| state))) ; $procmux$2541_Y
+(define-fun |CSR#388| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#387| state))) ; $auto$rtlil.cc:2224:Mux$3852
+(define-fun |CSR#389| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#203| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3375
+(define-fun |CSR#390| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#202| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (= ((_ extract 0 0) (|CSR#337| state)) #b1) (= ((_ extract 0 0) (|CSR#343| state)) #b1) (= ((_ extract 0 0) (|CSR#344| state)) #b1) (= ((_ extract 0 0) (|CSR#345| state)) #b1) (= ((_ extract 0 0) (|CSR#389| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3482
+(define-fun |CSR#391| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#390| state) (|CSR#97| state) (|CSR#34| state))) ; $auto$rtlil.cc:2224:Mux$3838
+(define-fun |CSR#392| ((state |CSR_s|)) Bool (or  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#175| state)) #b1) (= ((_ extract 0 0) (|CSR#183| state)) #b1))) ; $auto$opt_dff.cc:217:make_patterns_logic$3379
+(define-fun |CSR#393| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state))))))))))) #b00000000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3440
+(define-fun |CSR#394| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state)))))))))) #b0000000011)) ; $auto$opt_dff.cc:217:make_patterns_logic$3387
+(define-fun |CSR#395| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state))))))))) #b100000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3389
+(define-fun |CSR#396| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state)))))))) #b10000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3391
+(define-fun |CSR#397| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state))))))) #b1000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3393
+(define-fun |CSR#398| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state)))))) #b100001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3395
+(define-fun |CSR#399| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state))))) #b10001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3397
+(define-fun |CSR#400| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state)))) #b1001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3399
+(define-fun |CSR#401| ((state |CSR_s|)) Bool (distinct (concat (|CSR#183| state) (|CSR#175| state)) #b10)) ; $auto$opt_dff.cc:217:make_patterns_logic$3401
+(define-fun |CSR#402| ((state |CSR_s|)) Bool (and  (|CSR#392| state) (|CSR#393| state) (|CSR#394| state) (|CSR#395| state) (|CSR#396| state) (|CSR#397| state) (|CSR#398| state) (|CSR#399| state) (|CSR#400| state) (|CSR#401| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3460
+(define-fun |CSR#403| ((state |CSR_s|)) (_ BitVec 30) (ite (|CSR#402| state) ((_ extract 31 2) (|CSR#249| state)) (|CSR#31| state))) ; $auto$rtlil.cc:2224:Mux$3840
+(define-fun |CSR#404| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) #b00 ((_ extract 1 0) (|CSR#248| state)))) ; $auto$rtlil.cc:2224:Mux$3862
+(define-fun |CSR#405| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#402| state) (|CSR#404| state) (|CSR#30| state))) ; $auto$rtlil.cc:2224:Mux$3864
+(define-fun |CSR#406| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#199| state) #b00000000000000000000000000000000)) ; $procmux$2000_Y
+(define-fun |CSR#407| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) #b00000000000000000000000000000000 (|CSR#406| state))) ; $procmux$2002_Y
+(define-fun |CSR#408| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) #b00000000000000000000000000000000 (|CSR#407| state))) ; $procmux$2004_Y
+(define-fun |CSR#409| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) #b00000000000000000000000000000000 (|CSR#408| state))) ; $procmux$2006_Y
+(define-fun |CSR#410| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) #b00000000000000000000000000000000 (|CSR#409| state))) ; $procmux$2008_Y
+(define-fun |CSR#411| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) #b00000000000000000000000000000000 (|CSR#410| state))) ; $procmux$2010_Y
+(define-fun |CSR#412| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) #b00000000000000000000000000000000 (|CSR#411| state))) ; $procmux$2012_Y
+(define-fun |CSR#413| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) #b00000000000000000000000000000000 (|CSR#412| state))) ; $procmux$2014_Y
+(define-fun |CSR#414| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) #b00000000000000000000000000000000 (|CSR#413| state))) ; $procmux$2016_Y
+(define-fun |CSR#415| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#414| state) #b00000000000000000000000000000000)) ; $procmux$2018_Y
+(define-fun |CSR#416| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) #b00000000000000000000000000000000 (|CSR#415| state))) ; $procmux$2020_Y
+(define-fun |CSR#417| ((state |CSR_s|)) (_ BitVec 28) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) #b0000000000000000000000000000 ((_ extract 31 4) (|CSR#416| state)))) ; $auto$rtlil.cc:2224:Mux$3866
+(define-fun |CSR#418| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#200| state) #b1 #b0) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state)))))))))))) #b000000000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3412
+(define-fun |CSR#419| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state))))))))))) #b00000000101)) ; $auto$opt_dff.cc:217:make_patterns_logic$3385
+(define-fun |CSR#420| ((state |CSR_s|)) Bool (and  (|CSR#392| state) (|CSR#418| state) (|CSR#419| state) (|CSR#394| state) (|CSR#395| state) (|CSR#396| state) (|CSR#397| state) (|CSR#398| state) (|CSR#399| state) (|CSR#400| state) (|CSR#401| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3434
+(define-fun |CSR#421| ((state |CSR_s|)) (_ BitVec 28) (ite (|CSR#420| state) (|CSR#417| state) (|CSR#27| state))) ; $auto$rtlil.cc:2224:Mux$3868
+(define-fun |CSR#422| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (concat #b0000000000000000000000000000 (|CSR#216| state)) (|CSR#416| state))) ; $procmux$2023_Y
+(define-fun |CSR#423| ((state |CSR_s|)) (_ BitVec 4) (ite (|CSR#420| state) ((_ extract 3 0) (|CSR#422| state)) (|CSR#26| state))) ; $auto$rtlil.cc:2224:Mux$3842
+(define-fun |CSR#424| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#97| state) #b00000000000000000000000000000000)) ; $procmux$1969_Y
+(define-fun |CSR#425| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) #b00000000000000000000000000000000 (|CSR#424| state))) ; $procmux$1971_Y
+(define-fun |CSR#426| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) #b00000000000000000000000000000000 (|CSR#425| state))) ; $procmux$1973_Y
+(define-fun |CSR#427| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) #b00000000000000000000000000000000 (|CSR#426| state))) ; $procmux$1975_Y
+(define-fun |CSR#428| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) #b00000000000000000000000000000000 (|CSR#427| state))) ; $procmux$1977_Y
+(define-fun |CSR#429| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) #b00000000000000000000000000000000 (|CSR#428| state))) ; $procmux$1979_Y
+(define-fun |CSR#430| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) #b00000000000000000000000000000000 (|CSR#429| state))) ; $procmux$1981_Y
+(define-fun |CSR#431| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) #b00000000000000000000000000000000 (|CSR#430| state))) ; $procmux$1983_Y
+(define-fun |CSR#432| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) #b00000000000000000000000000000000 (|CSR#431| state))) ; $procmux$1985_Y
+(define-fun |CSR#433| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) #b00000000000000000000000000000000 (|CSR#432| state))) ; $procmux$1987_Y
+(define-fun |CSR#434| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#433| state) #b00000000000000000000000000000000)) ; $procmux$1989_Y
+(define-fun |CSR#435| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) #b00000000000000000000000000000000 (|CSR#434| state))) ; $procmux$1991_Y
+(define-fun |CSR#436| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#210| state)) #b1) (concat (|CSR#188| state) (concat (ite (|CSR#102| state) #b1 #b0) (|CSR#98| state))) #b00000000000000000000000000000000)) ; $procmux$1994_Y
+(define-fun |CSR#437| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#436| state) (|CSR#435| state))) ; $procmux$1996_Y
+(define-fun |CSR#438| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#198| state) #b1 #b0) (concat (ite (|CSR#200| state) #b1 #b0) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state))))))))))))) #b0000000000001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3381
+(define-fun |CSR#439| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#203| state) #b1 #b0) (concat (ite (|CSR#204| state) #b1 #b0) (concat (ite (|CSR#205| state) #b1 #b0) (concat (ite (|CSR#206| state) #b1 #b0) (concat (ite (|CSR#207| state) #b1 #b0) (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (concat (ite (|CSR#200| state) #b1 #b0) (concat (ite (|CSR#201| state) #b1 #b0) (concat (ite (|CSR#202| state) #b1 #b0) (|CSR#5| state)))))))))))) #b000000001001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3383
+(define-fun |CSR#440| ((state |CSR_s|)) Bool (distinct (concat (|CSR#210| state) (|CSR#175| state)) #b01)) ; $auto$opt_dff.cc:217:make_patterns_logic$3403
+(define-fun |CSR#441| ((state |CSR_s|)) Bool (and  (|CSR#392| state) (|CSR#438| state) (|CSR#439| state) (|CSR#419| state) (|CSR#394| state) (|CSR#395| state) (|CSR#396| state) (|CSR#397| state) (|CSR#398| state) (|CSR#399| state) (|CSR#400| state) (|CSR#401| state) (|CSR#440| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3407
+(define-fun |CSR#442| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#441| state) (|CSR#437| state) (|CSR#23| state))) ; $auto$rtlil.cc:2224:Mux$3844
+(define-fun |CSR#443| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (|CSR#207| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3527
+(define-fun |CSR#444| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#443| state) ((_ extract 7 7) (|CSR#97| state)) (|CSR#20| state))) ; $auto$rtlil.cc:2224:Mux$3820
+(define-fun |CSR#445| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#444| state))) ; $auto$rtlil.cc:2224:Mux$3822
+(define-fun |CSR#446| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#443| state) ((_ extract 3 3) (|CSR#97| state)) (|CSR#19| state))) ; $auto$rtlil.cc:2224:Mux$3828
+(define-fun |CSR#447| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#446| state))) ; $auto$rtlil.cc:2224:Mux$3830
+(define-fun |CSR#448| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#202| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3351
+(define-fun |CSR#449| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#201| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3353
+(define-fun |CSR#450| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#200| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3355
+(define-fun |CSR#451| ((state |CSR_s|)) (_ BitVec 1) (bvnot (ite (|CSR#198| state) #b1 #b0))) ; $auto$rtlil.cc:2127:Not$3357
+(define-fun |CSR#452| ((state |CSR_s|)) Bool (and  (= ((_ extract 0 0) (|CSR#5| state)) #b1) (= ((_ extract 0 0) (|CSR#448| state)) #b1) (= ((_ extract 0 0) (|CSR#449| state)) #b1) (= ((_ extract 0 0) (|CSR#450| state)) #b1) (= ((_ extract 0 0) (|CSR#451| state)) #b1) (|CSR#197| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1) (= ((_ extract 0 0) (|CSR#176| state)) #b1) (= ((_ extract 0 0) (|CSR#335| state)) #b1) (= ((_ extract 0 0) (|CSR#336| state)) #b1) (= ((_ extract 0 0) (|CSR#337| state)) #b1) (= ((_ extract 0 0) (|CSR#343| state)) #b1) (= ((_ extract 0 0) (|CSR#344| state)) #b1) (= ((_ extract 0 0) (|CSR#345| state)) #b1) (= ((_ extract 0 0) (|CSR#389| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3376
+(define-fun |CSR#453| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#452| state) (|CSR#97| state) (|CSR#16| state))) ; $auto$rtlil.cc:2224:Mux$3846
+(define-fun |CSR#454| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#106| state) #b00000000000000000000000000000000 (|CSR#453| state))) ; $auto$rtlil.cc:2224:Mux$3848
+(define-fun |CSR#455| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#196| state) (|CSR#97| state) (|CSR#252| state))) ; $procmux$1865_Y
+(define-fun |CSR#456| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#197| state) (|CSR#252| state) (|CSR#455| state))) ; $procmux$1868_Y
+(define-fun |CSR#457| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#198| state) (|CSR#252| state) (|CSR#456| state))) ; $procmux$1871_Y
+(define-fun |CSR#458| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#200| state) (|CSR#252| state) (|CSR#457| state))) ; $procmux$1874_Y
+(define-fun |CSR#459| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#201| state) (|CSR#252| state) (|CSR#458| state))) ; $procmux$1877_Y
+(define-fun |CSR#460| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#202| state) (|CSR#252| state) (|CSR#459| state))) ; $procmux$1880_Y
+(define-fun |CSR#461| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#203| state) (|CSR#252| state) (|CSR#460| state))) ; $procmux$1883_Y
+(define-fun |CSR#462| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#204| state) (|CSR#252| state) (|CSR#461| state))) ; $procmux$1886_Y
+(define-fun |CSR#463| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#205| state) (|CSR#252| state) (|CSR#462| state))) ; $procmux$1889_Y
+(define-fun |CSR#464| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#206| state) (|CSR#252| state) (|CSR#463| state))) ; $procmux$1892_Y
+(define-fun |CSR#465| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#207| state) (|CSR#252| state) (|CSR#464| state))) ; $procmux$1897_Y
+(define-fun |CSR#466| ((state |CSR_s|)) (_ BitVec 32) (ite (|CSR#208| state) (|CSR#252| state) (|CSR#465| state))) ; $procmux$1902_Y
+(define-fun |CSR#467| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#466| state) (|CSR#252| state))) ; $procmux$1904_Y
+(define-fun |CSR#468| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#252| state) (|CSR#467| state))) ; $procmux$1909_Y
+(define-fun |CSR#469| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#252| state) (|CSR#468| state))) ; $procmux$1914_Y
 (define-fun |CSR#470| ((state |CSR_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|CSR#180| state)) #b1) (|CSR#252| state) (|CSR#469| state))) ; $0\mfromhost[31:0]
-(define-fun |CSR#471| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#208| state) ((_ extract 5 4) (|CSR#97| state)) #b00)) ; $procmux$2122_Y
-(define-fun |CSR#472| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#471| state) #b00)) ; $procmux$2124_Y
-(define-fun |CSR#473| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) #b00 (|CSR#472| state))) ; $procmux$2127_Y
-(define-fun |CSR#474| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#7| state) (|CSR#473| state))) ; $procmux$2130_Y
-(define-fun |CSR#475| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state)))) #b0001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3466
-(define-fun |CSR#476| ((state |CSR_s|)) Bool (and  (|CSR#392| state) (|CSR#475| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3470
-(define-fun |CSR#477| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#476| state) (|CSR#474| state) (|CSR#9| state))) ; $auto$rtlil.cc:2224:Mux$3709
-(define-fun |CSR#478| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#106| state) #b11 (|CSR#477| state))) ; $auto$rtlil.cc:2224:Mux$3711
-(define-fun |CSR#479| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#208| state) ((_ extract 3 3) (|CSR#97| state)) #b0)) ; $procmux$2092_Y
-(define-fun |CSR#480| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#479| state) #b0)) ; $procmux$2094_Y
-(define-fun |CSR#481| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) #b1 (|CSR#480| state))) ; $procmux$2097_Y
-(define-fun |CSR#482| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#6| state) (|CSR#481| state))) ; $procmux$2100_Y
-(define-fun |CSR#483| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#476| state) (|CSR#482| state) (|CSR#8| state))) ; $auto$rtlil.cc:2224:Mux$3717
-(define-fun |CSR#484| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#483| state))) ; $auto$rtlil.cc:2224:Mux$3719
-(define-fun |CSR#485| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#208| state) ((_ extract 2 1) (|CSR#97| state)) #b00)) ; $procmux$2137_Y
-(define-fun |CSR#486| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#485| state) #b00)) ; $procmux$2139_Y
-(define-fun |CSR#487| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#9| state) (|CSR#486| state))) ; $procmux$2142_Y
-(define-fun |CSR#488| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) #b11 (|CSR#487| state))) ; $procmux$2145_Y
-(define-fun |CSR#489| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#476| state) (|CSR#488| state) (|CSR#7| state))) ; $auto$rtlil.cc:2224:Mux$3705
-(define-fun |CSR#490| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#106| state) #b11 (|CSR#489| state))) ; $auto$rtlil.cc:2224:Mux$3707
-(define-fun |CSR#491| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#208| state) ((_ extract 0 0) (|CSR#97| state)) #b0)) ; $procmux$2107_Y
-(define-fun |CSR#492| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#491| state) #b0)) ; $procmux$2109_Y
-(define-fun |CSR#493| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#8| state) (|CSR#492| state))) ; $procmux$2112_Y
-(define-fun |CSR#494| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) #b0 (|CSR#493| state))) ; $procmux$2115_Y
-(define-fun |CSR#495| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#476| state) (|CSR#494| state) (|CSR#6| state))) ; $auto$rtlil.cc:2224:Mux$3713
-(define-fun |CSR#496| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#495| state))) ; $auto$rtlil.cc:2224:Mux$3715
+(define-fun |CSR#471| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#208| state) ((_ extract 5 4) (|CSR#97| state)) #b00)) ; $procmux$2181_Y
+(define-fun |CSR#472| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#471| state) #b00)) ; $procmux$2183_Y
+(define-fun |CSR#473| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) #b00 (|CSR#472| state))) ; $procmux$2186_Y
+(define-fun |CSR#474| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#7| state) (|CSR#473| state))) ; $procmux$2189_Y
+(define-fun |CSR#475| ((state |CSR_s|)) Bool (distinct (concat (ite (|CSR#208| state) #b1 #b0) (concat (|CSR#183| state) (concat (|CSR#175| state) (|CSR#5| state)))) #b0001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3559
+(define-fun |CSR#476| ((state |CSR_s|)) Bool (and  (|CSR#392| state) (|CSR#475| state) (= ((_ extract 0 0) (|CSR#181| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3563
+(define-fun |CSR#477| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#476| state) (|CSR#474| state) (|CSR#9| state))) ; $auto$rtlil.cc:2224:Mux$3808
+(define-fun |CSR#478| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#106| state) #b11 (|CSR#477| state))) ; $auto$rtlil.cc:2224:Mux$3810
+(define-fun |CSR#479| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#208| state) ((_ extract 3 3) (|CSR#97| state)) #b0)) ; $procmux$2151_Y
+(define-fun |CSR#480| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#479| state) #b0)) ; $procmux$2153_Y
+(define-fun |CSR#481| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) #b1 (|CSR#480| state))) ; $procmux$2156_Y
+(define-fun |CSR#482| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) (|CSR#6| state) (|CSR#481| state))) ; $procmux$2159_Y
+(define-fun |CSR#483| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#476| state) (|CSR#482| state) (|CSR#8| state))) ; $auto$rtlil.cc:2224:Mux$3816
+(define-fun |CSR#484| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#483| state))) ; $auto$rtlil.cc:2224:Mux$3818
+(define-fun |CSR#485| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#208| state) ((_ extract 2 1) (|CSR#97| state)) #b00)) ; $procmux$2196_Y
+(define-fun |CSR#486| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#485| state) #b00)) ; $procmux$2198_Y
+(define-fun |CSR#487| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#9| state) (|CSR#486| state))) ; $procmux$2201_Y
+(define-fun |CSR#488| ((state |CSR_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) #b11 (|CSR#487| state))) ; $procmux$2204_Y
+(define-fun |CSR#489| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#476| state) (|CSR#488| state) (|CSR#7| state))) ; $auto$rtlil.cc:2224:Mux$3804
+(define-fun |CSR#490| ((state |CSR_s|)) (_ BitVec 2) (ite (|CSR#106| state) #b11 (|CSR#489| state))) ; $auto$rtlil.cc:2224:Mux$3806
+(define-fun |CSR#491| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#208| state) ((_ extract 0 0) (|CSR#97| state)) #b0)) ; $procmux$2166_Y
+(define-fun |CSR#492| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#5| state)) #b1) (|CSR#491| state) #b0)) ; $procmux$2168_Y
+(define-fun |CSR#493| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#183| state)) #b1) (|CSR#8| state) (|CSR#492| state))) ; $procmux$2171_Y
+(define-fun |CSR#494| ((state |CSR_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|CSR#175| state)) #b1) #b0 (|CSR#493| state))) ; $procmux$2174_Y
+(define-fun |CSR#495| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#476| state) (|CSR#494| state) (|CSR#6| state))) ; $auto$rtlil.cc:2224:Mux$3812
+(define-fun |CSR#496| ((state |CSR_s|)) (_ BitVec 1) (ite (|CSR#106| state) #b0 (|CSR#495| state))) ; $auto$rtlil.cc:2224:Mux$3814
 (define-fun |CSR_a| ((state |CSR_s|)) Bool true)
 (define-fun |CSR_u| ((state |CSR_s|)) Bool true)
 (define-fun |CSR_i| ((state |CSR_s|)) Bool true)
 (define-fun |CSR_h| ((state |CSR_s|)) Bool true)
 (define-fun |CSR_t| ((state |CSR_s|) (next_state |CSR_s|)) Bool (and
-  (= (|CSR#270| state) (|CSR#73| next_state)) ; $auto$opt_dff.cc:702:run$3506 \cycle
-  (= (|CSR#290| state) (|CSR#68| next_state)) ; $auto$opt_dff.cc:702:run$3504 \instret
-  (= (|CSR#311| state) (|CSR#65| next_state)) ; $auto$opt_dff.cc:702:run$3505 \cycleh
-  (= (|CSR#334| state) (|CSR#60| next_state)) ; $auto$opt_dff.cc:702:run$3503 \instreth
-  (= (|CSR#340| state) (|CSR#47| next_state)) ; $auto$opt_dff.cc:764:run$3450 \MTIE
-  (= (|CSR#342| state) (|CSR#46| next_state)) ; $auto$opt_dff.cc:764:run$3424 \MSIE
-  (= (|CSR#347| state) (|CSR#43| next_state)) ; $auto$opt_dff.cc:764:run$3410 \mtimecmp
-  (= (|CSR#366| state) (|CSR#40| next_state)) ; $auto$opt_dff.cc:702:run$3508 \time$
-  (= (|CSR#388| state) (|CSR#37| next_state)) ; $auto$opt_dff.cc:702:run$3507 \timeh
-  (= (|CSR#391| state) (|CSR#34| next_state)) ; $auto$opt_dff.cc:764:run$3391 \mscratch
-  (= (|CSR#403| state) (|CSR#31| next_state)) ; $auto$opt_dff.cc:764:run$3369 \mepc [31:2]
-  (= (|CSR#405| state) (|CSR#30| next_state)) ; $auto$opt_dff.cc:702:run$3370 \mepc [1:0]
-  (= (|CSR#421| state) (|CSR#27| next_state)) ; $auto$opt_dff.cc:702:run$3344 \mcause [31:4]
-  (= (|CSR#423| state) (|CSR#26| next_state)) ; $auto$opt_dff.cc:764:run$3343 \mcause [3:0]
-  (= (|CSR#442| state) (|CSR#23| next_state)) ; $auto$opt_dff.cc:764:run$3316 \mbadaddr
-  (= (|CSR#445| state) (|CSR#20| next_state)) ; $auto$opt_dff.cc:764:run$3462 \MTIP
-  (= (|CSR#447| state) (|CSR#19| next_state)) ; $auto$opt_dff.cc:764:run$3436 \MSIP
-  (= (|CSR#454| state) (|CSR#16| next_state)) ; $auto$opt_dff.cc:764:run$3285 \mtohost
-  (= (|CSR#470| state) (|CSR#13| next_state)) ; $procdff$2921 \mfromhost
-  (= (|CSR#478| state) (|CSR#9| next_state)) ; $auto$opt_dff.cc:764:run$3492 \PRV1
-  (= (|CSR#484| state) (|CSR#8| next_state)) ; $auto$opt_dff.cc:764:run$3472 \IE1
-  (= (|CSR#490| state) (|CSR#7| next_state)) ; $auto$opt_dff.cc:764:run$3502 \PRV
-  (= (|CSR#496| state) (|CSR#6| next_state)) ; $auto$opt_dff.cc:764:run$3482 \IE
+  (= (|CSR#270| state) (|CSR#73| next_state)) ; $auto$opt_dff.cc:702:run$3599 \cycle
+  (= (|CSR#290| state) (|CSR#68| next_state)) ; $auto$opt_dff.cc:702:run$3597 \instret
+  (= (|CSR#311| state) (|CSR#65| next_state)) ; $auto$opt_dff.cc:702:run$3598 \cycleh
+  (= (|CSR#334| state) (|CSR#60| next_state)) ; $auto$opt_dff.cc:702:run$3596 \instreth
+  (= (|CSR#340| state) (|CSR#47| next_state)) ; $auto$opt_dff.cc:764:run$3543 \MTIE
+  (= (|CSR#342| state) (|CSR#46| next_state)) ; $auto$opt_dff.cc:764:run$3517 \MSIE
+  (= (|CSR#347| state) (|CSR#43| next_state)) ; $auto$opt_dff.cc:764:run$3503 \mtimecmp
+  (= (|CSR#366| state) (|CSR#40| next_state)) ; $auto$opt_dff.cc:702:run$3601 \time$
+  (= (|CSR#388| state) (|CSR#37| next_state)) ; $auto$opt_dff.cc:702:run$3600 \timeh
+  (= (|CSR#391| state) (|CSR#34| next_state)) ; $auto$opt_dff.cc:764:run$3484 \mscratch
+  (= (|CSR#403| state) (|CSR#31| next_state)) ; $auto$opt_dff.cc:764:run$3462 \mepc [31:2]
+  (= (|CSR#405| state) (|CSR#30| next_state)) ; $auto$opt_dff.cc:702:run$3463 \mepc [1:0]
+  (= (|CSR#421| state) (|CSR#27| next_state)) ; $auto$opt_dff.cc:702:run$3437 \mcause [31:4]
+  (= (|CSR#423| state) (|CSR#26| next_state)) ; $auto$opt_dff.cc:764:run$3436 \mcause [3:0]
+  (= (|CSR#442| state) (|CSR#23| next_state)) ; $auto$opt_dff.cc:764:run$3409 \mbadaddr
+  (= (|CSR#445| state) (|CSR#20| next_state)) ; $auto$opt_dff.cc:764:run$3555 \MTIP
+  (= (|CSR#447| state) (|CSR#19| next_state)) ; $auto$opt_dff.cc:764:run$3529 \MSIP
+  (= (|CSR#454| state) (|CSR#16| next_state)) ; $auto$opt_dff.cc:764:run$3378 \mtohost
+  (= (|CSR#470| state) (|CSR#13| next_state)) ; $procdff$2996 \mfromhost
+  (= (|CSR#478| state) (|CSR#9| next_state)) ; $auto$opt_dff.cc:764:run$3585 \PRV1
+  (= (|CSR#484| state) (|CSR#8| next_state)) ; $auto$opt_dff.cc:764:run$3565 \IE1
+  (= (|CSR#490| state) (|CSR#7| next_state)) ; $auto$opt_dff.cc:764:run$3595 \PRV
+  (= (|CSR#496| state) (|CSR#6| next_state)) ; $auto$opt_dff.cc:764:run$3575 \IE
 )) ; end of module CSR
 ; yosys-smt2-module Cache
 (declare-sort |Cache_s| 0)
@@ -1929,11 +1929,11 @@
 ; yosys-smt2-output io_cpu_resp_valid 1
 ; yosys-smt2-wire io_cpu_resp_valid 1
 (define-fun |Cache_n io_cpu_resp_valid| ((state |Cache_s|)) Bool (= ((_ extract 0 0) (|Cache#118| state)) #b1))
-(define-fun |Cache#119| ((state |Cache_s|)) Bool (= #b01 ((_ extract 3 2) (|Cache#13| state)))) ; $eq$__lft__corr.v:5307$128_Y
+(define-fun |Cache#119| ((state |Cache_s|)) Bool (= #b01 ((_ extract 3 2) (|Cache#13| state)))) ; $eq$__lft__corr.v:5323$187_Y
 (define-fun |Cache#120| ((state |Cache_s|)) (_ BitVec 32) (ite (|Cache#119| state) ((_ extract 63 32) (|Cache#84| state)) ((_ extract 31 0) (|Cache#84| state)))) ; \_GEN_12
-(define-fun |Cache#121| ((state |Cache_s|)) Bool (= #b10 ((_ extract 3 2) (|Cache#13| state)))) ; $eq$__lft__corr.v:5308$130_Y
+(define-fun |Cache#121| ((state |Cache_s|)) Bool (= #b10 ((_ extract 3 2) (|Cache#13| state)))) ; $eq$__lft__corr.v:5324$189_Y
 (define-fun |Cache#122| ((state |Cache_s|)) (_ BitVec 32) (ite (|Cache#121| state) ((_ extract 95 64) (|Cache#84| state)) (|Cache#120| state))) ; \_GEN_13
-(define-fun |Cache#123| ((state |Cache_s|)) Bool (= #b11 ((_ extract 3 2) (|Cache#13| state)))) ; $eq$__lft__corr.v:5309$132_Y
+(define-fun |Cache#123| ((state |Cache_s|)) Bool (= #b11 ((_ extract 3 2) (|Cache#13| state)))) ; $eq$__lft__corr.v:5325$191_Y
 (define-fun |Cache#124| ((state |Cache_s|)) (_ BitVec 32) (ite (|Cache#123| state) ((_ extract 127 96) (|Cache#84| state)) (|Cache#122| state))) ; \io_cpu_resp_bits_data
 ; yosys-smt2-output io_cpu_resp_bits_data 32
 ; yosys-smt2-wire io_cpu_resp_bits_data 32
@@ -2554,272 +2554,272 @@
 (define-fun |Cache_n _GEN_100| ((state |Cache_s|)) (_ BitVec 64) (|Cache#89| state))
 ; yosys-smt2-wire _GEN_10 128
 (define-fun |Cache_n _GEN_10| ((state |Cache_s|)) (_ BitVec 128) (|Cache#83| state))
-(define-fun |Cache#163| ((state |Cache_s|)) (_ BitVec 256) (ite (= ((_ extract 0 0) (|Cache#20| state)) #b1) (|Cache#154| state) (|Cache#155| state))) ; $procmux$2795_Y
-(define-fun |Cache#164| ((state |Cache_s|)) (_ BitVec 256) (ite (= ((_ extract 0 0) (|Cache#36| state)) #b1) (|Cache#163| state) (|Cache#86| state))) ; $auto$rtlil.cc:2224:Mux$3681
-(define-fun |Cache#165| ((state |Cache_s|)) (_ BitVec 256) (ite (|Cache#41| state) #b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 (|Cache#164| state))) ; $auto$rtlil.cc:2224:Mux$3683
-(define-fun |Cache#166| ((state |Cache_s|)) Bool (and  (= ((_ extract 0 0) (|Cache#18| state)) #b1) (= ((_ extract 0 0) (|Cache#17| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3509
-(define-fun |Cache#167| ((state |Cache_s|)) (_ BitVec 64) (ite (|Cache#166| state) (|Cache#39| state) (|Cache#49| state))) ; $auto$rtlil.cc:2224:Mux$3703
-(define-fun |Cache#168| ((state |Cache_s|)) (_ BitVec 1) (bvnot (|Cache#18| state))) ; $auto$rtlil.cc:2127:Not$3513
-(define-fun |Cache#169| ((state |Cache_s|)) Bool (and  (= ((_ extract 0 0) (|Cache#168| state)) #b1) (= ((_ extract 0 0) (|Cache#17| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3514
-(define-fun |Cache#170| ((state |Cache_s|)) (_ BitVec 64) (ite (|Cache#169| state) (|Cache#39| state) (|Cache#38| state))) ; $auto$rtlil.cc:2224:Mux$3701
-(define-fun |Cache#171| ((state |Cache_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|Cache#118| state)) #b1) (|Cache#126| state) (|Cache#37| state))) ; $auto$rtlil.cc:2224:Mux$3689
-(define-fun |Cache#172| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#48| state)) #b1) ((_ extract 11 4) (|Cache#127| state)) (|Cache#26| state))) ; $auto$rtlil.cc:2224:Mux$3685
-(define-fun |Cache#173| ((state |Cache_s|)) (_ BitVec 256) (ite (= ((_ extract 0 0) (|Cache#36| state)) #b1) (|Cache#156| state) (|Cache#23| state))) ; $auto$rtlil.cc:2224:Mux$3677
-(define-fun |Cache#174| ((state |Cache_s|)) (_ BitVec 256) (ite (|Cache#41| state) #b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 (|Cache#173| state))) ; $auto$rtlil.cc:2224:Mux$3679
-(define-fun |Cache#175| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#17| state)) #b1) (|Cache#161| state) (|Cache#18| state))) ; $auto$rtlil.cc:2224:Mux$3693
-(define-fun |Cache#176| ((state |Cache_s|)) (_ BitVec 1) (ite (|Cache#41| state) #b0 (|Cache#175| state))) ; $auto$rtlil.cc:2224:Mux$3695
-(define-fun |Cache#177| ((state |Cache_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|Cache#118| state)) #b1) (|Cache#127| state) (|Cache#13| state))) ; $auto$rtlil.cc:2224:Mux$3687
-(define-fun |Cache#178| ((state |Cache_s|)) (_ BitVec 4) (ite (= ((_ extract 0 0) (|Cache#118| state)) #b1) (|Cache#125| state) (|Cache#12| state))) ; $auto$rtlil.cc:2224:Mux$3691
-(define-fun |Cache#179| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#9| state)) #b1) (|Cache#159| state) (|Cache#10| state))) ; $auto$rtlil.cc:2224:Mux$3697
-(define-fun |Cache#180| ((state |Cache_s|)) (_ BitVec 1) (ite (|Cache#41| state) #b0 (|Cache#179| state))) ; $auto$rtlil.cc:2224:Mux$3699
-(define-fun |Cache#181| ((state |Cache_s|)) (_ BitVec 2) (ite (|Cache#115| state) #b10 #b00)) ; $auto$wreduce.cc:454:run$3077 [1:0]
-(define-fun |Cache#182| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#19| state)) #b1) (concat #b0 (|Cache#181| state)) #b000)) ; $procmux$2810_Y
-(define-fun |Cache#183| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#145| state) (|Cache#182| state) #b000)) ; $procmux$2812_Y
-(define-fun |Cache#184| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#147| state)) #b1) #b110 (|Cache#1| state))) ; $procmux$2815_Y
-(define-fun |Cache#185| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#103| state) (|Cache#184| state) (|Cache#183| state))) ; $procmux$2817_Y
-(define-fun |Cache#186| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#146| state)) #b1) #b101 #b000)) ; $procmux$2820_Y
-(define-fun |Cache#187| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#91| state) (|Cache#186| state) (|Cache#185| state))) ; $procmux$2822_Y
-(define-fun |Cache#188| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#11| state)) #b1) #b100 #b000)) ; $procmux$2825_Y
-(define-fun |Cache#189| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#2| state) (|Cache#188| state) (|Cache#187| state))) ; $procmux$2827_Y
-(define-fun |Cache#190| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#148| state)) #b1) #b011 (|Cache#184| state))) ; $procmux$2833_Y
-(define-fun |Cache#191| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#96| state)) #b1) #b000 (|Cache#190| state))) ; $procmux$2836_Y
-(define-fun |Cache#192| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#3| state) (|Cache#191| state) (|Cache#189| state))) ; $procmux$2838_Y
-(define-fun |Cache#193| ((state |Cache_s|)) (_ BitVec 2) (ite (|Cache#149| state) #b10 #b01)) ; $auto$wreduce.cc:454:run$3078 [1:0]
-(define-fun |Cache#194| ((state |Cache_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|Cache#47| state)) #b1) (|Cache#193| state) #b00)) ; $auto$wreduce.cc:454:run$3079 [1:0]
-(define-fun |Cache#195| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#29| state)) #b1) (concat #b0 (|Cache#194| state)) (|Cache#190| state))) ; $procmux$2853_Y
-(define-fun |Cache#196| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#5| state) (|Cache#195| state) (|Cache#192| state))) ; $procmux$2855_Y
-(define-fun |Cache#197| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#47| state)) #b1) (concat #b0 (|Cache#193| state)) #b000)) ; $procmux$2861_Y
-(define-fun |Cache#198| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#7| state) (|Cache#197| state) (|Cache#196| state))) ; $procmux$2863_Y
-(define-fun |Cache#199| ((state |Cache_s|)) Bool (distinct (concat (ite (|Cache#2| state) #b1 #b0) (concat (ite (|Cache#3| state) #b1 #b0) (concat (ite (|Cache#5| state) #b1 #b0) (concat (ite (|Cache#7| state) #b1 #b0) (|Cache#11| state))))) #b10000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3546
-(define-fun |Cache#200| ((state |Cache_s|)) Bool (distinct (concat (ite (|Cache#7| state) #b1 #b0) (|Cache#47| state)) #b10)) ; $auto$opt_dff.cc:217:make_patterns_logic$3548
-(define-fun |Cache#201| ((state |Cache_s|)) Bool (distinct (concat (ite (|Cache#145| state) #b1 #b0) (concat (ite (|Cache#103| state) #b1 #b0) (concat (ite (|Cache#91| state) #b1 #b0) (concat (ite (|Cache#2| state) #b1 #b0) (concat (ite (|Cache#3| state) #b1 #b0) (concat (ite (|Cache#5| state) #b1 #b0) (concat (ite (|Cache#7| state) #b1 #b0) (|Cache#19| state)))))))) #b10000000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3550
-(define-fun |Cache#202| ((state |Cache_s|)) Bool (or  (|Cache#7| state) (|Cache#5| state) (|Cache#3| state) (|Cache#2| state) (|Cache#91| state) (|Cache#103| state) (|Cache#145| state))) ; $auto$opt_dff.cc:217:make_patterns_logic$3552
-(define-fun |Cache#203| ((state |Cache_s|)) Bool (distinct (concat (|Cache#146| state) (concat (ite (|Cache#91| state) #b1 #b0) (concat (ite (|Cache#2| state) #b1 #b0) (concat (ite (|Cache#3| state) #b1 #b0) (concat (ite (|Cache#5| state) #b1 #b0) (ite (|Cache#7| state) #b1 #b0)))))) #b010000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3554
-(define-fun |Cache#204| ((state |Cache_s|)) Bool (and  (|Cache#199| state) (|Cache#200| state) (|Cache#201| state) (|Cache#202| state) (|Cache#203| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3556
-(define-fun |Cache#205| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#204| state) (|Cache#198| state) (|Cache#1| state))) ; $auto$rtlil.cc:2224:Mux$3673
-(define-fun |Cache#206| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#41| state) #b000 (|Cache#205| state))) ; $auto$rtlil.cc:2224:Mux$3675
-; yosys-smt2-anyseq Cache#207 8 $auto$setundef.cc:501:execute$3168
-(declare-fun |Cache#207| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3169
-(define-fun |Cache#208| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#85| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#207| state))) ; $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_ADDR[7:0]$234
-; yosys-smt2-anyseq Cache#209 20 $auto$setundef.cc:501:execute$3166
-(declare-fun |Cache#209| (|Cache_s|) (_ BitVec 20)) ; $auto$rtlil.cc:2817:Anyseq$3167
-(define-fun |Cache#210| ((state |Cache_s|)) (_ BitVec 20) (ite (= ((_ extract 0 0) (|Cache#85| state)) #b1) ((_ extract 31 12) (|Cache#13| state)) (|Cache#209| state))) ; $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_DATA[19:0]$235
-(define-fun |Cache#211| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#85| state)) #b1) #b1 #b0)) ; $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19]
-(define-fun |Cache_m:W0A metaMem_tag| ((state |Cache_s|)) (_ BitVec 8) (|Cache#208| state)) ; $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_ADDR[7:0]$234
-(define-fun |Cache_m:W0D metaMem_tag| ((state |Cache_s|)) (_ BitVec 20) (|Cache#210| state)) ; $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_DATA[19:0]$235
-(define-fun |Cache_m:W0M metaMem_tag| ((state |Cache_s|)) (_ BitVec 20) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (|Cache#211| state))))))))))))))))))))) ; { $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5792$67_EN[19:0]$236 [19] }
+(define-fun |Cache#163| ((state |Cache_s|)) (_ BitVec 256) (ite (= ((_ extract 0 0) (|Cache#20| state)) #b1) (|Cache#154| state) (|Cache#155| state))) ; $procmux$2854_Y
+(define-fun |Cache#164| ((state |Cache_s|)) (_ BitVec 256) (ite (= ((_ extract 0 0) (|Cache#36| state)) #b1) (|Cache#163| state) (|Cache#86| state))) ; $auto$rtlil.cc:2224:Mux$3780
+(define-fun |Cache#165| ((state |Cache_s|)) (_ BitVec 256) (ite (|Cache#41| state) #b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 (|Cache#164| state))) ; $auto$rtlil.cc:2224:Mux$3782
+(define-fun |Cache#166| ((state |Cache_s|)) Bool (and  (= ((_ extract 0 0) (|Cache#18| state)) #b1) (= ((_ extract 0 0) (|Cache#17| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3602
+(define-fun |Cache#167| ((state |Cache_s|)) (_ BitVec 64) (ite (|Cache#166| state) (|Cache#39| state) (|Cache#49| state))) ; $auto$rtlil.cc:2224:Mux$3802
+(define-fun |Cache#168| ((state |Cache_s|)) (_ BitVec 1) (bvnot (|Cache#18| state))) ; $auto$rtlil.cc:2127:Not$3606
+(define-fun |Cache#169| ((state |Cache_s|)) Bool (and  (= ((_ extract 0 0) (|Cache#168| state)) #b1) (= ((_ extract 0 0) (|Cache#17| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3607
+(define-fun |Cache#170| ((state |Cache_s|)) (_ BitVec 64) (ite (|Cache#169| state) (|Cache#39| state) (|Cache#38| state))) ; $auto$rtlil.cc:2224:Mux$3800
+(define-fun |Cache#171| ((state |Cache_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|Cache#118| state)) #b1) (|Cache#126| state) (|Cache#37| state))) ; $auto$rtlil.cc:2224:Mux$3788
+(define-fun |Cache#172| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#48| state)) #b1) ((_ extract 11 4) (|Cache#127| state)) (|Cache#26| state))) ; $auto$rtlil.cc:2224:Mux$3784
+(define-fun |Cache#173| ((state |Cache_s|)) (_ BitVec 256) (ite (= ((_ extract 0 0) (|Cache#36| state)) #b1) (|Cache#156| state) (|Cache#23| state))) ; $auto$rtlil.cc:2224:Mux$3776
+(define-fun |Cache#174| ((state |Cache_s|)) (_ BitVec 256) (ite (|Cache#41| state) #b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 (|Cache#173| state))) ; $auto$rtlil.cc:2224:Mux$3778
+(define-fun |Cache#175| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#17| state)) #b1) (|Cache#161| state) (|Cache#18| state))) ; $auto$rtlil.cc:2224:Mux$3792
+(define-fun |Cache#176| ((state |Cache_s|)) (_ BitVec 1) (ite (|Cache#41| state) #b0 (|Cache#175| state))) ; $auto$rtlil.cc:2224:Mux$3794
+(define-fun |Cache#177| ((state |Cache_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|Cache#118| state)) #b1) (|Cache#127| state) (|Cache#13| state))) ; $auto$rtlil.cc:2224:Mux$3786
+(define-fun |Cache#178| ((state |Cache_s|)) (_ BitVec 4) (ite (= ((_ extract 0 0) (|Cache#118| state)) #b1) (|Cache#125| state) (|Cache#12| state))) ; $auto$rtlil.cc:2224:Mux$3790
+(define-fun |Cache#179| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#9| state)) #b1) (|Cache#159| state) (|Cache#10| state))) ; $auto$rtlil.cc:2224:Mux$3796
+(define-fun |Cache#180| ((state |Cache_s|)) (_ BitVec 1) (ite (|Cache#41| state) #b0 (|Cache#179| state))) ; $auto$rtlil.cc:2224:Mux$3798
+(define-fun |Cache#181| ((state |Cache_s|)) (_ BitVec 2) (ite (|Cache#115| state) #b10 #b00)) ; $auto$wreduce.cc:454:run$3164 [1:0]
+(define-fun |Cache#182| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#19| state)) #b1) (concat #b0 (|Cache#181| state)) #b000)) ; $procmux$2869_Y
+(define-fun |Cache#183| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#145| state) (|Cache#182| state) #b000)) ; $procmux$2871_Y
+(define-fun |Cache#184| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#147| state)) #b1) #b110 (|Cache#1| state))) ; $procmux$2874_Y
+(define-fun |Cache#185| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#103| state) (|Cache#184| state) (|Cache#183| state))) ; $procmux$2876_Y
+(define-fun |Cache#186| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#146| state)) #b1) #b101 #b000)) ; $procmux$2879_Y
+(define-fun |Cache#187| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#91| state) (|Cache#186| state) (|Cache#185| state))) ; $procmux$2881_Y
+(define-fun |Cache#188| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#11| state)) #b1) #b100 #b000)) ; $procmux$2884_Y
+(define-fun |Cache#189| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#2| state) (|Cache#188| state) (|Cache#187| state))) ; $procmux$2886_Y
+(define-fun |Cache#190| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#148| state)) #b1) #b011 (|Cache#184| state))) ; $procmux$2892_Y
+(define-fun |Cache#191| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#96| state)) #b1) #b000 (|Cache#190| state))) ; $procmux$2895_Y
+(define-fun |Cache#192| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#3| state) (|Cache#191| state) (|Cache#189| state))) ; $procmux$2897_Y
+(define-fun |Cache#193| ((state |Cache_s|)) (_ BitVec 2) (ite (|Cache#149| state) #b10 #b01)) ; $auto$wreduce.cc:454:run$3165 [1:0]
+(define-fun |Cache#194| ((state |Cache_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|Cache#47| state)) #b1) (|Cache#193| state) #b00)) ; $auto$wreduce.cc:454:run$3166 [1:0]
+(define-fun |Cache#195| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#29| state)) #b1) (concat #b0 (|Cache#194| state)) (|Cache#190| state))) ; $procmux$2912_Y
+(define-fun |Cache#196| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#5| state) (|Cache#195| state) (|Cache#192| state))) ; $procmux$2914_Y
+(define-fun |Cache#197| ((state |Cache_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Cache#47| state)) #b1) (concat #b0 (|Cache#193| state)) #b000)) ; $procmux$2920_Y
+(define-fun |Cache#198| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#7| state) (|Cache#197| state) (|Cache#196| state))) ; $procmux$2922_Y
+(define-fun |Cache#199| ((state |Cache_s|)) Bool (distinct (concat (ite (|Cache#2| state) #b1 #b0) (concat (ite (|Cache#3| state) #b1 #b0) (concat (ite (|Cache#5| state) #b1 #b0) (concat (ite (|Cache#7| state) #b1 #b0) (|Cache#11| state))))) #b10000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3639
+(define-fun |Cache#200| ((state |Cache_s|)) Bool (distinct (concat (ite (|Cache#7| state) #b1 #b0) (|Cache#47| state)) #b10)) ; $auto$opt_dff.cc:217:make_patterns_logic$3641
+(define-fun |Cache#201| ((state |Cache_s|)) Bool (distinct (concat (ite (|Cache#145| state) #b1 #b0) (concat (ite (|Cache#103| state) #b1 #b0) (concat (ite (|Cache#91| state) #b1 #b0) (concat (ite (|Cache#2| state) #b1 #b0) (concat (ite (|Cache#3| state) #b1 #b0) (concat (ite (|Cache#5| state) #b1 #b0) (concat (ite (|Cache#7| state) #b1 #b0) (|Cache#19| state)))))))) #b10000000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3643
+(define-fun |Cache#202| ((state |Cache_s|)) Bool (or  (|Cache#7| state) (|Cache#5| state) (|Cache#3| state) (|Cache#2| state) (|Cache#91| state) (|Cache#103| state) (|Cache#145| state))) ; $auto$opt_dff.cc:217:make_patterns_logic$3645
+(define-fun |Cache#203| ((state |Cache_s|)) Bool (distinct (concat (|Cache#146| state) (concat (ite (|Cache#91| state) #b1 #b0) (concat (ite (|Cache#2| state) #b1 #b0) (concat (ite (|Cache#3| state) #b1 #b0) (concat (ite (|Cache#5| state) #b1 #b0) (ite (|Cache#7| state) #b1 #b0)))))) #b010000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3647
+(define-fun |Cache#204| ((state |Cache_s|)) Bool (and  (|Cache#199| state) (|Cache#200| state) (|Cache#201| state) (|Cache#202| state) (|Cache#203| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3649
+(define-fun |Cache#205| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#204| state) (|Cache#198| state) (|Cache#1| state))) ; $auto$rtlil.cc:2224:Mux$3772
+(define-fun |Cache#206| ((state |Cache_s|)) (_ BitVec 3) (ite (|Cache#41| state) #b000 (|Cache#205| state))) ; $auto$rtlil.cc:2224:Mux$3774
+; yosys-smt2-anyseq Cache#207 8 $auto$setundef.cc:501:execute$3255
+(declare-fun |Cache#207| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3256
+(define-fun |Cache#208| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#85| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#207| state))) ; $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_ADDR[7:0]$293
+; yosys-smt2-anyseq Cache#209 20 $auto$setundef.cc:501:execute$3253
+(declare-fun |Cache#209| (|Cache_s|) (_ BitVec 20)) ; $auto$rtlil.cc:2817:Anyseq$3254
+(define-fun |Cache#210| ((state |Cache_s|)) (_ BitVec 20) (ite (= ((_ extract 0 0) (|Cache#85| state)) #b1) ((_ extract 31 12) (|Cache#13| state)) (|Cache#209| state))) ; $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_DATA[19:0]$294
+(define-fun |Cache#211| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#85| state)) #b1) #b1 #b0)) ; $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19]
+(define-fun |Cache_m:W0A metaMem_tag| ((state |Cache_s|)) (_ BitVec 8) (|Cache#208| state)) ; $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_ADDR[7:0]$293
+(define-fun |Cache_m:W0D metaMem_tag| ((state |Cache_s|)) (_ BitVec 20) (|Cache#210| state)) ; $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_DATA[19:0]$294
+(define-fun |Cache_m:W0M metaMem_tag| ((state |Cache_s|)) (_ BitVec 20) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (concat (|Cache#211| state) (|Cache#211| state))))))))))))))))))))) ; { $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] $0$memwr$\metaMem_tag$__lft__corr.v:5808$126_EN[19:0]$295 [19] }
 (define-fun |Cache#25#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 20)) (store (|Cache#25#0| state) (|Cache_m:W0A metaMem_tag| state) (bvor (bvand (|Cache_m:W0D metaMem_tag| state) (|Cache_m:W0M metaMem_tag| state)) (bvand (select (|Cache#25#0| state) (|Cache_m:W0A metaMem_tag| state)) (bvnot (|Cache_m:W0M metaMem_tag| state)))))) ; metaMem_tag
-; yosys-smt2-anyseq Cache#212 8 $auto$setundef.cc:501:execute$3104
-(declare-fun |Cache#212| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3105
-(define-fun |Cache#213| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#128| state))) ; $and$__lft__corr.v:5887$349_Y
-(define-fun |Cache#214| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#213| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#212| state))) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_ADDR[7:0]$282
-; yosys-smt2-anyseq Cache#215 8 $auto$setundef.cc:501:execute$3102
-(declare-fun |Cache#215| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3103
-(define-fun |Cache#216| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#213| state)) #b1) ((_ extract 127 120) (|Cache#40| state)) (|Cache#215| state))) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_DATA[7:0]$283
-(define-fun |Cache#217| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#213| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7]
-(define-fun |Cache_m:W0A dataMem_3_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#214| state)) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_ADDR[7:0]$282
-(define-fun |Cache_m:W0D dataMem_3_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#216| state)) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_DATA[7:0]$283
-(define-fun |Cache_m:W0M dataMem_3_3| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (|Cache#217| state))))))))) ; { $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5888$83_EN[7:0]$284 [7] }
+; yosys-smt2-anyseq Cache#212 8 $auto$setundef.cc:501:execute$3191
+(declare-fun |Cache#212| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3192
+(define-fun |Cache#213| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#128| state))) ; $and$__lft__corr.v:5903$408_Y
+(define-fun |Cache#214| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#213| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#212| state))) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5904$142_ADDR[7:0]$341
+; yosys-smt2-anyseq Cache#215 8 $auto$setundef.cc:501:execute$3189
+(declare-fun |Cache#215| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3190
+(define-fun |Cache#216| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#213| state)) #b1) ((_ extract 127 120) (|Cache#40| state)) (|Cache#215| state))) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5904$142_DATA[7:0]$342
+(define-fun |Cache#217| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#213| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5904$142_EN[7:0]$343 [7]
+(define-fun |Cache_m:W0A dataMem_3_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#214| state)) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5904$142_ADDR[7:0]$341
+(define-fun |Cache_m:W0D dataMem_3_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#216| state)) ; $0$memwr$\dataMem_3_3$__lft__corr.v:5904$142_DATA[7:0]$342
+(define-fun |Cache_m:W0M dataMem_3_3| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (concat (|Cache#217| state) (|Cache#217| state))))))))) ; { $0$memwr$\dataMem_3_3$__lft__corr.v:5904$142_EN[7:0]$343 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5904$142_EN[7:0]$343 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5904$142_EN[7:0]$343 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5904$142_EN[7:0]$343 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5904$142_EN[7:0]$343 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5904$142_EN[7:0]$343 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5904$142_EN[7:0]$343 [7] $0$memwr$\dataMem_3_3$__lft__corr.v:5904$142_EN[7:0]$343 [7] }
 (define-fun |Cache#81#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#81#0| state) (|Cache_m:W0A dataMem_3_3| state) (bvor (bvand (|Cache_m:W0D dataMem_3_3| state) (|Cache_m:W0M dataMem_3_3| state)) (bvand (select (|Cache#81#0| state) (|Cache_m:W0A dataMem_3_3| state)) (bvnot (|Cache_m:W0M dataMem_3_3| state)))))) ; dataMem_3_3
-; yosys-smt2-anyseq Cache#218 8 $auto$setundef.cc:501:execute$3108
-(declare-fun |Cache#218| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3109
-(define-fun |Cache#219| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#129| state))) ; $and$__lft__corr.v:5881$345_Y
-(define-fun |Cache#220| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#219| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#218| state))) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_ADDR[7:0]$279
-; yosys-smt2-anyseq Cache#221 8 $auto$setundef.cc:501:execute$3106
-(declare-fun |Cache#221| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3107
-(define-fun |Cache#222| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#219| state)) #b1) ((_ extract 119 112) (|Cache#40| state)) (|Cache#221| state))) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_DATA[7:0]$280
-(define-fun |Cache#223| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#219| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7]
-(define-fun |Cache_m:W0A dataMem_3_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#220| state)) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_ADDR[7:0]$279
-(define-fun |Cache_m:W0D dataMem_3_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#222| state)) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_DATA[7:0]$280
-(define-fun |Cache_m:W0M dataMem_3_2| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (|Cache#223| state))))))))) ; { $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5882$82_EN[7:0]$281 [7] }
+; yosys-smt2-anyseq Cache#218 8 $auto$setundef.cc:501:execute$3195
+(declare-fun |Cache#218| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3196
+(define-fun |Cache#219| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#129| state))) ; $and$__lft__corr.v:5897$404_Y
+(define-fun |Cache#220| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#219| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#218| state))) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5898$141_ADDR[7:0]$338
+; yosys-smt2-anyseq Cache#221 8 $auto$setundef.cc:501:execute$3193
+(declare-fun |Cache#221| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3194
+(define-fun |Cache#222| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#219| state)) #b1) ((_ extract 119 112) (|Cache#40| state)) (|Cache#221| state))) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5898$141_DATA[7:0]$339
+(define-fun |Cache#223| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#219| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5898$141_EN[7:0]$340 [7]
+(define-fun |Cache_m:W0A dataMem_3_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#220| state)) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5898$141_ADDR[7:0]$338
+(define-fun |Cache_m:W0D dataMem_3_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#222| state)) ; $0$memwr$\dataMem_3_2$__lft__corr.v:5898$141_DATA[7:0]$339
+(define-fun |Cache_m:W0M dataMem_3_2| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (concat (|Cache#223| state) (|Cache#223| state))))))))) ; { $0$memwr$\dataMem_3_2$__lft__corr.v:5898$141_EN[7:0]$340 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5898$141_EN[7:0]$340 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5898$141_EN[7:0]$340 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5898$141_EN[7:0]$340 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5898$141_EN[7:0]$340 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5898$141_EN[7:0]$340 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5898$141_EN[7:0]$340 [7] $0$memwr$\dataMem_3_2$__lft__corr.v:5898$141_EN[7:0]$340 [7] }
 (define-fun |Cache#79#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#79#0| state) (|Cache_m:W0A dataMem_3_2| state) (bvor (bvand (|Cache_m:W0D dataMem_3_2| state) (|Cache_m:W0M dataMem_3_2| state)) (bvand (select (|Cache#79#0| state) (|Cache_m:W0A dataMem_3_2| state)) (bvnot (|Cache_m:W0M dataMem_3_2| state)))))) ; dataMem_3_2
-; yosys-smt2-anyseq Cache#224 8 $auto$setundef.cc:501:execute$3112
-(declare-fun |Cache#224| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3113
-(define-fun |Cache#225| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#130| state))) ; $and$__lft__corr.v:5875$341_Y
-(define-fun |Cache#226| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#225| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#224| state))) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_ADDR[7:0]$276
-; yosys-smt2-anyseq Cache#227 8 $auto$setundef.cc:501:execute$3110
-(declare-fun |Cache#227| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3111
-(define-fun |Cache#228| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#225| state)) #b1) ((_ extract 111 104) (|Cache#40| state)) (|Cache#227| state))) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_DATA[7:0]$277
-(define-fun |Cache#229| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#225| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7]
-(define-fun |Cache_m:W0A dataMem_3_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#226| state)) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_ADDR[7:0]$276
-(define-fun |Cache_m:W0D dataMem_3_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#228| state)) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_DATA[7:0]$277
-(define-fun |Cache_m:W0M dataMem_3_1| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (|Cache#229| state))))))))) ; { $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5876$81_EN[7:0]$278 [7] }
+; yosys-smt2-anyseq Cache#224 8 $auto$setundef.cc:501:execute$3199
+(declare-fun |Cache#224| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3200
+(define-fun |Cache#225| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#130| state))) ; $and$__lft__corr.v:5891$400_Y
+(define-fun |Cache#226| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#225| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#224| state))) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5892$140_ADDR[7:0]$335
+; yosys-smt2-anyseq Cache#227 8 $auto$setundef.cc:501:execute$3197
+(declare-fun |Cache#227| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3198
+(define-fun |Cache#228| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#225| state)) #b1) ((_ extract 111 104) (|Cache#40| state)) (|Cache#227| state))) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5892$140_DATA[7:0]$336
+(define-fun |Cache#229| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#225| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5892$140_EN[7:0]$337 [7]
+(define-fun |Cache_m:W0A dataMem_3_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#226| state)) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5892$140_ADDR[7:0]$335
+(define-fun |Cache_m:W0D dataMem_3_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#228| state)) ; $0$memwr$\dataMem_3_1$__lft__corr.v:5892$140_DATA[7:0]$336
+(define-fun |Cache_m:W0M dataMem_3_1| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (concat (|Cache#229| state) (|Cache#229| state))))))))) ; { $0$memwr$\dataMem_3_1$__lft__corr.v:5892$140_EN[7:0]$337 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5892$140_EN[7:0]$337 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5892$140_EN[7:0]$337 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5892$140_EN[7:0]$337 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5892$140_EN[7:0]$337 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5892$140_EN[7:0]$337 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5892$140_EN[7:0]$337 [7] $0$memwr$\dataMem_3_1$__lft__corr.v:5892$140_EN[7:0]$337 [7] }
 (define-fun |Cache#77#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#77#0| state) (|Cache_m:W0A dataMem_3_1| state) (bvor (bvand (|Cache_m:W0D dataMem_3_1| state) (|Cache_m:W0M dataMem_3_1| state)) (bvand (select (|Cache#77#0| state) (|Cache_m:W0A dataMem_3_1| state)) (bvnot (|Cache_m:W0M dataMem_3_1| state)))))) ; dataMem_3_1
-; yosys-smt2-anyseq Cache#230 8 $auto$setundef.cc:501:execute$3116
-(declare-fun |Cache#230| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3117
-(define-fun |Cache#231| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#131| state))) ; $and$__lft__corr.v:5869$337_Y
-(define-fun |Cache#232| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#231| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#230| state))) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_ADDR[7:0]$273
-; yosys-smt2-anyseq Cache#233 8 $auto$setundef.cc:501:execute$3114
-(declare-fun |Cache#233| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3115
-(define-fun |Cache#234| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#231| state)) #b1) ((_ extract 103 96) (|Cache#40| state)) (|Cache#233| state))) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_DATA[7:0]$274
-(define-fun |Cache#235| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#231| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7]
-(define-fun |Cache_m:W0A dataMem_3_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#232| state)) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_ADDR[7:0]$273
-(define-fun |Cache_m:W0D dataMem_3_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#234| state)) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_DATA[7:0]$274
-(define-fun |Cache_m:W0M dataMem_3_0| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (|Cache#235| state))))))))) ; { $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5870$80_EN[7:0]$275 [7] }
+; yosys-smt2-anyseq Cache#230 8 $auto$setundef.cc:501:execute$3203
+(declare-fun |Cache#230| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3204
+(define-fun |Cache#231| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#131| state))) ; $and$__lft__corr.v:5885$396_Y
+(define-fun |Cache#232| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#231| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#230| state))) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5886$139_ADDR[7:0]$332
+; yosys-smt2-anyseq Cache#233 8 $auto$setundef.cc:501:execute$3201
+(declare-fun |Cache#233| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3202
+(define-fun |Cache#234| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#231| state)) #b1) ((_ extract 103 96) (|Cache#40| state)) (|Cache#233| state))) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5886$139_DATA[7:0]$333
+(define-fun |Cache#235| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#231| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5886$139_EN[7:0]$334 [7]
+(define-fun |Cache_m:W0A dataMem_3_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#232| state)) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5886$139_ADDR[7:0]$332
+(define-fun |Cache_m:W0D dataMem_3_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#234| state)) ; $0$memwr$\dataMem_3_0$__lft__corr.v:5886$139_DATA[7:0]$333
+(define-fun |Cache_m:W0M dataMem_3_0| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (concat (|Cache#235| state) (|Cache#235| state))))))))) ; { $0$memwr$\dataMem_3_0$__lft__corr.v:5886$139_EN[7:0]$334 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5886$139_EN[7:0]$334 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5886$139_EN[7:0]$334 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5886$139_EN[7:0]$334 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5886$139_EN[7:0]$334 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5886$139_EN[7:0]$334 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5886$139_EN[7:0]$334 [7] $0$memwr$\dataMem_3_0$__lft__corr.v:5886$139_EN[7:0]$334 [7] }
 (define-fun |Cache#75#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#75#0| state) (|Cache_m:W0A dataMem_3_0| state) (bvor (bvand (|Cache_m:W0D dataMem_3_0| state) (|Cache_m:W0M dataMem_3_0| state)) (bvand (select (|Cache#75#0| state) (|Cache_m:W0A dataMem_3_0| state)) (bvnot (|Cache_m:W0M dataMem_3_0| state)))))) ; dataMem_3_0
-; yosys-smt2-anyseq Cache#236 8 $auto$setundef.cc:501:execute$3120
-(declare-fun |Cache#236| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3121
-(define-fun |Cache#237| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#132| state))) ; $and$__lft__corr.v:5863$333_Y
-(define-fun |Cache#238| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#237| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#236| state))) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_ADDR[7:0]$270
-; yosys-smt2-anyseq Cache#239 8 $auto$setundef.cc:501:execute$3118
-(declare-fun |Cache#239| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3119
-(define-fun |Cache#240| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#237| state)) #b1) ((_ extract 95 88) (|Cache#40| state)) (|Cache#239| state))) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_DATA[7:0]$271
-(define-fun |Cache#241| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#237| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7]
-(define-fun |Cache_m:W0A dataMem_2_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#238| state)) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_ADDR[7:0]$270
-(define-fun |Cache_m:W0D dataMem_2_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#240| state)) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_DATA[7:0]$271
-(define-fun |Cache_m:W0M dataMem_2_3| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (|Cache#241| state))))))))) ; { $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5864$79_EN[7:0]$272 [7] }
+; yosys-smt2-anyseq Cache#236 8 $auto$setundef.cc:501:execute$3207
+(declare-fun |Cache#236| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3208
+(define-fun |Cache#237| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#132| state))) ; $and$__lft__corr.v:5879$392_Y
+(define-fun |Cache#238| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#237| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#236| state))) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5880$138_ADDR[7:0]$329
+; yosys-smt2-anyseq Cache#239 8 $auto$setundef.cc:501:execute$3205
+(declare-fun |Cache#239| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3206
+(define-fun |Cache#240| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#237| state)) #b1) ((_ extract 95 88) (|Cache#40| state)) (|Cache#239| state))) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5880$138_DATA[7:0]$330
+(define-fun |Cache#241| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#237| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5880$138_EN[7:0]$331 [7]
+(define-fun |Cache_m:W0A dataMem_2_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#238| state)) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5880$138_ADDR[7:0]$329
+(define-fun |Cache_m:W0D dataMem_2_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#240| state)) ; $0$memwr$\dataMem_2_3$__lft__corr.v:5880$138_DATA[7:0]$330
+(define-fun |Cache_m:W0M dataMem_2_3| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (concat (|Cache#241| state) (|Cache#241| state))))))))) ; { $0$memwr$\dataMem_2_3$__lft__corr.v:5880$138_EN[7:0]$331 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5880$138_EN[7:0]$331 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5880$138_EN[7:0]$331 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5880$138_EN[7:0]$331 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5880$138_EN[7:0]$331 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5880$138_EN[7:0]$331 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5880$138_EN[7:0]$331 [7] $0$memwr$\dataMem_2_3$__lft__corr.v:5880$138_EN[7:0]$331 [7] }
 (define-fun |Cache#73#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#73#0| state) (|Cache_m:W0A dataMem_2_3| state) (bvor (bvand (|Cache_m:W0D dataMem_2_3| state) (|Cache_m:W0M dataMem_2_3| state)) (bvand (select (|Cache#73#0| state) (|Cache_m:W0A dataMem_2_3| state)) (bvnot (|Cache_m:W0M dataMem_2_3| state)))))) ; dataMem_2_3
-; yosys-smt2-anyseq Cache#242 8 $auto$setundef.cc:501:execute$3124
-(declare-fun |Cache#242| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3125
-(define-fun |Cache#243| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#133| state))) ; $and$__lft__corr.v:5857$329_Y
-(define-fun |Cache#244| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#243| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#242| state))) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_ADDR[7:0]$267
-; yosys-smt2-anyseq Cache#245 8 $auto$setundef.cc:501:execute$3122
-(declare-fun |Cache#245| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3123
-(define-fun |Cache#246| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#243| state)) #b1) ((_ extract 87 80) (|Cache#40| state)) (|Cache#245| state))) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_DATA[7:0]$268
-(define-fun |Cache#247| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#243| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7]
-(define-fun |Cache_m:W0A dataMem_2_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#244| state)) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_ADDR[7:0]$267
-(define-fun |Cache_m:W0D dataMem_2_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#246| state)) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_DATA[7:0]$268
-(define-fun |Cache_m:W0M dataMem_2_2| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (|Cache#247| state))))))))) ; { $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5858$78_EN[7:0]$269 [7] }
+; yosys-smt2-anyseq Cache#242 8 $auto$setundef.cc:501:execute$3211
+(declare-fun |Cache#242| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3212
+(define-fun |Cache#243| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#133| state))) ; $and$__lft__corr.v:5873$388_Y
+(define-fun |Cache#244| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#243| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#242| state))) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5874$137_ADDR[7:0]$326
+; yosys-smt2-anyseq Cache#245 8 $auto$setundef.cc:501:execute$3209
+(declare-fun |Cache#245| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3210
+(define-fun |Cache#246| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#243| state)) #b1) ((_ extract 87 80) (|Cache#40| state)) (|Cache#245| state))) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5874$137_DATA[7:0]$327
+(define-fun |Cache#247| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#243| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5874$137_EN[7:0]$328 [7]
+(define-fun |Cache_m:W0A dataMem_2_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#244| state)) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5874$137_ADDR[7:0]$326
+(define-fun |Cache_m:W0D dataMem_2_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#246| state)) ; $0$memwr$\dataMem_2_2$__lft__corr.v:5874$137_DATA[7:0]$327
+(define-fun |Cache_m:W0M dataMem_2_2| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (concat (|Cache#247| state) (|Cache#247| state))))))))) ; { $0$memwr$\dataMem_2_2$__lft__corr.v:5874$137_EN[7:0]$328 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5874$137_EN[7:0]$328 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5874$137_EN[7:0]$328 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5874$137_EN[7:0]$328 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5874$137_EN[7:0]$328 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5874$137_EN[7:0]$328 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5874$137_EN[7:0]$328 [7] $0$memwr$\dataMem_2_2$__lft__corr.v:5874$137_EN[7:0]$328 [7] }
 (define-fun |Cache#71#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#71#0| state) (|Cache_m:W0A dataMem_2_2| state) (bvor (bvand (|Cache_m:W0D dataMem_2_2| state) (|Cache_m:W0M dataMem_2_2| state)) (bvand (select (|Cache#71#0| state) (|Cache_m:W0A dataMem_2_2| state)) (bvnot (|Cache_m:W0M dataMem_2_2| state)))))) ; dataMem_2_2
-; yosys-smt2-anyseq Cache#248 8 $auto$setundef.cc:501:execute$3128
-(declare-fun |Cache#248| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3129
-(define-fun |Cache#249| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#134| state))) ; $and$__lft__corr.v:5851$325_Y
-(define-fun |Cache#250| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#249| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#248| state))) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_ADDR[7:0]$264
-; yosys-smt2-anyseq Cache#251 8 $auto$setundef.cc:501:execute$3126
-(declare-fun |Cache#251| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3127
-(define-fun |Cache#252| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#249| state)) #b1) ((_ extract 79 72) (|Cache#40| state)) (|Cache#251| state))) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_DATA[7:0]$265
-(define-fun |Cache#253| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#249| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7]
-(define-fun |Cache_m:W0A dataMem_2_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#250| state)) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_ADDR[7:0]$264
-(define-fun |Cache_m:W0D dataMem_2_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#252| state)) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_DATA[7:0]$265
-(define-fun |Cache_m:W0M dataMem_2_1| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (|Cache#253| state))))))))) ; { $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5852$77_EN[7:0]$266 [7] }
+; yosys-smt2-anyseq Cache#248 8 $auto$setundef.cc:501:execute$3215
+(declare-fun |Cache#248| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3216
+(define-fun |Cache#249| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#134| state))) ; $and$__lft__corr.v:5867$384_Y
+(define-fun |Cache#250| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#249| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#248| state))) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5868$136_ADDR[7:0]$323
+; yosys-smt2-anyseq Cache#251 8 $auto$setundef.cc:501:execute$3213
+(declare-fun |Cache#251| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3214
+(define-fun |Cache#252| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#249| state)) #b1) ((_ extract 79 72) (|Cache#40| state)) (|Cache#251| state))) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5868$136_DATA[7:0]$324
+(define-fun |Cache#253| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#249| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5868$136_EN[7:0]$325 [7]
+(define-fun |Cache_m:W0A dataMem_2_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#250| state)) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5868$136_ADDR[7:0]$323
+(define-fun |Cache_m:W0D dataMem_2_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#252| state)) ; $0$memwr$\dataMem_2_1$__lft__corr.v:5868$136_DATA[7:0]$324
+(define-fun |Cache_m:W0M dataMem_2_1| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (concat (|Cache#253| state) (|Cache#253| state))))))))) ; { $0$memwr$\dataMem_2_1$__lft__corr.v:5868$136_EN[7:0]$325 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5868$136_EN[7:0]$325 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5868$136_EN[7:0]$325 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5868$136_EN[7:0]$325 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5868$136_EN[7:0]$325 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5868$136_EN[7:0]$325 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5868$136_EN[7:0]$325 [7] $0$memwr$\dataMem_2_1$__lft__corr.v:5868$136_EN[7:0]$325 [7] }
 (define-fun |Cache#69#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#69#0| state) (|Cache_m:W0A dataMem_2_1| state) (bvor (bvand (|Cache_m:W0D dataMem_2_1| state) (|Cache_m:W0M dataMem_2_1| state)) (bvand (select (|Cache#69#0| state) (|Cache_m:W0A dataMem_2_1| state)) (bvnot (|Cache_m:W0M dataMem_2_1| state)))))) ; dataMem_2_1
-; yosys-smt2-anyseq Cache#254 8 $auto$setundef.cc:501:execute$3132
-(declare-fun |Cache#254| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3133
-(define-fun |Cache#255| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#135| state))) ; $and$__lft__corr.v:5845$321_Y
-(define-fun |Cache#256| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#255| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#254| state))) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_ADDR[7:0]$261
-; yosys-smt2-anyseq Cache#257 8 $auto$setundef.cc:501:execute$3130
-(declare-fun |Cache#257| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3131
-(define-fun |Cache#258| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#255| state)) #b1) ((_ extract 71 64) (|Cache#40| state)) (|Cache#257| state))) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_DATA[7:0]$262
-(define-fun |Cache#259| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#255| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7]
-(define-fun |Cache_m:W0A dataMem_2_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#256| state)) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_ADDR[7:0]$261
-(define-fun |Cache_m:W0D dataMem_2_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#258| state)) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_DATA[7:0]$262
-(define-fun |Cache_m:W0M dataMem_2_0| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (|Cache#259| state))))))))) ; { $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5846$76_EN[7:0]$263 [7] }
+; yosys-smt2-anyseq Cache#254 8 $auto$setundef.cc:501:execute$3219
+(declare-fun |Cache#254| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3220
+(define-fun |Cache#255| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#135| state))) ; $and$__lft__corr.v:5861$380_Y
+(define-fun |Cache#256| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#255| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#254| state))) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5862$135_ADDR[7:0]$320
+; yosys-smt2-anyseq Cache#257 8 $auto$setundef.cc:501:execute$3217
+(declare-fun |Cache#257| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3218
+(define-fun |Cache#258| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#255| state)) #b1) ((_ extract 71 64) (|Cache#40| state)) (|Cache#257| state))) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5862$135_DATA[7:0]$321
+(define-fun |Cache#259| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#255| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5862$135_EN[7:0]$322 [7]
+(define-fun |Cache_m:W0A dataMem_2_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#256| state)) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5862$135_ADDR[7:0]$320
+(define-fun |Cache_m:W0D dataMem_2_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#258| state)) ; $0$memwr$\dataMem_2_0$__lft__corr.v:5862$135_DATA[7:0]$321
+(define-fun |Cache_m:W0M dataMem_2_0| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (concat (|Cache#259| state) (|Cache#259| state))))))))) ; { $0$memwr$\dataMem_2_0$__lft__corr.v:5862$135_EN[7:0]$322 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5862$135_EN[7:0]$322 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5862$135_EN[7:0]$322 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5862$135_EN[7:0]$322 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5862$135_EN[7:0]$322 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5862$135_EN[7:0]$322 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5862$135_EN[7:0]$322 [7] $0$memwr$\dataMem_2_0$__lft__corr.v:5862$135_EN[7:0]$322 [7] }
 (define-fun |Cache#67#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#67#0| state) (|Cache_m:W0A dataMem_2_0| state) (bvor (bvand (|Cache_m:W0D dataMem_2_0| state) (|Cache_m:W0M dataMem_2_0| state)) (bvand (select (|Cache#67#0| state) (|Cache_m:W0A dataMem_2_0| state)) (bvnot (|Cache_m:W0M dataMem_2_0| state)))))) ; dataMem_2_0
-; yosys-smt2-anyseq Cache#260 8 $auto$setundef.cc:501:execute$3136
-(declare-fun |Cache#260| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3137
-(define-fun |Cache#261| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#136| state))) ; $and$__lft__corr.v:5839$317_Y
-(define-fun |Cache#262| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#261| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#260| state))) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_ADDR[7:0]$258
-; yosys-smt2-anyseq Cache#263 8 $auto$setundef.cc:501:execute$3134
-(declare-fun |Cache#263| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3135
-(define-fun |Cache#264| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#261| state)) #b1) ((_ extract 63 56) (|Cache#40| state)) (|Cache#263| state))) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_DATA[7:0]$259
-(define-fun |Cache#265| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#261| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7]
-(define-fun |Cache_m:W0A dataMem_1_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#262| state)) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_ADDR[7:0]$258
-(define-fun |Cache_m:W0D dataMem_1_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#264| state)) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_DATA[7:0]$259
-(define-fun |Cache_m:W0M dataMem_1_3| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (|Cache#265| state))))))))) ; { $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5840$75_EN[7:0]$260 [7] }
+; yosys-smt2-anyseq Cache#260 8 $auto$setundef.cc:501:execute$3223
+(declare-fun |Cache#260| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3224
+(define-fun |Cache#261| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#136| state))) ; $and$__lft__corr.v:5855$376_Y
+(define-fun |Cache#262| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#261| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#260| state))) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5856$134_ADDR[7:0]$317
+; yosys-smt2-anyseq Cache#263 8 $auto$setundef.cc:501:execute$3221
+(declare-fun |Cache#263| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3222
+(define-fun |Cache#264| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#261| state)) #b1) ((_ extract 63 56) (|Cache#40| state)) (|Cache#263| state))) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5856$134_DATA[7:0]$318
+(define-fun |Cache#265| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#261| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5856$134_EN[7:0]$319 [7]
+(define-fun |Cache_m:W0A dataMem_1_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#262| state)) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5856$134_ADDR[7:0]$317
+(define-fun |Cache_m:W0D dataMem_1_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#264| state)) ; $0$memwr$\dataMem_1_3$__lft__corr.v:5856$134_DATA[7:0]$318
+(define-fun |Cache_m:W0M dataMem_1_3| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (concat (|Cache#265| state) (|Cache#265| state))))))))) ; { $0$memwr$\dataMem_1_3$__lft__corr.v:5856$134_EN[7:0]$319 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5856$134_EN[7:0]$319 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5856$134_EN[7:0]$319 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5856$134_EN[7:0]$319 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5856$134_EN[7:0]$319 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5856$134_EN[7:0]$319 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5856$134_EN[7:0]$319 [7] $0$memwr$\dataMem_1_3$__lft__corr.v:5856$134_EN[7:0]$319 [7] }
 (define-fun |Cache#65#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#65#0| state) (|Cache_m:W0A dataMem_1_3| state) (bvor (bvand (|Cache_m:W0D dataMem_1_3| state) (|Cache_m:W0M dataMem_1_3| state)) (bvand (select (|Cache#65#0| state) (|Cache_m:W0A dataMem_1_3| state)) (bvnot (|Cache_m:W0M dataMem_1_3| state)))))) ; dataMem_1_3
-; yosys-smt2-anyseq Cache#266 8 $auto$setundef.cc:501:execute$3140
-(declare-fun |Cache#266| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3141
-(define-fun |Cache#267| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#137| state))) ; $and$__lft__corr.v:5833$313_Y
-(define-fun |Cache#268| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#267| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#266| state))) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_ADDR[7:0]$255
-; yosys-smt2-anyseq Cache#269 8 $auto$setundef.cc:501:execute$3138
-(declare-fun |Cache#269| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3139
-(define-fun |Cache#270| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#267| state)) #b1) ((_ extract 55 48) (|Cache#40| state)) (|Cache#269| state))) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_DATA[7:0]$256
-(define-fun |Cache#271| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#267| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7]
-(define-fun |Cache_m:W0A dataMem_1_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#268| state)) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_ADDR[7:0]$255
-(define-fun |Cache_m:W0D dataMem_1_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#270| state)) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_DATA[7:0]$256
-(define-fun |Cache_m:W0M dataMem_1_2| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (|Cache#271| state))))))))) ; { $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5834$74_EN[7:0]$257 [7] }
+; yosys-smt2-anyseq Cache#266 8 $auto$setundef.cc:501:execute$3227
+(declare-fun |Cache#266| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3228
+(define-fun |Cache#267| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#137| state))) ; $and$__lft__corr.v:5849$372_Y
+(define-fun |Cache#268| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#267| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#266| state))) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5850$133_ADDR[7:0]$314
+; yosys-smt2-anyseq Cache#269 8 $auto$setundef.cc:501:execute$3225
+(declare-fun |Cache#269| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3226
+(define-fun |Cache#270| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#267| state)) #b1) ((_ extract 55 48) (|Cache#40| state)) (|Cache#269| state))) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5850$133_DATA[7:0]$315
+(define-fun |Cache#271| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#267| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5850$133_EN[7:0]$316 [7]
+(define-fun |Cache_m:W0A dataMem_1_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#268| state)) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5850$133_ADDR[7:0]$314
+(define-fun |Cache_m:W0D dataMem_1_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#270| state)) ; $0$memwr$\dataMem_1_2$__lft__corr.v:5850$133_DATA[7:0]$315
+(define-fun |Cache_m:W0M dataMem_1_2| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (concat (|Cache#271| state) (|Cache#271| state))))))))) ; { $0$memwr$\dataMem_1_2$__lft__corr.v:5850$133_EN[7:0]$316 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5850$133_EN[7:0]$316 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5850$133_EN[7:0]$316 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5850$133_EN[7:0]$316 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5850$133_EN[7:0]$316 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5850$133_EN[7:0]$316 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5850$133_EN[7:0]$316 [7] $0$memwr$\dataMem_1_2$__lft__corr.v:5850$133_EN[7:0]$316 [7] }
 (define-fun |Cache#63#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#63#0| state) (|Cache_m:W0A dataMem_1_2| state) (bvor (bvand (|Cache_m:W0D dataMem_1_2| state) (|Cache_m:W0M dataMem_1_2| state)) (bvand (select (|Cache#63#0| state) (|Cache_m:W0A dataMem_1_2| state)) (bvnot (|Cache_m:W0M dataMem_1_2| state)))))) ; dataMem_1_2
-; yosys-smt2-anyseq Cache#272 8 $auto$setundef.cc:501:execute$3144
-(declare-fun |Cache#272| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3145
-(define-fun |Cache#273| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#138| state))) ; $and$__lft__corr.v:5827$309_Y
-(define-fun |Cache#274| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#273| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#272| state))) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_ADDR[7:0]$252
-; yosys-smt2-anyseq Cache#275 8 $auto$setundef.cc:501:execute$3142
-(declare-fun |Cache#275| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3143
-(define-fun |Cache#276| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#273| state)) #b1) ((_ extract 47 40) (|Cache#40| state)) (|Cache#275| state))) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_DATA[7:0]$253
-(define-fun |Cache#277| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#273| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7]
-(define-fun |Cache_m:W0A dataMem_1_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#274| state)) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_ADDR[7:0]$252
-(define-fun |Cache_m:W0D dataMem_1_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#276| state)) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_DATA[7:0]$253
-(define-fun |Cache_m:W0M dataMem_1_1| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (|Cache#277| state))))))))) ; { $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5828$73_EN[7:0]$254 [7] }
+; yosys-smt2-anyseq Cache#272 8 $auto$setundef.cc:501:execute$3231
+(declare-fun |Cache#272| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3232
+(define-fun |Cache#273| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#138| state))) ; $and$__lft__corr.v:5843$368_Y
+(define-fun |Cache#274| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#273| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#272| state))) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5844$132_ADDR[7:0]$311
+; yosys-smt2-anyseq Cache#275 8 $auto$setundef.cc:501:execute$3229
+(declare-fun |Cache#275| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3230
+(define-fun |Cache#276| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#273| state)) #b1) ((_ extract 47 40) (|Cache#40| state)) (|Cache#275| state))) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5844$132_DATA[7:0]$312
+(define-fun |Cache#277| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#273| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5844$132_EN[7:0]$313 [7]
+(define-fun |Cache_m:W0A dataMem_1_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#274| state)) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5844$132_ADDR[7:0]$311
+(define-fun |Cache_m:W0D dataMem_1_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#276| state)) ; $0$memwr$\dataMem_1_1$__lft__corr.v:5844$132_DATA[7:0]$312
+(define-fun |Cache_m:W0M dataMem_1_1| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (concat (|Cache#277| state) (|Cache#277| state))))))))) ; { $0$memwr$\dataMem_1_1$__lft__corr.v:5844$132_EN[7:0]$313 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5844$132_EN[7:0]$313 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5844$132_EN[7:0]$313 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5844$132_EN[7:0]$313 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5844$132_EN[7:0]$313 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5844$132_EN[7:0]$313 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5844$132_EN[7:0]$313 [7] $0$memwr$\dataMem_1_1$__lft__corr.v:5844$132_EN[7:0]$313 [7] }
 (define-fun |Cache#61#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#61#0| state) (|Cache_m:W0A dataMem_1_1| state) (bvor (bvand (|Cache_m:W0D dataMem_1_1| state) (|Cache_m:W0M dataMem_1_1| state)) (bvand (select (|Cache#61#0| state) (|Cache_m:W0A dataMem_1_1| state)) (bvnot (|Cache_m:W0M dataMem_1_1| state)))))) ; dataMem_1_1
-; yosys-smt2-anyseq Cache#278 8 $auto$setundef.cc:501:execute$3148
-(declare-fun |Cache#278| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3149
-(define-fun |Cache#279| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#139| state))) ; $and$__lft__corr.v:5821$305_Y
-(define-fun |Cache#280| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#279| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#278| state))) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_ADDR[7:0]$249
-; yosys-smt2-anyseq Cache#281 8 $auto$setundef.cc:501:execute$3146
-(declare-fun |Cache#281| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3147
-(define-fun |Cache#282| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#279| state)) #b1) ((_ extract 39 32) (|Cache#40| state)) (|Cache#281| state))) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_DATA[7:0]$250
-(define-fun |Cache#283| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#279| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7]
-(define-fun |Cache_m:W0A dataMem_1_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#280| state)) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_ADDR[7:0]$249
-(define-fun |Cache_m:W0D dataMem_1_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#282| state)) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_DATA[7:0]$250
-(define-fun |Cache_m:W0M dataMem_1_0| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (|Cache#283| state))))))))) ; { $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5822$72_EN[7:0]$251 [7] }
+; yosys-smt2-anyseq Cache#278 8 $auto$setundef.cc:501:execute$3235
+(declare-fun |Cache#278| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3236
+(define-fun |Cache#279| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#139| state))) ; $and$__lft__corr.v:5837$364_Y
+(define-fun |Cache#280| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#279| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#278| state))) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5838$131_ADDR[7:0]$308
+; yosys-smt2-anyseq Cache#281 8 $auto$setundef.cc:501:execute$3233
+(declare-fun |Cache#281| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3234
+(define-fun |Cache#282| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#279| state)) #b1) ((_ extract 39 32) (|Cache#40| state)) (|Cache#281| state))) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5838$131_DATA[7:0]$309
+(define-fun |Cache#283| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#279| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5838$131_EN[7:0]$310 [7]
+(define-fun |Cache_m:W0A dataMem_1_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#280| state)) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5838$131_ADDR[7:0]$308
+(define-fun |Cache_m:W0D dataMem_1_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#282| state)) ; $0$memwr$\dataMem_1_0$__lft__corr.v:5838$131_DATA[7:0]$309
+(define-fun |Cache_m:W0M dataMem_1_0| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (concat (|Cache#283| state) (|Cache#283| state))))))))) ; { $0$memwr$\dataMem_1_0$__lft__corr.v:5838$131_EN[7:0]$310 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5838$131_EN[7:0]$310 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5838$131_EN[7:0]$310 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5838$131_EN[7:0]$310 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5838$131_EN[7:0]$310 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5838$131_EN[7:0]$310 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5838$131_EN[7:0]$310 [7] $0$memwr$\dataMem_1_0$__lft__corr.v:5838$131_EN[7:0]$310 [7] }
 (define-fun |Cache#59#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#59#0| state) (|Cache_m:W0A dataMem_1_0| state) (bvor (bvand (|Cache_m:W0D dataMem_1_0| state) (|Cache_m:W0M dataMem_1_0| state)) (bvand (select (|Cache#59#0| state) (|Cache_m:W0A dataMem_1_0| state)) (bvnot (|Cache_m:W0M dataMem_1_0| state)))))) ; dataMem_1_0
-; yosys-smt2-anyseq Cache#284 8 $auto$setundef.cc:501:execute$3152
-(declare-fun |Cache#284| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3153
-(define-fun |Cache#285| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#140| state))) ; $and$__lft__corr.v:5815$301_Y
-(define-fun |Cache#286| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#285| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#284| state))) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_ADDR[7:0]$246
-; yosys-smt2-anyseq Cache#287 8 $auto$setundef.cc:501:execute$3150
-(declare-fun |Cache#287| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3151
-(define-fun |Cache#288| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#285| state)) #b1) ((_ extract 31 24) (|Cache#40| state)) (|Cache#287| state))) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_DATA[7:0]$247
-(define-fun |Cache#289| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#285| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7]
-(define-fun |Cache_m:W0A dataMem_0_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#286| state)) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_ADDR[7:0]$246
-(define-fun |Cache_m:W0D dataMem_0_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#288| state)) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_DATA[7:0]$247
-(define-fun |Cache_m:W0M dataMem_0_3| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (|Cache#289| state))))))))) ; { $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5816$71_EN[7:0]$248 [7] }
+; yosys-smt2-anyseq Cache#284 8 $auto$setundef.cc:501:execute$3239
+(declare-fun |Cache#284| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3240
+(define-fun |Cache#285| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#140| state))) ; $and$__lft__corr.v:5831$360_Y
+(define-fun |Cache#286| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#285| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#284| state))) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5832$130_ADDR[7:0]$305
+; yosys-smt2-anyseq Cache#287 8 $auto$setundef.cc:501:execute$3237
+(declare-fun |Cache#287| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3238
+(define-fun |Cache#288| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#285| state)) #b1) ((_ extract 31 24) (|Cache#40| state)) (|Cache#287| state))) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5832$130_DATA[7:0]$306
+(define-fun |Cache#289| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#285| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5832$130_EN[7:0]$307 [7]
+(define-fun |Cache_m:W0A dataMem_0_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#286| state)) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5832$130_ADDR[7:0]$305
+(define-fun |Cache_m:W0D dataMem_0_3| ((state |Cache_s|)) (_ BitVec 8) (|Cache#288| state)) ; $0$memwr$\dataMem_0_3$__lft__corr.v:5832$130_DATA[7:0]$306
+(define-fun |Cache_m:W0M dataMem_0_3| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (concat (|Cache#289| state) (|Cache#289| state))))))))) ; { $0$memwr$\dataMem_0_3$__lft__corr.v:5832$130_EN[7:0]$307 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5832$130_EN[7:0]$307 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5832$130_EN[7:0]$307 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5832$130_EN[7:0]$307 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5832$130_EN[7:0]$307 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5832$130_EN[7:0]$307 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5832$130_EN[7:0]$307 [7] $0$memwr$\dataMem_0_3$__lft__corr.v:5832$130_EN[7:0]$307 [7] }
 (define-fun |Cache#57#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#57#0| state) (|Cache_m:W0A dataMem_0_3| state) (bvor (bvand (|Cache_m:W0D dataMem_0_3| state) (|Cache_m:W0M dataMem_0_3| state)) (bvand (select (|Cache#57#0| state) (|Cache_m:W0A dataMem_0_3| state)) (bvnot (|Cache_m:W0M dataMem_0_3| state)))))) ; dataMem_0_3
-; yosys-smt2-anyseq Cache#290 8 $auto$setundef.cc:501:execute$3156
-(declare-fun |Cache#290| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3157
-(define-fun |Cache#291| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#141| state))) ; $and$__lft__corr.v:5809$297_Y
-(define-fun |Cache#292| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#291| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#290| state))) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_ADDR[7:0]$243
-; yosys-smt2-anyseq Cache#293 8 $auto$setundef.cc:501:execute$3154
-(declare-fun |Cache#293| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3155
-(define-fun |Cache#294| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#291| state)) #b1) ((_ extract 23 16) (|Cache#40| state)) (|Cache#293| state))) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_DATA[7:0]$244
-(define-fun |Cache#295| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#291| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7]
-(define-fun |Cache_m:W0A dataMem_0_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#292| state)) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_ADDR[7:0]$243
-(define-fun |Cache_m:W0D dataMem_0_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#294| state)) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_DATA[7:0]$244
-(define-fun |Cache_m:W0M dataMem_0_2| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (|Cache#295| state))))))))) ; { $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5810$70_EN[7:0]$245 [7] }
+; yosys-smt2-anyseq Cache#290 8 $auto$setundef.cc:501:execute$3243
+(declare-fun |Cache#290| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3244
+(define-fun |Cache#291| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#141| state))) ; $and$__lft__corr.v:5825$356_Y
+(define-fun |Cache#292| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#291| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#290| state))) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5826$129_ADDR[7:0]$302
+; yosys-smt2-anyseq Cache#293 8 $auto$setundef.cc:501:execute$3241
+(declare-fun |Cache#293| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3242
+(define-fun |Cache#294| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#291| state)) #b1) ((_ extract 23 16) (|Cache#40| state)) (|Cache#293| state))) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5826$129_DATA[7:0]$303
+(define-fun |Cache#295| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#291| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5826$129_EN[7:0]$304 [7]
+(define-fun |Cache_m:W0A dataMem_0_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#292| state)) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5826$129_ADDR[7:0]$302
+(define-fun |Cache_m:W0D dataMem_0_2| ((state |Cache_s|)) (_ BitVec 8) (|Cache#294| state)) ; $0$memwr$\dataMem_0_2$__lft__corr.v:5826$129_DATA[7:0]$303
+(define-fun |Cache_m:W0M dataMem_0_2| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (concat (|Cache#295| state) (|Cache#295| state))))))))) ; { $0$memwr$\dataMem_0_2$__lft__corr.v:5826$129_EN[7:0]$304 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5826$129_EN[7:0]$304 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5826$129_EN[7:0]$304 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5826$129_EN[7:0]$304 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5826$129_EN[7:0]$304 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5826$129_EN[7:0]$304 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5826$129_EN[7:0]$304 [7] $0$memwr$\dataMem_0_2$__lft__corr.v:5826$129_EN[7:0]$304 [7] }
 (define-fun |Cache#55#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#55#0| state) (|Cache_m:W0A dataMem_0_2| state) (bvor (bvand (|Cache_m:W0D dataMem_0_2| state) (|Cache_m:W0M dataMem_0_2| state)) (bvand (select (|Cache#55#0| state) (|Cache_m:W0A dataMem_0_2| state)) (bvnot (|Cache_m:W0M dataMem_0_2| state)))))) ; dataMem_0_2
-; yosys-smt2-anyseq Cache#296 8 $auto$setundef.cc:501:execute$3160
-(declare-fun |Cache#296| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3161
-(define-fun |Cache#297| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#142| state))) ; $and$__lft__corr.v:5803$293_Y
-(define-fun |Cache#298| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#297| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#296| state))) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_ADDR[7:0]$240
-; yosys-smt2-anyseq Cache#299 8 $auto$setundef.cc:501:execute$3158
-(declare-fun |Cache#299| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3159
-(define-fun |Cache#300| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#297| state)) #b1) ((_ extract 15 8) (|Cache#40| state)) (|Cache#299| state))) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_DATA[7:0]$241
-(define-fun |Cache#301| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#297| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7]
-(define-fun |Cache_m:W0A dataMem_0_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#298| state)) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_ADDR[7:0]$240
-(define-fun |Cache_m:W0D dataMem_0_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#300| state)) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_DATA[7:0]$241
-(define-fun |Cache_m:W0M dataMem_0_1| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (|Cache#301| state))))))))) ; { $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5804$69_EN[7:0]$242 [7] }
+; yosys-smt2-anyseq Cache#296 8 $auto$setundef.cc:501:execute$3247
+(declare-fun |Cache#296| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3248
+(define-fun |Cache#297| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#142| state))) ; $and$__lft__corr.v:5819$352_Y
+(define-fun |Cache#298| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#297| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#296| state))) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5820$128_ADDR[7:0]$299
+; yosys-smt2-anyseq Cache#299 8 $auto$setundef.cc:501:execute$3245
+(declare-fun |Cache#299| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3246
+(define-fun |Cache#300| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#297| state)) #b1) ((_ extract 15 8) (|Cache#40| state)) (|Cache#299| state))) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5820$128_DATA[7:0]$300
+(define-fun |Cache#301| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#297| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5820$128_EN[7:0]$301 [7]
+(define-fun |Cache_m:W0A dataMem_0_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#298| state)) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5820$128_ADDR[7:0]$299
+(define-fun |Cache_m:W0D dataMem_0_1| ((state |Cache_s|)) (_ BitVec 8) (|Cache#300| state)) ; $0$memwr$\dataMem_0_1$__lft__corr.v:5820$128_DATA[7:0]$300
+(define-fun |Cache_m:W0M dataMem_0_1| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (concat (|Cache#301| state) (|Cache#301| state))))))))) ; { $0$memwr$\dataMem_0_1$__lft__corr.v:5820$128_EN[7:0]$301 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5820$128_EN[7:0]$301 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5820$128_EN[7:0]$301 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5820$128_EN[7:0]$301 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5820$128_EN[7:0]$301 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5820$128_EN[7:0]$301 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5820$128_EN[7:0]$301 [7] $0$memwr$\dataMem_0_1$__lft__corr.v:5820$128_EN[7:0]$301 [7] }
 (define-fun |Cache#53#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#53#0| state) (|Cache_m:W0A dataMem_0_1| state) (bvor (bvand (|Cache_m:W0D dataMem_0_1| state) (|Cache_m:W0M dataMem_0_1| state)) (bvand (select (|Cache#53#0| state) (|Cache_m:W0A dataMem_0_1| state)) (bvnot (|Cache_m:W0M dataMem_0_1| state)))))) ; dataMem_0_1
-; yosys-smt2-anyseq Cache#302 8 $auto$setundef.cc:501:execute$3164
-(declare-fun |Cache#302| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3165
-(define-fun |Cache#303| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#143| state))) ; $and$__lft__corr.v:5797$289_Y
-(define-fun |Cache#304| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#303| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#302| state))) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_ADDR[7:0]$237
-; yosys-smt2-anyseq Cache#305 8 $auto$setundef.cc:501:execute$3162
-(declare-fun |Cache#305| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3163
-(define-fun |Cache#306| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#303| state)) #b1) ((_ extract 7 0) (|Cache#40| state)) (|Cache#305| state))) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_DATA[7:0]$238
-(define-fun |Cache#307| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#303| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7]
-(define-fun |Cache_m:W0A dataMem_0_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#304| state)) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_ADDR[7:0]$237
-(define-fun |Cache_m:W0D dataMem_0_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#306| state)) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_DATA[7:0]$238
-(define-fun |Cache_m:W0M dataMem_0_0| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (|Cache#307| state))))))))) ; { $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5798$68_EN[7:0]$239 [7] }
+; yosys-smt2-anyseq Cache#302 8 $auto$setundef.cc:501:execute$3251
+(declare-fun |Cache#302| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3252
+(define-fun |Cache#303| ((state |Cache_s|)) (_ BitVec 1) (bvand (|Cache#36| state) (|Cache#143| state))) ; $and$__lft__corr.v:5813$348_Y
+(define-fun |Cache#304| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#303| state)) #b1) ((_ extract 11 4) (|Cache#13| state)) (|Cache#302| state))) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5814$127_ADDR[7:0]$296
+; yosys-smt2-anyseq Cache#305 8 $auto$setundef.cc:501:execute$3249
+(declare-fun |Cache#305| (|Cache_s|) (_ BitVec 8)) ; $auto$rtlil.cc:2817:Anyseq$3250
+(define-fun |Cache#306| ((state |Cache_s|)) (_ BitVec 8) (ite (= ((_ extract 0 0) (|Cache#303| state)) #b1) ((_ extract 7 0) (|Cache#40| state)) (|Cache#305| state))) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5814$127_DATA[7:0]$297
+(define-fun |Cache#307| ((state |Cache_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Cache#303| state)) #b1) #b1 #b0)) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5814$127_EN[7:0]$298 [7]
+(define-fun |Cache_m:W0A dataMem_0_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#304| state)) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5814$127_ADDR[7:0]$296
+(define-fun |Cache_m:W0D dataMem_0_0| ((state |Cache_s|)) (_ BitVec 8) (|Cache#306| state)) ; $0$memwr$\dataMem_0_0$__lft__corr.v:5814$127_DATA[7:0]$297
+(define-fun |Cache_m:W0M dataMem_0_0| ((state |Cache_s|)) (_ BitVec 8) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (concat (|Cache#307| state) (|Cache#307| state))))))))) ; { $0$memwr$\dataMem_0_0$__lft__corr.v:5814$127_EN[7:0]$298 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5814$127_EN[7:0]$298 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5814$127_EN[7:0]$298 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5814$127_EN[7:0]$298 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5814$127_EN[7:0]$298 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5814$127_EN[7:0]$298 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5814$127_EN[7:0]$298 [7] $0$memwr$\dataMem_0_0$__lft__corr.v:5814$127_EN[7:0]$298 [7] }
 (define-fun |Cache#51#1| ((state |Cache_s|)) (Array (_ BitVec 8) (_ BitVec 8)) (store (|Cache#51#0| state) (|Cache_m:W0A dataMem_0_0| state) (bvor (bvand (|Cache_m:W0D dataMem_0_0| state) (|Cache_m:W0M dataMem_0_0| state)) (bvand (select (|Cache#51#0| state) (|Cache_m:W0A dataMem_0_0| state)) (bvnot (|Cache_m:W0M dataMem_0_0| state)))))) ; dataMem_0_0
 (define-fun |Cache_a| ((state |Cache_s|)) Bool true)
 (define-fun |Cache_u| ((state |Cache_s|)) Bool true)
 (define-fun |Cache_i| ((state |Cache_s|)) Bool true)
 (define-fun |Cache_h| ((state |Cache_s|)) Bool true)
 (define-fun |Cache_t| ((state |Cache_s|) (next_state |Cache_s|)) Bool (and
-  (= (|Cache#165| state) (|Cache#86| next_state)) ; $auto$opt_dff.cc:764:run$3542 \d
-  (= (|Cache#83| state) (|Cache#50| next_state)) ; $procdff$2967 \rdata_buf
-  (= (|Cache#167| state) (|Cache#49| next_state)) ; $auto$opt_dff.cc:764:run$3511 \refill_buf_1
-  (= (|Cache#48| state) (|Cache#42| next_state)) ; $procdff$2966 \ren_reg
-  (= (|Cache#170| state) (|Cache#38| next_state)) ; $auto$opt_dff.cc:764:run$3516 \refill_buf_0
-  (= (|Cache#171| state) (|Cache#37| next_state)) ; $auto$opt_dff.cc:764:run$3522 \cpu_data
-  (= (|Cache#20| state) (|Cache#30| next_state)) ; $procdff$2965 \is_alloc_reg
-  (= (|Cache#172| state) (|Cache#26| next_state)) ; $auto$opt_dff.cc:764:run$3524 \dataMem_3_3__T_210_addr_pipe_0
-  (= (|Cache#174| state) (|Cache#23| next_state)) ; $auto$opt_dff.cc:764:run$3544 \v
-  (= (|Cache#176| state) (|Cache#18| next_state)) ; $auto$opt_dff.cc:764:run$3520 \value
-  (= (|Cache#177| state) (|Cache#13| next_state)) ; $auto$opt_dff.cc:764:run$3523 \addr_reg
-  (= (|Cache#178| state) (|Cache#12| next_state)) ; $auto$opt_dff.cc:764:run$3521 \cpu_mask
-  (= (|Cache#180| state) (|Cache#10| next_state)) ; $auto$opt_dff.cc:764:run$3518 \value_1
-  (= (|Cache#206| state) (|Cache#1| next_state)) ; $auto$opt_dff.cc:764:run$3558 \state
+  (= (|Cache#165| state) (|Cache#86| next_state)) ; $auto$opt_dff.cc:764:run$3635 \d
+  (= (|Cache#83| state) (|Cache#50| next_state)) ; $procdff$3042 \rdata_buf
+  (= (|Cache#167| state) (|Cache#49| next_state)) ; $auto$opt_dff.cc:764:run$3604 \refill_buf_1
+  (= (|Cache#48| state) (|Cache#42| next_state)) ; $procdff$3041 \ren_reg
+  (= (|Cache#170| state) (|Cache#38| next_state)) ; $auto$opt_dff.cc:764:run$3609 \refill_buf_0
+  (= (|Cache#171| state) (|Cache#37| next_state)) ; $auto$opt_dff.cc:764:run$3615 \cpu_data
+  (= (|Cache#20| state) (|Cache#30| next_state)) ; $procdff$3040 \is_alloc_reg
+  (= (|Cache#172| state) (|Cache#26| next_state)) ; $auto$opt_dff.cc:764:run$3617 \dataMem_3_3__T_210_addr_pipe_0
+  (= (|Cache#174| state) (|Cache#23| next_state)) ; $auto$opt_dff.cc:764:run$3637 \v
+  (= (|Cache#176| state) (|Cache#18| next_state)) ; $auto$opt_dff.cc:764:run$3613 \value
+  (= (|Cache#177| state) (|Cache#13| next_state)) ; $auto$opt_dff.cc:764:run$3616 \addr_reg
+  (= (|Cache#178| state) (|Cache#12| next_state)) ; $auto$opt_dff.cc:764:run$3614 \cpu_mask
+  (= (|Cache#180| state) (|Cache#10| next_state)) ; $auto$opt_dff.cc:764:run$3611 \value_1
+  (= (|Cache#206| state) (|Cache#1| next_state)) ; $auto$opt_dff.cc:764:run$3651 \state
   (= (|Cache#25#1| state) (|Cache#25#0| next_state)) ; metaMem_tag
   (= (|Cache#81#1| state) (|Cache#81#0| next_state)) ; dataMem_3_3
   (= (|Cache#79#1| state) (|Cache#79#0| next_state)) ; dataMem_3_2
@@ -4902,30 +4902,30 @@
 (define-fun |MemArbiter_n _T_221| ((state |MemArbiter_s|)) Bool (= ((_ extract 0 0) (|MemArbiter#24| state)) #b1))
 ; yosys-smt2-wire _T_220 1
 (define-fun |MemArbiter_n _T_220| ((state |MemArbiter_s|)) Bool (|MemArbiter#23| state))
-(define-fun |MemArbiter#59| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#47| state)) #b1) #b000 #b000)) ; $procmux$2868_Y
-(define-fun |MemArbiter#60| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#48| state) (|MemArbiter#59| state) #b000)) ; $procmux$2870_Y
-(define-fun |MemArbiter#61| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#50| state)) #b1) #b100 #b000)) ; $procmux$2873_Y
-(define-fun |MemArbiter#62| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#51| state) (|MemArbiter#61| state) (|MemArbiter#60| state))) ; $procmux$2875_Y
-(define-fun |MemArbiter#63| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#54| state)) #b1) #b000 (|MemArbiter#0| state))) ; $procmux$2878_Y
-(define-fun |MemArbiter#64| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#52| state) (|MemArbiter#63| state) (|MemArbiter#62| state))) ; $procmux$2880_Y
-(define-fun |MemArbiter#65| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#55| state) (|MemArbiter#63| state) (|MemArbiter#64| state))) ; $procmux$2885_Y
-(define-fun |MemArbiter#66| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#56| state)) #b1) #b001 #b000)) ; $procmux$2888_Y
-(define-fun |MemArbiter#67| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#57| state)) #b1) #b010 (|MemArbiter#66| state))) ; $procmux$2891_Y
-(define-fun |MemArbiter#68| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#58| state)) #b1) #b011 (|MemArbiter#67| state))) ; $procmux$2894_Y
-(define-fun |MemArbiter#69| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#23| state) (|MemArbiter#68| state) (|MemArbiter#65| state))) ; $procmux$2896_Y
-(define-fun |MemArbiter#70| ((state |MemArbiter_s|)) Bool (or  (|MemArbiter#23| state) (|MemArbiter#55| state) (|MemArbiter#52| state) (|MemArbiter#51| state) (|MemArbiter#48| state))) ; $auto$opt_dff.cc:217:make_patterns_logic$3609
-(define-fun |MemArbiter#71| ((state |MemArbiter_s|)) Bool (distinct (concat (|MemArbiter#47| state) (concat (ite (|MemArbiter#48| state) #b1 #b0) (concat (ite (|MemArbiter#51| state) #b1 #b0) (concat (ite (|MemArbiter#52| state) #b1 #b0) (concat (ite (|MemArbiter#55| state) #b1 #b0) (ite (|MemArbiter#23| state) #b1 #b0)))))) #b010000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3611
-(define-fun |MemArbiter#72| ((state |MemArbiter_s|)) Bool (distinct (concat (|MemArbiter#50| state) (concat (ite (|MemArbiter#51| state) #b1 #b0) (concat (ite (|MemArbiter#52| state) #b1 #b0) (concat (ite (|MemArbiter#55| state) #b1 #b0) (ite (|MemArbiter#23| state) #b1 #b0))))) #b01000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3613
-(define-fun |MemArbiter#73| ((state |MemArbiter_s|)) Bool (distinct (concat (|MemArbiter#56| state) (concat (|MemArbiter#57| state) (concat (|MemArbiter#58| state) (ite (|MemArbiter#23| state) #b1 #b0)))) #b0001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3615
-(define-fun |MemArbiter#74| ((state |MemArbiter_s|)) Bool (and  (|MemArbiter#70| state) (|MemArbiter#71| state) (|MemArbiter#72| state) (|MemArbiter#73| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3617
-(define-fun |MemArbiter#75| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#74| state) (|MemArbiter#69| state) (|MemArbiter#0| state))) ; $auto$rtlil.cc:2224:Mux$3621
-(define-fun |MemArbiter#76| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#1| state) #b000 (|MemArbiter#75| state))) ; $auto$rtlil.cc:2224:Mux$3623
+(define-fun |MemArbiter#59| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#47| state)) #b1) #b000 #b000)) ; $procmux$2927_Y
+(define-fun |MemArbiter#60| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#48| state) (|MemArbiter#59| state) #b000)) ; $procmux$2929_Y
+(define-fun |MemArbiter#61| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#50| state)) #b1) #b100 #b000)) ; $procmux$2932_Y
+(define-fun |MemArbiter#62| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#51| state) (|MemArbiter#61| state) (|MemArbiter#60| state))) ; $procmux$2934_Y
+(define-fun |MemArbiter#63| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#54| state)) #b1) #b000 (|MemArbiter#0| state))) ; $procmux$2937_Y
+(define-fun |MemArbiter#64| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#52| state) (|MemArbiter#63| state) (|MemArbiter#62| state))) ; $procmux$2939_Y
+(define-fun |MemArbiter#65| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#55| state) (|MemArbiter#63| state) (|MemArbiter#64| state))) ; $procmux$2944_Y
+(define-fun |MemArbiter#66| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#56| state)) #b1) #b001 #b000)) ; $procmux$2947_Y
+(define-fun |MemArbiter#67| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#57| state)) #b1) #b010 (|MemArbiter#66| state))) ; $procmux$2950_Y
+(define-fun |MemArbiter#68| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|MemArbiter#58| state)) #b1) #b011 (|MemArbiter#67| state))) ; $procmux$2953_Y
+(define-fun |MemArbiter#69| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#23| state) (|MemArbiter#68| state) (|MemArbiter#65| state))) ; $procmux$2955_Y
+(define-fun |MemArbiter#70| ((state |MemArbiter_s|)) Bool (or  (|MemArbiter#23| state) (|MemArbiter#55| state) (|MemArbiter#52| state) (|MemArbiter#51| state) (|MemArbiter#48| state))) ; $auto$opt_dff.cc:217:make_patterns_logic$3702
+(define-fun |MemArbiter#71| ((state |MemArbiter_s|)) Bool (distinct (concat (|MemArbiter#47| state) (concat (ite (|MemArbiter#48| state) #b1 #b0) (concat (ite (|MemArbiter#51| state) #b1 #b0) (concat (ite (|MemArbiter#52| state) #b1 #b0) (concat (ite (|MemArbiter#55| state) #b1 #b0) (ite (|MemArbiter#23| state) #b1 #b0)))))) #b010000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3704
+(define-fun |MemArbiter#72| ((state |MemArbiter_s|)) Bool (distinct (concat (|MemArbiter#50| state) (concat (ite (|MemArbiter#51| state) #b1 #b0) (concat (ite (|MemArbiter#52| state) #b1 #b0) (concat (ite (|MemArbiter#55| state) #b1 #b0) (ite (|MemArbiter#23| state) #b1 #b0))))) #b01000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3706
+(define-fun |MemArbiter#73| ((state |MemArbiter_s|)) Bool (distinct (concat (|MemArbiter#56| state) (concat (|MemArbiter#57| state) (concat (|MemArbiter#58| state) (ite (|MemArbiter#23| state) #b1 #b0)))) #b0001)) ; $auto$opt_dff.cc:217:make_patterns_logic$3708
+(define-fun |MemArbiter#74| ((state |MemArbiter_s|)) Bool (and  (|MemArbiter#70| state) (|MemArbiter#71| state) (|MemArbiter#72| state) (|MemArbiter#73| state))) ; $auto$opt_dff.cc:242:make_patterns_logic$3710
+(define-fun |MemArbiter#75| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#74| state) (|MemArbiter#69| state) (|MemArbiter#0| state))) ; $auto$rtlil.cc:2224:Mux$3720
+(define-fun |MemArbiter#76| ((state |MemArbiter_s|)) (_ BitVec 3) (ite (|MemArbiter#1| state) #b000 (|MemArbiter#75| state))) ; $auto$rtlil.cc:2224:Mux$3722
 (define-fun |MemArbiter_a| ((state |MemArbiter_s|)) Bool true)
 (define-fun |MemArbiter_u| ((state |MemArbiter_s|)) Bool true)
 (define-fun |MemArbiter_i| ((state |MemArbiter_s|)) Bool true)
 (define-fun |MemArbiter_h| ((state |MemArbiter_s|)) Bool true)
 (define-fun |MemArbiter_t| ((state |MemArbiter_s|) (next_state |MemArbiter_s|)) Bool 
-  (= (|MemArbiter#76| state) (|MemArbiter#0| next_state)) ; $auto$opt_dff.cc:764:run$3619 \state
+  (= (|MemArbiter#76| state) (|MemArbiter#0| next_state)) ; $auto$opt_dff.cc:764:run$3712 \state
 ) ; end of module MemArbiter
 ; yosys-smt2-module RegFile
 (declare-sort |RegFile_s| 0)
@@ -5004,16 +5004,16 @@
 (define-fun |RegFile_n _T_25| ((state |RegFile_s|)) (_ BitVec 32) (|RegFile#13| state))
 ; yosys-smt2-wire _T_22 1
 (define-fun |RegFile_n _T_22| ((state |RegFile_s|)) Bool (|RegFile#12| state))
-; yosys-smt2-anyseq RegFile#15 5 $auto$setundef.cc:501:execute$3250
-(declare-fun |RegFile#15| (|RegFile_s|) (_ BitVec 5)) ; $auto$rtlil.cc:2817:Anyseq$3251
-(define-fun |RegFile#16| ((state |RegFile_s|)) (_ BitVec 5) (ite (= ((_ extract 0 0) (|RegFile#3| state)) #b1) (|RegFile#1| state) (|RegFile#15| state))) ; $0$memwr$\regs$__lft__corr.v:2296$1124_ADDR[4:0]$1134
-; yosys-smt2-anyseq RegFile#17 32 $auto$setundef.cc:501:execute$3248
-(declare-fun |RegFile#17| (|RegFile_s|) (_ BitVec 32)) ; $auto$rtlil.cc:2817:Anyseq$3249
-(define-fun |RegFile#18| ((state |RegFile_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|RegFile#3| state)) #b1) (|RegFile#4| state) (|RegFile#17| state))) ; $0$memwr$\regs$__lft__corr.v:2296$1124_DATA[31:0]$1135
-(define-fun |RegFile#19| ((state |RegFile_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|RegFile#3| state)) #b1) #b1 #b0)) ; $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31]
-(define-fun |RegFile_m:W0A regs| ((state |RegFile_s|)) (_ BitVec 5) (|RegFile#16| state)) ; $0$memwr$\regs$__lft__corr.v:2296$1124_ADDR[4:0]$1134
-(define-fun |RegFile_m:W0D regs| ((state |RegFile_s|)) (_ BitVec 32) (|RegFile#18| state)) ; $0$memwr$\regs$__lft__corr.v:2296$1124_DATA[31:0]$1135
-(define-fun |RegFile_m:W0M regs| ((state |RegFile_s|)) (_ BitVec 32) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (|RegFile#19| state))))))))))))))))))))))))))))))))) ; { $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] $0$memwr$\regs$__lft__corr.v:2296$1124_EN[31:0]$1136 [31] }
+; yosys-smt2-anyseq RegFile#15 5 $auto$setundef.cc:501:execute$3337
+(declare-fun |RegFile#15| (|RegFile_s|) (_ BitVec 5)) ; $auto$rtlil.cc:2817:Anyseq$3338
+(define-fun |RegFile#16| ((state |RegFile_s|)) (_ BitVec 5) (ite (= ((_ extract 0 0) (|RegFile#3| state)) #b1) (|RegFile#1| state) (|RegFile#15| state))) ; $0$memwr$\regs$__lft__corr.v:2296$1183_ADDR[4:0]$1193
+; yosys-smt2-anyseq RegFile#17 32 $auto$setundef.cc:501:execute$3335
+(declare-fun |RegFile#17| (|RegFile_s|) (_ BitVec 32)) ; $auto$rtlil.cc:2817:Anyseq$3336
+(define-fun |RegFile#18| ((state |RegFile_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|RegFile#3| state)) #b1) (|RegFile#4| state) (|RegFile#17| state))) ; $0$memwr$\regs$__lft__corr.v:2296$1183_DATA[31:0]$1194
+(define-fun |RegFile#19| ((state |RegFile_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|RegFile#3| state)) #b1) #b1 #b0)) ; $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31]
+(define-fun |RegFile_m:W0A regs| ((state |RegFile_s|)) (_ BitVec 5) (|RegFile#16| state)) ; $0$memwr$\regs$__lft__corr.v:2296$1183_ADDR[4:0]$1193
+(define-fun |RegFile_m:W0D regs| ((state |RegFile_s|)) (_ BitVec 32) (|RegFile#18| state)) ; $0$memwr$\regs$__lft__corr.v:2296$1183_DATA[31:0]$1194
+(define-fun |RegFile_m:W0M regs| ((state |RegFile_s|)) (_ BitVec 32) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (concat (|RegFile#19| state) (|RegFile#19| state))))))))))))))))))))))))))))))))) ; { $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] $0$memwr$\regs$__lft__corr.v:2296$1183_EN[31:0]$1195 [31] }
 (define-fun |RegFile#5#1| ((state |RegFile_s|)) (Array (_ BitVec 5) (_ BitVec 32)) (store (|RegFile#5#0| state) (|RegFile_m:W0A regs| state) (bvor (bvand (|RegFile_m:W0D regs| state) (|RegFile_m:W0M regs| state)) (bvand (select (|RegFile#5#0| state) (|RegFile_m:W0A regs| state)) (bvnot (|RegFile_m:W0M regs| state)))))) ; regs
 (define-fun |RegFile_a| ((state |RegFile_s|)) Bool true)
 (define-fun |RegFile_u| ((state |RegFile_s|)) Bool true)
@@ -5295,6 +5295,9 @@
 ; yosys-smt2-input io_ctrl_A_sel 1
 ; yosys-smt2-wire io_ctrl_A_sel 1
 (define-fun |Datapath_n io_ctrl_A_sel| ((state |Datapath_s|)) Bool (|Datapath#108| state))
+; yosys-smt2-output io__lft__dpath__stall 33
+; yosys-smt2-wire io__lft__dpath__stall 33
+(define-fun |Datapath_n io__lft__dpath__stall| ((state |Datapath_s|)) (_ BitVec 33) (concat #b00000000000000000000000000000000 (|Datapath#11| state)))
 ; yosys-smt2-output io__lft__dpath__regFile_io_wdata 32
 ; yosys-smt2-wire io__lft__dpath__regFile_io_wdata 32
 (define-fun |Datapath_n io__lft__dpath__regFile_io_wdata| ((state |Datapath_s|)) (_ BitVec 32) (|Datapath#55| state))
@@ -5320,6 +5323,9 @@
 ; yosys-smt2-output io__lft__dpath__fe_pc 33
 ; yosys-smt2-wire io__lft__dpath__fe_pc 33
 (define-fun |Datapath_n io__lft__dpath__fe_pc| ((state |Datapath_s|)) (_ BitVec 33) (|Datapath#109| state))
+; yosys-smt2-output io__lft__dpath__fe_inst 32
+; yosys-smt2-wire io__lft__dpath__fe_inst 32
+(define-fun |Datapath_n io__lft__dpath__fe_inst| ((state |Datapath_s|)) (_ BitVec 32) (|Datapath#13| state))
 ; yosys-smt2-output io__lft__dpath__ew_pc 33
 ; yosys-smt2-wire io__lft__dpath__ew_pc 33
 (define-fun |Datapath_n io__lft__dpath__ew_pc| ((state |Datapath_s|)) (_ BitVec 33) (|Datapath#38| state))
@@ -5649,36 +5655,36 @@
 (define-fun |Datapath_n _GEN_25| ((state |Datapath_s|)) (_ BitVec 30) ((_ extract 31 2) (|Datapath#98| state)))
 ; yosys-smt2-wire _GEN_24 31
 (define-fun |Datapath_n _GEN_24| ((state |Datapath_s|)) (_ BitVec 31) ((_ extract 31 1) (|Datapath#0| state)))
-(define-fun |Datapath#130| ((state |Datapath_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (|Datapath#104| state) (|Datapath#115| state))) ; $auto$rtlil.cc:2224:Mux$3655
-(define-fun |Datapath#131| ((state |Datapath_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b000 (|Datapath#130| state))) ; $auto$rtlil.cc:2224:Mux$3657
-(define-fun |Datapath#132| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#119| state) (|Datapath#110| state) (|Datapath#29| state))) ; $procmux$2550_Y
-(define-fun |Datapath#133| ((state |Datapath_s|)) (_ BitVec 1) (bvnot (|Datapath#122| state))) ; $auto$rtlil.cc:2127:Not$3576
-(define-fun |Datapath#134| ((state |Datapath_s|)) Bool (and  (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (= ((_ extract 0 0) (|Datapath#133| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3577
-(define-fun |Datapath#135| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#134| state) (|Datapath#132| state) (|Datapath#114| state))) ; $auto$rtlil.cc:2224:Mux$3639
-(define-fun |Datapath#136| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (ite (|Datapath#103| state) #b1 #b0) (|Datapath#113| state))) ; $auto$rtlil.cc:2224:Mux$3659
-(define-fun |Datapath#137| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b0 (|Datapath#136| state))) ; $auto$rtlil.cc:2224:Mux$3661
-(define-fun |Datapath#138| ((state |Datapath_s|)) (_ BitVec 33) (ite (= ((_ extract 0 0) (|Datapath#11| state)) #b1) (|Datapath#109| state) (concat (|Datapath#64| state) (|Datapath#63| state)))) ; $auto$rtlil.cc:2224:Mux$3629
-(define-fun |Datapath#139| ((state |Datapath_s|)) Bool (distinct (concat (ite (|Datapath#67| state) #b1 #b0) (concat (ite (|Datapath#33| state) #b1 #b0) (concat (ite (|Datapath#73| state) #b1 #b0) (|Datapath#71| state)))) #b1000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3560
-(define-fun |Datapath#140| ((state |Datapath_s|)) Bool (and  (|Datapath#139| state) (= ((_ extract 0 0) (|Datapath#57| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3564
-(define-fun |Datapath#141| ((state |Datapath_s|)) (_ BitVec 1) (ite (|Datapath#140| state) ((_ extract 32 32) (|Datapath#75| state)) (|Datapath#64| state))) ; $auto$rtlil.cc:2224:Mux$3667
-(define-fun |Datapath#142| ((state |Datapath_s|)) (_ BitVec 1) (ite (|Datapath#30| state) #b0 (|Datapath#141| state))) ; $auto$rtlil.cc:2224:Mux$3669
-(define-fun |Datapath#143| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#30| state) #b00000000000000000000000111111100 ((_ extract 31 0) (|Datapath#76| state)))) ; $auto$rtlil.cc:2224:Mux$3671
-(define-fun |Datapath#144| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (ite (|Datapath#69| state) #b1 #b0) (|Datapath#62| state))) ; $auto$rtlil.cc:2224:Mux$3663
-(define-fun |Datapath#145| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b0 (|Datapath#144| state))) ; $auto$rtlil.cc:2224:Mux$3665
-(define-fun |Datapath#146| ((state |Datapath_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (|Datapath#84| state) (|Datapath#45| state))) ; $auto$rtlil.cc:2224:Mux$3645
-(define-fun |Datapath#147| ((state |Datapath_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b000 (|Datapath#146| state))) ; $auto$rtlil.cc:2224:Mux$3647
-(define-fun |Datapath#148| ((state |Datapath_s|)) (_ BitVec 33) (ite (|Datapath#134| state) (|Datapath#109| state) (|Datapath#38| state))) ; $auto$rtlil.cc:2224:Mux$3635
-(define-fun |Datapath#149| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#134| state) (|Datapath#1| state) (|Datapath#20| state))) ; $auto$rtlil.cc:2224:Mux$3637
-(define-fun |Datapath#150| ((state |Datapath_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|Datapath#128| state)) #b1) #b00000000000000000000000000010011 (|Datapath#78| state))) ; $procmux$2574_Y
-(define-fun |Datapath#151| ((state |Datapath_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|Datapath#11| state)) #b1) (|Datapath#13| state) (|Datapath#150| state))) ; $auto$rtlil.cc:2224:Mux$3625
-(define-fun |Datapath#152| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#30| state) #b00000000000000000000000000010011 (|Datapath#151| state))) ; $auto$rtlil.cc:2224:Mux$3627
-(define-fun |Datapath#153| ((state |Datapath_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (concat (ite (|Datapath#82| state) #b1 #b0) (ite (|Datapath#81| state) #b1 #b0)) (|Datapath#12| state))) ; $auto$rtlil.cc:2224:Mux$3641
-(define-fun |Datapath#154| ((state |Datapath_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b00 (|Datapath#153| state))) ; $auto$rtlil.cc:2224:Mux$3643
-(define-fun |Datapath#155| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (ite (|Datapath#100| state) #b1 #b0) (|Datapath#5| state))) ; $auto$rtlil.cc:2224:Mux$3651
-(define-fun |Datapath#156| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b0 (|Datapath#155| state))) ; $auto$rtlil.cc:2224:Mux$3653
-(define-fun |Datapath#157| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#134| state) (|Datapath#13| state) (|Datapath#4| state))) ; $auto$rtlil.cc:2224:Mux$3631
-(define-fun |Datapath#158| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#30| state) #b00000000000000000000000000010011 (|Datapath#157| state))) ; $auto$rtlil.cc:2224:Mux$3633
-(define-fun |Datapath#159| ((state |Datapath_s|)) (_ BitVec 2) (ite (|Datapath#134| state) (|Datapath#99| state) (|Datapath#3| state))) ; $auto$rtlil.cc:2224:Mux$3649
+(define-fun |Datapath#130| ((state |Datapath_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (|Datapath#104| state) (|Datapath#115| state))) ; $auto$rtlil.cc:2224:Mux$3754
+(define-fun |Datapath#131| ((state |Datapath_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b000 (|Datapath#130| state))) ; $auto$rtlil.cc:2224:Mux$3756
+(define-fun |Datapath#132| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#119| state) (|Datapath#110| state) (|Datapath#29| state))) ; $procmux$2609_Y
+(define-fun |Datapath#133| ((state |Datapath_s|)) (_ BitVec 1) (bvnot (|Datapath#122| state))) ; $auto$rtlil.cc:2127:Not$3669
+(define-fun |Datapath#134| ((state |Datapath_s|)) Bool (and  (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (= ((_ extract 0 0) (|Datapath#133| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3670
+(define-fun |Datapath#135| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#134| state) (|Datapath#132| state) (|Datapath#114| state))) ; $auto$rtlil.cc:2224:Mux$3738
+(define-fun |Datapath#136| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (ite (|Datapath#103| state) #b1 #b0) (|Datapath#113| state))) ; $auto$rtlil.cc:2224:Mux$3758
+(define-fun |Datapath#137| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b0 (|Datapath#136| state))) ; $auto$rtlil.cc:2224:Mux$3760
+(define-fun |Datapath#138| ((state |Datapath_s|)) (_ BitVec 33) (ite (= ((_ extract 0 0) (|Datapath#11| state)) #b1) (|Datapath#109| state) (concat (|Datapath#64| state) (|Datapath#63| state)))) ; $auto$rtlil.cc:2224:Mux$3728
+(define-fun |Datapath#139| ((state |Datapath_s|)) Bool (distinct (concat (ite (|Datapath#67| state) #b1 #b0) (concat (ite (|Datapath#33| state) #b1 #b0) (concat (ite (|Datapath#73| state) #b1 #b0) (|Datapath#71| state)))) #b1000)) ; $auto$opt_dff.cc:217:make_patterns_logic$3653
+(define-fun |Datapath#140| ((state |Datapath_s|)) Bool (and  (|Datapath#139| state) (= ((_ extract 0 0) (|Datapath#57| state)) #b1))) ; $auto$opt_dff.cc:242:make_patterns_logic$3657
+(define-fun |Datapath#141| ((state |Datapath_s|)) (_ BitVec 1) (ite (|Datapath#140| state) ((_ extract 32 32) (|Datapath#75| state)) (|Datapath#64| state))) ; $auto$rtlil.cc:2224:Mux$3766
+(define-fun |Datapath#142| ((state |Datapath_s|)) (_ BitVec 1) (ite (|Datapath#30| state) #b0 (|Datapath#141| state))) ; $auto$rtlil.cc:2224:Mux$3768
+(define-fun |Datapath#143| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#30| state) #b00000000000000000000000111111100 ((_ extract 31 0) (|Datapath#76| state)))) ; $auto$rtlil.cc:2224:Mux$3770
+(define-fun |Datapath#144| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (ite (|Datapath#69| state) #b1 #b0) (|Datapath#62| state))) ; $auto$rtlil.cc:2224:Mux$3762
+(define-fun |Datapath#145| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b0 (|Datapath#144| state))) ; $auto$rtlil.cc:2224:Mux$3764
+(define-fun |Datapath#146| ((state |Datapath_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (|Datapath#84| state) (|Datapath#45| state))) ; $auto$rtlil.cc:2224:Mux$3744
+(define-fun |Datapath#147| ((state |Datapath_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b000 (|Datapath#146| state))) ; $auto$rtlil.cc:2224:Mux$3746
+(define-fun |Datapath#148| ((state |Datapath_s|)) (_ BitVec 33) (ite (|Datapath#134| state) (|Datapath#109| state) (|Datapath#38| state))) ; $auto$rtlil.cc:2224:Mux$3734
+(define-fun |Datapath#149| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#134| state) (|Datapath#1| state) (|Datapath#20| state))) ; $auto$rtlil.cc:2224:Mux$3736
+(define-fun |Datapath#150| ((state |Datapath_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|Datapath#128| state)) #b1) #b00000000000000000000000000010011 (|Datapath#78| state))) ; $procmux$2633_Y
+(define-fun |Datapath#151| ((state |Datapath_s|)) (_ BitVec 32) (ite (= ((_ extract 0 0) (|Datapath#11| state)) #b1) (|Datapath#13| state) (|Datapath#150| state))) ; $auto$rtlil.cc:2224:Mux$3724
+(define-fun |Datapath#152| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#30| state) #b00000000000000000000000000010011 (|Datapath#151| state))) ; $auto$rtlil.cc:2224:Mux$3726
+(define-fun |Datapath#153| ((state |Datapath_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (concat (ite (|Datapath#82| state) #b1 #b0) (ite (|Datapath#81| state) #b1 #b0)) (|Datapath#12| state))) ; $auto$rtlil.cc:2224:Mux$3740
+(define-fun |Datapath#154| ((state |Datapath_s|)) (_ BitVec 2) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b00 (|Datapath#153| state))) ; $auto$rtlil.cc:2224:Mux$3742
+(define-fun |Datapath#155| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#120| state)) #b1) (ite (|Datapath#100| state) #b1 #b0) (|Datapath#5| state))) ; $auto$rtlil.cc:2224:Mux$3750
+(define-fun |Datapath#156| ((state |Datapath_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|Datapath#122| state)) #b1) #b0 (|Datapath#155| state))) ; $auto$rtlil.cc:2224:Mux$3752
+(define-fun |Datapath#157| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#134| state) (|Datapath#13| state) (|Datapath#4| state))) ; $auto$rtlil.cc:2224:Mux$3730
+(define-fun |Datapath#158| ((state |Datapath_s|)) (_ BitVec 32) (ite (|Datapath#30| state) #b00000000000000000000000000010011 (|Datapath#157| state))) ; $auto$rtlil.cc:2224:Mux$3732
+(define-fun |Datapath#159| ((state |Datapath_s|)) (_ BitVec 2) (ite (|Datapath#134| state) (|Datapath#99| state) (|Datapath#3| state))) ; $auto$rtlil.cc:2224:Mux$3748
 (define-fun |Datapath_a| ((state |Datapath_s|)) Bool (and
   (|ALUArea_a| (|Datapath_h alu| state))
   (|BrCondArea_a| (|Datapath_h brCond| state))
@@ -5752,22 +5758,22 @@
   (|RegFile_h| (|Datapath_h regFile| state))
 ))
 (define-fun |Datapath_t| ((state |Datapath_s|) (next_state |Datapath_s|)) Bool (and
-  (= (|Datapath#131| state) (|Datapath#115| next_state)) ; $auto$opt_dff.cc:764:run$3572 \csr_cmd
-  (= (|Datapath#135| state) (|Datapath#114| next_state)) ; $auto$opt_dff.cc:764:run$3588 \csr_in
-  (= (|Datapath#137| state) (|Datapath#113| next_state)) ; $auto$opt_dff.cc:764:run$3570 \illegal
-  (= (|Datapath#138| state) (|Datapath#109| next_state)) ; $auto$opt_dff.cc:764:run$3605 \fe_pc
-  (= (|Datapath#142| state) (|Datapath#64| next_state)) ; $auto$opt_dff.cc:764:run$3566 \pc [32]
-  (= (|Datapath#143| state) (|Datapath#63| next_state)) ; $auto$opt_dff.cc:702:run$3559 \pc [31:0]
-  (= (|Datapath#145| state) (|Datapath#62| next_state)) ; $auto$opt_dff.cc:764:run$3568 \pc_check
-  (= (|Datapath#147| state) (|Datapath#45| next_state)) ; $auto$opt_dff.cc:764:run$3581 \ld_type
-  (= (|Datapath#148| state) (|Datapath#38| next_state)) ; $auto$opt_dff.cc:764:run$3598 \ew_pc
-  (= (|Datapath#149| state) (|Datapath#20| next_state)) ; $auto$opt_dff.cc:764:run$3593 \ew_alu
-  (= (|Datapath#152| state) (|Datapath#13| next_state)) ; $auto$opt_dff.cc:764:run$3607 \fe_inst
-  (= (|Datapath#154| state) (|Datapath#12| next_state)) ; $auto$opt_dff.cc:764:run$3583 \st_type
-  (= (ite (|Datapath#30| state) #b1 #b0) (|Datapath#6| next_state)) ; $procdff$2938 \started
-  (= (|Datapath#156| state) (|Datapath#5| next_state)) ; $auto$opt_dff.cc:764:run$3574 \wb_en
-  (= (|Datapath#158| state) (|Datapath#4| next_state)) ; $auto$opt_dff.cc:764:run$3604 \ew_inst
-  (= (|Datapath#159| state) (|Datapath#3| next_state)) ; $auto$opt_dff.cc:764:run$3579 \wb_sel
+  (= (|Datapath#131| state) (|Datapath#115| next_state)) ; $auto$opt_dff.cc:764:run$3665 \csr_cmd
+  (= (|Datapath#135| state) (|Datapath#114| next_state)) ; $auto$opt_dff.cc:764:run$3681 \csr_in
+  (= (|Datapath#137| state) (|Datapath#113| next_state)) ; $auto$opt_dff.cc:764:run$3663 \illegal
+  (= (|Datapath#138| state) (|Datapath#109| next_state)) ; $auto$opt_dff.cc:764:run$3698 \fe_pc
+  (= (|Datapath#142| state) (|Datapath#64| next_state)) ; $auto$opt_dff.cc:764:run$3659 \pc [32]
+  (= (|Datapath#143| state) (|Datapath#63| next_state)) ; $auto$opt_dff.cc:702:run$3652 \pc [31:0]
+  (= (|Datapath#145| state) (|Datapath#62| next_state)) ; $auto$opt_dff.cc:764:run$3661 \pc_check
+  (= (|Datapath#147| state) (|Datapath#45| next_state)) ; $auto$opt_dff.cc:764:run$3674 \ld_type
+  (= (|Datapath#148| state) (|Datapath#38| next_state)) ; $auto$opt_dff.cc:764:run$3691 \ew_pc
+  (= (|Datapath#149| state) (|Datapath#20| next_state)) ; $auto$opt_dff.cc:764:run$3686 \ew_alu
+  (= (|Datapath#152| state) (|Datapath#13| next_state)) ; $auto$opt_dff.cc:764:run$3700 \fe_inst
+  (= (|Datapath#154| state) (|Datapath#12| next_state)) ; $auto$opt_dff.cc:764:run$3676 \st_type
+  (= (ite (|Datapath#30| state) #b1 #b0) (|Datapath#6| next_state)) ; $procdff$3013 \started
+  (= (|Datapath#156| state) (|Datapath#5| next_state)) ; $auto$opt_dff.cc:764:run$3667 \wb_en
+  (= (|Datapath#158| state) (|Datapath#4| next_state)) ; $auto$opt_dff.cc:764:run$3697 \ew_inst
+  (= (|Datapath#159| state) (|Datapath#3| next_state)) ; $auto$opt_dff.cc:764:run$3672 \wb_sel
   (|ALUArea_t| (|Datapath_h alu| state) (|Datapath_h alu| next_state))
   (|BrCondArea_t| (|Datapath_h brCond| state) (|Datapath_h brCond| next_state))
   (|CSR_t| (|Datapath_h csr| state) (|Datapath_h csr| next_state))
@@ -5799,20 +5805,22 @@
 (declare-fun |Core#9| (|Core_s|) (_ BitVec 32)) ; \dpath_io_dcache_req_bits_addr
 (declare-fun |Core#10| (|Core_s|) Bool) ; \dpath_io_dcache_abort
 (declare-fun |Core#11| (|Core_s|) (_ BitVec 32)) ; \ctrl_io_inst
-(declare-fun |Core#12| (|Core_s|) (_ BitVec 32)) ; \io__lft__core__regFile_io_wdata
-(declare-fun |Core#13| (|Core_s|) (_ BitVec 5)) ; \io__lft__core__regFile_io_waddr
-(declare-fun |Core#14| (|Core_s|) (_ BitVec 32)) ; \io__lft__core__regFile_io_rdata2
-(declare-fun |Core#15| (|Core_s|) (_ BitVec 32)) ; \io__lft__core__regFile_io_rdata1
-(declare-fun |Core#16| (|Core_s|) (_ BitVec 5)) ; \io__lft__core__regFile_io_raddr2
-(declare-fun |Core#17| (|Core_s|) (_ BitVec 5)) ; \io__lft__core__regFile_io_raddr1
-(declare-fun |Core#18| (|Core_s|) (_ BitVec 33)) ; \io__lft__core__pc
-(declare-fun |Core#19| (|Core_s|) (_ BitVec 33)) ; \io__lft__core__fe_pc
-(declare-fun |Core#20| (|Core_s|) (_ BitVec 33)) ; \io__lft__core__ew_pc
-(declare-fun |Core#21| (|Core_s|) (_ BitVec 32)) ; \io__lft__core__alu_io_sum
-(declare-fun |Core#22| (|Core_s|) (_ BitVec 32)) ; \io__lft__core__alu_io_out
-(declare-fun |Core#23| (|Core_s|) (_ BitVec 4)) ; \io__lft__core__alu_io_alu_op
-(declare-fun |Core#24| (|Core_s|) (_ BitVec 32)) ; \io__lft__core__alu_io_B
-(declare-fun |Core#25| (|Core_s|) (_ BitVec 32)) ; \io__lft__core__alu_io_A
+(declare-fun |Core#12| (|Core_s|) (_ BitVec 33)) ; \io__lft__core__stall
+(declare-fun |Core#13| (|Core_s|) (_ BitVec 32)) ; \io__lft__core__regFile_io_wdata
+(declare-fun |Core#14| (|Core_s|) (_ BitVec 5)) ; \io__lft__core__regFile_io_waddr
+(declare-fun |Core#15| (|Core_s|) (_ BitVec 32)) ; \io__lft__core__regFile_io_rdata2
+(declare-fun |Core#16| (|Core_s|) (_ BitVec 32)) ; \io__lft__core__regFile_io_rdata1
+(declare-fun |Core#17| (|Core_s|) (_ BitVec 5)) ; \io__lft__core__regFile_io_raddr2
+(declare-fun |Core#18| (|Core_s|) (_ BitVec 5)) ; \io__lft__core__regFile_io_raddr1
+(declare-fun |Core#19| (|Core_s|) (_ BitVec 33)) ; \io__lft__core__pc
+(declare-fun |Core#20| (|Core_s|) (_ BitVec 33)) ; \io__lft__core__fe_pc
+(declare-fun |Core#21| (|Core_s|) (_ BitVec 32)) ; \io__lft__core__fe_inst
+(declare-fun |Core#22| (|Core_s|) (_ BitVec 33)) ; \io__lft__core__ew_pc
+(declare-fun |Core#23| (|Core_s|) (_ BitVec 32)) ; \io__lft__core__alu_io_sum
+(declare-fun |Core#24| (|Core_s|) (_ BitVec 32)) ; \io__lft__core__alu_io_out
+(declare-fun |Core#25| (|Core_s|) (_ BitVec 4)) ; \io__lft__core__alu_io_alu_op
+(declare-fun |Core#26| (|Core_s|) (_ BitVec 32)) ; \io__lft__core__alu_io_B
+(declare-fun |Core#27| (|Core_s|) (_ BitVec 32)) ; \io__lft__core__alu_io_A
 (declare-fun |Core_h dpath| (|Core_s|) |Datapath_s|)
 ; yosys-smt2-output io_icache_req_valid 1
 ; yosys-smt2-wire io_icache_req_valid 1
@@ -5823,22 +5831,22 @@
 ; yosys-smt2-output io_host_tohost 32
 ; yosys-smt2-wire io_host_tohost 32
 (define-fun |Core_n io_host_tohost| ((state |Core_s|)) (_ BitVec 32) (|Core#5| state))
-(declare-fun |Core#26| (|Core_s|) Bool) ; \io_host_fromhost_valid
+(declare-fun |Core#28| (|Core_s|) Bool) ; \io_host_fromhost_valid
 ; yosys-smt2-input io_host_fromhost_valid 1
 ; yosys-smt2-wire io_host_fromhost_valid 1
-(define-fun |Core_n io_host_fromhost_valid| ((state |Core_s|)) Bool (|Core#26| state))
-(declare-fun |Core#27| (|Core_s|) (_ BitVec 32)) ; \io_host_fromhost_bits
+(define-fun |Core_n io_host_fromhost_valid| ((state |Core_s|)) Bool (|Core#28| state))
+(declare-fun |Core#29| (|Core_s|) (_ BitVec 32)) ; \io_host_fromhost_bits
 ; yosys-smt2-input io_host_fromhost_bits 32
 ; yosys-smt2-wire io_host_fromhost_bits 32
-(define-fun |Core_n io_host_fromhost_bits| ((state |Core_s|)) (_ BitVec 32) (|Core#27| state))
-(declare-fun |Core#28| (|Core_s|) Bool) ; \io_dcache_resp_valid
+(define-fun |Core_n io_host_fromhost_bits| ((state |Core_s|)) (_ BitVec 32) (|Core#29| state))
+(declare-fun |Core#30| (|Core_s|) Bool) ; \io_dcache_resp_valid
 ; yosys-smt2-input io_dcache_resp_valid 1
 ; yosys-smt2-wire io_dcache_resp_valid 1
-(define-fun |Core_n io_dcache_resp_valid| ((state |Core_s|)) Bool (|Core#28| state))
-(declare-fun |Core#29| (|Core_s|) (_ BitVec 32)) ; \io_dcache_resp_bits_data
+(define-fun |Core_n io_dcache_resp_valid| ((state |Core_s|)) Bool (|Core#30| state))
+(declare-fun |Core#31| (|Core_s|) (_ BitVec 32)) ; \io_dcache_resp_bits_data
 ; yosys-smt2-input io_dcache_resp_bits_data 32
 ; yosys-smt2-wire io_dcache_resp_bits_data 32
-(define-fun |Core_n io_dcache_resp_bits_data| ((state |Core_s|)) (_ BitVec 32) (|Core#29| state))
+(define-fun |Core_n io_dcache_resp_bits_data| ((state |Core_s|)) (_ BitVec 32) (|Core#31| state))
 ; yosys-smt2-output io_dcache_req_valid 1
 ; yosys-smt2-wire io_dcache_req_valid 1
 (define-fun |Core_n io_dcache_req_valid| ((state |Core_s|)) Bool (|Core#6| state))
@@ -5854,48 +5862,54 @@
 ; yosys-smt2-output io_dcache_abort 1
 ; yosys-smt2-wire io_dcache_abort 1
 (define-fun |Core_n io_dcache_abort| ((state |Core_s|)) Bool (|Core#10| state))
+; yosys-smt2-output io__lft__core__stall 33
+; yosys-smt2-wire io__lft__core__stall 33
+(define-fun |Core_n io__lft__core__stall| ((state |Core_s|)) (_ BitVec 33) (|Core#12| state))
 ; yosys-smt2-output io__lft__core__regFile_io_wdata 32
 ; yosys-smt2-wire io__lft__core__regFile_io_wdata 32
-(define-fun |Core_n io__lft__core__regFile_io_wdata| ((state |Core_s|)) (_ BitVec 32) (|Core#12| state))
+(define-fun |Core_n io__lft__core__regFile_io_wdata| ((state |Core_s|)) (_ BitVec 32) (|Core#13| state))
 ; yosys-smt2-output io__lft__core__regFile_io_waddr 5
 ; yosys-smt2-wire io__lft__core__regFile_io_waddr 5
-(define-fun |Core_n io__lft__core__regFile_io_waddr| ((state |Core_s|)) (_ BitVec 5) (|Core#13| state))
+(define-fun |Core_n io__lft__core__regFile_io_waddr| ((state |Core_s|)) (_ BitVec 5) (|Core#14| state))
 ; yosys-smt2-output io__lft__core__regFile_io_rdata2 32
 ; yosys-smt2-wire io__lft__core__regFile_io_rdata2 32
-(define-fun |Core_n io__lft__core__regFile_io_rdata2| ((state |Core_s|)) (_ BitVec 32) (|Core#14| state))
+(define-fun |Core_n io__lft__core__regFile_io_rdata2| ((state |Core_s|)) (_ BitVec 32) (|Core#15| state))
 ; yosys-smt2-output io__lft__core__regFile_io_rdata1 32
 ; yosys-smt2-wire io__lft__core__regFile_io_rdata1 32
-(define-fun |Core_n io__lft__core__regFile_io_rdata1| ((state |Core_s|)) (_ BitVec 32) (|Core#15| state))
+(define-fun |Core_n io__lft__core__regFile_io_rdata1| ((state |Core_s|)) (_ BitVec 32) (|Core#16| state))
 ; yosys-smt2-output io__lft__core__regFile_io_raddr2 5
 ; yosys-smt2-wire io__lft__core__regFile_io_raddr2 5
-(define-fun |Core_n io__lft__core__regFile_io_raddr2| ((state |Core_s|)) (_ BitVec 5) (|Core#16| state))
+(define-fun |Core_n io__lft__core__regFile_io_raddr2| ((state |Core_s|)) (_ BitVec 5) (|Core#17| state))
 ; yosys-smt2-output io__lft__core__regFile_io_raddr1 5
 ; yosys-smt2-wire io__lft__core__regFile_io_raddr1 5
-(define-fun |Core_n io__lft__core__regFile_io_raddr1| ((state |Core_s|)) (_ BitVec 5) (|Core#17| state))
+(define-fun |Core_n io__lft__core__regFile_io_raddr1| ((state |Core_s|)) (_ BitVec 5) (|Core#18| state))
 ; yosys-smt2-output io__lft__core__pc 33
 ; yosys-smt2-wire io__lft__core__pc 33
-(define-fun |Core_n io__lft__core__pc| ((state |Core_s|)) (_ BitVec 33) (|Core#18| state))
+(define-fun |Core_n io__lft__core__pc| ((state |Core_s|)) (_ BitVec 33) (|Core#19| state))
 ; yosys-smt2-output io__lft__core__fe_pc 33
 ; yosys-smt2-wire io__lft__core__fe_pc 33
-(define-fun |Core_n io__lft__core__fe_pc| ((state |Core_s|)) (_ BitVec 33) (|Core#19| state))
+(define-fun |Core_n io__lft__core__fe_pc| ((state |Core_s|)) (_ BitVec 33) (|Core#20| state))
+; yosys-smt2-output io__lft__core__fe_inst 32
+; yosys-smt2-wire io__lft__core__fe_inst 32
+(define-fun |Core_n io__lft__core__fe_inst| ((state |Core_s|)) (_ BitVec 32) (|Core#21| state))
 ; yosys-smt2-output io__lft__core__ew_pc 33
 ; yosys-smt2-wire io__lft__core__ew_pc 33
-(define-fun |Core_n io__lft__core__ew_pc| ((state |Core_s|)) (_ BitVec 33) (|Core#20| state))
+(define-fun |Core_n io__lft__core__ew_pc| ((state |Core_s|)) (_ BitVec 33) (|Core#22| state))
 ; yosys-smt2-output io__lft__core__alu_io_sum 32
 ; yosys-smt2-wire io__lft__core__alu_io_sum 32
-(define-fun |Core_n io__lft__core__alu_io_sum| ((state |Core_s|)) (_ BitVec 32) (|Core#21| state))
+(define-fun |Core_n io__lft__core__alu_io_sum| ((state |Core_s|)) (_ BitVec 32) (|Core#23| state))
 ; yosys-smt2-output io__lft__core__alu_io_out 32
 ; yosys-smt2-wire io__lft__core__alu_io_out 32
-(define-fun |Core_n io__lft__core__alu_io_out| ((state |Core_s|)) (_ BitVec 32) (|Core#22| state))
+(define-fun |Core_n io__lft__core__alu_io_out| ((state |Core_s|)) (_ BitVec 32) (|Core#24| state))
 ; yosys-smt2-output io__lft__core__alu_io_alu_op 4
 ; yosys-smt2-wire io__lft__core__alu_io_alu_op 4
-(define-fun |Core_n io__lft__core__alu_io_alu_op| ((state |Core_s|)) (_ BitVec 4) (|Core#23| state))
+(define-fun |Core_n io__lft__core__alu_io_alu_op| ((state |Core_s|)) (_ BitVec 4) (|Core#25| state))
 ; yosys-smt2-output io__lft__core__alu_io_B 32
 ; yosys-smt2-wire io__lft__core__alu_io_B 32
-(define-fun |Core_n io__lft__core__alu_io_B| ((state |Core_s|)) (_ BitVec 32) (|Core#24| state))
+(define-fun |Core_n io__lft__core__alu_io_B| ((state |Core_s|)) (_ BitVec 32) (|Core#26| state))
 ; yosys-smt2-output io__lft__core__alu_io_A 32
 ; yosys-smt2-wire io__lft__core__alu_io_A 32
-(define-fun |Core_n io__lft__core__alu_io_A| ((state |Core_s|)) (_ BitVec 32) (|Core#25| state))
+(define-fun |Core_n io__lft__core__alu_io_A| ((state |Core_s|)) (_ BitVec 32) (|Core#27| state))
 ; yosys-smt2-wire dpath_reset 1
 (define-fun |Core_n dpath_reset| ((state |Core_s|)) Bool (|Core#0| state))
 ; yosys-smt2-wire dpath_io_icache_resp_valid 1
@@ -5909,13 +5923,13 @@
 ; yosys-smt2-wire dpath_io_host_tohost 32
 (define-fun |Core_n dpath_io_host_tohost| ((state |Core_s|)) (_ BitVec 32) (|Core#5| state))
 ; yosys-smt2-wire dpath_io_host_fromhost_valid 1
-(define-fun |Core_n dpath_io_host_fromhost_valid| ((state |Core_s|)) Bool (|Core#26| state))
+(define-fun |Core_n dpath_io_host_fromhost_valid| ((state |Core_s|)) Bool (|Core#28| state))
 ; yosys-smt2-wire dpath_io_host_fromhost_bits 32
-(define-fun |Core_n dpath_io_host_fromhost_bits| ((state |Core_s|)) (_ BitVec 32) (|Core#27| state))
+(define-fun |Core_n dpath_io_host_fromhost_bits| ((state |Core_s|)) (_ BitVec 32) (|Core#29| state))
 ; yosys-smt2-wire dpath_io_dcache_resp_valid 1
-(define-fun |Core_n dpath_io_dcache_resp_valid| ((state |Core_s|)) Bool (|Core#28| state))
+(define-fun |Core_n dpath_io_dcache_resp_valid| ((state |Core_s|)) Bool (|Core#30| state))
 ; yosys-smt2-wire dpath_io_dcache_resp_bits_data 32
-(define-fun |Core_n dpath_io_dcache_resp_bits_data| ((state |Core_s|)) (_ BitVec 32) (|Core#29| state))
+(define-fun |Core_n dpath_io_dcache_resp_bits_data| ((state |Core_s|)) (_ BitVec 32) (|Core#31| state))
 ; yosys-smt2-wire dpath_io_dcache_req_valid 1
 (define-fun |Core_n dpath_io_dcache_req_valid| ((state |Core_s|)) Bool (|Core#6| state))
 ; yosys-smt2-wire dpath_io_dcache_req_bits_mask 4
@@ -5927,84 +5941,84 @@
 ; yosys-smt2-wire dpath_io_dcache_abort 1
 (define-fun |Core_n dpath_io_dcache_abort| ((state |Core_s|)) Bool (|Core#10| state))
 ; yosys-smt2-cell Control ctrl
-(declare-fun |Core#30| (|Core_s|) (_ BitVec 2)) ; \ctrl_io_wb_sel
-(declare-fun |Core#31| (|Core_s|) Bool) ; \ctrl_io_wb_en
-(declare-fun |Core#32| (|Core_s|) (_ BitVec 2)) ; \ctrl_io_st_type
-(declare-fun |Core#33| (|Core_s|) (_ BitVec 2)) ; \ctrl_io_pc_sel
-(declare-fun |Core#34| (|Core_s|) (_ BitVec 3)) ; \ctrl_io_ld_type
-(declare-fun |Core#35| (|Core_s|) Bool) ; \ctrl_io_inst_kill
-(declare-fun |Core#36| (|Core_s|) (_ BitVec 3)) ; \ctrl_io_imm_sel
-(declare-fun |Core#37| (|Core_s|) Bool) ; \ctrl_io_illegal
-(declare-fun |Core#38| (|Core_s|) (_ BitVec 3)) ; \ctrl_io_csr_cmd
-(declare-fun |Core#39| (|Core_s|) (_ BitVec 3)) ; \ctrl_io_br_type
-(declare-fun |Core#40| (|Core_s|) (_ BitVec 4)) ; \ctrl_io_alu_op
-(declare-fun |Core#41| (|Core_s|) Bool) ; \ctrl_io_B_sel
-(declare-fun |Core#42| (|Core_s|) Bool) ; \ctrl_io_A_sel
+(declare-fun |Core#32| (|Core_s|) (_ BitVec 2)) ; \ctrl_io_wb_sel
+(declare-fun |Core#33| (|Core_s|) Bool) ; \ctrl_io_wb_en
+(declare-fun |Core#34| (|Core_s|) (_ BitVec 2)) ; \ctrl_io_st_type
+(declare-fun |Core#35| (|Core_s|) (_ BitVec 2)) ; \ctrl_io_pc_sel
+(declare-fun |Core#36| (|Core_s|) (_ BitVec 3)) ; \ctrl_io_ld_type
+(declare-fun |Core#37| (|Core_s|) Bool) ; \ctrl_io_inst_kill
+(declare-fun |Core#38| (|Core_s|) (_ BitVec 3)) ; \ctrl_io_imm_sel
+(declare-fun |Core#39| (|Core_s|) Bool) ; \ctrl_io_illegal
+(declare-fun |Core#40| (|Core_s|) (_ BitVec 3)) ; \ctrl_io_csr_cmd
+(declare-fun |Core#41| (|Core_s|) (_ BitVec 3)) ; \ctrl_io_br_type
+(declare-fun |Core#42| (|Core_s|) (_ BitVec 4)) ; \ctrl_io_alu_op
+(declare-fun |Core#43| (|Core_s|) Bool) ; \ctrl_io_B_sel
+(declare-fun |Core#44| (|Core_s|) Bool) ; \ctrl_io_A_sel
 (declare-fun |Core_h ctrl| (|Core_s|) |Control_s|)
 ; yosys-smt2-wire dpath_io_ctrl_wb_sel 2
-(define-fun |Core_n dpath_io_ctrl_wb_sel| ((state |Core_s|)) (_ BitVec 2) (|Core#30| state))
+(define-fun |Core_n dpath_io_ctrl_wb_sel| ((state |Core_s|)) (_ BitVec 2) (|Core#32| state))
 ; yosys-smt2-wire dpath_io_ctrl_wb_en 1
-(define-fun |Core_n dpath_io_ctrl_wb_en| ((state |Core_s|)) Bool (|Core#31| state))
+(define-fun |Core_n dpath_io_ctrl_wb_en| ((state |Core_s|)) Bool (|Core#33| state))
 ; yosys-smt2-wire dpath_io_ctrl_st_type 2
-(define-fun |Core_n dpath_io_ctrl_st_type| ((state |Core_s|)) (_ BitVec 2) (|Core#32| state))
+(define-fun |Core_n dpath_io_ctrl_st_type| ((state |Core_s|)) (_ BitVec 2) (|Core#34| state))
 ; yosys-smt2-wire dpath_io_ctrl_pc_sel 2
-(define-fun |Core_n dpath_io_ctrl_pc_sel| ((state |Core_s|)) (_ BitVec 2) (|Core#33| state))
+(define-fun |Core_n dpath_io_ctrl_pc_sel| ((state |Core_s|)) (_ BitVec 2) (|Core#35| state))
 ; yosys-smt2-wire dpath_io_ctrl_ld_type 3
-(define-fun |Core_n dpath_io_ctrl_ld_type| ((state |Core_s|)) (_ BitVec 3) (|Core#34| state))
+(define-fun |Core_n dpath_io_ctrl_ld_type| ((state |Core_s|)) (_ BitVec 3) (|Core#36| state))
 ; yosys-smt2-wire dpath_io_ctrl_inst_kill 1
-(define-fun |Core_n dpath_io_ctrl_inst_kill| ((state |Core_s|)) Bool (|Core#35| state))
+(define-fun |Core_n dpath_io_ctrl_inst_kill| ((state |Core_s|)) Bool (|Core#37| state))
 ; yosys-smt2-wire dpath_io_ctrl_inst 32
 (define-fun |Core_n dpath_io_ctrl_inst| ((state |Core_s|)) (_ BitVec 32) (|Core#11| state))
 ; yosys-smt2-wire dpath_io_ctrl_imm_sel 3
-(define-fun |Core_n dpath_io_ctrl_imm_sel| ((state |Core_s|)) (_ BitVec 3) (|Core#36| state))
+(define-fun |Core_n dpath_io_ctrl_imm_sel| ((state |Core_s|)) (_ BitVec 3) (|Core#38| state))
 ; yosys-smt2-wire dpath_io_ctrl_illegal 1
-(define-fun |Core_n dpath_io_ctrl_illegal| ((state |Core_s|)) Bool (|Core#37| state))
+(define-fun |Core_n dpath_io_ctrl_illegal| ((state |Core_s|)) Bool (|Core#39| state))
 ; yosys-smt2-wire dpath_io_ctrl_csr_cmd 3
-(define-fun |Core_n dpath_io_ctrl_csr_cmd| ((state |Core_s|)) (_ BitVec 3) (|Core#38| state))
+(define-fun |Core_n dpath_io_ctrl_csr_cmd| ((state |Core_s|)) (_ BitVec 3) (|Core#40| state))
 ; yosys-smt2-wire dpath_io_ctrl_br_type 3
-(define-fun |Core_n dpath_io_ctrl_br_type| ((state |Core_s|)) (_ BitVec 3) (|Core#39| state))
+(define-fun |Core_n dpath_io_ctrl_br_type| ((state |Core_s|)) (_ BitVec 3) (|Core#41| state))
 ; yosys-smt2-wire dpath_io_ctrl_alu_op 4
-(define-fun |Core_n dpath_io_ctrl_alu_op| ((state |Core_s|)) (_ BitVec 4) (|Core#40| state))
+(define-fun |Core_n dpath_io_ctrl_alu_op| ((state |Core_s|)) (_ BitVec 4) (|Core#42| state))
 ; yosys-smt2-wire dpath_io_ctrl_B_sel 1
-(define-fun |Core_n dpath_io_ctrl_B_sel| ((state |Core_s|)) Bool (|Core#41| state))
+(define-fun |Core_n dpath_io_ctrl_B_sel| ((state |Core_s|)) Bool (|Core#43| state))
 ; yosys-smt2-wire dpath_io_ctrl_A_sel 1
-(define-fun |Core_n dpath_io_ctrl_A_sel| ((state |Core_s|)) Bool (|Core#42| state))
-(declare-fun |Core#43| (|Core_s|) Bool) ; \clock
+(define-fun |Core_n dpath_io_ctrl_A_sel| ((state |Core_s|)) Bool (|Core#44| state))
+(declare-fun |Core#45| (|Core_s|) Bool) ; \clock
 ; yosys-smt2-wire dpath_clock 1
 ; yosys-smt2-clock dpath_clock posedge
-(define-fun |Core_n dpath_clock| ((state |Core_s|)) Bool (|Core#43| state))
+(define-fun |Core_n dpath_clock| ((state |Core_s|)) Bool (|Core#45| state))
 ; yosys-smt2-wire ctrl_io_wb_sel 2
-(define-fun |Core_n ctrl_io_wb_sel| ((state |Core_s|)) (_ BitVec 2) (|Core#30| state))
+(define-fun |Core_n ctrl_io_wb_sel| ((state |Core_s|)) (_ BitVec 2) (|Core#32| state))
 ; yosys-smt2-wire ctrl_io_wb_en 1
-(define-fun |Core_n ctrl_io_wb_en| ((state |Core_s|)) Bool (|Core#31| state))
+(define-fun |Core_n ctrl_io_wb_en| ((state |Core_s|)) Bool (|Core#33| state))
 ; yosys-smt2-wire ctrl_io_st_type 2
-(define-fun |Core_n ctrl_io_st_type| ((state |Core_s|)) (_ BitVec 2) (|Core#32| state))
+(define-fun |Core_n ctrl_io_st_type| ((state |Core_s|)) (_ BitVec 2) (|Core#34| state))
 ; yosys-smt2-wire ctrl_io_pc_sel 2
-(define-fun |Core_n ctrl_io_pc_sel| ((state |Core_s|)) (_ BitVec 2) (|Core#33| state))
+(define-fun |Core_n ctrl_io_pc_sel| ((state |Core_s|)) (_ BitVec 2) (|Core#35| state))
 ; yosys-smt2-wire ctrl_io_ld_type 3
-(define-fun |Core_n ctrl_io_ld_type| ((state |Core_s|)) (_ BitVec 3) (|Core#34| state))
+(define-fun |Core_n ctrl_io_ld_type| ((state |Core_s|)) (_ BitVec 3) (|Core#36| state))
 ; yosys-smt2-wire ctrl_io_inst_kill 1
-(define-fun |Core_n ctrl_io_inst_kill| ((state |Core_s|)) Bool (|Core#35| state))
+(define-fun |Core_n ctrl_io_inst_kill| ((state |Core_s|)) Bool (|Core#37| state))
 ; yosys-smt2-wire ctrl_io_inst 32
 (define-fun |Core_n ctrl_io_inst| ((state |Core_s|)) (_ BitVec 32) (|Core#11| state))
 ; yosys-smt2-wire ctrl_io_imm_sel 3
-(define-fun |Core_n ctrl_io_imm_sel| ((state |Core_s|)) (_ BitVec 3) (|Core#36| state))
+(define-fun |Core_n ctrl_io_imm_sel| ((state |Core_s|)) (_ BitVec 3) (|Core#38| state))
 ; yosys-smt2-wire ctrl_io_illegal 1
-(define-fun |Core_n ctrl_io_illegal| ((state |Core_s|)) Bool (|Core#37| state))
+(define-fun |Core_n ctrl_io_illegal| ((state |Core_s|)) Bool (|Core#39| state))
 ; yosys-smt2-wire ctrl_io_csr_cmd 3
-(define-fun |Core_n ctrl_io_csr_cmd| ((state |Core_s|)) (_ BitVec 3) (|Core#38| state))
+(define-fun |Core_n ctrl_io_csr_cmd| ((state |Core_s|)) (_ BitVec 3) (|Core#40| state))
 ; yosys-smt2-wire ctrl_io_br_type 3
-(define-fun |Core_n ctrl_io_br_type| ((state |Core_s|)) (_ BitVec 3) (|Core#39| state))
+(define-fun |Core_n ctrl_io_br_type| ((state |Core_s|)) (_ BitVec 3) (|Core#41| state))
 ; yosys-smt2-wire ctrl_io_alu_op 4
-(define-fun |Core_n ctrl_io_alu_op| ((state |Core_s|)) (_ BitVec 4) (|Core#40| state))
+(define-fun |Core_n ctrl_io_alu_op| ((state |Core_s|)) (_ BitVec 4) (|Core#42| state))
 ; yosys-smt2-wire ctrl_io_B_sel 1
-(define-fun |Core_n ctrl_io_B_sel| ((state |Core_s|)) Bool (|Core#41| state))
+(define-fun |Core_n ctrl_io_B_sel| ((state |Core_s|)) Bool (|Core#43| state))
 ; yosys-smt2-wire ctrl_io_A_sel 1
-(define-fun |Core_n ctrl_io_A_sel| ((state |Core_s|)) Bool (|Core#42| state))
+(define-fun |Core_n ctrl_io_A_sel| ((state |Core_s|)) Bool (|Core#44| state))
 ; yosys-smt2-input clock 1
 ; yosys-smt2-wire clock 1
 ; yosys-smt2-clock clock posedge
-(define-fun |Core_n clock| ((state |Core_s|)) Bool (|Core#43| state))
+(define-fun |Core_n clock| ((state |Core_s|)) Bool (|Core#45| state))
 (define-fun |Core_a| ((state |Core_s|)) Bool (and
   (|Control_a| (|Core_h ctrl| state))
   (|Datapath_a| (|Core_h dpath| state))
@@ -6019,20 +6033,20 @@
 ))
 (define-fun |Core_h| ((state |Core_s|)) Bool (and
   (= (|Core_is| state) (|Control_is| (|Core_h ctrl| state)))
-  (= (|Core#30| state) (|Control_n io_wb_sel| (|Core_h ctrl| state))) ; Control.io_wb_sel
-  (= (|Core#31| state) (|Control_n io_wb_en| (|Core_h ctrl| state))) ; Control.io_wb_en
-  (= (|Core#32| state) (|Control_n io_st_type| (|Core_h ctrl| state))) ; Control.io_st_type
-  (= (|Core#33| state) (|Control_n io_pc_sel| (|Core_h ctrl| state))) ; Control.io_pc_sel
-  (= (|Core#34| state) (|Control_n io_ld_type| (|Core_h ctrl| state))) ; Control.io_ld_type
-  (= (|Core#35| state) (|Control_n io_inst_kill| (|Core_h ctrl| state))) ; Control.io_inst_kill
+  (= (|Core#32| state) (|Control_n io_wb_sel| (|Core_h ctrl| state))) ; Control.io_wb_sel
+  (= (|Core#33| state) (|Control_n io_wb_en| (|Core_h ctrl| state))) ; Control.io_wb_en
+  (= (|Core#34| state) (|Control_n io_st_type| (|Core_h ctrl| state))) ; Control.io_st_type
+  (= (|Core#35| state) (|Control_n io_pc_sel| (|Core_h ctrl| state))) ; Control.io_pc_sel
+  (= (|Core#36| state) (|Control_n io_ld_type| (|Core_h ctrl| state))) ; Control.io_ld_type
+  (= (|Core#37| state) (|Control_n io_inst_kill| (|Core_h ctrl| state))) ; Control.io_inst_kill
   (= (|Core#11| state) (|Control_n io_inst| (|Core_h ctrl| state))) ; Control.io_inst
-  (= (|Core#36| state) (|Control_n io_imm_sel| (|Core_h ctrl| state))) ; Control.io_imm_sel
-  (= (|Core#37| state) (|Control_n io_illegal| (|Core_h ctrl| state))) ; Control.io_illegal
-  (= (|Core#38| state) (|Control_n io_csr_cmd| (|Core_h ctrl| state))) ; Control.io_csr_cmd
-  (= (|Core#39| state) (|Control_n io_br_type| (|Core_h ctrl| state))) ; Control.io_br_type
-  (= (|Core#40| state) (|Control_n io_alu_op| (|Core_h ctrl| state))) ; Control.io_alu_op
-  (= (|Core#41| state) (|Control_n io_B_sel| (|Core_h ctrl| state))) ; Control.io_B_sel
-  (= (|Core#42| state) (|Control_n io_A_sel| (|Core_h ctrl| state))) ; Control.io_A_sel
+  (= (|Core#38| state) (|Control_n io_imm_sel| (|Core_h ctrl| state))) ; Control.io_imm_sel
+  (= (|Core#39| state) (|Control_n io_illegal| (|Core_h ctrl| state))) ; Control.io_illegal
+  (= (|Core#40| state) (|Control_n io_csr_cmd| (|Core_h ctrl| state))) ; Control.io_csr_cmd
+  (= (|Core#41| state) (|Control_n io_br_type| (|Core_h ctrl| state))) ; Control.io_br_type
+  (= (|Core#42| state) (|Control_n io_alu_op| (|Core_h ctrl| state))) ; Control.io_alu_op
+  (= (|Core#43| state) (|Control_n io_B_sel| (|Core_h ctrl| state))) ; Control.io_B_sel
+  (= (|Core#44| state) (|Control_n io_A_sel| (|Core_h ctrl| state))) ; Control.io_A_sel
   (= (|Core_is| state) (|Datapath_is| (|Core_h dpath| state)))
   (= (|Core#0| state) (|Datapath_n reset| (|Core_h dpath| state))) ; Datapath.reset
   (= (|Core#1| state) (|Datapath_n io_icache_resp_valid| (|Core_h dpath| state))) ; Datapath.io_icache_resp_valid
@@ -6040,44 +6054,46 @@
   (= (|Core#3| state) (|Datapath_n io_icache_req_valid| (|Core_h dpath| state))) ; Datapath.io_icache_req_valid
   (= (|Core#4| state) (|Datapath_n io_icache_req_bits_addr| (|Core_h dpath| state))) ; Datapath.io_icache_req_bits_addr
   (= (|Core#5| state) (|Datapath_n io_host_tohost| (|Core_h dpath| state))) ; Datapath.io_host_tohost
-  (= (|Core#26| state) (|Datapath_n io_host_fromhost_valid| (|Core_h dpath| state))) ; Datapath.io_host_fromhost_valid
-  (= (|Core#27| state) (|Datapath_n io_host_fromhost_bits| (|Core_h dpath| state))) ; Datapath.io_host_fromhost_bits
-  (= (|Core#28| state) (|Datapath_n io_dcache_resp_valid| (|Core_h dpath| state))) ; Datapath.io_dcache_resp_valid
-  (= (|Core#29| state) (|Datapath_n io_dcache_resp_bits_data| (|Core_h dpath| state))) ; Datapath.io_dcache_resp_bits_data
+  (= (|Core#28| state) (|Datapath_n io_host_fromhost_valid| (|Core_h dpath| state))) ; Datapath.io_host_fromhost_valid
+  (= (|Core#29| state) (|Datapath_n io_host_fromhost_bits| (|Core_h dpath| state))) ; Datapath.io_host_fromhost_bits
+  (= (|Core#30| state) (|Datapath_n io_dcache_resp_valid| (|Core_h dpath| state))) ; Datapath.io_dcache_resp_valid
+  (= (|Core#31| state) (|Datapath_n io_dcache_resp_bits_data| (|Core_h dpath| state))) ; Datapath.io_dcache_resp_bits_data
   (= (|Core#6| state) (|Datapath_n io_dcache_req_valid| (|Core_h dpath| state))) ; Datapath.io_dcache_req_valid
   (= (|Core#7| state) (|Datapath_n io_dcache_req_bits_mask| (|Core_h dpath| state))) ; Datapath.io_dcache_req_bits_mask
   (= (|Core#8| state) (|Datapath_n io_dcache_req_bits_data| (|Core_h dpath| state))) ; Datapath.io_dcache_req_bits_data
   (= (|Core#9| state) (|Datapath_n io_dcache_req_bits_addr| (|Core_h dpath| state))) ; Datapath.io_dcache_req_bits_addr
   (= (|Core#10| state) (|Datapath_n io_dcache_abort| (|Core_h dpath| state))) ; Datapath.io_dcache_abort
-  (= (|Core#30| state) (|Datapath_n io_ctrl_wb_sel| (|Core_h dpath| state))) ; Datapath.io_ctrl_wb_sel
-  (= (|Core#31| state) (|Datapath_n io_ctrl_wb_en| (|Core_h dpath| state))) ; Datapath.io_ctrl_wb_en
-  (= (|Core#32| state) (|Datapath_n io_ctrl_st_type| (|Core_h dpath| state))) ; Datapath.io_ctrl_st_type
-  (= (|Core#33| state) (|Datapath_n io_ctrl_pc_sel| (|Core_h dpath| state))) ; Datapath.io_ctrl_pc_sel
-  (= (|Core#34| state) (|Datapath_n io_ctrl_ld_type| (|Core_h dpath| state))) ; Datapath.io_ctrl_ld_type
-  (= (|Core#35| state) (|Datapath_n io_ctrl_inst_kill| (|Core_h dpath| state))) ; Datapath.io_ctrl_inst_kill
+  (= (|Core#32| state) (|Datapath_n io_ctrl_wb_sel| (|Core_h dpath| state))) ; Datapath.io_ctrl_wb_sel
+  (= (|Core#33| state) (|Datapath_n io_ctrl_wb_en| (|Core_h dpath| state))) ; Datapath.io_ctrl_wb_en
+  (= (|Core#34| state) (|Datapath_n io_ctrl_st_type| (|Core_h dpath| state))) ; Datapath.io_ctrl_st_type
+  (= (|Core#35| state) (|Datapath_n io_ctrl_pc_sel| (|Core_h dpath| state))) ; Datapath.io_ctrl_pc_sel
+  (= (|Core#36| state) (|Datapath_n io_ctrl_ld_type| (|Core_h dpath| state))) ; Datapath.io_ctrl_ld_type
+  (= (|Core#37| state) (|Datapath_n io_ctrl_inst_kill| (|Core_h dpath| state))) ; Datapath.io_ctrl_inst_kill
   (= (|Core#11| state) (|Datapath_n io_ctrl_inst| (|Core_h dpath| state))) ; Datapath.io_ctrl_inst
-  (= (|Core#36| state) (|Datapath_n io_ctrl_imm_sel| (|Core_h dpath| state))) ; Datapath.io_ctrl_imm_sel
-  (= (|Core#37| state) (|Datapath_n io_ctrl_illegal| (|Core_h dpath| state))) ; Datapath.io_ctrl_illegal
-  (= (|Core#38| state) (|Datapath_n io_ctrl_csr_cmd| (|Core_h dpath| state))) ; Datapath.io_ctrl_csr_cmd
-  (= (|Core#39| state) (|Datapath_n io_ctrl_br_type| (|Core_h dpath| state))) ; Datapath.io_ctrl_br_type
-  (= (|Core#40| state) (|Datapath_n io_ctrl_alu_op| (|Core_h dpath| state))) ; Datapath.io_ctrl_alu_op
-  (= (|Core#41| state) (|Datapath_n io_ctrl_B_sel| (|Core_h dpath| state))) ; Datapath.io_ctrl_B_sel
-  (= (|Core#42| state) (|Datapath_n io_ctrl_A_sel| (|Core_h dpath| state))) ; Datapath.io_ctrl_A_sel
-  (= (|Core#12| state) (|Datapath_n io__lft__dpath__regFile_io_wdata| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__regFile_io_wdata
-  (= (|Core#13| state) (|Datapath_n io__lft__dpath__regFile_io_waddr| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__regFile_io_waddr
-  (= (|Core#14| state) (|Datapath_n io__lft__dpath__regFile_io_rdata2| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__regFile_io_rdata2
-  (= (|Core#15| state) (|Datapath_n io__lft__dpath__regFile_io_rdata1| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__regFile_io_rdata1
-  (= (|Core#16| state) (|Datapath_n io__lft__dpath__regFile_io_raddr2| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__regFile_io_raddr2
-  (= (|Core#17| state) (|Datapath_n io__lft__dpath__regFile_io_raddr1| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__regFile_io_raddr1
-  (= (|Core#18| state) (|Datapath_n io__lft__dpath__pc| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__pc
-  (= (|Core#19| state) (|Datapath_n io__lft__dpath__fe_pc| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__fe_pc
-  (= (|Core#20| state) (|Datapath_n io__lft__dpath__ew_pc| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__ew_pc
-  (= (|Core#21| state) (|Datapath_n io__lft__dpath__alu_io_sum| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__alu_io_sum
-  (= (|Core#22| state) (|Datapath_n io__lft__dpath__alu_io_out| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__alu_io_out
-  (= (|Core#23| state) (|Datapath_n io__lft__dpath__alu_io_alu_op| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__alu_io_alu_op
-  (= (|Core#24| state) (|Datapath_n io__lft__dpath__alu_io_B| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__alu_io_B
-  (= (|Core#25| state) (|Datapath_n io__lft__dpath__alu_io_A| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__alu_io_A
-  (= (|Core#43| state) (|Datapath_n clock| (|Core_h dpath| state))) ; Datapath.clock
+  (= (|Core#38| state) (|Datapath_n io_ctrl_imm_sel| (|Core_h dpath| state))) ; Datapath.io_ctrl_imm_sel
+  (= (|Core#39| state) (|Datapath_n io_ctrl_illegal| (|Core_h dpath| state))) ; Datapath.io_ctrl_illegal
+  (= (|Core#40| state) (|Datapath_n io_ctrl_csr_cmd| (|Core_h dpath| state))) ; Datapath.io_ctrl_csr_cmd
+  (= (|Core#41| state) (|Datapath_n io_ctrl_br_type| (|Core_h dpath| state))) ; Datapath.io_ctrl_br_type
+  (= (|Core#42| state) (|Datapath_n io_ctrl_alu_op| (|Core_h dpath| state))) ; Datapath.io_ctrl_alu_op
+  (= (|Core#43| state) (|Datapath_n io_ctrl_B_sel| (|Core_h dpath| state))) ; Datapath.io_ctrl_B_sel
+  (= (|Core#44| state) (|Datapath_n io_ctrl_A_sel| (|Core_h dpath| state))) ; Datapath.io_ctrl_A_sel
+  (= (|Core#12| state) (|Datapath_n io__lft__dpath__stall| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__stall
+  (= (|Core#13| state) (|Datapath_n io__lft__dpath__regFile_io_wdata| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__regFile_io_wdata
+  (= (|Core#14| state) (|Datapath_n io__lft__dpath__regFile_io_waddr| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__regFile_io_waddr
+  (= (|Core#15| state) (|Datapath_n io__lft__dpath__regFile_io_rdata2| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__regFile_io_rdata2
+  (= (|Core#16| state) (|Datapath_n io__lft__dpath__regFile_io_rdata1| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__regFile_io_rdata1
+  (= (|Core#17| state) (|Datapath_n io__lft__dpath__regFile_io_raddr2| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__regFile_io_raddr2
+  (= (|Core#18| state) (|Datapath_n io__lft__dpath__regFile_io_raddr1| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__regFile_io_raddr1
+  (= (|Core#19| state) (|Datapath_n io__lft__dpath__pc| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__pc
+  (= (|Core#20| state) (|Datapath_n io__lft__dpath__fe_pc| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__fe_pc
+  (= (|Core#21| state) (|Datapath_n io__lft__dpath__fe_inst| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__fe_inst
+  (= (|Core#22| state) (|Datapath_n io__lft__dpath__ew_pc| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__ew_pc
+  (= (|Core#23| state) (|Datapath_n io__lft__dpath__alu_io_sum| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__alu_io_sum
+  (= (|Core#24| state) (|Datapath_n io__lft__dpath__alu_io_out| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__alu_io_out
+  (= (|Core#25| state) (|Datapath_n io__lft__dpath__alu_io_alu_op| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__alu_io_alu_op
+  (= (|Core#26| state) (|Datapath_n io__lft__dpath__alu_io_B| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__alu_io_B
+  (= (|Core#27| state) (|Datapath_n io__lft__dpath__alu_io_A| (|Core_h dpath| state))) ; Datapath.io__lft__dpath__alu_io_A
+  (= (|Core#45| state) (|Datapath_n clock| (|Core_h dpath| state))) ; Datapath.clock
   (|Control_h| (|Core_h ctrl| state))
   (|Datapath_h| (|Core_h dpath| state))
 ))
@@ -6088,37 +6104,84 @@
 ; yosys-smt2-module Tile
 (declare-sort |Tile_s| 0)
 (declare-fun |Tile_is| (|Tile_s|) Bool)
-(declare-fun |Tile#0| (|Tile_s|) Bool) ; \reset
+; yosys-smt2-anyconst Tile#0 32 __lft__corr.v:0.0-0.0 tgt_rs2
+(declare-fun |Tile#0| (|Tile_s|) (_ BitVec 32)) ; \tgt_rs2
+; yosys-smt2-wire tgt_rs2 32
+(define-fun |Tile_n tgt_rs2| ((state |Tile_s|)) (_ BitVec 32) (|Tile#0| state))
+; yosys-smt2-anyconst Tile#1 32 __lft__corr.v:0.0-0.0 tgt_rs1
+(declare-fun |Tile#1| (|Tile_s|) (_ BitVec 32)) ; \tgt_rs1
+; yosys-smt2-wire tgt_rs1 32
+(define-fun |Tile_n tgt_rs1| ((state |Tile_s|)) (_ BitVec 32) (|Tile#1| state))
+(declare-fun |Tile#2| (|Tile_s|) Bool) ; \reset
 ; yosys-smt2-input reset 1
 ; yosys-smt2-wire reset 1
-(define-fun |Tile_n reset| ((state |Tile_s|)) Bool (|Tile#0| state))
+(define-fun |Tile_n reset| ((state |Tile_s|)) Bool (|Tile#2| state))
+(declare-fun |Tile#3| (|Tile_s|) (_ BitVec 1)) ; \issued
+; yosys-smt2-register issued 1
+; yosys-smt2-wire issued 1
+(define-fun |Tile_n issued| ((state |Tile_s|)) Bool (= ((_ extract 0 0) (|Tile#3| state)) #b1))
+; yosys-smt2-cell Core core
+(declare-fun |Tile#4| (|Tile_s|) Bool) ; \core_io_icache_req_valid
+(declare-fun |Tile#5| (|Tile_s|) (_ BitVec 32)) ; \core_io_icache_req_bits_addr
+(declare-fun |Tile#6| (|Tile_s|) (_ BitVec 32)) ; \core_io_host_tohost
+(declare-fun |Tile#7| (|Tile_s|) Bool) ; \core_io_dcache_req_valid
+(declare-fun |Tile#8| (|Tile_s|) (_ BitVec 4)) ; \core_io_dcache_req_bits_mask
+(declare-fun |Tile#9| (|Tile_s|) (_ BitVec 32)) ; \core_io_dcache_req_bits_data
+(declare-fun |Tile#10| (|Tile_s|) (_ BitVec 32)) ; \core_io_dcache_req_bits_addr
+(declare-fun |Tile#11| (|Tile_s|) Bool) ; \core_io_dcache_abort
+(declare-fun |Tile#12| (|Tile_s|) (_ BitVec 33)) ; \__lft__tile__stall
+(declare-fun |Tile#13| (|Tile_s|) (_ BitVec 32)) ; \__lft__tile__regFile_io_wdata
+(declare-fun |Tile#14| (|Tile_s|) (_ BitVec 5)) ; \__lft__tile__regFile_io_waddr
+(declare-fun |Tile#15| (|Tile_s|) (_ BitVec 32)) ; \__lft__tile__regFile_io_rdata2
+(declare-fun |Tile#16| (|Tile_s|) (_ BitVec 32)) ; \__lft__tile__regFile_io_rdata1
+(declare-fun |Tile#17| (|Tile_s|) (_ BitVec 5)) ; \__lft__tile__regFile_io_raddr2
+(declare-fun |Tile#18| (|Tile_s|) (_ BitVec 5)) ; \__lft__tile__regFile_io_raddr1
+(declare-fun |Tile#19| (|Tile_s|) (_ BitVec 33)) ; \__lft__tile__pc
+(declare-fun |Tile#20| (|Tile_s|) (_ BitVec 33)) ; \__lft__tile__fe_pc
+(declare-fun |Tile#21| (|Tile_s|) (_ BitVec 32)) ; \__lft__tile__fe_inst
+(declare-fun |Tile#22| (|Tile_s|) (_ BitVec 33)) ; \__lft__tile__ew_pc
+(declare-fun |Tile#23| (|Tile_s|) (_ BitVec 32)) ; \__lft__tile__alu_io_sum
+(declare-fun |Tile#24| (|Tile_s|) (_ BitVec 32)) ; \__lft__tile__alu_io_out
+(declare-fun |Tile#25| (|Tile_s|) (_ BitVec 4)) ; \__lft__tile__alu_io_alu_op
+(declare-fun |Tile#26| (|Tile_s|) (_ BitVec 32)) ; \__lft__tile__alu_io_B
+(declare-fun |Tile#27| (|Tile_s|) (_ BitVec 32)) ; \__lft__tile__alu_io_A
+(declare-fun |Tile_h core| (|Tile_s|) |Core_s|)
+(define-fun |Tile#28| ((state |Tile_s|)) Bool (not (or  (= ((_ extract 25 25) (|Tile#21| state)) #b1) (= ((_ extract 26 26) (|Tile#21| state)) #b1) (= ((_ extract 27 27) (|Tile#21| state)) #b1) (= ((_ extract 28 28) (|Tile#21| state)) #b1) (= ((_ extract 29 29) (|Tile#21| state)) #b1) (= ((_ extract 30 30) (|Tile#21| state)) #b1) (= ((_ extract 31 31) (|Tile#21| state)) #b1)))) ; $eq$__lft__corr.v:6571$8_Y
+(define-fun |Tile#29| ((state |Tile_s|)) Bool (not (or  (= ((_ extract 12 12) (|Tile#21| state)) #b1) (= ((_ extract 13 13) (|Tile#21| state)) #b1) (= ((_ extract 14 14) (|Tile#21| state)) #b1)))) ; $eq$__lft__corr.v:6572$9_Y
+(define-fun |Tile#30| ((state |Tile_s|)) Bool (and (or  (|Tile#28| state) false) (or  (|Tile#29| state) false))) ; $logic_and$__lft__corr.v:6571$10_Y
+(define-fun |Tile#31| ((state |Tile_s|)) Bool (= ((_ extract 6 0) (|Tile#21| state)) #b0110011)) ; $eq$__lft__corr.v:6573$11_Y
+(define-fun |Tile#32| ((state |Tile_s|)) Bool (and (or  (|Tile#30| state) false) (or  (|Tile#31| state) false))) ; $logic_and$__lft__corr.v:6571$12_Y
+(define-fun |Tile#33| ((state |Tile_s|)) Bool (distinct ((_ extract 11 7) (|Tile#21| state)) #b00000)) ; $ne$__lft__corr.v:6574$13_Y
+(define-fun |Tile#34| ((state |Tile_s|)) Bool (and (or  (|Tile#32| state) false) (or  (|Tile#33| state) false))) ; \is_add
+; yosys-smt2-wire is_add 1
+(define-fun |Tile_n is_add| ((state |Tile_s|)) Bool (|Tile#34| state))
 ; yosys-smt2-cell MemArbiter arb
-(declare-fun |Tile#1| (|Tile_s|) Bool) ; \arb_io_nasti_w_valid
-(declare-fun |Tile#2| (|Tile_s|) Bool) ; \arb_io_nasti_w_bits_last
-(declare-fun |Tile#3| (|Tile_s|) (_ BitVec 64)) ; \arb_io_nasti_w_bits_data
-(declare-fun |Tile#4| (|Tile_s|) Bool) ; \arb_io_nasti_r_ready
-(declare-fun |Tile#5| (|Tile_s|) Bool) ; \arb_io_nasti_b_ready
-(declare-fun |Tile#6| (|Tile_s|) Bool) ; \arb_io_nasti_aw_valid
-(declare-fun |Tile#7| (|Tile_s|) (_ BitVec 32)) ; \arb_io_nasti_aw_bits_addr
-(declare-fun |Tile#8| (|Tile_s|) Bool) ; \arb_io_nasti_ar_valid
-(declare-fun |Tile#9| (|Tile_s|) (_ BitVec 32)) ; \arb_io_nasti_ar_bits_addr
-(declare-fun |Tile#10| (|Tile_s|) Bool) ; \arb_io_icache_r_valid
-(declare-fun |Tile#11| (|Tile_s|) (_ BitVec 64)) ; \arb_io_icache_r_bits_data
-(declare-fun |Tile#12| (|Tile_s|) Bool) ; \arb_io_icache_ar_ready
-(declare-fun |Tile#13| (|Tile_s|) Bool) ; \arb_io_dcache_w_ready
-(declare-fun |Tile#14| (|Tile_s|) Bool) ; \arb_io_dcache_r_valid
-(declare-fun |Tile#15| (|Tile_s|) (_ BitVec 64)) ; \arb_io_dcache_r_bits_data
-(declare-fun |Tile#16| (|Tile_s|) Bool) ; \arb_io_dcache_b_valid
-(declare-fun |Tile#17| (|Tile_s|) Bool) ; \arb_io_dcache_aw_ready
-(declare-fun |Tile#18| (|Tile_s|) Bool) ; \arb_io_dcache_ar_ready
+(declare-fun |Tile#35| (|Tile_s|) Bool) ; \arb_io_nasti_w_valid
+(declare-fun |Tile#36| (|Tile_s|) Bool) ; \arb_io_nasti_w_bits_last
+(declare-fun |Tile#37| (|Tile_s|) (_ BitVec 64)) ; \arb_io_nasti_w_bits_data
+(declare-fun |Tile#38| (|Tile_s|) Bool) ; \arb_io_nasti_r_ready
+(declare-fun |Tile#39| (|Tile_s|) Bool) ; \arb_io_nasti_b_ready
+(declare-fun |Tile#40| (|Tile_s|) Bool) ; \arb_io_nasti_aw_valid
+(declare-fun |Tile#41| (|Tile_s|) (_ BitVec 32)) ; \arb_io_nasti_aw_bits_addr
+(declare-fun |Tile#42| (|Tile_s|) Bool) ; \arb_io_nasti_ar_valid
+(declare-fun |Tile#43| (|Tile_s|) (_ BitVec 32)) ; \arb_io_nasti_ar_bits_addr
+(declare-fun |Tile#44| (|Tile_s|) Bool) ; \arb_io_icache_r_valid
+(declare-fun |Tile#45| (|Tile_s|) (_ BitVec 64)) ; \arb_io_icache_r_bits_data
+(declare-fun |Tile#46| (|Tile_s|) Bool) ; \arb_io_icache_ar_ready
+(declare-fun |Tile#47| (|Tile_s|) Bool) ; \arb_io_dcache_w_ready
+(declare-fun |Tile#48| (|Tile_s|) Bool) ; \arb_io_dcache_r_valid
+(declare-fun |Tile#49| (|Tile_s|) (_ BitVec 64)) ; \arb_io_dcache_r_bits_data
+(declare-fun |Tile#50| (|Tile_s|) Bool) ; \arb_io_dcache_b_valid
+(declare-fun |Tile#51| (|Tile_s|) Bool) ; \arb_io_dcache_aw_ready
+(declare-fun |Tile#52| (|Tile_s|) Bool) ; \arb_io_dcache_ar_ready
 (declare-fun |Tile_h arb| (|Tile_s|) |MemArbiter_s|)
 ; yosys-smt2-output io_nasti_w_valid 1
 ; yosys-smt2-wire io_nasti_w_valid 1
-(define-fun |Tile_n io_nasti_w_valid| ((state |Tile_s|)) Bool (|Tile#1| state))
-(declare-fun |Tile#19| (|Tile_s|) Bool) ; \io_nasti_w_ready
+(define-fun |Tile_n io_nasti_w_valid| ((state |Tile_s|)) Bool (|Tile#35| state))
+(declare-fun |Tile#53| (|Tile_s|) Bool) ; \io_nasti_w_ready
 ; yosys-smt2-input io_nasti_w_ready 1
 ; yosys-smt2-wire io_nasti_w_ready 1
-(define-fun |Tile_n io_nasti_w_ready| ((state |Tile_s|)) Bool (|Tile#19| state))
+(define-fun |Tile_n io_nasti_w_ready| ((state |Tile_s|)) Bool (|Tile#53| state))
 ; yosys-smt2-output io_nasti_w_bits_user 1
 ; yosys-smt2-wire io_nasti_w_bits_user 1
 (define-fun |Tile_n io_nasti_w_bits_user| ((state |Tile_s|)) Bool false)
@@ -6127,66 +6190,66 @@
 (define-fun |Tile_n io_nasti_w_bits_strb| ((state |Tile_s|)) (_ BitVec 8) #b11111111)
 ; yosys-smt2-output io_nasti_w_bits_last 1
 ; yosys-smt2-wire io_nasti_w_bits_last 1
-(define-fun |Tile_n io_nasti_w_bits_last| ((state |Tile_s|)) Bool (|Tile#2| state))
+(define-fun |Tile_n io_nasti_w_bits_last| ((state |Tile_s|)) Bool (|Tile#36| state))
 ; yosys-smt2-output io_nasti_w_bits_id 5
 ; yosys-smt2-wire io_nasti_w_bits_id 5
 (define-fun |Tile_n io_nasti_w_bits_id| ((state |Tile_s|)) (_ BitVec 5) #b00000)
 ; yosys-smt2-output io_nasti_w_bits_data 64
 ; yosys-smt2-wire io_nasti_w_bits_data 64
-(define-fun |Tile_n io_nasti_w_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#3| state))
-(declare-fun |Tile#20| (|Tile_s|) Bool) ; \io_nasti_r_valid
+(define-fun |Tile_n io_nasti_w_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#37| state))
+(declare-fun |Tile#54| (|Tile_s|) Bool) ; \io_nasti_r_valid
 ; yosys-smt2-input io_nasti_r_valid 1
 ; yosys-smt2-wire io_nasti_r_valid 1
-(define-fun |Tile_n io_nasti_r_valid| ((state |Tile_s|)) Bool (|Tile#20| state))
+(define-fun |Tile_n io_nasti_r_valid| ((state |Tile_s|)) Bool (|Tile#54| state))
 ; yosys-smt2-output io_nasti_r_ready 1
 ; yosys-smt2-wire io_nasti_r_ready 1
-(define-fun |Tile_n io_nasti_r_ready| ((state |Tile_s|)) Bool (|Tile#4| state))
-(declare-fun |Tile#21| (|Tile_s|) Bool) ; \io_nasti_r_bits_user
+(define-fun |Tile_n io_nasti_r_ready| ((state |Tile_s|)) Bool (|Tile#38| state))
+(declare-fun |Tile#55| (|Tile_s|) Bool) ; \io_nasti_r_bits_user
 ; yosys-smt2-input io_nasti_r_bits_user 1
 ; yosys-smt2-wire io_nasti_r_bits_user 1
-(define-fun |Tile_n io_nasti_r_bits_user| ((state |Tile_s|)) Bool (|Tile#21| state))
-(declare-fun |Tile#22| (|Tile_s|) (_ BitVec 2)) ; \io_nasti_r_bits_resp
+(define-fun |Tile_n io_nasti_r_bits_user| ((state |Tile_s|)) Bool (|Tile#55| state))
+(declare-fun |Tile#56| (|Tile_s|) (_ BitVec 2)) ; \io_nasti_r_bits_resp
 ; yosys-smt2-input io_nasti_r_bits_resp 2
 ; yosys-smt2-wire io_nasti_r_bits_resp 2
-(define-fun |Tile_n io_nasti_r_bits_resp| ((state |Tile_s|)) (_ BitVec 2) (|Tile#22| state))
-(declare-fun |Tile#23| (|Tile_s|) Bool) ; \io_nasti_r_bits_last
+(define-fun |Tile_n io_nasti_r_bits_resp| ((state |Tile_s|)) (_ BitVec 2) (|Tile#56| state))
+(declare-fun |Tile#57| (|Tile_s|) Bool) ; \io_nasti_r_bits_last
 ; yosys-smt2-input io_nasti_r_bits_last 1
 ; yosys-smt2-wire io_nasti_r_bits_last 1
-(define-fun |Tile_n io_nasti_r_bits_last| ((state |Tile_s|)) Bool (|Tile#23| state))
-(declare-fun |Tile#24| (|Tile_s|) (_ BitVec 5)) ; \io_nasti_r_bits_id
+(define-fun |Tile_n io_nasti_r_bits_last| ((state |Tile_s|)) Bool (|Tile#57| state))
+(declare-fun |Tile#58| (|Tile_s|) (_ BitVec 5)) ; \io_nasti_r_bits_id
 ; yosys-smt2-input io_nasti_r_bits_id 5
 ; yosys-smt2-wire io_nasti_r_bits_id 5
-(define-fun |Tile_n io_nasti_r_bits_id| ((state |Tile_s|)) (_ BitVec 5) (|Tile#24| state))
-(declare-fun |Tile#25| (|Tile_s|) (_ BitVec 64)) ; \io_nasti_r_bits_data
+(define-fun |Tile_n io_nasti_r_bits_id| ((state |Tile_s|)) (_ BitVec 5) (|Tile#58| state))
+(declare-fun |Tile#59| (|Tile_s|) (_ BitVec 64)) ; \io_nasti_r_bits_data
 ; yosys-smt2-input io_nasti_r_bits_data 64
 ; yosys-smt2-wire io_nasti_r_bits_data 64
-(define-fun |Tile_n io_nasti_r_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#25| state))
-(declare-fun |Tile#26| (|Tile_s|) Bool) ; \io_nasti_b_valid
+(define-fun |Tile_n io_nasti_r_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#59| state))
+(declare-fun |Tile#60| (|Tile_s|) Bool) ; \io_nasti_b_valid
 ; yosys-smt2-input io_nasti_b_valid 1
 ; yosys-smt2-wire io_nasti_b_valid 1
-(define-fun |Tile_n io_nasti_b_valid| ((state |Tile_s|)) Bool (|Tile#26| state))
+(define-fun |Tile_n io_nasti_b_valid| ((state |Tile_s|)) Bool (|Tile#60| state))
 ; yosys-smt2-output io_nasti_b_ready 1
 ; yosys-smt2-wire io_nasti_b_ready 1
-(define-fun |Tile_n io_nasti_b_ready| ((state |Tile_s|)) Bool (|Tile#5| state))
-(declare-fun |Tile#27| (|Tile_s|) Bool) ; \io_nasti_b_bits_user
+(define-fun |Tile_n io_nasti_b_ready| ((state |Tile_s|)) Bool (|Tile#39| state))
+(declare-fun |Tile#61| (|Tile_s|) Bool) ; \io_nasti_b_bits_user
 ; yosys-smt2-input io_nasti_b_bits_user 1
 ; yosys-smt2-wire io_nasti_b_bits_user 1
-(define-fun |Tile_n io_nasti_b_bits_user| ((state |Tile_s|)) Bool (|Tile#27| state))
-(declare-fun |Tile#28| (|Tile_s|) (_ BitVec 2)) ; \io_nasti_b_bits_resp
+(define-fun |Tile_n io_nasti_b_bits_user| ((state |Tile_s|)) Bool (|Tile#61| state))
+(declare-fun |Tile#62| (|Tile_s|) (_ BitVec 2)) ; \io_nasti_b_bits_resp
 ; yosys-smt2-input io_nasti_b_bits_resp 2
 ; yosys-smt2-wire io_nasti_b_bits_resp 2
-(define-fun |Tile_n io_nasti_b_bits_resp| ((state |Tile_s|)) (_ BitVec 2) (|Tile#28| state))
-(declare-fun |Tile#29| (|Tile_s|) (_ BitVec 5)) ; \io_nasti_b_bits_id
+(define-fun |Tile_n io_nasti_b_bits_resp| ((state |Tile_s|)) (_ BitVec 2) (|Tile#62| state))
+(declare-fun |Tile#63| (|Tile_s|) (_ BitVec 5)) ; \io_nasti_b_bits_id
 ; yosys-smt2-input io_nasti_b_bits_id 5
 ; yosys-smt2-wire io_nasti_b_bits_id 5
-(define-fun |Tile_n io_nasti_b_bits_id| ((state |Tile_s|)) (_ BitVec 5) (|Tile#29| state))
+(define-fun |Tile_n io_nasti_b_bits_id| ((state |Tile_s|)) (_ BitVec 5) (|Tile#63| state))
 ; yosys-smt2-output io_nasti_aw_valid 1
 ; yosys-smt2-wire io_nasti_aw_valid 1
-(define-fun |Tile_n io_nasti_aw_valid| ((state |Tile_s|)) Bool (|Tile#6| state))
-(declare-fun |Tile#30| (|Tile_s|) Bool) ; \io_nasti_aw_ready
+(define-fun |Tile_n io_nasti_aw_valid| ((state |Tile_s|)) Bool (|Tile#40| state))
+(declare-fun |Tile#64| (|Tile_s|) Bool) ; \io_nasti_aw_ready
 ; yosys-smt2-input io_nasti_aw_ready 1
 ; yosys-smt2-wire io_nasti_aw_ready 1
-(define-fun |Tile_n io_nasti_aw_ready| ((state |Tile_s|)) Bool (|Tile#30| state))
+(define-fun |Tile_n io_nasti_aw_ready| ((state |Tile_s|)) Bool (|Tile#64| state))
 ; yosys-smt2-output io_nasti_aw_bits_user 1
 ; yosys-smt2-wire io_nasti_aw_bits_user 1
 (define-fun |Tile_n io_nasti_aw_bits_user| ((state |Tile_s|)) Bool false)
@@ -6219,14 +6282,14 @@
 (define-fun |Tile_n io_nasti_aw_bits_burst| ((state |Tile_s|)) (_ BitVec 2) #b01)
 ; yosys-smt2-output io_nasti_aw_bits_addr 32
 ; yosys-smt2-wire io_nasti_aw_bits_addr 32
-(define-fun |Tile_n io_nasti_aw_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#7| state))
+(define-fun |Tile_n io_nasti_aw_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#41| state))
 ; yosys-smt2-output io_nasti_ar_valid 1
 ; yosys-smt2-wire io_nasti_ar_valid 1
-(define-fun |Tile_n io_nasti_ar_valid| ((state |Tile_s|)) Bool (|Tile#8| state))
-(declare-fun |Tile#31| (|Tile_s|) Bool) ; \io_nasti_ar_ready
+(define-fun |Tile_n io_nasti_ar_valid| ((state |Tile_s|)) Bool (|Tile#42| state))
+(declare-fun |Tile#65| (|Tile_s|) Bool) ; \io_nasti_ar_ready
 ; yosys-smt2-input io_nasti_ar_ready 1
 ; yosys-smt2-wire io_nasti_ar_ready 1
-(define-fun |Tile_n io_nasti_ar_ready| ((state |Tile_s|)) Bool (|Tile#31| state))
+(define-fun |Tile_n io_nasti_ar_ready| ((state |Tile_s|)) Bool (|Tile#65| state))
 ; yosys-smt2-output io_nasti_ar_bits_user 1
 ; yosys-smt2-wire io_nasti_ar_bits_user 1
 (define-fun |Tile_n io_nasti_ar_bits_user| ((state |Tile_s|)) Bool false)
@@ -6259,478 +6322,522 @@
 (define-fun |Tile_n io_nasti_ar_bits_burst| ((state |Tile_s|)) (_ BitVec 2) #b01)
 ; yosys-smt2-output io_nasti_ar_bits_addr 32
 ; yosys-smt2-wire io_nasti_ar_bits_addr 32
-(define-fun |Tile_n io_nasti_ar_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#9| state))
-; yosys-smt2-cell Core core
-(declare-fun |Tile#32| (|Tile_s|) Bool) ; \core_io_icache_req_valid
-(declare-fun |Tile#33| (|Tile_s|) (_ BitVec 32)) ; \core_io_icache_req_bits_addr
-(declare-fun |Tile#34| (|Tile_s|) (_ BitVec 32)) ; \core_io_host_tohost
-(declare-fun |Tile#35| (|Tile_s|) Bool) ; \core_io_dcache_req_valid
-(declare-fun |Tile#36| (|Tile_s|) (_ BitVec 4)) ; \core_io_dcache_req_bits_mask
-(declare-fun |Tile#37| (|Tile_s|) (_ BitVec 32)) ; \core_io_dcache_req_bits_data
-(declare-fun |Tile#38| (|Tile_s|) (_ BitVec 32)) ; \core_io_dcache_req_bits_addr
-(declare-fun |Tile#39| (|Tile_s|) Bool) ; \core_io_dcache_abort
-(declare-fun |Tile#40| (|Tile_s|) (_ BitVec 32)) ; \__lft__tile__regFile_io_wdata
-(declare-fun |Tile#41| (|Tile_s|) (_ BitVec 5)) ; \__lft__tile__regFile_io_waddr
-(declare-fun |Tile#42| (|Tile_s|) (_ BitVec 32)) ; \__lft__tile__regFile_io_rdata2
-(declare-fun |Tile#43| (|Tile_s|) (_ BitVec 32)) ; \__lft__tile__regFile_io_rdata1
-(declare-fun |Tile#44| (|Tile_s|) (_ BitVec 5)) ; \__lft__tile__regFile_io_raddr2
-(declare-fun |Tile#45| (|Tile_s|) (_ BitVec 5)) ; \__lft__tile__regFile_io_raddr1
-(declare-fun |Tile#46| (|Tile_s|) (_ BitVec 33)) ; \__lft__tile__pc
-(declare-fun |Tile#47| (|Tile_s|) (_ BitVec 33)) ; \__lft__tile__fe_pc
-(declare-fun |Tile#48| (|Tile_s|) (_ BitVec 33)) ; \__lft__tile__ew_pc
-(declare-fun |Tile#49| (|Tile_s|) (_ BitVec 32)) ; \__lft__tile__alu_io_sum
-(declare-fun |Tile#50| (|Tile_s|) (_ BitVec 32)) ; \__lft__tile__alu_io_out
-(declare-fun |Tile#51| (|Tile_s|) (_ BitVec 4)) ; \__lft__tile__alu_io_alu_op
-(declare-fun |Tile#52| (|Tile_s|) (_ BitVec 32)) ; \__lft__tile__alu_io_B
-(declare-fun |Tile#53| (|Tile_s|) (_ BitVec 32)) ; \__lft__tile__alu_io_A
-(declare-fun |Tile_h core| (|Tile_s|) |Core_s|)
+(define-fun |Tile_n io_nasti_ar_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#43| state))
 ; yosys-smt2-output io_host_tohost 32
 ; yosys-smt2-wire io_host_tohost 32
-(define-fun |Tile_n io_host_tohost| ((state |Tile_s|)) (_ BitVec 32) (|Tile#34| state))
-(declare-fun |Tile#54| (|Tile_s|) Bool) ; \io_host_fromhost_valid
+(define-fun |Tile_n io_host_tohost| ((state |Tile_s|)) (_ BitVec 32) (|Tile#6| state))
+(declare-fun |Tile#66| (|Tile_s|) Bool) ; \io_host_fromhost_valid
 ; yosys-smt2-input io_host_fromhost_valid 1
 ; yosys-smt2-wire io_host_fromhost_valid 1
-(define-fun |Tile_n io_host_fromhost_valid| ((state |Tile_s|)) Bool (|Tile#54| state))
-(declare-fun |Tile#55| (|Tile_s|) (_ BitVec 32)) ; \io_host_fromhost_bits
+(define-fun |Tile_n io_host_fromhost_valid| ((state |Tile_s|)) Bool (|Tile#66| state))
+(declare-fun |Tile#67| (|Tile_s|) (_ BitVec 32)) ; \io_host_fromhost_bits
 ; yosys-smt2-input io_host_fromhost_bits 32
 ; yosys-smt2-wire io_host_fromhost_bits 32
-(define-fun |Tile_n io_host_fromhost_bits| ((state |Tile_s|)) (_ BitVec 32) (|Tile#55| state))
+(define-fun |Tile_n io_host_fromhost_bits| ((state |Tile_s|)) (_ BitVec 32) (|Tile#67| state))
+(declare-fun |Tile#68| (|Tile_s|) (_ BitVec 1)) ; \init
+; yosys-smt2-register init 1
+; yosys-smt2-wire init 1
+(define-fun |Tile_n init| ((state |Tile_s|)) Bool (= ((_ extract 0 0) (|Tile#68| state)) #b1))
 ; yosys-smt2-wire icache_reset 1
-(define-fun |Tile_n icache_reset| ((state |Tile_s|)) Bool (|Tile#0| state))
+(define-fun |Tile_n icache_reset| ((state |Tile_s|)) Bool (|Tile#2| state))
 ; yosys-smt2-cell Cache icache
-(declare-fun |Tile#56| (|Tile_s|) Bool) ; \icache_io_nasti_w_valid
-(declare-fun |Tile#57| (|Tile_s|) Bool) ; \icache_io_nasti_w_bits_last
-(declare-fun |Tile#58| (|Tile_s|) (_ BitVec 64)) ; \icache_io_nasti_w_bits_data
-(declare-fun |Tile#59| (|Tile_s|) Bool) ; \arb_io_icache_r_ready
-(declare-fun |Tile#60| (|Tile_s|) Bool) ; \icache_io_nasti_b_ready
-(declare-fun |Tile#61| (|Tile_s|) Bool) ; \icache_io_nasti_aw_valid
-(declare-fun |Tile#62| (|Tile_s|) (_ BitVec 32)) ; \icache_io_nasti_aw_bits_addr
-(declare-fun |Tile#63| (|Tile_s|) Bool) ; \arb_io_icache_ar_valid
-(declare-fun |Tile#64| (|Tile_s|) (_ BitVec 32)) ; \arb_io_icache_ar_bits_addr
-(declare-fun |Tile#65| (|Tile_s|) Bool) ; \core_io_icache_resp_valid
-(declare-fun |Tile#66| (|Tile_s|) (_ BitVec 32)) ; \core_io_icache_resp_bits_data
+(declare-fun |Tile#69| (|Tile_s|) Bool) ; \icache_io_nasti_w_valid
+(declare-fun |Tile#70| (|Tile_s|) Bool) ; \icache_io_nasti_w_bits_last
+(declare-fun |Tile#71| (|Tile_s|) (_ BitVec 64)) ; \icache_io_nasti_w_bits_data
+(declare-fun |Tile#72| (|Tile_s|) Bool) ; \arb_io_icache_r_ready
+(declare-fun |Tile#73| (|Tile_s|) Bool) ; \icache_io_nasti_b_ready
+(declare-fun |Tile#74| (|Tile_s|) Bool) ; \icache_io_nasti_aw_valid
+(declare-fun |Tile#75| (|Tile_s|) (_ BitVec 32)) ; \icache_io_nasti_aw_bits_addr
+(declare-fun |Tile#76| (|Tile_s|) Bool) ; \arb_io_icache_ar_valid
+(declare-fun |Tile#77| (|Tile_s|) (_ BitVec 32)) ; \arb_io_icache_ar_bits_addr
+(declare-fun |Tile#78| (|Tile_s|) Bool) ; \core_io_icache_resp_valid
+(declare-fun |Tile#79| (|Tile_s|) (_ BitVec 32)) ; \core_io_icache_resp_bits_data
 (declare-fun |Tile_h icache| (|Tile_s|) |Cache_s|)
 ; yosys-smt2-wire icache_io_nasti_w_valid 1
-(define-fun |Tile_n icache_io_nasti_w_valid| ((state |Tile_s|)) Bool (|Tile#56| state))
+(define-fun |Tile_n icache_io_nasti_w_valid| ((state |Tile_s|)) Bool (|Tile#69| state))
 ; yosys-smt2-wire icache_io_nasti_w_ready 1
 (define-fun |Tile_n icache_io_nasti_w_ready| ((state |Tile_s|)) Bool false)
 ; yosys-smt2-wire icache_io_nasti_w_bits_last 1
-(define-fun |Tile_n icache_io_nasti_w_bits_last| ((state |Tile_s|)) Bool (|Tile#57| state))
+(define-fun |Tile_n icache_io_nasti_w_bits_last| ((state |Tile_s|)) Bool (|Tile#70| state))
 ; yosys-smt2-wire icache_io_nasti_w_bits_data 64
-(define-fun |Tile_n icache_io_nasti_w_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#58| state))
+(define-fun |Tile_n icache_io_nasti_w_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#71| state))
 ; yosys-smt2-wire icache_io_nasti_r_valid 1
-(define-fun |Tile_n icache_io_nasti_r_valid| ((state |Tile_s|)) Bool (|Tile#10| state))
+(define-fun |Tile_n icache_io_nasti_r_valid| ((state |Tile_s|)) Bool (|Tile#44| state))
 ; yosys-smt2-wire icache_io_nasti_r_ready 1
-(define-fun |Tile_n icache_io_nasti_r_ready| ((state |Tile_s|)) Bool (|Tile#59| state))
+(define-fun |Tile_n icache_io_nasti_r_ready| ((state |Tile_s|)) Bool (|Tile#72| state))
 ; yosys-smt2-wire icache_io_nasti_r_bits_data 64
-(define-fun |Tile_n icache_io_nasti_r_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#11| state))
+(define-fun |Tile_n icache_io_nasti_r_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#45| state))
 ; yosys-smt2-wire icache_io_nasti_b_valid 1
 (define-fun |Tile_n icache_io_nasti_b_valid| ((state |Tile_s|)) Bool false)
 ; yosys-smt2-wire icache_io_nasti_b_ready 1
-(define-fun |Tile_n icache_io_nasti_b_ready| ((state |Tile_s|)) Bool (|Tile#60| state))
+(define-fun |Tile_n icache_io_nasti_b_ready| ((state |Tile_s|)) Bool (|Tile#73| state))
 ; yosys-smt2-wire icache_io_nasti_aw_valid 1
-(define-fun |Tile_n icache_io_nasti_aw_valid| ((state |Tile_s|)) Bool (|Tile#61| state))
+(define-fun |Tile_n icache_io_nasti_aw_valid| ((state |Tile_s|)) Bool (|Tile#74| state))
 ; yosys-smt2-wire icache_io_nasti_aw_ready 1
 (define-fun |Tile_n icache_io_nasti_aw_ready| ((state |Tile_s|)) Bool false)
 ; yosys-smt2-wire icache_io_nasti_aw_bits_addr 32
-(define-fun |Tile_n icache_io_nasti_aw_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#62| state))
+(define-fun |Tile_n icache_io_nasti_aw_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#75| state))
 ; yosys-smt2-wire icache_io_nasti_ar_valid 1
-(define-fun |Tile_n icache_io_nasti_ar_valid| ((state |Tile_s|)) Bool (|Tile#63| state))
+(define-fun |Tile_n icache_io_nasti_ar_valid| ((state |Tile_s|)) Bool (|Tile#76| state))
 ; yosys-smt2-wire icache_io_nasti_ar_ready 1
-(define-fun |Tile_n icache_io_nasti_ar_ready| ((state |Tile_s|)) Bool (|Tile#12| state))
+(define-fun |Tile_n icache_io_nasti_ar_ready| ((state |Tile_s|)) Bool (|Tile#46| state))
 ; yosys-smt2-wire icache_io_nasti_ar_bits_addr 32
-(define-fun |Tile_n icache_io_nasti_ar_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#64| state))
+(define-fun |Tile_n icache_io_nasti_ar_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#77| state))
 ; yosys-smt2-wire icache_io_cpu_resp_valid 1
-(define-fun |Tile_n icache_io_cpu_resp_valid| ((state |Tile_s|)) Bool (|Tile#65| state))
+(define-fun |Tile_n icache_io_cpu_resp_valid| ((state |Tile_s|)) Bool (|Tile#78| state))
 ; yosys-smt2-wire icache_io_cpu_resp_bits_data 32
-(define-fun |Tile_n icache_io_cpu_resp_bits_data| ((state |Tile_s|)) (_ BitVec 32) (|Tile#66| state))
+(define-fun |Tile_n icache_io_cpu_resp_bits_data| ((state |Tile_s|)) (_ BitVec 32) (|Tile#79| state))
 ; yosys-smt2-wire icache_io_cpu_req_valid 1
-(define-fun |Tile_n icache_io_cpu_req_valid| ((state |Tile_s|)) Bool (|Tile#32| state))
+(define-fun |Tile_n icache_io_cpu_req_valid| ((state |Tile_s|)) Bool (|Tile#4| state))
 ; yosys-smt2-wire icache_io_cpu_req_bits_mask 4
 (define-fun |Tile_n icache_io_cpu_req_bits_mask| ((state |Tile_s|)) (_ BitVec 4) #b0000)
 ; yosys-smt2-wire icache_io_cpu_req_bits_data 32
 (define-fun |Tile_n icache_io_cpu_req_bits_data| ((state |Tile_s|)) (_ BitVec 32) #b00000000000000000000000000000000)
 ; yosys-smt2-wire icache_io_cpu_req_bits_addr 32
-(define-fun |Tile_n icache_io_cpu_req_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#33| state))
+(define-fun |Tile_n icache_io_cpu_req_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#5| state))
 ; yosys-smt2-wire icache_io_cpu_abort 1
 (define-fun |Tile_n icache_io_cpu_abort| ((state |Tile_s|)) Bool false)
-(declare-fun |Tile#67| (|Tile_s|) Bool) ; \clock
+(declare-fun |Tile#80| (|Tile_s|) Bool) ; \clock
 ; yosys-smt2-wire icache_clock 1
 ; yosys-smt2-clock icache_clock posedge
-(define-fun |Tile_n icache_clock| ((state |Tile_s|)) Bool (|Tile#67| state))
+(define-fun |Tile_n icache_clock| ((state |Tile_s|)) Bool (|Tile#80| state))
+; yosys-smt2-wire fe_inst 32
+(define-fun |Tile_n fe_inst| ((state |Tile_s|)) (_ BitVec 32) (|Tile#21| state))
 ; yosys-smt2-wire dcache_reset 1
-(define-fun |Tile_n dcache_reset| ((state |Tile_s|)) Bool (|Tile#0| state))
+(define-fun |Tile_n dcache_reset| ((state |Tile_s|)) Bool (|Tile#2| state))
 ; yosys-smt2-cell Cache dcache
-(declare-fun |Tile#68| (|Tile_s|) Bool) ; \arb_io_dcache_w_valid
-(declare-fun |Tile#69| (|Tile_s|) Bool) ; \arb_io_dcache_w_bits_last
-(declare-fun |Tile#70| (|Tile_s|) (_ BitVec 64)) ; \arb_io_dcache_w_bits_data
-(declare-fun |Tile#71| (|Tile_s|) Bool) ; \arb_io_dcache_r_ready
-(declare-fun |Tile#72| (|Tile_s|) Bool) ; \arb_io_dcache_b_ready
-(declare-fun |Tile#73| (|Tile_s|) Bool) ; \arb_io_dcache_aw_valid
-(declare-fun |Tile#74| (|Tile_s|) (_ BitVec 32)) ; \arb_io_dcache_aw_bits_addr
-(declare-fun |Tile#75| (|Tile_s|) Bool) ; \arb_io_dcache_ar_valid
-(declare-fun |Tile#76| (|Tile_s|) (_ BitVec 32)) ; \arb_io_dcache_ar_bits_addr
-(declare-fun |Tile#77| (|Tile_s|) Bool) ; \core_io_dcache_resp_valid
-(declare-fun |Tile#78| (|Tile_s|) (_ BitVec 32)) ; \core_io_dcache_resp_bits_data
+(declare-fun |Tile#81| (|Tile_s|) Bool) ; \arb_io_dcache_w_valid
+(declare-fun |Tile#82| (|Tile_s|) Bool) ; \arb_io_dcache_w_bits_last
+(declare-fun |Tile#83| (|Tile_s|) (_ BitVec 64)) ; \arb_io_dcache_w_bits_data
+(declare-fun |Tile#84| (|Tile_s|) Bool) ; \arb_io_dcache_r_ready
+(declare-fun |Tile#85| (|Tile_s|) Bool) ; \arb_io_dcache_b_ready
+(declare-fun |Tile#86| (|Tile_s|) Bool) ; \arb_io_dcache_aw_valid
+(declare-fun |Tile#87| (|Tile_s|) (_ BitVec 32)) ; \arb_io_dcache_aw_bits_addr
+(declare-fun |Tile#88| (|Tile_s|) Bool) ; \arb_io_dcache_ar_valid
+(declare-fun |Tile#89| (|Tile_s|) (_ BitVec 32)) ; \arb_io_dcache_ar_bits_addr
+(declare-fun |Tile#90| (|Tile_s|) Bool) ; \core_io_dcache_resp_valid
+(declare-fun |Tile#91| (|Tile_s|) (_ BitVec 32)) ; \core_io_dcache_resp_bits_data
 (declare-fun |Tile_h dcache| (|Tile_s|) |Cache_s|)
 ; yosys-smt2-wire dcache_io_nasti_w_valid 1
-(define-fun |Tile_n dcache_io_nasti_w_valid| ((state |Tile_s|)) Bool (|Tile#68| state))
+(define-fun |Tile_n dcache_io_nasti_w_valid| ((state |Tile_s|)) Bool (|Tile#81| state))
 ; yosys-smt2-wire dcache_io_nasti_w_ready 1
-(define-fun |Tile_n dcache_io_nasti_w_ready| ((state |Tile_s|)) Bool (|Tile#13| state))
+(define-fun |Tile_n dcache_io_nasti_w_ready| ((state |Tile_s|)) Bool (|Tile#47| state))
 ; yosys-smt2-wire dcache_io_nasti_w_bits_last 1
-(define-fun |Tile_n dcache_io_nasti_w_bits_last| ((state |Tile_s|)) Bool (|Tile#69| state))
+(define-fun |Tile_n dcache_io_nasti_w_bits_last| ((state |Tile_s|)) Bool (|Tile#82| state))
 ; yosys-smt2-wire dcache_io_nasti_w_bits_data 64
-(define-fun |Tile_n dcache_io_nasti_w_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#70| state))
+(define-fun |Tile_n dcache_io_nasti_w_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#83| state))
 ; yosys-smt2-wire dcache_io_nasti_r_valid 1
-(define-fun |Tile_n dcache_io_nasti_r_valid| ((state |Tile_s|)) Bool (|Tile#14| state))
+(define-fun |Tile_n dcache_io_nasti_r_valid| ((state |Tile_s|)) Bool (|Tile#48| state))
 ; yosys-smt2-wire dcache_io_nasti_r_ready 1
-(define-fun |Tile_n dcache_io_nasti_r_ready| ((state |Tile_s|)) Bool (|Tile#71| state))
+(define-fun |Tile_n dcache_io_nasti_r_ready| ((state |Tile_s|)) Bool (|Tile#84| state))
 ; yosys-smt2-wire dcache_io_nasti_r_bits_data 64
-(define-fun |Tile_n dcache_io_nasti_r_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#15| state))
+(define-fun |Tile_n dcache_io_nasti_r_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#49| state))
 ; yosys-smt2-wire dcache_io_nasti_b_valid 1
-(define-fun |Tile_n dcache_io_nasti_b_valid| ((state |Tile_s|)) Bool (|Tile#16| state))
+(define-fun |Tile_n dcache_io_nasti_b_valid| ((state |Tile_s|)) Bool (|Tile#50| state))
 ; yosys-smt2-wire dcache_io_nasti_b_ready 1
-(define-fun |Tile_n dcache_io_nasti_b_ready| ((state |Tile_s|)) Bool (|Tile#72| state))
+(define-fun |Tile_n dcache_io_nasti_b_ready| ((state |Tile_s|)) Bool (|Tile#85| state))
 ; yosys-smt2-wire dcache_io_nasti_aw_valid 1
-(define-fun |Tile_n dcache_io_nasti_aw_valid| ((state |Tile_s|)) Bool (|Tile#73| state))
+(define-fun |Tile_n dcache_io_nasti_aw_valid| ((state |Tile_s|)) Bool (|Tile#86| state))
 ; yosys-smt2-wire dcache_io_nasti_aw_ready 1
-(define-fun |Tile_n dcache_io_nasti_aw_ready| ((state |Tile_s|)) Bool (|Tile#17| state))
+(define-fun |Tile_n dcache_io_nasti_aw_ready| ((state |Tile_s|)) Bool (|Tile#51| state))
 ; yosys-smt2-wire dcache_io_nasti_aw_bits_addr 32
-(define-fun |Tile_n dcache_io_nasti_aw_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#74| state))
+(define-fun |Tile_n dcache_io_nasti_aw_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#87| state))
 ; yosys-smt2-wire dcache_io_nasti_ar_valid 1
-(define-fun |Tile_n dcache_io_nasti_ar_valid| ((state |Tile_s|)) Bool (|Tile#75| state))
+(define-fun |Tile_n dcache_io_nasti_ar_valid| ((state |Tile_s|)) Bool (|Tile#88| state))
 ; yosys-smt2-wire dcache_io_nasti_ar_ready 1
-(define-fun |Tile_n dcache_io_nasti_ar_ready| ((state |Tile_s|)) Bool (|Tile#18| state))
+(define-fun |Tile_n dcache_io_nasti_ar_ready| ((state |Tile_s|)) Bool (|Tile#52| state))
 ; yosys-smt2-wire dcache_io_nasti_ar_bits_addr 32
-(define-fun |Tile_n dcache_io_nasti_ar_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#76| state))
+(define-fun |Tile_n dcache_io_nasti_ar_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#89| state))
 ; yosys-smt2-wire dcache_io_cpu_resp_valid 1
-(define-fun |Tile_n dcache_io_cpu_resp_valid| ((state |Tile_s|)) Bool (|Tile#77| state))
+(define-fun |Tile_n dcache_io_cpu_resp_valid| ((state |Tile_s|)) Bool (|Tile#90| state))
 ; yosys-smt2-wire dcache_io_cpu_resp_bits_data 32
-(define-fun |Tile_n dcache_io_cpu_resp_bits_data| ((state |Tile_s|)) (_ BitVec 32) (|Tile#78| state))
+(define-fun |Tile_n dcache_io_cpu_resp_bits_data| ((state |Tile_s|)) (_ BitVec 32) (|Tile#91| state))
 ; yosys-smt2-wire dcache_io_cpu_req_valid 1
-(define-fun |Tile_n dcache_io_cpu_req_valid| ((state |Tile_s|)) Bool (|Tile#35| state))
+(define-fun |Tile_n dcache_io_cpu_req_valid| ((state |Tile_s|)) Bool (|Tile#7| state))
 ; yosys-smt2-wire dcache_io_cpu_req_bits_mask 4
-(define-fun |Tile_n dcache_io_cpu_req_bits_mask| ((state |Tile_s|)) (_ BitVec 4) (|Tile#36| state))
+(define-fun |Tile_n dcache_io_cpu_req_bits_mask| ((state |Tile_s|)) (_ BitVec 4) (|Tile#8| state))
 ; yosys-smt2-wire dcache_io_cpu_req_bits_data 32
-(define-fun |Tile_n dcache_io_cpu_req_bits_data| ((state |Tile_s|)) (_ BitVec 32) (|Tile#37| state))
+(define-fun |Tile_n dcache_io_cpu_req_bits_data| ((state |Tile_s|)) (_ BitVec 32) (|Tile#9| state))
 ; yosys-smt2-wire dcache_io_cpu_req_bits_addr 32
-(define-fun |Tile_n dcache_io_cpu_req_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#38| state))
+(define-fun |Tile_n dcache_io_cpu_req_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#10| state))
 ; yosys-smt2-wire dcache_io_cpu_abort 1
-(define-fun |Tile_n dcache_io_cpu_abort| ((state |Tile_s|)) Bool (|Tile#39| state))
+(define-fun |Tile_n dcache_io_cpu_abort| ((state |Tile_s|)) Bool (|Tile#11| state))
 ; yosys-smt2-wire dcache_clock 1
 ; yosys-smt2-clock dcache_clock posedge
-(define-fun |Tile_n dcache_clock| ((state |Tile_s|)) Bool (|Tile#67| state))
+(define-fun |Tile_n dcache_clock| ((state |Tile_s|)) Bool (|Tile#80| state))
 ; yosys-smt2-wire core_reset 1
-(define-fun |Tile_n core_reset| ((state |Tile_s|)) Bool (|Tile#0| state))
+(define-fun |Tile_n core_reset| ((state |Tile_s|)) Bool (|Tile#2| state))
 ; yosys-smt2-wire core_io_icache_resp_valid 1
-(define-fun |Tile_n core_io_icache_resp_valid| ((state |Tile_s|)) Bool (|Tile#65| state))
+(define-fun |Tile_n core_io_icache_resp_valid| ((state |Tile_s|)) Bool (|Tile#78| state))
 ; yosys-smt2-wire core_io_icache_resp_bits_data 32
-(define-fun |Tile_n core_io_icache_resp_bits_data| ((state |Tile_s|)) (_ BitVec 32) (|Tile#66| state))
+(define-fun |Tile_n core_io_icache_resp_bits_data| ((state |Tile_s|)) (_ BitVec 32) (|Tile#79| state))
 ; yosys-smt2-wire core_io_icache_req_valid 1
-(define-fun |Tile_n core_io_icache_req_valid| ((state |Tile_s|)) Bool (|Tile#32| state))
+(define-fun |Tile_n core_io_icache_req_valid| ((state |Tile_s|)) Bool (|Tile#4| state))
 ; yosys-smt2-wire core_io_icache_req_bits_addr 32
-(define-fun |Tile_n core_io_icache_req_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#33| state))
+(define-fun |Tile_n core_io_icache_req_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#5| state))
 ; yosys-smt2-wire core_io_host_tohost 32
-(define-fun |Tile_n core_io_host_tohost| ((state |Tile_s|)) (_ BitVec 32) (|Tile#34| state))
+(define-fun |Tile_n core_io_host_tohost| ((state |Tile_s|)) (_ BitVec 32) (|Tile#6| state))
 ; yosys-smt2-wire core_io_host_fromhost_valid 1
-(define-fun |Tile_n core_io_host_fromhost_valid| ((state |Tile_s|)) Bool (|Tile#54| state))
+(define-fun |Tile_n core_io_host_fromhost_valid| ((state |Tile_s|)) Bool (|Tile#66| state))
 ; yosys-smt2-wire core_io_host_fromhost_bits 32
-(define-fun |Tile_n core_io_host_fromhost_bits| ((state |Tile_s|)) (_ BitVec 32) (|Tile#55| state))
+(define-fun |Tile_n core_io_host_fromhost_bits| ((state |Tile_s|)) (_ BitVec 32) (|Tile#67| state))
 ; yosys-smt2-wire core_io_dcache_resp_valid 1
-(define-fun |Tile_n core_io_dcache_resp_valid| ((state |Tile_s|)) Bool (|Tile#77| state))
+(define-fun |Tile_n core_io_dcache_resp_valid| ((state |Tile_s|)) Bool (|Tile#90| state))
 ; yosys-smt2-wire core_io_dcache_resp_bits_data 32
-(define-fun |Tile_n core_io_dcache_resp_bits_data| ((state |Tile_s|)) (_ BitVec 32) (|Tile#78| state))
+(define-fun |Tile_n core_io_dcache_resp_bits_data| ((state |Tile_s|)) (_ BitVec 32) (|Tile#91| state))
 ; yosys-smt2-wire core_io_dcache_req_valid 1
-(define-fun |Tile_n core_io_dcache_req_valid| ((state |Tile_s|)) Bool (|Tile#35| state))
+(define-fun |Tile_n core_io_dcache_req_valid| ((state |Tile_s|)) Bool (|Tile#7| state))
 ; yosys-smt2-wire core_io_dcache_req_bits_mask 4
-(define-fun |Tile_n core_io_dcache_req_bits_mask| ((state |Tile_s|)) (_ BitVec 4) (|Tile#36| state))
+(define-fun |Tile_n core_io_dcache_req_bits_mask| ((state |Tile_s|)) (_ BitVec 4) (|Tile#8| state))
 ; yosys-smt2-wire core_io_dcache_req_bits_data 32
-(define-fun |Tile_n core_io_dcache_req_bits_data| ((state |Tile_s|)) (_ BitVec 32) (|Tile#37| state))
+(define-fun |Tile_n core_io_dcache_req_bits_data| ((state |Tile_s|)) (_ BitVec 32) (|Tile#9| state))
 ; yosys-smt2-wire core_io_dcache_req_bits_addr 32
-(define-fun |Tile_n core_io_dcache_req_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#38| state))
+(define-fun |Tile_n core_io_dcache_req_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#10| state))
 ; yosys-smt2-wire core_io_dcache_abort 1
-(define-fun |Tile_n core_io_dcache_abort| ((state |Tile_s|)) Bool (|Tile#39| state))
+(define-fun |Tile_n core_io_dcache_abort| ((state |Tile_s|)) Bool (|Tile#11| state))
 ; yosys-smt2-wire core_clock 1
 ; yosys-smt2-clock core_clock posedge
-(define-fun |Tile_n core_clock| ((state |Tile_s|)) Bool (|Tile#67| state))
+(define-fun |Tile_n core_clock| ((state |Tile_s|)) Bool (|Tile#80| state))
 ; yosys-smt2-input clock 1
 ; yosys-smt2-wire clock 1
 ; yosys-smt2-clock clock posedge
-(define-fun |Tile_n clock| ((state |Tile_s|)) Bool (|Tile#67| state))
+(define-fun |Tile_n clock| ((state |Tile_s|)) Bool (|Tile#80| state))
 ; yosys-smt2-wire arb_reset 1
-(define-fun |Tile_n arb_reset| ((state |Tile_s|)) Bool (|Tile#0| state))
+(define-fun |Tile_n arb_reset| ((state |Tile_s|)) Bool (|Tile#2| state))
 ; yosys-smt2-wire arb_io_nasti_w_valid 1
-(define-fun |Tile_n arb_io_nasti_w_valid| ((state |Tile_s|)) Bool (|Tile#1| state))
+(define-fun |Tile_n arb_io_nasti_w_valid| ((state |Tile_s|)) Bool (|Tile#35| state))
 ; yosys-smt2-wire arb_io_nasti_w_ready 1
-(define-fun |Tile_n arb_io_nasti_w_ready| ((state |Tile_s|)) Bool (|Tile#19| state))
+(define-fun |Tile_n arb_io_nasti_w_ready| ((state |Tile_s|)) Bool (|Tile#53| state))
 ; yosys-smt2-wire arb_io_nasti_w_bits_last 1
-(define-fun |Tile_n arb_io_nasti_w_bits_last| ((state |Tile_s|)) Bool (|Tile#2| state))
+(define-fun |Tile_n arb_io_nasti_w_bits_last| ((state |Tile_s|)) Bool (|Tile#36| state))
 ; yosys-smt2-wire arb_io_nasti_w_bits_data 64
-(define-fun |Tile_n arb_io_nasti_w_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#3| state))
+(define-fun |Tile_n arb_io_nasti_w_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#37| state))
 ; yosys-smt2-wire arb_io_nasti_r_valid 1
-(define-fun |Tile_n arb_io_nasti_r_valid| ((state |Tile_s|)) Bool (|Tile#20| state))
+(define-fun |Tile_n arb_io_nasti_r_valid| ((state |Tile_s|)) Bool (|Tile#54| state))
 ; yosys-smt2-wire arb_io_nasti_r_ready 1
-(define-fun |Tile_n arb_io_nasti_r_ready| ((state |Tile_s|)) Bool (|Tile#4| state))
+(define-fun |Tile_n arb_io_nasti_r_ready| ((state |Tile_s|)) Bool (|Tile#38| state))
 ; yosys-smt2-wire arb_io_nasti_r_bits_last 1
-(define-fun |Tile_n arb_io_nasti_r_bits_last| ((state |Tile_s|)) Bool (|Tile#23| state))
+(define-fun |Tile_n arb_io_nasti_r_bits_last| ((state |Tile_s|)) Bool (|Tile#57| state))
 ; yosys-smt2-wire arb_io_nasti_r_bits_data 64
-(define-fun |Tile_n arb_io_nasti_r_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#25| state))
+(define-fun |Tile_n arb_io_nasti_r_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#59| state))
 ; yosys-smt2-wire arb_io_nasti_b_valid 1
-(define-fun |Tile_n arb_io_nasti_b_valid| ((state |Tile_s|)) Bool (|Tile#26| state))
+(define-fun |Tile_n arb_io_nasti_b_valid| ((state |Tile_s|)) Bool (|Tile#60| state))
 ; yosys-smt2-wire arb_io_nasti_b_ready 1
-(define-fun |Tile_n arb_io_nasti_b_ready| ((state |Tile_s|)) Bool (|Tile#5| state))
+(define-fun |Tile_n arb_io_nasti_b_ready| ((state |Tile_s|)) Bool (|Tile#39| state))
 ; yosys-smt2-wire arb_io_nasti_aw_valid 1
-(define-fun |Tile_n arb_io_nasti_aw_valid| ((state |Tile_s|)) Bool (|Tile#6| state))
+(define-fun |Tile_n arb_io_nasti_aw_valid| ((state |Tile_s|)) Bool (|Tile#40| state))
 ; yosys-smt2-wire arb_io_nasti_aw_ready 1
-(define-fun |Tile_n arb_io_nasti_aw_ready| ((state |Tile_s|)) Bool (|Tile#30| state))
+(define-fun |Tile_n arb_io_nasti_aw_ready| ((state |Tile_s|)) Bool (|Tile#64| state))
 ; yosys-smt2-wire arb_io_nasti_aw_bits_addr 32
-(define-fun |Tile_n arb_io_nasti_aw_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#7| state))
+(define-fun |Tile_n arb_io_nasti_aw_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#41| state))
 ; yosys-smt2-wire arb_io_nasti_ar_valid 1
-(define-fun |Tile_n arb_io_nasti_ar_valid| ((state |Tile_s|)) Bool (|Tile#8| state))
+(define-fun |Tile_n arb_io_nasti_ar_valid| ((state |Tile_s|)) Bool (|Tile#42| state))
 ; yosys-smt2-wire arb_io_nasti_ar_ready 1
-(define-fun |Tile_n arb_io_nasti_ar_ready| ((state |Tile_s|)) Bool (|Tile#31| state))
+(define-fun |Tile_n arb_io_nasti_ar_ready| ((state |Tile_s|)) Bool (|Tile#65| state))
 ; yosys-smt2-wire arb_io_nasti_ar_bits_addr 32
-(define-fun |Tile_n arb_io_nasti_ar_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#9| state))
+(define-fun |Tile_n arb_io_nasti_ar_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#43| state))
 ; yosys-smt2-wire arb_io_icache_r_valid 1
-(define-fun |Tile_n arb_io_icache_r_valid| ((state |Tile_s|)) Bool (|Tile#10| state))
+(define-fun |Tile_n arb_io_icache_r_valid| ((state |Tile_s|)) Bool (|Tile#44| state))
 ; yosys-smt2-wire arb_io_icache_r_ready 1
-(define-fun |Tile_n arb_io_icache_r_ready| ((state |Tile_s|)) Bool (|Tile#59| state))
+(define-fun |Tile_n arb_io_icache_r_ready| ((state |Tile_s|)) Bool (|Tile#72| state))
 ; yosys-smt2-wire arb_io_icache_r_bits_data 64
-(define-fun |Tile_n arb_io_icache_r_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#11| state))
+(define-fun |Tile_n arb_io_icache_r_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#45| state))
 ; yosys-smt2-wire arb_io_icache_ar_valid 1
-(define-fun |Tile_n arb_io_icache_ar_valid| ((state |Tile_s|)) Bool (|Tile#63| state))
+(define-fun |Tile_n arb_io_icache_ar_valid| ((state |Tile_s|)) Bool (|Tile#76| state))
 ; yosys-smt2-wire arb_io_icache_ar_ready 1
-(define-fun |Tile_n arb_io_icache_ar_ready| ((state |Tile_s|)) Bool (|Tile#12| state))
+(define-fun |Tile_n arb_io_icache_ar_ready| ((state |Tile_s|)) Bool (|Tile#46| state))
 ; yosys-smt2-wire arb_io_icache_ar_bits_addr 32
-(define-fun |Tile_n arb_io_icache_ar_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#64| state))
+(define-fun |Tile_n arb_io_icache_ar_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#77| state))
 ; yosys-smt2-wire arb_io_dcache_w_valid 1
-(define-fun |Tile_n arb_io_dcache_w_valid| ((state |Tile_s|)) Bool (|Tile#68| state))
+(define-fun |Tile_n arb_io_dcache_w_valid| ((state |Tile_s|)) Bool (|Tile#81| state))
 ; yosys-smt2-wire arb_io_dcache_w_ready 1
-(define-fun |Tile_n arb_io_dcache_w_ready| ((state |Tile_s|)) Bool (|Tile#13| state))
+(define-fun |Tile_n arb_io_dcache_w_ready| ((state |Tile_s|)) Bool (|Tile#47| state))
 ; yosys-smt2-wire arb_io_dcache_w_bits_last 1
-(define-fun |Tile_n arb_io_dcache_w_bits_last| ((state |Tile_s|)) Bool (|Tile#69| state))
+(define-fun |Tile_n arb_io_dcache_w_bits_last| ((state |Tile_s|)) Bool (|Tile#82| state))
 ; yosys-smt2-wire arb_io_dcache_w_bits_data 64
-(define-fun |Tile_n arb_io_dcache_w_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#70| state))
+(define-fun |Tile_n arb_io_dcache_w_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#83| state))
 ; yosys-smt2-wire arb_io_dcache_r_valid 1
-(define-fun |Tile_n arb_io_dcache_r_valid| ((state |Tile_s|)) Bool (|Tile#14| state))
+(define-fun |Tile_n arb_io_dcache_r_valid| ((state |Tile_s|)) Bool (|Tile#48| state))
 ; yosys-smt2-wire arb_io_dcache_r_ready 1
-(define-fun |Tile_n arb_io_dcache_r_ready| ((state |Tile_s|)) Bool (|Tile#71| state))
+(define-fun |Tile_n arb_io_dcache_r_ready| ((state |Tile_s|)) Bool (|Tile#84| state))
 ; yosys-smt2-wire arb_io_dcache_r_bits_data 64
-(define-fun |Tile_n arb_io_dcache_r_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#15| state))
+(define-fun |Tile_n arb_io_dcache_r_bits_data| ((state |Tile_s|)) (_ BitVec 64) (|Tile#49| state))
 ; yosys-smt2-wire arb_io_dcache_b_valid 1
-(define-fun |Tile_n arb_io_dcache_b_valid| ((state |Tile_s|)) Bool (|Tile#16| state))
+(define-fun |Tile_n arb_io_dcache_b_valid| ((state |Tile_s|)) Bool (|Tile#50| state))
 ; yosys-smt2-wire arb_io_dcache_b_ready 1
-(define-fun |Tile_n arb_io_dcache_b_ready| ((state |Tile_s|)) Bool (|Tile#72| state))
+(define-fun |Tile_n arb_io_dcache_b_ready| ((state |Tile_s|)) Bool (|Tile#85| state))
 ; yosys-smt2-wire arb_io_dcache_aw_valid 1
-(define-fun |Tile_n arb_io_dcache_aw_valid| ((state |Tile_s|)) Bool (|Tile#73| state))
+(define-fun |Tile_n arb_io_dcache_aw_valid| ((state |Tile_s|)) Bool (|Tile#86| state))
 ; yosys-smt2-wire arb_io_dcache_aw_ready 1
-(define-fun |Tile_n arb_io_dcache_aw_ready| ((state |Tile_s|)) Bool (|Tile#17| state))
+(define-fun |Tile_n arb_io_dcache_aw_ready| ((state |Tile_s|)) Bool (|Tile#51| state))
 ; yosys-smt2-wire arb_io_dcache_aw_bits_addr 32
-(define-fun |Tile_n arb_io_dcache_aw_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#74| state))
+(define-fun |Tile_n arb_io_dcache_aw_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#87| state))
 ; yosys-smt2-wire arb_io_dcache_ar_valid 1
-(define-fun |Tile_n arb_io_dcache_ar_valid| ((state |Tile_s|)) Bool (|Tile#75| state))
+(define-fun |Tile_n arb_io_dcache_ar_valid| ((state |Tile_s|)) Bool (|Tile#88| state))
 ; yosys-smt2-wire arb_io_dcache_ar_ready 1
-(define-fun |Tile_n arb_io_dcache_ar_ready| ((state |Tile_s|)) Bool (|Tile#18| state))
+(define-fun |Tile_n arb_io_dcache_ar_ready| ((state |Tile_s|)) Bool (|Tile#52| state))
 ; yosys-smt2-wire arb_io_dcache_ar_bits_addr 32
-(define-fun |Tile_n arb_io_dcache_ar_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#76| state))
+(define-fun |Tile_n arb_io_dcache_ar_bits_addr| ((state |Tile_s|)) (_ BitVec 32) (|Tile#89| state))
 ; yosys-smt2-wire arb_clock 1
 ; yosys-smt2-clock arb_clock posedge
-(define-fun |Tile_n arb_clock| ((state |Tile_s|)) Bool (|Tile#67| state))
+(define-fun |Tile_n arb_clock| ((state |Tile_s|)) Bool (|Tile#80| state))
+; yosys-smt2-wire __lft__tile__stall 33
+(define-fun |Tile_n __lft__tile__stall| ((state |Tile_s|)) (_ BitVec 33) (|Tile#12| state))
 ; yosys-smt2-wire __lft__tile__regFile_io_wdata 32
-(define-fun |Tile_n __lft__tile__regFile_io_wdata| ((state |Tile_s|)) (_ BitVec 32) (|Tile#40| state))
+(define-fun |Tile_n __lft__tile__regFile_io_wdata| ((state |Tile_s|)) (_ BitVec 32) (|Tile#13| state))
 ; yosys-smt2-wire __lft__tile__regFile_io_waddr 5
-(define-fun |Tile_n __lft__tile__regFile_io_waddr| ((state |Tile_s|)) (_ BitVec 5) (|Tile#41| state))
+(define-fun |Tile_n __lft__tile__regFile_io_waddr| ((state |Tile_s|)) (_ BitVec 5) (|Tile#14| state))
 ; yosys-smt2-wire __lft__tile__regFile_io_rdata2 32
-(define-fun |Tile_n __lft__tile__regFile_io_rdata2| ((state |Tile_s|)) (_ BitVec 32) (|Tile#42| state))
+(define-fun |Tile_n __lft__tile__regFile_io_rdata2| ((state |Tile_s|)) (_ BitVec 32) (|Tile#15| state))
 ; yosys-smt2-wire __lft__tile__regFile_io_rdata1 32
-(define-fun |Tile_n __lft__tile__regFile_io_rdata1| ((state |Tile_s|)) (_ BitVec 32) (|Tile#43| state))
+(define-fun |Tile_n __lft__tile__regFile_io_rdata1| ((state |Tile_s|)) (_ BitVec 32) (|Tile#16| state))
 ; yosys-smt2-wire __lft__tile__regFile_io_raddr2 5
-(define-fun |Tile_n __lft__tile__regFile_io_raddr2| ((state |Tile_s|)) (_ BitVec 5) (|Tile#44| state))
+(define-fun |Tile_n __lft__tile__regFile_io_raddr2| ((state |Tile_s|)) (_ BitVec 5) (|Tile#17| state))
 ; yosys-smt2-wire __lft__tile__regFile_io_raddr1 5
-(define-fun |Tile_n __lft__tile__regFile_io_raddr1| ((state |Tile_s|)) (_ BitVec 5) (|Tile#45| state))
+(define-fun |Tile_n __lft__tile__regFile_io_raddr1| ((state |Tile_s|)) (_ BitVec 5) (|Tile#18| state))
 ; yosys-smt2-wire __lft__tile__pc 33
-(define-fun |Tile_n __lft__tile__pc| ((state |Tile_s|)) (_ BitVec 33) (|Tile#46| state))
+(define-fun |Tile_n __lft__tile__pc| ((state |Tile_s|)) (_ BitVec 33) (|Tile#19| state))
 ; yosys-smt2-wire __lft__tile__fe_pc 33
-(define-fun |Tile_n __lft__tile__fe_pc| ((state |Tile_s|)) (_ BitVec 33) (|Tile#47| state))
+(define-fun |Tile_n __lft__tile__fe_pc| ((state |Tile_s|)) (_ BitVec 33) (|Tile#20| state))
+; yosys-smt2-wire __lft__tile__fe_inst 32
+(define-fun |Tile_n __lft__tile__fe_inst| ((state |Tile_s|)) (_ BitVec 32) (|Tile#21| state))
 ; yosys-smt2-wire __lft__tile__ew_pc 33
-(define-fun |Tile_n __lft__tile__ew_pc| ((state |Tile_s|)) (_ BitVec 33) (|Tile#48| state))
+(define-fun |Tile_n __lft__tile__ew_pc| ((state |Tile_s|)) (_ BitVec 33) (|Tile#22| state))
 ; yosys-smt2-wire __lft__tile__alu_io_sum 32
-(define-fun |Tile_n __lft__tile__alu_io_sum| ((state |Tile_s|)) (_ BitVec 32) (|Tile#49| state))
+(define-fun |Tile_n __lft__tile__alu_io_sum| ((state |Tile_s|)) (_ BitVec 32) (|Tile#23| state))
 ; yosys-smt2-wire __lft__tile__alu_io_out 32
-(define-fun |Tile_n __lft__tile__alu_io_out| ((state |Tile_s|)) (_ BitVec 32) (|Tile#50| state))
+(define-fun |Tile_n __lft__tile__alu_io_out| ((state |Tile_s|)) (_ BitVec 32) (|Tile#24| state))
 ; yosys-smt2-wire __lft__tile__alu_io_alu_op 4
-(define-fun |Tile_n __lft__tile__alu_io_alu_op| ((state |Tile_s|)) (_ BitVec 4) (|Tile#51| state))
+(define-fun |Tile_n __lft__tile__alu_io_alu_op| ((state |Tile_s|)) (_ BitVec 4) (|Tile#25| state))
 ; yosys-smt2-wire __lft__tile__alu_io_B 32
-(define-fun |Tile_n __lft__tile__alu_io_B| ((state |Tile_s|)) (_ BitVec 32) (|Tile#52| state))
+(define-fun |Tile_n __lft__tile__alu_io_B| ((state |Tile_s|)) (_ BitVec 32) (|Tile#26| state))
 ; yosys-smt2-wire __lft__tile__alu_io_A 32
-(define-fun |Tile_n __lft__tile__alu_io_A| ((state |Tile_s|)) (_ BitVec 32) (|Tile#53| state))
-(declare-fun |Tile#79| (|Tile_s|) (_ BitVec 1)) ; $formal$__lft__corr.v:6571$2_CHECK
-; yosys-smt2-register $formal$__lft__corr.v:6571$2_CHECK 1
-(define-fun |Tile_n $formal$__lft__corr.v:6571$2_CHECK| ((state |Tile_s|)) Bool (= ((_ extract 0 0) (|Tile#79| state)) #b1))
-(declare-fun |Tile#80| (|Tile_s|) (_ BitVec 1)) ; $formal$__lft__corr.v:6570$1_EN
-; yosys-smt2-register $formal$__lft__corr.v:6570$1_EN 1
-(define-fun |Tile_n $formal$__lft__corr.v:6570$1_EN| ((state |Tile_s|)) Bool (= ((_ extract 0 0) (|Tile#80| state)) #b1))
-(define-fun |Tile#81| ((state |Tile_s|)) Bool (= (|Tile#51| state) #b0011)) ; $0$formal$__lft__corr.v:6570$1_CHECK[0:0]$4
-; yosys-smt2-assume 0 __lft__corr.v:6570.32-6571.43
-(define-fun |Tile_u 0| ((state |Tile_s|)) Bool (or (|Tile#81| state) (not true))) ; $assume$__lft__corr.v:6570$11
-; yosys-smt2-assert 0 __lft__corr.v:6571.44-6572.90
-(define-fun |Tile_a 0| ((state |Tile_s|)) Bool (or (= ((_ extract 0 0) (|Tile#79| state)) #b1) (not (= ((_ extract 0 0) (|Tile#80| state)) #b1)))) ; $assert$__lft__corr.v:6571$12
-(define-fun |Tile#82| ((state |Tile_s|)) (_ BitVec 32) (bvor (|Tile#52| state) (|Tile#53| state))) ; $or$__lft__corr.v:6572$9_Y
-(define-fun |Tile#83| ((state |Tile_s|)) Bool (= (|Tile#82| state) (|Tile#50| state))) ; $0$formal$__lft__corr.v:6571$2_CHECK[0:0]$6
+(define-fun |Tile_n __lft__tile__alu_io_A| ((state |Tile_s|)) (_ BitVec 32) (|Tile#27| state))
+(declare-fun |Tile#92| (|Tile_s|) (_ BitVec 1)) ; $past$__lft__corr.v:6622$3$1
+; yosys-smt2-register $past$__lft__corr.v:6622$3$1 1
+(define-fun |Tile_n $past$__lft__corr.v:6622$3$1| ((state |Tile_s|)) Bool (= ((_ extract 0 0) (|Tile#92| state)) #b1))
+(declare-fun |Tile#93| (|Tile_s|) (_ BitVec 1)) ; $formal$__lft__corr.v:6623$7_EN
+; yosys-smt2-register $formal$__lft__corr.v:6623$7_EN 1
+(define-fun |Tile_n $formal$__lft__corr.v:6623$7_EN| ((state |Tile_s|)) Bool (= ((_ extract 0 0) (|Tile#93| state)) #b1))
+(declare-fun |Tile#94| (|Tile_s|) (_ BitVec 1)) ; $formal$__lft__corr.v:6623$7_CHECK
+; yosys-smt2-register $formal$__lft__corr.v:6623$7_CHECK 1
+(define-fun |Tile_n $formal$__lft__corr.v:6623$7_CHECK| ((state |Tile_s|)) Bool (= ((_ extract 0 0) (|Tile#94| state)) #b1))
+(declare-fun |Tile#95| (|Tile_s|) (_ BitVec 1)) ; $0$past$__lft__corr.v:6622$3$1[0:0]$23
+; yosys-smt2-register $0$past$__lft__corr.v:6622$3$1[0:0]$23 1
+(define-fun |Tile_n $0$past$__lft__corr.v:6622$3$1[0:0]$23| ((state |Tile_s|)) Bool (= ((_ extract 0 0) (|Tile#95| state)) #b1))
+; yosys-smt2-anyseq Tile#96 1 $auto$setundef.cc:501:execute$3345
+(declare-fun |Tile#96| (|Tile_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2817:Anyseq$3346
+(define-fun |Tile#97| ((state |Tile_s|)) Bool (= (|Tile#1| state) (|Tile#16| state))) ; $eq$__lft__corr.v:6616$47_Y
+(define-fun |Tile#98| ((state |Tile_s|)) Bool (and (or  (|Tile#34| state) false) (or  (|Tile#97| state) false))) ; $logic_and$__lft__corr.v:6615$48_Y
+(define-fun |Tile#99| ((state |Tile_s|)) Bool (= (|Tile#0| state) (|Tile#15| state))) ; $eq$__lft__corr.v:6617$49_Y
+(define-fun |Tile#100| ((state |Tile_s|)) Bool (and (or  (|Tile#98| state) false) (or  (|Tile#99| state) false))) ; $logic_and$__lft__corr.v:6615$50_Y
+(define-fun |Tile#101| ((state |Tile_s|)) Bool (not (or  (|Tile#2| state) false))) ; $logic_not$__lft__corr.v:6608$38_Y
+(define-fun |Tile#102| ((state |Tile_s|)) Bool (not (or  (= ((_ extract 0 0) (|Tile#95| state)) #b1) false))) ; $logic_not$__lft__corr.v:6613$42_Y
+(define-fun |Tile#103| ((state |Tile_s|)) Bool (and (or  (|Tile#101| state) false) (or  (|Tile#102| state) false))) ; $logic_and$__lft__corr.v:6613$43_Y
+(define-fun |Tile#104| ((state |Tile_s|)) Bool (and (or  (|Tile#103| state) false) (or  (= ((_ extract 0 0) (|Tile#3| state)) #b1) false))) ; $logic_and$__lft__corr.v:6613$44_Y
+(define-fun |Tile#105| ((state |Tile_s|)) Bool (= (|Tile#20| state) #b000000000000000000000001000000000)) ; $eq$__lft__corr.v:6613$45_Y
+(define-fun |Tile#106| ((state |Tile_s|)) Bool (and (or  (|Tile#104| state) false) (or  (|Tile#105| state) false))) ; $logic_and$__lft__corr.v:6613$46_Y
+(define-fun |Tile#107| ((state |Tile_s|)) (_ BitVec 1) (ite (|Tile#106| state) (ite (|Tile#100| state) #b1 #b0) (|Tile#96| state))) ; $0$formal$__lft__corr.v:6613$6_CHECK[0:0]$28
+(define-fun |Tile#108| ((state |Tile_s|)) (_ BitVec 1) (ite (|Tile#106| state) #b1 #b0)) ; $0$formal$__lft__corr.v:6613$6_EN[0:0]$29
+; yosys-smt2-assume 0 __lft__corr.v:6613.86-6618.10
+(define-fun |Tile_u 0| ((state |Tile_s|)) Bool (or (= ((_ extract 0 0) (|Tile#107| state)) #b1) (not (= ((_ extract 0 0) (|Tile#108| state)) #b1)))) ; $assume$__lft__corr.v:6613$63
+; yosys-smt2-anyseq Tile#109 1 $auto$setundef.cc:501:execute$3343
+(declare-fun |Tile#109| (|Tile_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2817:Anyseq$3344
+(define-fun |Tile#110| ((state |Tile_s|)) Bool (not (or  (= ((_ extract 0 0) (|Tile#19| state)) #b1) (= ((_ extract 1 1) (|Tile#19| state)) #b1) (= ((_ extract 2 2) (|Tile#19| state)) #b1) (= ((_ extract 3 3) (|Tile#19| state)) #b1) (= ((_ extract 4 4) (|Tile#19| state)) #b1) (= ((_ extract 5 5) (|Tile#19| state)) #b1) (= ((_ extract 6 6) (|Tile#19| state)) #b1) (= ((_ extract 7 7) (|Tile#19| state)) #b1) (= ((_ extract 8 8) (|Tile#19| state)) #b1) (= ((_ extract 9 9) (|Tile#19| state)) #b1) (= ((_ extract 10 10) (|Tile#19| state)) #b1) (= ((_ extract 11 11) (|Tile#19| state)) #b1) (= ((_ extract 12 12) (|Tile#19| state)) #b1) (= ((_ extract 13 13) (|Tile#19| state)) #b1) (= ((_ extract 14 14) (|Tile#19| state)) #b1) (= ((_ extract 15 15) (|Tile#19| state)) #b1) (= ((_ extract 16 16) (|Tile#19| state)) #b1) (= ((_ extract 17 17) (|Tile#19| state)) #b1) (= ((_ extract 18 18) (|Tile#19| state)) #b1) (= ((_ extract 19 19) (|Tile#19| state)) #b1) (= ((_ extract 20 20) (|Tile#19| state)) #b1) (= ((_ extract 21 21) (|Tile#19| state)) #b1) (= ((_ extract 22 22) (|Tile#19| state)) #b1) (= ((_ extract 23 23) (|Tile#19| state)) #b1) (= ((_ extract 24 24) (|Tile#19| state)) #b1) (= ((_ extract 25 25) (|Tile#19| state)) #b1) (= ((_ extract 26 26) (|Tile#19| state)) #b1) (= ((_ extract 27 27) (|Tile#19| state)) #b1) (= ((_ extract 28 28) (|Tile#19| state)) #b1) (= ((_ extract 29 29) (|Tile#19| state)) #b1) (= ((_ extract 30 30) (|Tile#19| state)) #b1) (= ((_ extract 31 31) (|Tile#19| state)) #b1) (= ((_ extract 32 32) (|Tile#19| state)) #b1)))) ; $eq$__lft__corr.v:6602$33_Y
+(define-fun |Tile#111| ((state |Tile_s|)) Bool (not (or  (= ((_ extract 0 0) (|Tile#20| state)) #b1) (= ((_ extract 1 1) (|Tile#20| state)) #b1) (= ((_ extract 2 2) (|Tile#20| state)) #b1) (= ((_ extract 3 3) (|Tile#20| state)) #b1) (= ((_ extract 4 4) (|Tile#20| state)) #b1) (= ((_ extract 5 5) (|Tile#20| state)) #b1) (= ((_ extract 6 6) (|Tile#20| state)) #b1) (= ((_ extract 7 7) (|Tile#20| state)) #b1) (= ((_ extract 8 8) (|Tile#20| state)) #b1) (= ((_ extract 9 9) (|Tile#20| state)) #b1) (= ((_ extract 10 10) (|Tile#20| state)) #b1) (= ((_ extract 11 11) (|Tile#20| state)) #b1) (= ((_ extract 12 12) (|Tile#20| state)) #b1) (= ((_ extract 13 13) (|Tile#20| state)) #b1) (= ((_ extract 14 14) (|Tile#20| state)) #b1) (= ((_ extract 15 15) (|Tile#20| state)) #b1) (= ((_ extract 16 16) (|Tile#20| state)) #b1) (= ((_ extract 17 17) (|Tile#20| state)) #b1) (= ((_ extract 18 18) (|Tile#20| state)) #b1) (= ((_ extract 19 19) (|Tile#20| state)) #b1) (= ((_ extract 20 20) (|Tile#20| state)) #b1) (= ((_ extract 21 21) (|Tile#20| state)) #b1) (= ((_ extract 22 22) (|Tile#20| state)) #b1) (= ((_ extract 23 23) (|Tile#20| state)) #b1) (= ((_ extract 24 24) (|Tile#20| state)) #b1) (= ((_ extract 25 25) (|Tile#20| state)) #b1) (= ((_ extract 26 26) (|Tile#20| state)) #b1) (= ((_ extract 27 27) (|Tile#20| state)) #b1) (= ((_ extract 28 28) (|Tile#20| state)) #b1) (= ((_ extract 29 29) (|Tile#20| state)) #b1) (= ((_ extract 30 30) (|Tile#20| state)) #b1) (= ((_ extract 31 31) (|Tile#20| state)) #b1) (= ((_ extract 32 32) (|Tile#20| state)) #b1)))) ; $eq$__lft__corr.v:6603$34_Y
+(define-fun |Tile#112| ((state |Tile_s|)) Bool (and (or  (|Tile#110| state) false) (or  (|Tile#111| state) false))) ; $logic_and$__lft__corr.v:6602$35_Y
+(define-fun |Tile#113| ((state |Tile_s|)) Bool (not (or  (= ((_ extract 0 0) (|Tile#22| state)) #b1) (= ((_ extract 1 1) (|Tile#22| state)) #b1) (= ((_ extract 2 2) (|Tile#22| state)) #b1) (= ((_ extract 3 3) (|Tile#22| state)) #b1) (= ((_ extract 4 4) (|Tile#22| state)) #b1) (= ((_ extract 5 5) (|Tile#22| state)) #b1) (= ((_ extract 6 6) (|Tile#22| state)) #b1) (= ((_ extract 7 7) (|Tile#22| state)) #b1) (= ((_ extract 8 8) (|Tile#22| state)) #b1) (= ((_ extract 9 9) (|Tile#22| state)) #b1) (= ((_ extract 10 10) (|Tile#22| state)) #b1) (= ((_ extract 11 11) (|Tile#22| state)) #b1) (= ((_ extract 12 12) (|Tile#22| state)) #b1) (= ((_ extract 13 13) (|Tile#22| state)) #b1) (= ((_ extract 14 14) (|Tile#22| state)) #b1) (= ((_ extract 15 15) (|Tile#22| state)) #b1) (= ((_ extract 16 16) (|Tile#22| state)) #b1) (= ((_ extract 17 17) (|Tile#22| state)) #b1) (= ((_ extract 18 18) (|Tile#22| state)) #b1) (= ((_ extract 19 19) (|Tile#22| state)) #b1) (= ((_ extract 20 20) (|Tile#22| state)) #b1) (= ((_ extract 21 21) (|Tile#22| state)) #b1) (= ((_ extract 22 22) (|Tile#22| state)) #b1) (= ((_ extract 23 23) (|Tile#22| state)) #b1) (= ((_ extract 24 24) (|Tile#22| state)) #b1) (= ((_ extract 25 25) (|Tile#22| state)) #b1) (= ((_ extract 26 26) (|Tile#22| state)) #b1) (= ((_ extract 27 27) (|Tile#22| state)) #b1) (= ((_ extract 28 28) (|Tile#22| state)) #b1) (= ((_ extract 29 29) (|Tile#22| state)) #b1) (= ((_ extract 30 30) (|Tile#22| state)) #b1) (= ((_ extract 31 31) (|Tile#22| state)) #b1) (= ((_ extract 32 32) (|Tile#22| state)) #b1)))) ; $eq$__lft__corr.v:6604$36_Y
+(define-fun |Tile#114| ((state |Tile_s|)) Bool (and (or  (|Tile#112| state) false) (or  (|Tile#113| state) false))) ; $logic_and$__lft__corr.v:6602$37_Y
+(define-fun |Tile#115| ((state |Tile_s|)) (_ BitVec 1) (ite (|Tile#2| state) (ite (|Tile#114| state) #b1 #b0) (|Tile#109| state))) ; $0$formal$__lft__corr.v:6597$5_CHECK[0:0]$26
+(define-fun |Tile#116| ((state |Tile_s|)) (_ BitVec 1) (ite (|Tile#2| state) #b1 #b0)) ; $0$formal$__lft__corr.v:6597$5_EN[0:0]$27
+; yosys-smt2-assume 1 __lft__corr.v:6597.21-6605.10
+(define-fun |Tile_u 1| ((state |Tile_s|)) Bool (or (= ((_ extract 0 0) (|Tile#115| state)) #b1) (not (= ((_ extract 0 0) (|Tile#116| state)) #b1)))) ; $assume$__lft__corr.v:6597$62
+(define-fun |Tile#117| ((state |Tile_s|)) Bool (= (ite (|Tile#2| state) #b1 #b0) (|Tile#68| state))) ; $0$formal$__lft__corr.v:6591$4_CHECK[0:0]$24
+; yosys-smt2-assume 2 __lft__corr.v:6591.34-6593.28
+(define-fun |Tile_u 2| ((state |Tile_s|)) Bool (or (|Tile#117| state) (not true))) ; $assume$__lft__corr.v:6591$61
+; yosys-smt2-assert 0 __lft__corr.v:6623.59-6626.10
+(define-fun |Tile_a 0| ((state |Tile_s|)) Bool (or (= ((_ extract 0 0) (|Tile#94| state)) #b1) (not (= ((_ extract 0 0) (|Tile#93| state)) #b1)))) ; $assert$__lft__corr.v:6623$64
+; yosys-smt2-anyseq Tile#118 1 $auto$setundef.cc:501:execute$3347
+(declare-fun |Tile#118| (|Tile_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2817:Anyseq$3348
+(define-fun |Tile#119| ((state |Tile_s|)) (_ BitVec 32) (bvsub (|Tile#1| state) (|Tile#0| state))) ; $sub$__lft__corr.v:6625$59_Y
+(define-fun |Tile#120| ((state |Tile_s|)) Bool (= (|Tile#119| state) (|Tile#13| state))) ; $eq$__lft__corr.v:6625$60_Y
+(define-fun |Tile#121| ((state |Tile_s|)) Bool (not (or  (= ((_ extract 0 0) (|Tile#92| state)) #b1) false))) ; $logic_not$__lft__corr.v:6622$54_Y
+(define-fun |Tile#122| ((state |Tile_s|)) Bool (and (or  (|Tile#103| state) false) (or  (|Tile#121| state) false))) ; $logic_and$__lft__corr.v:6622$55_Y
+(define-fun |Tile#123| ((state |Tile_s|)) Bool (and (or  (|Tile#122| state) false) (or  (= ((_ extract 0 0) (|Tile#3| state)) #b1) false))) ; $logic_and$__lft__corr.v:6622$56_Y
+(define-fun |Tile#124| ((state |Tile_s|)) Bool (= (|Tile#22| state) #b000000000000000000000001000000000)) ; $eq$__lft__corr.v:6623$57_Y
+(define-fun |Tile#125| ((state |Tile_s|)) Bool (and (or  (|Tile#123| state) false) (or  (|Tile#124| state) false))) ; $logic_and$__lft__corr.v:6622$58_Y
+(define-fun |Tile#126| ((state |Tile_s|)) (_ BitVec 1) (ite (|Tile#125| state) (ite (|Tile#120| state) #b1 #b0) (|Tile#118| state))) ; $0$formal$__lft__corr.v:6623$7_CHECK[0:0]$30
+(define-fun |Tile#127| ((state |Tile_s|)) (_ BitVec 1) (ite (|Tile#125| state) #b1 #b0)) ; $0$formal$__lft__corr.v:6623$7_EN[0:0]$31
+(define-fun |Tile#128| ((state |Tile_s|)) (_ BitVec 1) (ite (|Tile#2| state) #b0 (|Tile#3| state))) ; $auto$rtlil.cc:2224:Mux$3716
+(define-fun |Tile#129| ((state |Tile_s|)) Bool (= (|Tile#19| state) #b000000000000000000000001000000000)) ; $eq$__lft__corr.v:6608$39_Y
+(define-fun |Tile#130| ((state |Tile_s|)) Bool (and (or  (|Tile#101| state) false) (or  (|Tile#129| state) false))) ; $logic_and$__lft__corr.v:6608$40_Y
+(define-fun |Tile#131| ((state |Tile_s|)) (_ BitVec 1) (ite (|Tile#130| state) #b1 (|Tile#128| state))) ; $auto$rtlil.cc:2224:Mux$3718
 (define-fun |Tile_a| ((state |Tile_s|)) Bool (and
   (|Tile_a 0| state)
-  (|Cache_a| (|Tile_h dcache| state))
   (|MemArbiter_a| (|Tile_h arb| state))
   (|Core_a| (|Tile_h core| state))
+  (|Cache_a| (|Tile_h dcache| state))
   (|Cache_a| (|Tile_h icache| state))
 ))
 (define-fun |Tile_u| ((state |Tile_s|)) Bool (and
   (|Tile_u 0| state)
-  (|Cache_u| (|Tile_h dcache| state))
+  (|Tile_u 1| state)
+  (|Tile_u 2| state)
   (|MemArbiter_u| (|Tile_h arb| state))
   (|Core_u| (|Tile_h core| state))
+  (|Cache_u| (|Tile_h dcache| state))
   (|Cache_u| (|Tile_h icache| state))
 ))
 (define-fun |Tile_i| ((state |Tile_s|)) Bool (and
-  (= (= ((_ extract 0 0) (|Tile#80| state)) #b1) false) ; $formal$__lft__corr.v:6570$1_EN
-  (|Cache_i| (|Tile_h dcache| state))
+  (= (= ((_ extract 0 0) (|Tile#3| state)) #b1) false) ; issued
+  (= (= ((_ extract 0 0) (|Tile#68| state)) #b1) true) ; init
+  (= (= ((_ extract 0 0) (|Tile#93| state)) #b1) false) ; $formal$__lft__corr.v:6623$7_EN
   (|MemArbiter_i| (|Tile_h arb| state))
   (|Core_i| (|Tile_h core| state))
+  (|Cache_i| (|Tile_h dcache| state))
   (|Cache_i| (|Tile_h icache| state))
 ))
 (define-fun |Tile_h| ((state |Tile_s|)) Bool (and
-  (= (|Tile_is| state) (|Cache_is| (|Tile_h dcache| state)))
-  (= (|Tile#0| state) (|Cache_n reset| (|Tile_h dcache| state))) ; Cache.reset
-  (= (|Tile#68| state) (|Cache_n io_nasti_w_valid| (|Tile_h dcache| state))) ; Cache.io_nasti_w_valid
-  (= (|Tile#13| state) (|Cache_n io_nasti_w_ready| (|Tile_h dcache| state))) ; Cache.io_nasti_w_ready
-  (= (|Tile#69| state) (|Cache_n io_nasti_w_bits_last| (|Tile_h dcache| state))) ; Cache.io_nasti_w_bits_last
-  (= (|Tile#70| state) (|Cache_n io_nasti_w_bits_data| (|Tile_h dcache| state))) ; Cache.io_nasti_w_bits_data
-  (= (|Tile#14| state) (|Cache_n io_nasti_r_valid| (|Tile_h dcache| state))) ; Cache.io_nasti_r_valid
-  (= (|Tile#71| state) (|Cache_n io_nasti_r_ready| (|Tile_h dcache| state))) ; Cache.io_nasti_r_ready
-  (= (|Tile#15| state) (|Cache_n io_nasti_r_bits_data| (|Tile_h dcache| state))) ; Cache.io_nasti_r_bits_data
-  (= (|Tile#16| state) (|Cache_n io_nasti_b_valid| (|Tile_h dcache| state))) ; Cache.io_nasti_b_valid
-  (= (|Tile#72| state) (|Cache_n io_nasti_b_ready| (|Tile_h dcache| state))) ; Cache.io_nasti_b_ready
-  (= (|Tile#73| state) (|Cache_n io_nasti_aw_valid| (|Tile_h dcache| state))) ; Cache.io_nasti_aw_valid
-  (= (|Tile#17| state) (|Cache_n io_nasti_aw_ready| (|Tile_h dcache| state))) ; Cache.io_nasti_aw_ready
-  (= (|Tile#74| state) (|Cache_n io_nasti_aw_bits_addr| (|Tile_h dcache| state))) ; Cache.io_nasti_aw_bits_addr
-  (= (|Tile#75| state) (|Cache_n io_nasti_ar_valid| (|Tile_h dcache| state))) ; Cache.io_nasti_ar_valid
-  (= (|Tile#18| state) (|Cache_n io_nasti_ar_ready| (|Tile_h dcache| state))) ; Cache.io_nasti_ar_ready
-  (= (|Tile#76| state) (|Cache_n io_nasti_ar_bits_addr| (|Tile_h dcache| state))) ; Cache.io_nasti_ar_bits_addr
-  (= (|Tile#77| state) (|Cache_n io_cpu_resp_valid| (|Tile_h dcache| state))) ; Cache.io_cpu_resp_valid
-  (= (|Tile#78| state) (|Cache_n io_cpu_resp_bits_data| (|Tile_h dcache| state))) ; Cache.io_cpu_resp_bits_data
-  (= (|Tile#35| state) (|Cache_n io_cpu_req_valid| (|Tile_h dcache| state))) ; Cache.io_cpu_req_valid
-  (= (|Tile#36| state) (|Cache_n io_cpu_req_bits_mask| (|Tile_h dcache| state))) ; Cache.io_cpu_req_bits_mask
-  (= (|Tile#37| state) (|Cache_n io_cpu_req_bits_data| (|Tile_h dcache| state))) ; Cache.io_cpu_req_bits_data
-  (= (|Tile#38| state) (|Cache_n io_cpu_req_bits_addr| (|Tile_h dcache| state))) ; Cache.io_cpu_req_bits_addr
-  (= (|Tile#39| state) (|Cache_n io_cpu_abort| (|Tile_h dcache| state))) ; Cache.io_cpu_abort
-  (= (|Tile#67| state) (|Cache_n clock| (|Tile_h dcache| state))) ; Cache.clock
   (= (|Tile_is| state) (|MemArbiter_is| (|Tile_h arb| state)))
-  (= (|Tile#0| state) (|MemArbiter_n reset| (|Tile_h arb| state))) ; MemArbiter.reset
-  (= (|Tile#1| state) (|MemArbiter_n io_nasti_w_valid| (|Tile_h arb| state))) ; MemArbiter.io_nasti_w_valid
-  (= (|Tile#19| state) (|MemArbiter_n io_nasti_w_ready| (|Tile_h arb| state))) ; MemArbiter.io_nasti_w_ready
-  (= (|Tile#2| state) (|MemArbiter_n io_nasti_w_bits_last| (|Tile_h arb| state))) ; MemArbiter.io_nasti_w_bits_last
-  (= (|Tile#3| state) (|MemArbiter_n io_nasti_w_bits_data| (|Tile_h arb| state))) ; MemArbiter.io_nasti_w_bits_data
-  (= (|Tile#20| state) (|MemArbiter_n io_nasti_r_valid| (|Tile_h arb| state))) ; MemArbiter.io_nasti_r_valid
-  (= (|Tile#4| state) (|MemArbiter_n io_nasti_r_ready| (|Tile_h arb| state))) ; MemArbiter.io_nasti_r_ready
-  (= (|Tile#23| state) (|MemArbiter_n io_nasti_r_bits_last| (|Tile_h arb| state))) ; MemArbiter.io_nasti_r_bits_last
-  (= (|Tile#25| state) (|MemArbiter_n io_nasti_r_bits_data| (|Tile_h arb| state))) ; MemArbiter.io_nasti_r_bits_data
-  (= (|Tile#26| state) (|MemArbiter_n io_nasti_b_valid| (|Tile_h arb| state))) ; MemArbiter.io_nasti_b_valid
-  (= (|Tile#5| state) (|MemArbiter_n io_nasti_b_ready| (|Tile_h arb| state))) ; MemArbiter.io_nasti_b_ready
-  (= (|Tile#6| state) (|MemArbiter_n io_nasti_aw_valid| (|Tile_h arb| state))) ; MemArbiter.io_nasti_aw_valid
-  (= (|Tile#30| state) (|MemArbiter_n io_nasti_aw_ready| (|Tile_h arb| state))) ; MemArbiter.io_nasti_aw_ready
-  (= (|Tile#7| state) (|MemArbiter_n io_nasti_aw_bits_addr| (|Tile_h arb| state))) ; MemArbiter.io_nasti_aw_bits_addr
-  (= (|Tile#8| state) (|MemArbiter_n io_nasti_ar_valid| (|Tile_h arb| state))) ; MemArbiter.io_nasti_ar_valid
-  (= (|Tile#31| state) (|MemArbiter_n io_nasti_ar_ready| (|Tile_h arb| state))) ; MemArbiter.io_nasti_ar_ready
-  (= (|Tile#9| state) (|MemArbiter_n io_nasti_ar_bits_addr| (|Tile_h arb| state))) ; MemArbiter.io_nasti_ar_bits_addr
-  (= (|Tile#10| state) (|MemArbiter_n io_icache_r_valid| (|Tile_h arb| state))) ; MemArbiter.io_icache_r_valid
-  (= (|Tile#59| state) (|MemArbiter_n io_icache_r_ready| (|Tile_h arb| state))) ; MemArbiter.io_icache_r_ready
-  (= (|Tile#11| state) (|MemArbiter_n io_icache_r_bits_data| (|Tile_h arb| state))) ; MemArbiter.io_icache_r_bits_data
-  (= (|Tile#63| state) (|MemArbiter_n io_icache_ar_valid| (|Tile_h arb| state))) ; MemArbiter.io_icache_ar_valid
-  (= (|Tile#12| state) (|MemArbiter_n io_icache_ar_ready| (|Tile_h arb| state))) ; MemArbiter.io_icache_ar_ready
-  (= (|Tile#64| state) (|MemArbiter_n io_icache_ar_bits_addr| (|Tile_h arb| state))) ; MemArbiter.io_icache_ar_bits_addr
-  (= (|Tile#68| state) (|MemArbiter_n io_dcache_w_valid| (|Tile_h arb| state))) ; MemArbiter.io_dcache_w_valid
-  (= (|Tile#13| state) (|MemArbiter_n io_dcache_w_ready| (|Tile_h arb| state))) ; MemArbiter.io_dcache_w_ready
-  (= (|Tile#69| state) (|MemArbiter_n io_dcache_w_bits_last| (|Tile_h arb| state))) ; MemArbiter.io_dcache_w_bits_last
-  (= (|Tile#70| state) (|MemArbiter_n io_dcache_w_bits_data| (|Tile_h arb| state))) ; MemArbiter.io_dcache_w_bits_data
-  (= (|Tile#14| state) (|MemArbiter_n io_dcache_r_valid| (|Tile_h arb| state))) ; MemArbiter.io_dcache_r_valid
-  (= (|Tile#71| state) (|MemArbiter_n io_dcache_r_ready| (|Tile_h arb| state))) ; MemArbiter.io_dcache_r_ready
-  (= (|Tile#15| state) (|MemArbiter_n io_dcache_r_bits_data| (|Tile_h arb| state))) ; MemArbiter.io_dcache_r_bits_data
-  (= (|Tile#16| state) (|MemArbiter_n io_dcache_b_valid| (|Tile_h arb| state))) ; MemArbiter.io_dcache_b_valid
-  (= (|Tile#72| state) (|MemArbiter_n io_dcache_b_ready| (|Tile_h arb| state))) ; MemArbiter.io_dcache_b_ready
-  (= (|Tile#73| state) (|MemArbiter_n io_dcache_aw_valid| (|Tile_h arb| state))) ; MemArbiter.io_dcache_aw_valid
-  (= (|Tile#17| state) (|MemArbiter_n io_dcache_aw_ready| (|Tile_h arb| state))) ; MemArbiter.io_dcache_aw_ready
-  (= (|Tile#74| state) (|MemArbiter_n io_dcache_aw_bits_addr| (|Tile_h arb| state))) ; MemArbiter.io_dcache_aw_bits_addr
-  (= (|Tile#75| state) (|MemArbiter_n io_dcache_ar_valid| (|Tile_h arb| state))) ; MemArbiter.io_dcache_ar_valid
-  (= (|Tile#18| state) (|MemArbiter_n io_dcache_ar_ready| (|Tile_h arb| state))) ; MemArbiter.io_dcache_ar_ready
-  (= (|Tile#76| state) (|MemArbiter_n io_dcache_ar_bits_addr| (|Tile_h arb| state))) ; MemArbiter.io_dcache_ar_bits_addr
-  (= (|Tile#67| state) (|MemArbiter_n clock| (|Tile_h arb| state))) ; MemArbiter.clock
+  (= (|Tile#2| state) (|MemArbiter_n reset| (|Tile_h arb| state))) ; MemArbiter.reset
+  (= (|Tile#35| state) (|MemArbiter_n io_nasti_w_valid| (|Tile_h arb| state))) ; MemArbiter.io_nasti_w_valid
+  (= (|Tile#53| state) (|MemArbiter_n io_nasti_w_ready| (|Tile_h arb| state))) ; MemArbiter.io_nasti_w_ready
+  (= (|Tile#36| state) (|MemArbiter_n io_nasti_w_bits_last| (|Tile_h arb| state))) ; MemArbiter.io_nasti_w_bits_last
+  (= (|Tile#37| state) (|MemArbiter_n io_nasti_w_bits_data| (|Tile_h arb| state))) ; MemArbiter.io_nasti_w_bits_data
+  (= (|Tile#54| state) (|MemArbiter_n io_nasti_r_valid| (|Tile_h arb| state))) ; MemArbiter.io_nasti_r_valid
+  (= (|Tile#38| state) (|MemArbiter_n io_nasti_r_ready| (|Tile_h arb| state))) ; MemArbiter.io_nasti_r_ready
+  (= (|Tile#57| state) (|MemArbiter_n io_nasti_r_bits_last| (|Tile_h arb| state))) ; MemArbiter.io_nasti_r_bits_last
+  (= (|Tile#59| state) (|MemArbiter_n io_nasti_r_bits_data| (|Tile_h arb| state))) ; MemArbiter.io_nasti_r_bits_data
+  (= (|Tile#60| state) (|MemArbiter_n io_nasti_b_valid| (|Tile_h arb| state))) ; MemArbiter.io_nasti_b_valid
+  (= (|Tile#39| state) (|MemArbiter_n io_nasti_b_ready| (|Tile_h arb| state))) ; MemArbiter.io_nasti_b_ready
+  (= (|Tile#40| state) (|MemArbiter_n io_nasti_aw_valid| (|Tile_h arb| state))) ; MemArbiter.io_nasti_aw_valid
+  (= (|Tile#64| state) (|MemArbiter_n io_nasti_aw_ready| (|Tile_h arb| state))) ; MemArbiter.io_nasti_aw_ready
+  (= (|Tile#41| state) (|MemArbiter_n io_nasti_aw_bits_addr| (|Tile_h arb| state))) ; MemArbiter.io_nasti_aw_bits_addr
+  (= (|Tile#42| state) (|MemArbiter_n io_nasti_ar_valid| (|Tile_h arb| state))) ; MemArbiter.io_nasti_ar_valid
+  (= (|Tile#65| state) (|MemArbiter_n io_nasti_ar_ready| (|Tile_h arb| state))) ; MemArbiter.io_nasti_ar_ready
+  (= (|Tile#43| state) (|MemArbiter_n io_nasti_ar_bits_addr| (|Tile_h arb| state))) ; MemArbiter.io_nasti_ar_bits_addr
+  (= (|Tile#44| state) (|MemArbiter_n io_icache_r_valid| (|Tile_h arb| state))) ; MemArbiter.io_icache_r_valid
+  (= (|Tile#72| state) (|MemArbiter_n io_icache_r_ready| (|Tile_h arb| state))) ; MemArbiter.io_icache_r_ready
+  (= (|Tile#45| state) (|MemArbiter_n io_icache_r_bits_data| (|Tile_h arb| state))) ; MemArbiter.io_icache_r_bits_data
+  (= (|Tile#76| state) (|MemArbiter_n io_icache_ar_valid| (|Tile_h arb| state))) ; MemArbiter.io_icache_ar_valid
+  (= (|Tile#46| state) (|MemArbiter_n io_icache_ar_ready| (|Tile_h arb| state))) ; MemArbiter.io_icache_ar_ready
+  (= (|Tile#77| state) (|MemArbiter_n io_icache_ar_bits_addr| (|Tile_h arb| state))) ; MemArbiter.io_icache_ar_bits_addr
+  (= (|Tile#81| state) (|MemArbiter_n io_dcache_w_valid| (|Tile_h arb| state))) ; MemArbiter.io_dcache_w_valid
+  (= (|Tile#47| state) (|MemArbiter_n io_dcache_w_ready| (|Tile_h arb| state))) ; MemArbiter.io_dcache_w_ready
+  (= (|Tile#82| state) (|MemArbiter_n io_dcache_w_bits_last| (|Tile_h arb| state))) ; MemArbiter.io_dcache_w_bits_last
+  (= (|Tile#83| state) (|MemArbiter_n io_dcache_w_bits_data| (|Tile_h arb| state))) ; MemArbiter.io_dcache_w_bits_data
+  (= (|Tile#48| state) (|MemArbiter_n io_dcache_r_valid| (|Tile_h arb| state))) ; MemArbiter.io_dcache_r_valid
+  (= (|Tile#84| state) (|MemArbiter_n io_dcache_r_ready| (|Tile_h arb| state))) ; MemArbiter.io_dcache_r_ready
+  (= (|Tile#49| state) (|MemArbiter_n io_dcache_r_bits_data| (|Tile_h arb| state))) ; MemArbiter.io_dcache_r_bits_data
+  (= (|Tile#50| state) (|MemArbiter_n io_dcache_b_valid| (|Tile_h arb| state))) ; MemArbiter.io_dcache_b_valid
+  (= (|Tile#85| state) (|MemArbiter_n io_dcache_b_ready| (|Tile_h arb| state))) ; MemArbiter.io_dcache_b_ready
+  (= (|Tile#86| state) (|MemArbiter_n io_dcache_aw_valid| (|Tile_h arb| state))) ; MemArbiter.io_dcache_aw_valid
+  (= (|Tile#51| state) (|MemArbiter_n io_dcache_aw_ready| (|Tile_h arb| state))) ; MemArbiter.io_dcache_aw_ready
+  (= (|Tile#87| state) (|MemArbiter_n io_dcache_aw_bits_addr| (|Tile_h arb| state))) ; MemArbiter.io_dcache_aw_bits_addr
+  (= (|Tile#88| state) (|MemArbiter_n io_dcache_ar_valid| (|Tile_h arb| state))) ; MemArbiter.io_dcache_ar_valid
+  (= (|Tile#52| state) (|MemArbiter_n io_dcache_ar_ready| (|Tile_h arb| state))) ; MemArbiter.io_dcache_ar_ready
+  (= (|Tile#89| state) (|MemArbiter_n io_dcache_ar_bits_addr| (|Tile_h arb| state))) ; MemArbiter.io_dcache_ar_bits_addr
+  (= (|Tile#80| state) (|MemArbiter_n clock| (|Tile_h arb| state))) ; MemArbiter.clock
   (= (|Tile_is| state) (|Core_is| (|Tile_h core| state)))
-  (= (|Tile#0| state) (|Core_n reset| (|Tile_h core| state))) ; Core.reset
-  (= (|Tile#65| state) (|Core_n io_icache_resp_valid| (|Tile_h core| state))) ; Core.io_icache_resp_valid
-  (= (|Tile#66| state) (|Core_n io_icache_resp_bits_data| (|Tile_h core| state))) ; Core.io_icache_resp_bits_data
-  (= (|Tile#32| state) (|Core_n io_icache_req_valid| (|Tile_h core| state))) ; Core.io_icache_req_valid
-  (= (|Tile#33| state) (|Core_n io_icache_req_bits_addr| (|Tile_h core| state))) ; Core.io_icache_req_bits_addr
-  (= (|Tile#34| state) (|Core_n io_host_tohost| (|Tile_h core| state))) ; Core.io_host_tohost
-  (= (|Tile#54| state) (|Core_n io_host_fromhost_valid| (|Tile_h core| state))) ; Core.io_host_fromhost_valid
-  (= (|Tile#55| state) (|Core_n io_host_fromhost_bits| (|Tile_h core| state))) ; Core.io_host_fromhost_bits
-  (= (|Tile#77| state) (|Core_n io_dcache_resp_valid| (|Tile_h core| state))) ; Core.io_dcache_resp_valid
-  (= (|Tile#78| state) (|Core_n io_dcache_resp_bits_data| (|Tile_h core| state))) ; Core.io_dcache_resp_bits_data
-  (= (|Tile#35| state) (|Core_n io_dcache_req_valid| (|Tile_h core| state))) ; Core.io_dcache_req_valid
-  (= (|Tile#36| state) (|Core_n io_dcache_req_bits_mask| (|Tile_h core| state))) ; Core.io_dcache_req_bits_mask
-  (= (|Tile#37| state) (|Core_n io_dcache_req_bits_data| (|Tile_h core| state))) ; Core.io_dcache_req_bits_data
-  (= (|Tile#38| state) (|Core_n io_dcache_req_bits_addr| (|Tile_h core| state))) ; Core.io_dcache_req_bits_addr
-  (= (|Tile#39| state) (|Core_n io_dcache_abort| (|Tile_h core| state))) ; Core.io_dcache_abort
-  (= (|Tile#40| state) (|Core_n io__lft__core__regFile_io_wdata| (|Tile_h core| state))) ; Core.io__lft__core__regFile_io_wdata
-  (= (|Tile#41| state) (|Core_n io__lft__core__regFile_io_waddr| (|Tile_h core| state))) ; Core.io__lft__core__regFile_io_waddr
-  (= (|Tile#42| state) (|Core_n io__lft__core__regFile_io_rdata2| (|Tile_h core| state))) ; Core.io__lft__core__regFile_io_rdata2
-  (= (|Tile#43| state) (|Core_n io__lft__core__regFile_io_rdata1| (|Tile_h core| state))) ; Core.io__lft__core__regFile_io_rdata1
-  (= (|Tile#44| state) (|Core_n io__lft__core__regFile_io_raddr2| (|Tile_h core| state))) ; Core.io__lft__core__regFile_io_raddr2
-  (= (|Tile#45| state) (|Core_n io__lft__core__regFile_io_raddr1| (|Tile_h core| state))) ; Core.io__lft__core__regFile_io_raddr1
-  (= (|Tile#46| state) (|Core_n io__lft__core__pc| (|Tile_h core| state))) ; Core.io__lft__core__pc
-  (= (|Tile#47| state) (|Core_n io__lft__core__fe_pc| (|Tile_h core| state))) ; Core.io__lft__core__fe_pc
-  (= (|Tile#48| state) (|Core_n io__lft__core__ew_pc| (|Tile_h core| state))) ; Core.io__lft__core__ew_pc
-  (= (|Tile#49| state) (|Core_n io__lft__core__alu_io_sum| (|Tile_h core| state))) ; Core.io__lft__core__alu_io_sum
-  (= (|Tile#50| state) (|Core_n io__lft__core__alu_io_out| (|Tile_h core| state))) ; Core.io__lft__core__alu_io_out
-  (= (|Tile#51| state) (|Core_n io__lft__core__alu_io_alu_op| (|Tile_h core| state))) ; Core.io__lft__core__alu_io_alu_op
-  (= (|Tile#52| state) (|Core_n io__lft__core__alu_io_B| (|Tile_h core| state))) ; Core.io__lft__core__alu_io_B
-  (= (|Tile#53| state) (|Core_n io__lft__core__alu_io_A| (|Tile_h core| state))) ; Core.io__lft__core__alu_io_A
-  (= (|Tile#67| state) (|Core_n clock| (|Tile_h core| state))) ; Core.clock
+  (= (|Tile#2| state) (|Core_n reset| (|Tile_h core| state))) ; Core.reset
+  (= (|Tile#78| state) (|Core_n io_icache_resp_valid| (|Tile_h core| state))) ; Core.io_icache_resp_valid
+  (= (|Tile#79| state) (|Core_n io_icache_resp_bits_data| (|Tile_h core| state))) ; Core.io_icache_resp_bits_data
+  (= (|Tile#4| state) (|Core_n io_icache_req_valid| (|Tile_h core| state))) ; Core.io_icache_req_valid
+  (= (|Tile#5| state) (|Core_n io_icache_req_bits_addr| (|Tile_h core| state))) ; Core.io_icache_req_bits_addr
+  (= (|Tile#6| state) (|Core_n io_host_tohost| (|Tile_h core| state))) ; Core.io_host_tohost
+  (= (|Tile#66| state) (|Core_n io_host_fromhost_valid| (|Tile_h core| state))) ; Core.io_host_fromhost_valid
+  (= (|Tile#67| state) (|Core_n io_host_fromhost_bits| (|Tile_h core| state))) ; Core.io_host_fromhost_bits
+  (= (|Tile#90| state) (|Core_n io_dcache_resp_valid| (|Tile_h core| state))) ; Core.io_dcache_resp_valid
+  (= (|Tile#91| state) (|Core_n io_dcache_resp_bits_data| (|Tile_h core| state))) ; Core.io_dcache_resp_bits_data
+  (= (|Tile#7| state) (|Core_n io_dcache_req_valid| (|Tile_h core| state))) ; Core.io_dcache_req_valid
+  (= (|Tile#8| state) (|Core_n io_dcache_req_bits_mask| (|Tile_h core| state))) ; Core.io_dcache_req_bits_mask
+  (= (|Tile#9| state) (|Core_n io_dcache_req_bits_data| (|Tile_h core| state))) ; Core.io_dcache_req_bits_data
+  (= (|Tile#10| state) (|Core_n io_dcache_req_bits_addr| (|Tile_h core| state))) ; Core.io_dcache_req_bits_addr
+  (= (|Tile#11| state) (|Core_n io_dcache_abort| (|Tile_h core| state))) ; Core.io_dcache_abort
+  (= (|Tile#12| state) (|Core_n io__lft__core__stall| (|Tile_h core| state))) ; Core.io__lft__core__stall
+  (= (|Tile#13| state) (|Core_n io__lft__core__regFile_io_wdata| (|Tile_h core| state))) ; Core.io__lft__core__regFile_io_wdata
+  (= (|Tile#14| state) (|Core_n io__lft__core__regFile_io_waddr| (|Tile_h core| state))) ; Core.io__lft__core__regFile_io_waddr
+  (= (|Tile#15| state) (|Core_n io__lft__core__regFile_io_rdata2| (|Tile_h core| state))) ; Core.io__lft__core__regFile_io_rdata2
+  (= (|Tile#16| state) (|Core_n io__lft__core__regFile_io_rdata1| (|Tile_h core| state))) ; Core.io__lft__core__regFile_io_rdata1
+  (= (|Tile#17| state) (|Core_n io__lft__core__regFile_io_raddr2| (|Tile_h core| state))) ; Core.io__lft__core__regFile_io_raddr2
+  (= (|Tile#18| state) (|Core_n io__lft__core__regFile_io_raddr1| (|Tile_h core| state))) ; Core.io__lft__core__regFile_io_raddr1
+  (= (|Tile#19| state) (|Core_n io__lft__core__pc| (|Tile_h core| state))) ; Core.io__lft__core__pc
+  (= (|Tile#20| state) (|Core_n io__lft__core__fe_pc| (|Tile_h core| state))) ; Core.io__lft__core__fe_pc
+  (= (|Tile#21| state) (|Core_n io__lft__core__fe_inst| (|Tile_h core| state))) ; Core.io__lft__core__fe_inst
+  (= (|Tile#22| state) (|Core_n io__lft__core__ew_pc| (|Tile_h core| state))) ; Core.io__lft__core__ew_pc
+  (= (|Tile#23| state) (|Core_n io__lft__core__alu_io_sum| (|Tile_h core| state))) ; Core.io__lft__core__alu_io_sum
+  (= (|Tile#24| state) (|Core_n io__lft__core__alu_io_out| (|Tile_h core| state))) ; Core.io__lft__core__alu_io_out
+  (= (|Tile#25| state) (|Core_n io__lft__core__alu_io_alu_op| (|Tile_h core| state))) ; Core.io__lft__core__alu_io_alu_op
+  (= (|Tile#26| state) (|Core_n io__lft__core__alu_io_B| (|Tile_h core| state))) ; Core.io__lft__core__alu_io_B
+  (= (|Tile#27| state) (|Core_n io__lft__core__alu_io_A| (|Tile_h core| state))) ; Core.io__lft__core__alu_io_A
+  (= (|Tile#80| state) (|Core_n clock| (|Tile_h core| state))) ; Core.clock
+  (= (|Tile_is| state) (|Cache_is| (|Tile_h dcache| state)))
+  (= (|Tile#2| state) (|Cache_n reset| (|Tile_h dcache| state))) ; Cache.reset
+  (= (|Tile#81| state) (|Cache_n io_nasti_w_valid| (|Tile_h dcache| state))) ; Cache.io_nasti_w_valid
+  (= (|Tile#47| state) (|Cache_n io_nasti_w_ready| (|Tile_h dcache| state))) ; Cache.io_nasti_w_ready
+  (= (|Tile#82| state) (|Cache_n io_nasti_w_bits_last| (|Tile_h dcache| state))) ; Cache.io_nasti_w_bits_last
+  (= (|Tile#83| state) (|Cache_n io_nasti_w_bits_data| (|Tile_h dcache| state))) ; Cache.io_nasti_w_bits_data
+  (= (|Tile#48| state) (|Cache_n io_nasti_r_valid| (|Tile_h dcache| state))) ; Cache.io_nasti_r_valid
+  (= (|Tile#84| state) (|Cache_n io_nasti_r_ready| (|Tile_h dcache| state))) ; Cache.io_nasti_r_ready
+  (= (|Tile#49| state) (|Cache_n io_nasti_r_bits_data| (|Tile_h dcache| state))) ; Cache.io_nasti_r_bits_data
+  (= (|Tile#50| state) (|Cache_n io_nasti_b_valid| (|Tile_h dcache| state))) ; Cache.io_nasti_b_valid
+  (= (|Tile#85| state) (|Cache_n io_nasti_b_ready| (|Tile_h dcache| state))) ; Cache.io_nasti_b_ready
+  (= (|Tile#86| state) (|Cache_n io_nasti_aw_valid| (|Tile_h dcache| state))) ; Cache.io_nasti_aw_valid
+  (= (|Tile#51| state) (|Cache_n io_nasti_aw_ready| (|Tile_h dcache| state))) ; Cache.io_nasti_aw_ready
+  (= (|Tile#87| state) (|Cache_n io_nasti_aw_bits_addr| (|Tile_h dcache| state))) ; Cache.io_nasti_aw_bits_addr
+  (= (|Tile#88| state) (|Cache_n io_nasti_ar_valid| (|Tile_h dcache| state))) ; Cache.io_nasti_ar_valid
+  (= (|Tile#52| state) (|Cache_n io_nasti_ar_ready| (|Tile_h dcache| state))) ; Cache.io_nasti_ar_ready
+  (= (|Tile#89| state) (|Cache_n io_nasti_ar_bits_addr| (|Tile_h dcache| state))) ; Cache.io_nasti_ar_bits_addr
+  (= (|Tile#90| state) (|Cache_n io_cpu_resp_valid| (|Tile_h dcache| state))) ; Cache.io_cpu_resp_valid
+  (= (|Tile#91| state) (|Cache_n io_cpu_resp_bits_data| (|Tile_h dcache| state))) ; Cache.io_cpu_resp_bits_data
+  (= (|Tile#7| state) (|Cache_n io_cpu_req_valid| (|Tile_h dcache| state))) ; Cache.io_cpu_req_valid
+  (= (|Tile#8| state) (|Cache_n io_cpu_req_bits_mask| (|Tile_h dcache| state))) ; Cache.io_cpu_req_bits_mask
+  (= (|Tile#9| state) (|Cache_n io_cpu_req_bits_data| (|Tile_h dcache| state))) ; Cache.io_cpu_req_bits_data
+  (= (|Tile#10| state) (|Cache_n io_cpu_req_bits_addr| (|Tile_h dcache| state))) ; Cache.io_cpu_req_bits_addr
+  (= (|Tile#11| state) (|Cache_n io_cpu_abort| (|Tile_h dcache| state))) ; Cache.io_cpu_abort
+  (= (|Tile#80| state) (|Cache_n clock| (|Tile_h dcache| state))) ; Cache.clock
   (= (|Tile_is| state) (|Cache_is| (|Tile_h icache| state)))
-  (= (|Tile#0| state) (|Cache_n reset| (|Tile_h icache| state))) ; Cache.reset
-  (= (|Tile#56| state) (|Cache_n io_nasti_w_valid| (|Tile_h icache| state))) ; Cache.io_nasti_w_valid
+  (= (|Tile#2| state) (|Cache_n reset| (|Tile_h icache| state))) ; Cache.reset
+  (= (|Tile#69| state) (|Cache_n io_nasti_w_valid| (|Tile_h icache| state))) ; Cache.io_nasti_w_valid
   (= false (|Cache_n io_nasti_w_ready| (|Tile_h icache| state))) ; Cache.io_nasti_w_ready
-  (= (|Tile#57| state) (|Cache_n io_nasti_w_bits_last| (|Tile_h icache| state))) ; Cache.io_nasti_w_bits_last
-  (= (|Tile#58| state) (|Cache_n io_nasti_w_bits_data| (|Tile_h icache| state))) ; Cache.io_nasti_w_bits_data
-  (= (|Tile#10| state) (|Cache_n io_nasti_r_valid| (|Tile_h icache| state))) ; Cache.io_nasti_r_valid
-  (= (|Tile#59| state) (|Cache_n io_nasti_r_ready| (|Tile_h icache| state))) ; Cache.io_nasti_r_ready
-  (= (|Tile#11| state) (|Cache_n io_nasti_r_bits_data| (|Tile_h icache| state))) ; Cache.io_nasti_r_bits_data
+  (= (|Tile#70| state) (|Cache_n io_nasti_w_bits_last| (|Tile_h icache| state))) ; Cache.io_nasti_w_bits_last
+  (= (|Tile#71| state) (|Cache_n io_nasti_w_bits_data| (|Tile_h icache| state))) ; Cache.io_nasti_w_bits_data
+  (= (|Tile#44| state) (|Cache_n io_nasti_r_valid| (|Tile_h icache| state))) ; Cache.io_nasti_r_valid
+  (= (|Tile#72| state) (|Cache_n io_nasti_r_ready| (|Tile_h icache| state))) ; Cache.io_nasti_r_ready
+  (= (|Tile#45| state) (|Cache_n io_nasti_r_bits_data| (|Tile_h icache| state))) ; Cache.io_nasti_r_bits_data
   (= false (|Cache_n io_nasti_b_valid| (|Tile_h icache| state))) ; Cache.io_nasti_b_valid
-  (= (|Tile#60| state) (|Cache_n io_nasti_b_ready| (|Tile_h icache| state))) ; Cache.io_nasti_b_ready
-  (= (|Tile#61| state) (|Cache_n io_nasti_aw_valid| (|Tile_h icache| state))) ; Cache.io_nasti_aw_valid
+  (= (|Tile#73| state) (|Cache_n io_nasti_b_ready| (|Tile_h icache| state))) ; Cache.io_nasti_b_ready
+  (= (|Tile#74| state) (|Cache_n io_nasti_aw_valid| (|Tile_h icache| state))) ; Cache.io_nasti_aw_valid
   (= false (|Cache_n io_nasti_aw_ready| (|Tile_h icache| state))) ; Cache.io_nasti_aw_ready
-  (= (|Tile#62| state) (|Cache_n io_nasti_aw_bits_addr| (|Tile_h icache| state))) ; Cache.io_nasti_aw_bits_addr
-  (= (|Tile#63| state) (|Cache_n io_nasti_ar_valid| (|Tile_h icache| state))) ; Cache.io_nasti_ar_valid
-  (= (|Tile#12| state) (|Cache_n io_nasti_ar_ready| (|Tile_h icache| state))) ; Cache.io_nasti_ar_ready
-  (= (|Tile#64| state) (|Cache_n io_nasti_ar_bits_addr| (|Tile_h icache| state))) ; Cache.io_nasti_ar_bits_addr
-  (= (|Tile#65| state) (|Cache_n io_cpu_resp_valid| (|Tile_h icache| state))) ; Cache.io_cpu_resp_valid
-  (= (|Tile#66| state) (|Cache_n io_cpu_resp_bits_data| (|Tile_h icache| state))) ; Cache.io_cpu_resp_bits_data
-  (= (|Tile#32| state) (|Cache_n io_cpu_req_valid| (|Tile_h icache| state))) ; Cache.io_cpu_req_valid
+  (= (|Tile#75| state) (|Cache_n io_nasti_aw_bits_addr| (|Tile_h icache| state))) ; Cache.io_nasti_aw_bits_addr
+  (= (|Tile#76| state) (|Cache_n io_nasti_ar_valid| (|Tile_h icache| state))) ; Cache.io_nasti_ar_valid
+  (= (|Tile#46| state) (|Cache_n io_nasti_ar_ready| (|Tile_h icache| state))) ; Cache.io_nasti_ar_ready
+  (= (|Tile#77| state) (|Cache_n io_nasti_ar_bits_addr| (|Tile_h icache| state))) ; Cache.io_nasti_ar_bits_addr
+  (= (|Tile#78| state) (|Cache_n io_cpu_resp_valid| (|Tile_h icache| state))) ; Cache.io_cpu_resp_valid
+  (= (|Tile#79| state) (|Cache_n io_cpu_resp_bits_data| (|Tile_h icache| state))) ; Cache.io_cpu_resp_bits_data
+  (= (|Tile#4| state) (|Cache_n io_cpu_req_valid| (|Tile_h icache| state))) ; Cache.io_cpu_req_valid
   (= #b0000 (|Cache_n io_cpu_req_bits_mask| (|Tile_h icache| state))) ; Cache.io_cpu_req_bits_mask
   (= #b00000000000000000000000000000000 (|Cache_n io_cpu_req_bits_data| (|Tile_h icache| state))) ; Cache.io_cpu_req_bits_data
-  (= (|Tile#33| state) (|Cache_n io_cpu_req_bits_addr| (|Tile_h icache| state))) ; Cache.io_cpu_req_bits_addr
+  (= (|Tile#5| state) (|Cache_n io_cpu_req_bits_addr| (|Tile_h icache| state))) ; Cache.io_cpu_req_bits_addr
   (= false (|Cache_n io_cpu_abort| (|Tile_h icache| state))) ; Cache.io_cpu_abort
-  (= (|Tile#67| state) (|Cache_n clock| (|Tile_h icache| state))) ; Cache.clock
-  (|Cache_h| (|Tile_h dcache| state))
+  (= (|Tile#80| state) (|Cache_n clock| (|Tile_h icache| state))) ; Cache.clock
   (|MemArbiter_h| (|Tile_h arb| state))
   (|Core_h| (|Tile_h core| state))
+  (|Cache_h| (|Tile_h dcache| state))
   (|Cache_h| (|Tile_h icache| state))
 ))
 (define-fun |Tile_t| ((state |Tile_s|) (next_state |Tile_s|)) Bool (and
-  (= #b1 (|Tile#80| next_state)) ; $procdff$3023 $formal$__lft__corr.v:6570$1_EN
-  (= (ite (|Tile#83| state) #b1 #b0) (|Tile#79| next_state)) ; $procdff$3024 $formal$__lft__corr.v:6571$2_CHECK
-  (|Cache_t| (|Tile_h dcache| state) (|Tile_h dcache| next_state))
+  (= (ite (|Tile#2| state) #b1 #b0) (|Tile#95| next_state)) ; $procdff$3099 $0$past$__lft__corr.v:6622$3$1[0:0]$23
+  (= (|Tile#126| state) (|Tile#94| next_state)) ; $procdff$3109 $formal$__lft__corr.v:6623$7_CHECK
+  (= (|Tile#127| state) (|Tile#93| next_state)) ; $procdff$3110 $formal$__lft__corr.v:6623$7_EN
+  (= (|Tile#95| state) (|Tile#92| next_state)) ; $procdff$3102 $past$__lft__corr.v:6622$3$1
+  (= #b0 (|Tile#68| next_state)) ; $procdff$3097 \init
+  (= (|Tile#131| state) (|Tile#3| next_state)) ; $auto$opt_dff.cc:764:run$3714 \issued
+  (= (|Tile#1| state) (|Tile#1| next_state)) ; $anyconst$15 \tgt_rs1
+  (= (|Tile#0| state) (|Tile#0| next_state)) ; $anyconst$16 \tgt_rs2
   (|MemArbiter_t| (|Tile_h arb| state) (|Tile_h arb| next_state))
   (|Core_t| (|Tile_h core| state) (|Tile_h core| next_state))
+  (|Cache_t| (|Tile_h dcache| state) (|Tile_h dcache| next_state))
   (|Cache_t| (|Tile_h icache| state) (|Tile_h icache| next_state))
 )) ; end of module Tile
 ; yosys-smt2-topmod Tile

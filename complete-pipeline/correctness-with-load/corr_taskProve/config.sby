@@ -1,0 +1,14 @@
+[options]
+mode prove
+
+
+[engines]
+
+[script]
+read -formal __lft__corr.v
+
+prep -top Tile
+
+
+[files]
+__lft__corr.v

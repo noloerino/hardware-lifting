@@ -33,19 +33,25 @@ Input filename: design.il
 
 === Tile ===
 
-   Number of wires:                172
-   Number of wire bits:           2110
-   Number of public wires:         167
-   Number of public wire bits:    2074
+   Number of wires:                221
+   Number of wire bits:           2315
+   Number of public wires:         175
+   Number of public wire bits:    2238
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 11
+   Number of cells:                 59
+     $anyconst                       2
+     $anyseq                         3
      $assert                         1
-     $assume                         1
-     $dff                            2
-     $eq                             2
-     $or                             1
+     $assume                         3
+     $dff                            6
+     $eq                             8
+     $logic_and                     14
+     $logic_not                      8
+     $mux                            8
+     $reduce_bool                    1
+     $sub                            1
      Cache                           2
      Core                            1
      MemArbiter                      1
@@ -103,10 +109,10 @@ Input filename: design.il
 
 === Datapath ===
 
-   Number of wires:                241
-   Number of wire bits:           3921
-   Number of public wires:         211
-   Number of public wire bits:    3537
+   Number of wires:                243
+   Number of wire bits:           3986
+   Number of public wires:         213
+   Number of public wire bits:    3602
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -132,10 +138,10 @@ Input filename: design.il
 
 === Core ===
 
-   Number of wires:                 74
-   Number of wire bits:            932
-   Number of public wires:          74
-   Number of public wire bits:     932
+   Number of wires:                 76
+   Number of wire bits:            997
+   Number of public wires:          76
+   Number of public wire bits:     997
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -185,10 +191,10 @@ Input filename: design.il
 
 === CSR ===
 
-   Number of wires:                542
-   Number of wire bits:           9088
+   Number of wires:                543
+   Number of wire bits:           9118
    Number of public wires:         297
-   Number of public wire bits:    3439
+   Number of public wire bits:    3437
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -258,34 +264,36 @@ Input filename: design.il
          RegFile                     1
      MemArbiter                      1
 
-   Number of wires:               2951
-   Number of wire bits:          39556
-   Number of public wires:        2282
-   Number of public wire bits:   28681
+   Number of wires:               3005
+   Number of wire bits:          39921
+   Number of public wires:        2294
+   Number of public wire bits:   28973
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:               1924
+   Number of cells:               1972
      $add                           15
      $and                          145
-     $anyseq                       140
+     $anyconst                       2
+     $anyseq                       143
      $assert                         1
-     $assume                         1
-     $dff                           70
-     $eq                           184
+     $assume                         3
+     $dff                           74
+     $eq                           190
      $le                             1
-     $logic_not                      9
+     $logic_and                     14
+     $logic_not                     17
      $mem                           35
-     $mux                         1102
+     $mux                         1110
      $ne                            28
      $not                           46
-     $or                            94
+     $or                            93
      $reduce_and                    18
-     $reduce_bool                   19
+     $reduce_bool                   20
      $shl                            7
      $shr                            5
      $sshr                           1
-     $sub                            2
+     $sub                            3
      $xor                            1
 
 4. Executing SMT2 backend.
@@ -301,6 +309,6 @@ Creating SMT-LIBv2 representation of module Datapath.
 Creating SMT-LIBv2 representation of module Core.
 Creating SMT-LIBv2 representation of module Tile.
 
-End of script. Logfile hash: 094c4ef255, CPU: user 0.14s system 0.00s, MEM: 16.10 MB peak
+End of script. Logfile hash: 3215fc70b1, CPU: user 0.35s system 0.00s, MEM: 16.20 MB peak
 Yosys 0.9+4052 (git sha1 a58571d0, clang 6.0.0-1ubuntu2 -fPIC -Os)
-Time spent: 71% 2x write_smt2 (0 sec), 25% 2x read_ilang (0 sec), ...
+Time spent: 70% 2x write_smt2 (0 sec), 26% 2x read_ilang (0 sec), ...

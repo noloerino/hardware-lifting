@@ -1,28 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites disabled="0" errors="0" failures="0" tests="1" time="5">
-<testsuite disabled="0" errors="0" failures="0" name="corr" skipped="0" tests="1" time="5">
+<testsuites disabled="0" errors="0" failures="1" tests="1" time="195">
+<testsuite disabled="0" errors="0" failures="1" name="corr" skipped="0" tests="1" time="195">
 <properties>
 <property name="os" value="posix"/>
 </properties>
-<testcase classname="corr" name="taskBMC" status="PASS" time="5">
-<system-out>SBY 12:36:01 [corr_taskBMC] Removing directory 'corr_taskBMC'.
-SBY 12:36:01 [corr_taskBMC] Copy '__lft__corr.v' to 'corr_taskBMC/src/__lft__corr.v'.
-SBY 12:36:01 [corr_taskBMC] engine_0: smtbmc z3
-SBY 12:36:01 [corr_taskBMC] base: starting process &quot;cd corr_taskBMC/src; yosys -ql ../model/design.log ../model/design.ys&quot;
-SBY 12:36:03 [corr_taskBMC] base: finished (returncode=0)
-SBY 12:36:03 [corr_taskBMC] smt2: starting process &quot;cd corr_taskBMC/model; yosys -ql design_smt2.log design_smt2.ys&quot;
-SBY 12:36:03 [corr_taskBMC] smt2: finished (returncode=0)
-SBY 12:36:03 [corr_taskBMC] engine_0: starting process &quot;cd corr_taskBMC; yosys-smtbmc -s z3 --presat --noprogress -t 2  --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
-SBY 12:36:03 [corr_taskBMC] engine_0: ##   0:00:00  Solver: z3
-SBY 12:36:03 [corr_taskBMC] engine_0: ##   0:00:00  Checking assumptions in step 0..
-SBY 12:36:03 [corr_taskBMC] engine_0: ##   0:00:00  Checking assertions in step 0..
-SBY 12:36:03 [corr_taskBMC] engine_0: ##   0:00:00  Checking assumptions in step 1..
-SBY 12:36:06 [corr_taskBMC] engine_0: ##   0:00:02  Checking assertions in step 1..
-SBY 12:36:06 [corr_taskBMC] engine_0: ##   0:00:02  Status: passed
-SBY 12:36:06 [corr_taskBMC] engine_0: finished (returncode=0)
-SBY 12:36:06 [corr_taskBMC] engine_0: Status returned by engine: pass
-SBY 12:36:06 [corr_taskBMC] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:05 (5)
-SBY 12:36:06 [corr_taskBMC] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:05 (5)
-SBY 12:36:06 [corr_taskBMC] summary: engine_0 (smtbmc z3) returned pass
-SBY 12:36:06 [corr_taskBMC] DONE (PASS, rc=0)
+<testcase classname="corr" name="taskBMC" status="FAIL" time="195">
+<failure message="FAIL" type="FAIL"/>
+<system-out>SBY 16:23:29 [corr_taskBMC] Removing directory 'corr_taskBMC'.
+SBY 16:23:29 [corr_taskBMC] Copy '__lft__corr.v' to 'corr_taskBMC/src/__lft__corr.v'.
+SBY 16:23:29 [corr_taskBMC] engine_0: smtbmc z3
+SBY 16:23:29 [corr_taskBMC] base: starting process &quot;cd corr_taskBMC/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 16:23:35 [corr_taskBMC] base: finished (returncode=0)
+SBY 16:23:35 [corr_taskBMC] smt2: starting process &quot;cd corr_taskBMC/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 16:23:35 [corr_taskBMC] smt2: finished (returncode=0)
+SBY 16:23:35 [corr_taskBMC] engine_0: starting process &quot;cd corr_taskBMC; yosys-smtbmc -s z3 --presat --noprogress -t 10  --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 16:23:36 [corr_taskBMC] engine_0: ##   0:00:00  Solver: z3
+SBY 16:23:36 [corr_taskBMC] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY 16:23:36 [corr_taskBMC] engine_0: ##   0:00:00  Checking assertions in step 0..
+SBY 16:23:36 [corr_taskBMC] engine_0: ##   0:00:00  Checking assumptions in step 1..
+SBY 16:23:38 [corr_taskBMC] engine_0: ##   0:00:02  Checking assertions in step 1..
+SBY 16:23:38 [corr_taskBMC] engine_0: ##   0:00:02  Checking assumptions in step 2..
+SBY 16:23:38 [corr_taskBMC] engine_0: ##   0:00:02  Checking assertions in step 2..
+SBY 16:23:38 [corr_taskBMC] engine_0: ##   0:00:02  Checking assumptions in step 3..
+SBY 16:23:39 [corr_taskBMC] engine_0: ##   0:00:03  Checking assertions in step 3..
+SBY 16:23:39 [corr_taskBMC] engine_0: ##   0:00:03  Checking assumptions in step 4..
+SBY 16:23:43 [corr_taskBMC] engine_0: ##   0:00:07  Checking assertions in step 4..
+SBY 16:23:43 [corr_taskBMC] engine_0: ##   0:00:07  Checking assumptions in step 5..
+SBY 16:23:51 [corr_taskBMC] engine_0: ##   0:00:15  Checking assertions in step 5..
+SBY 16:23:51 [corr_taskBMC] engine_0: ##   0:00:15  Checking assumptions in step 6..
+SBY 16:24:05 [corr_taskBMC] engine_0: ##   0:00:29  Checking assertions in step 6..
+SBY 16:24:05 [corr_taskBMC] engine_0: ##   0:00:29  Checking assumptions in step 7..
+SBY 16:24:13 [corr_taskBMC] engine_0: ##   0:00:37  Checking assertions in step 7..
+SBY 16:24:13 [corr_taskBMC] engine_0: ##   0:00:37  Checking assumptions in step 8..
+SBY 16:25:11 [corr_taskBMC] engine_0: ##   0:01:35  Checking assertions in step 8..
+SBY 16:25:20 [corr_taskBMC] engine_0: ##   0:01:43  BMC failed!
+SBY 16:25:20 [corr_taskBMC] engine_0: ##   0:01:43  Value for anyconst Tile.tgt_rs2 (__lft__corr.v:0.0-0.0): 4294967292
+SBY 16:25:20 [corr_taskBMC] engine_0: ##   0:01:44  Value for anyconst Tile.tgt_rs1 (__lft__corr.v:0.0-0.0): 4
+SBY 16:25:22 [corr_taskBMC] engine_0: ##   0:01:46  Assert failed in Tile: __lft__corr.v:6623.59-6626.10
+SBY 16:25:22 [corr_taskBMC] engine_0: ##   0:01:46  Writing trace to VCD file: engine_0/trace.vcd
+SBY 16:25:43 [corr_taskBMC] engine_0: ##   0:02:07  Writing trace to Verilog testbench: engine_0/trace_tb.v
+SBY 16:26:14 [corr_taskBMC] engine_0: ##   0:02:38  Writing trace to constraints file: engine_0/trace.smtc
+SBY 16:26:44 [corr_taskBMC] engine_0: ##   0:03:08  Status: failed
+SBY 16:26:44 [corr_taskBMC] engine_0: finished (returncode=1)
+SBY 16:26:44 [corr_taskBMC] engine_0: Status returned by engine: FAIL
+SBY 16:26:44 [corr_taskBMC] summary: Elapsed clock time [H:MM:SS (secs)]: 0:03:15 (195)
+SBY 16:26:44 [corr_taskBMC] summary: Elapsed process time [H:MM:SS (secs)]: 0:03:15 (195)
+SBY 16:26:44 [corr_taskBMC] summary: engine_0 (smtbmc z3) returned FAIL
+SBY 16:26:44 [corr_taskBMC] summary: counterexample trace: corr_taskBMC/engine_0/trace.vcd
+SBY 16:26:44 [corr_taskBMC] DONE (FAIL, rc=2)
 </system-out></testcase></testsuite></testsuites>
