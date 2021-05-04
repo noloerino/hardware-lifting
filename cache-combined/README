@@ -1,0 +1,14 @@
+Verification of some properties of a 4-way set-associative cache,
+design taken from here:
+https://github.com/airin711/Verilog-caches
+
+The cache is word addressed with a 25-bit address. The block size is 128 bits = 4 words.
+Therefore, the lower 2 bits are dedicated to the index.
+The tag seems to be bits 22 through 14 (9 bits) for some reason.
+
+Properties to check:
+- Consecutively accessing an address causes a hit
+
+- First access after reset is a miss
+- After accessing 4 different addresses in the same way and then evicting one,
+  the evicted block was the least recently used one 
